@@ -329,6 +329,7 @@
             // 
             // txtTotalGeneral
             // 
+            this.txtTotalGeneral.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalGeneral.Location = new System.Drawing.Point(622, 234);
             this.txtTotalGeneral.Name = "txtTotalGeneral";
@@ -366,6 +367,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(622, 205);
             this.txtTotal.Name = "txtTotal";

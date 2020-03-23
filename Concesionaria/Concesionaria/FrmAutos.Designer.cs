@@ -189,7 +189,7 @@
             this.groupBox1.Controls.Add(this.txtPatente);
             this.groupBox1.Controls.Add(this.lblPatente);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 6);
+            this.groupBox1.Location = new System.Drawing.Point(-9, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(801, 219);
             this.groupBox1.TabIndex = 1;
@@ -201,15 +201,15 @@
             // 
             this.CmbTipoCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipoCombustible.FormattingEnabled = true;
-            this.CmbTipoCombustible.Location = new System.Drawing.Point(536, 172);
+            this.CmbTipoCombustible.Location = new System.Drawing.Point(506, 172);
             this.CmbTipoCombustible.Name = "CmbTipoCombustible";
-            this.CmbTipoCombustible.Size = new System.Drawing.Size(246, 24);
+            this.CmbTipoCombustible.Size = new System.Drawing.Size(289, 24);
             this.CmbTipoCombustible.TabIndex = 10;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(443, 172);
+            this.label16.Location = new System.Drawing.Point(416, 172);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 16);
             this.label16.TabIndex = 38;
@@ -217,15 +217,15 @@
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(536, 143);
+            this.txtColor.Location = new System.Drawing.Point(506, 143);
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(246, 22);
+            this.txtColor.Size = new System.Drawing.Size(289, 22);
             this.txtColor.TabIndex = 8;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(443, 143);
+            this.label23.Location = new System.Drawing.Point(416, 143);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 16);
             this.label23.TabIndex = 36;
@@ -251,9 +251,9 @@
             // 
             // txtChasis
             // 
-            this.txtChasis.Location = new System.Drawing.Point(536, 113);
+            this.txtChasis.Location = new System.Drawing.Point(506, 113);
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(246, 22);
+            this.txtChasis.Size = new System.Drawing.Size(289, 22);
             this.txtChasis.TabIndex = 33;
             // 
             // txtMotor
@@ -266,7 +266,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(443, 116);
+            this.label19.Location = new System.Drawing.Point(422, 116);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(49, 16);
             this.label19.TabIndex = 31;
@@ -340,7 +340,7 @@
             // radioConcesion
             // 
             this.radioConcesion.AutoSize = true;
-            this.radioConcesion.Location = new System.Drawing.Point(536, 84);
+            this.radioConcesion.Location = new System.Drawing.Point(507, 87);
             this.radioConcesion.Name = "radioConcesion";
             this.radioConcesion.Size = new System.Drawing.Size(90, 20);
             this.radioConcesion.TabIndex = 13;
@@ -351,7 +351,7 @@
             // 
             this.radioPropio.AutoSize = true;
             this.radioPropio.Checked = true;
-            this.radioPropio.Location = new System.Drawing.Point(444, 84);
+            this.radioPropio.Location = new System.Drawing.Point(419, 85);
             this.radioPropio.Name = "radioPropio";
             this.radioPropio.Size = new System.Drawing.Size(66, 20);
             this.radioPropio.TabIndex = 12;
@@ -379,9 +379,9 @@
             // 
             // txtKilometros
             // 
-            this.txtKilometros.Location = new System.Drawing.Point(536, 54);
+            this.txtKilometros.Location = new System.Drawing.Point(506, 54);
             this.txtKilometros.Name = "txtKilometros";
-            this.txtKilometros.Size = new System.Drawing.Size(246, 22);
+            this.txtKilometros.Size = new System.Drawing.Size(289, 22);
             this.txtKilometros.TabIndex = 4;
             this.txtKilometros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKms_KeyPress);
             this.txtKilometros.Leave += new System.EventHandler(this.txtKms_Leave);
@@ -389,7 +389,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(449, 57);
+            this.label4.Location = new System.Drawing.Point(422, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 8;
@@ -416,9 +416,9 @@
             // txtDescripcion
             // 
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcion.Location = new System.Drawing.Point(536, 25);
+            this.txtDescripcion.Location = new System.Drawing.Point(506, 25);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(246, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(289, 22);
             this.txtDescripcion.TabIndex = 2;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             this.txtDescripcion.Leave += new System.EventHandler(this.txtDescripcion_Leave);
@@ -426,7 +426,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 31);
+            this.label2.Location = new System.Drawing.Point(416, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 4;
@@ -858,14 +858,13 @@
             // 
             // tabControl3
             // 
+            this.tabControl3.Controls.Add(this.tabPage4);
             this.tabControl3.Controls.Add(this.Efectivo);
             this.tabControl3.Controls.Add(this.tabPage5);
-            this.tabControl3.Controls.Add(this.tabPage4);
             this.tabControl3.Controls.Add(this.tabPage2);
             this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl3.Location = new System.Drawing.Point(12, 272);
             this.tabControl3.Name = "tabControl3";
-            this.tabControl3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(823, 197);
             this.tabControl3.TabIndex = 23;
@@ -1111,7 +1110,7 @@
             this.txtFechaVencimiento.Mask = "00/00/0000";
             this.txtFechaVencimiento.Name = "txtFechaVencimiento";
             this.txtFechaVencimiento.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtFechaVencimiento.Size = new System.Drawing.Size(100, 23);
+            this.txtFechaVencimiento.Size = new System.Drawing.Size(80, 23);
             this.txtFechaVencimiento.TabIndex = 50;
             this.txtFechaVencimiento.ValidatingType = typeof(System.DateTime);
             // 
@@ -1185,8 +1184,8 @@
             // 
             // txtTotalEfectivo
             // 
-            this.txtTotalEfectivo.BackColor = System.Drawing.Color.White;
-            this.txtTotalEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalEfectivo.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalEfectivo.Location = new System.Drawing.Point(16, 492);
             this.txtTotalEfectivo.Name = "txtTotalEfectivo";
             this.txtTotalEfectivo.ReadOnly = true;
@@ -1195,8 +1194,8 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.BackColor = System.Drawing.Color.White;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(661, 492);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -1225,8 +1224,8 @@
             // 
             // txtTotalVehiculo
             // 
-            this.txtTotalVehiculo.BackColor = System.Drawing.Color.White;
-            this.txtTotalVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalVehiculo.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalVehiculo.Location = new System.Drawing.Point(182, 492);
             this.txtTotalVehiculo.Name = "txtTotalVehiculo";
             this.txtTotalVehiculo.ReadOnly = true;
@@ -1245,8 +1244,8 @@
             // 
             // txtTotalCheque
             // 
-            this.txtTotalCheque.BackColor = System.Drawing.Color.White;
-            this.txtTotalCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalCheque.Location = new System.Drawing.Point(339, 492);
             this.txtTotalCheque.Name = "txtTotalCheque";
             this.txtTotalCheque.ReadOnly = true;
@@ -1265,8 +1264,8 @@
             // 
             // txtTotalEfectivosaPagar
             // 
-            this.txtTotalEfectivosaPagar.BackColor = System.Drawing.Color.White;
-            this.txtTotalEfectivosaPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalEfectivosaPagar.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalEfectivosaPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalEfectivosaPagar.Location = new System.Drawing.Point(496, 492);
             this.txtTotalEfectivosaPagar.Name = "txtTotalEfectivosaPagar";
             this.txtTotalEfectivosaPagar.ReadOnly = true;

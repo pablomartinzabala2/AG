@@ -56,6 +56,7 @@ namespace Concesionaria
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
+            
         }
 
         private void GrabarAutos(SqlConnection con, SqlTransaction Transaccion)
@@ -1190,7 +1191,7 @@ namespace Concesionaria
             GrillaCheques.Columns[0].HeaderText = "Cheque";
             GrillaCheques.Columns[2].HeaderText = "Vencimiento";
             GrillaCheques.Columns[3].Visible = false;
-            GrillaCheques.Columns[4].Width = 400;
+            GrillaCheques.Columns[4].Width = 410;
             txtImporteCheque.Text = "";
             txtCheque.Text = "";
             txtFechaVencimiento.Text = "";
