@@ -88,8 +88,15 @@ namespace Concesionaria
                     BuscarPreVenta(Convert.ToInt32(Principal.CodigoSenia));
                 }
             }
-
-
+            txtTotalVehiculoPartePago.BackColor  = System.Drawing.Color.LightGreen;
+            txtTotalEfectivo.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalDocumentos.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalPrenda.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalCobranza.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
+            txtTotalVenta.BackColor = System.Drawing.Color.LightGreen;
+            txtSubTotal.BackColor = System.Drawing.Color.LightGreen;
         }
 
         private void txtPatente_TextChanged(object sender, EventArgs e)
@@ -247,8 +254,8 @@ namespace Concesionaria
             Grilla.DataSource = fun.TablaaMiles(trdo, "Importe");
             Grilla.Columns[1].Visible = false;
             Grilla.Columns[0].Visible = false;
-            Grilla.Columns[2].Width = 200;
-            Grilla.Columns[3].Width = 110;
+            Grilla.Columns[2].Width = 150;
+            Grilla.Columns[3].Width = 90;
             Grilla.Columns[4].Width = 110;
             txtTotalCossto.Text = TotalCosto.ToString();
             if (txtTotalCossto.Text != "")
@@ -1907,9 +1914,10 @@ namespace Concesionaria
             txtImporteVehiculoCompra.Text = "";
             CmbMarca2.SelectedIndex = 0;
             GrillaVehiculos.Columns[0].Visible = false;
-            GrillaVehiculos.Columns[1].Width = 130;
-            GrillaVehiculos.Columns[2].Width = 130;
-            GrillaVehiculos.Columns[3].Width = 100;
+            GrillaVehiculos.Columns[1].Width = 100;
+            GrillaVehiculos.Columns[2].Width = 240;
+            GrillaVehiculos.Columns[3].Width = 235;
+            GrillaVehiculos.Columns[4].Width = 150;
 
         }
 
@@ -2301,6 +2309,7 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             GrillaGastosRecepcion.Columns[0].Visible = false;
             GrillaGastosRecepcion.Columns[2].Visible = false;
+            GrillaGastosRecepcion.Columns[4].Visible = false;
             txtImporteGastoTransferencia.Text = "";
             txtImporteGastoRecepcion.Text = "";
             GrillaGastosRecepcion.Columns[1].Width = 250;
@@ -2334,6 +2343,8 @@ namespace Concesionaria
             TotalVenta = PrecioVenta + TotalGastos + TotalGastosRecepcion;
             txtTotalVenta.Text = TotalVenta.ToString();
             txtTotalVenta.Text = fun.FormatoEnteroMiles(txtTotalVenta.Text);
+            GrillaGastosRecepcion.Columns[1].Width = 195;
+            GrillaGastosRecepcion.Columns[3].Width = 80;
             //CalcularSubTotal();
         }
 
@@ -2670,7 +2681,9 @@ namespace Concesionaria
             GrillaCheques.Columns[0].HeaderText = "Cheque";
             GrillaCheques.Columns[2].HeaderText = "Vencimiento";
             GrillaCheques.Columns[3].Visible = false;
-            GrillaCheques.Columns[4].Width = 230;
+            GrillaCheques.Columns[0].Width = 145;
+            GrillaCheques.Columns[1].Width = 120;
+            GrillaCheques.Columns[4].Width = 390;
             txtImporteCheque.Text = "";
             txtCheque.Text = "";
             txtFechaVencimiento.Text = "";
@@ -2816,7 +2829,7 @@ namespace Concesionaria
             tGastos = fun2.TablaaMiles(tGastos, "Importe");
             GrillaGastosGenerales.DataSource = tGastos;
             GrillaGastosGenerales.Columns[0].Width = 200;
-            GrillaGastosGenerales.Columns[2].Width = 120;
+            GrillaGastosGenerales.Columns[2].Width = 160;
             GrillaGastosGenerales.Columns[0].Visible = false; 
             /*    if (b == 1)
                 {
@@ -4117,7 +4130,8 @@ namespace Concesionaria
             GrillaTarjeta.DataSource = tbTarjeta;
             CalcularSubTotal();
             GrillaTarjeta.Columns[0].Visible = false;
-            GrillaTarjeta.Columns[1].Width = 443;
+            GrillaTarjeta.Columns[1].Width = 640;
+            GrillaTarjeta.Columns[2].Width = 120;
         }
 
         private void txtImporteTarjeta_Leave(object sender, EventArgs e)
