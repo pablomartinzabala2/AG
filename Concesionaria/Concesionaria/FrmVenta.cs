@@ -499,10 +499,10 @@ namespace Concesionaria
             GrillaCuotas.Columns[2].HeaderText = "Vencimiento";
             GrillaCuotas.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
             GrillaCuotas.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomRight;
-            GrillaCuotas.Columns[0].Width = 50;
-            GrillaCuotas.Columns[1].Width = 150;
-            GrillaCuotas.Columns[2].Width = 150;
-            GrillaCuotas.Columns[3].Width = 180;
+            GrillaCuotas.Columns[0].Width = 180;
+            GrillaCuotas.Columns[1].Width = 195;
+            GrillaCuotas.Columns[2].Width = 180;
+            GrillaCuotas.Columns[3].Width = 210;
             GrillaCuotas.Columns[3].HeaderText = "Importe s/Interés";
             txtTotalDocumentos.Text = txtCapital.Text;
             CalcularSubTotal();
@@ -3993,8 +3993,9 @@ namespace Concesionaria
                 txtTotalPrenda.Text = fun.FormatoEnteroMiles(txtTotalPrenda.Text);
             }
             GrillaPrendas.Columns[0].Visible = false;
-            GrillaPrendas.Columns[2].Visible = false;
-            GrillaPrendas.Columns[1].Width = 430;
+           // GrillaPrendas.Columns[2].Visible = false;
+            GrillaPrendas.Columns[1].Width = 505;
+            GrillaPrendas.Columns[3].Width = 150;
             GrillaPrendas.Columns[4].Visible = false; 
             CalcularSubTotal();
         }

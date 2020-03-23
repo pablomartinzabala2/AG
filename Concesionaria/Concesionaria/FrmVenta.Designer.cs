@@ -234,6 +234,15 @@
             this.label46 = new System.Windows.Forms.Label();
             this.BtnAgregarCheque = new System.Windows.Forms.Button();
             this.btnNuevaBanco = new System.Windows.Forms.Button();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.txtMontoTarjeta = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
+            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
+            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
+            this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
+            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
+            this.label69 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
             this.txtTotalCheque = new System.Windows.Forms.TextBox();
@@ -254,15 +263,6 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.label69 = new System.Windows.Forms.Label();
-            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
-            this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
-            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
-            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
-            this.GrillaTarjeta = new System.Windows.Forms.DataGridView();
-            this.label70 = new System.Windows.Forms.Label();
-            this.txtMontoTarjeta = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -297,9 +297,9 @@
             this.tabPage9.SuspendLayout();
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -315,7 +315,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(919, 197);
+            this.tabControl1.Size = new System.Drawing.Size(875, 197);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -325,7 +325,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(911, 168);
+            this.tabPage1.Size = new System.Drawing.Size(867, 168);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Información del Vehículo";
             // 
@@ -1430,26 +1430,26 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(12, 215);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(915, 225);
+            this.groupBox3.Size = new System.Drawing.Size(875, 225);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Formas de Pago";
             // 
             // tabControl2
             // 
+            this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage16);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
-            this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Controls.Add(this.tabPage14);
             this.tabControl2.Controls.Add(this.tabPage17);
             this.tabControl2.Location = new System.Drawing.Point(0, 22);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(915, 197);
-            this.tabControl2.TabIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(875, 197);
+            this.tabControl2.TabIndex = 1;
             // 
             // tabPage16
             // 
@@ -1458,7 +1458,7 @@
             this.tabPage16.Controls.Add(this.label68);
             this.tabPage16.Location = new System.Drawing.Point(4, 25);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(907, 168);
+            this.tabPage16.Size = new System.Drawing.Size(867, 168);
             this.tabPage16.TabIndex = 8;
             this.tabPage16.Text = "Seña";
             // 
@@ -1489,7 +1489,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(907, 168);
+            this.tabPage4.Size = new System.Drawing.Size(867, 168);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Efectivo";
             // 
@@ -1521,7 +1521,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(907, 168);
+            this.tabPage6.Size = new System.Drawing.Size(867, 168);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Vehículos";
             // 
@@ -2002,7 +2002,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(907, 168);
+            this.tabPage7.Size = new System.Drawing.Size(867, 168);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Prenda";
             // 
@@ -2033,7 +2033,7 @@
             this.GrillaPrendas.Name = "GrillaPrendas";
             this.GrillaPrendas.ReadOnly = true;
             this.GrillaPrendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaPrendas.Size = new System.Drawing.Size(591, 111);
+            this.GrillaPrendas.Size = new System.Drawing.Size(814, 111);
             this.GrillaPrendas.TabIndex = 49;
             // 
             // btnAbrircPrenda
@@ -2108,7 +2108,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(907, 168);
+            this.tabPage5.Size = new System.Drawing.Size(867, 168);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Documentos";
             // 
@@ -2141,7 +2141,7 @@
             this.GrillaCuotas.ReadOnly = true;
             this.GrillaCuotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrillaCuotas.ShowEditingIcon = false;
-            this.GrillaCuotas.Size = new System.Drawing.Size(596, 118);
+            this.GrillaCuotas.Size = new System.Drawing.Size(826, 118);
             this.GrillaCuotas.TabIndex = 25;
             // 
             // txtCuotas
@@ -2217,7 +2217,7 @@
             this.tabPage9.Controls.Add(this.label35);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(907, 168);
+            this.tabPage9.Size = new System.Drawing.Size(867, 168);
             this.tabPage9.TabIndex = 6;
             this.tabPage9.Text = "Cobranza";
             // 
@@ -2287,7 +2287,7 @@
             this.tabPage14.Controls.Add(this.btnNuevaBanco);
             this.tabPage14.Location = new System.Drawing.Point(4, 25);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(907, 168);
+            this.tabPage14.Size = new System.Drawing.Size(867, 168);
             this.tabPage14.TabIndex = 7;
             this.tabPage14.Text = "Cheques";
             // 
@@ -2414,204 +2414,6 @@
             this.btnNuevaBanco.UseVisualStyleBackColor = true;
             this.btnNuevaBanco.Click += new System.EventHandler(this.btnNuevaBanco_Click);
             // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.groupBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox5.Controls.Add(this.label50);
-            this.groupBox5.Controls.Add(this.txtTotalCheque);
-            this.groupBox5.Controls.Add(this.label38);
-            this.groupBox5.Controls.Add(this.txtSubTotal);
-            this.groupBox5.Controls.Add(this.txtTotalEfectivo);
-            this.groupBox5.Controls.Add(this.txtTotalCobranza);
-            this.groupBox5.Controls.Add(this.label30);
-            this.groupBox5.Controls.Add(this.txtTotalVenta);
-            this.groupBox5.Controls.Add(this.label28);
-            this.groupBox5.Controls.Add(this.txtTotalPrenda);
-            this.groupBox5.Controls.Add(this.txtTotalDocumentos);
-            this.groupBox5.Controls.Add(this.label27);
-            this.groupBox5.Controls.Add(this.label26);
-            this.groupBox5.Controls.Add(this.txtTotalVehiculoPartePago);
-            this.groupBox5.Controls.Add(this.label25);
-            this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            this.groupBox5.Location = new System.Drawing.Point(16, 446);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1007, 84);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Resumen";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(545, 22);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(57, 17);
-            this.label50.TabIndex = 18;
-            this.label50.Text = "Cheque";
-            // 
-            // txtTotalCheque
-            // 
-            this.txtTotalCheque.Location = new System.Drawing.Point(548, 42);
-            this.txtTotalCheque.Name = "txtTotalCheque";
-            this.txtTotalCheque.ReadOnly = true;
-            this.txtTotalCheque.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalCheque.TabIndex = 17;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(689, 22);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 17);
-            this.label38.TabIndex = 16;
-            this.label38.Text = "Subtotal";
-            // 
-            // txtSubTotal
-            // 
-            this.txtSubTotal.Location = new System.Drawing.Point(694, 42);
-            this.txtSubTotal.Name = "txtSubTotal";
-            this.txtSubTotal.ReadOnly = true;
-            this.txtSubTotal.Size = new System.Drawing.Size(100, 23);
-            this.txtSubTotal.TabIndex = 15;
-            // 
-            // txtTotalEfectivo
-            // 
-            this.txtTotalEfectivo.Location = new System.Drawing.Point(13, 39);
-            this.txtTotalEfectivo.Name = "txtTotalEfectivo";
-            this.txtTotalEfectivo.ReadOnly = true;
-            this.txtTotalEfectivo.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalEfectivo.TabIndex = 14;
-            // 
-            // txtTotalCobranza
-            // 
-            this.txtTotalCobranza.Location = new System.Drawing.Point(441, 42);
-            this.txtTotalCobranza.Name = "txtTotalCobranza";
-            this.txtTotalCobranza.ReadOnly = true;
-            this.txtTotalCobranza.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalCobranza.TabIndex = 13;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(438, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(69, 17);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "Cobranza";
-            // 
-            // txtTotalVenta
-            // 
-            this.txtTotalVenta.Location = new System.Drawing.Point(800, 42);
-            this.txtTotalVenta.Name = "txtTotalVenta";
-            this.txtTotalVenta.ReadOnly = true;
-            this.txtTotalVenta.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalVenta.TabIndex = 8;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(797, 19);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(40, 17);
-            this.label28.TabIndex = 9;
-            this.label28.Text = "Total";
-            // 
-            // txtTotalPrenda
-            // 
-            this.txtTotalPrenda.Location = new System.Drawing.Point(335, 39);
-            this.txtTotalPrenda.Name = "txtTotalPrenda";
-            this.txtTotalPrenda.ReadOnly = true;
-            this.txtTotalPrenda.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalPrenda.TabIndex = 7;
-            // 
-            // txtTotalDocumentos
-            // 
-            this.txtTotalDocumentos.Location = new System.Drawing.Point(225, 39);
-            this.txtTotalDocumentos.Name = "txtTotalDocumentos";
-            this.txtTotalDocumentos.ReadOnly = true;
-            this.txtTotalDocumentos.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalDocumentos.TabIndex = 6;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(335, 19);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 17);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "Prenda";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(228, 19);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 17);
-            this.label26.TabIndex = 4;
-            this.label26.Text = "Documentos";
-            // 
-            // txtTotalVehiculoPartePago
-            // 
-            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(119, 39);
-            this.txtTotalVehiculoPartePago.Name = "txtTotalVehiculoPartePago";
-            this.txtTotalVehiculoPartePago.ReadOnly = true;
-            this.txtTotalVehiculoPartePago.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalVehiculoPartePago.TabIndex = 3;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(116, 19);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(69, 17);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Vehículos";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(10, 19);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(58, 17);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Efectivo";
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabar.Location = new System.Drawing.Point(670, 536);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(131, 36);
-            this.btnGrabar.TabIndex = 4;
-            this.btnGrabar.Text = "Grabar venta";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.Location = new System.Drawing.Point(545, 536);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(119, 36);
-            this.btnAnular.TabIndex = 5;
-            this.btnAnular.Text = "&Anular";
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Visible = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnGrabarPreVenta
-            // 
-            this.btnGrabarPreVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGrabarPreVenta.Location = new System.Drawing.Point(807, 536);
-            this.btnGrabarPreVenta.Name = "btnGrabarPreVenta";
-            this.btnGrabarPreVenta.Size = new System.Drawing.Size(131, 36);
-            this.btnGrabarPreVenta.TabIndex = 6;
-            this.btnGrabarPreVenta.Text = "Grabar pre venta";
-            this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
-            this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
-            // 
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -2625,36 +2427,36 @@
             this.tabPage17.Controls.Add(this.label69);
             this.tabPage17.Location = new System.Drawing.Point(4, 25);
             this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Size = new System.Drawing.Size(907, 168);
+            this.tabPage17.Size = new System.Drawing.Size(867, 168);
             this.tabPage17.TabIndex = 9;
             this.tabPage17.Text = "Tarjetas";
             // 
-            // label69
+            // txtMontoTarjeta
             // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(21, 21);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(51, 16);
-            this.label69.TabIndex = 11;
-            this.label69.Text = "Tarjeta";
+            this.txtMontoTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMontoTarjeta.Location = new System.Drawing.Point(535, 134);
+            this.txtMontoTarjeta.Name = "txtMontoTarjeta";
+            this.txtMontoTarjeta.Size = new System.Drawing.Size(96, 22);
+            this.txtMontoTarjeta.TabIndex = 54;
             // 
-            // cmbTarjeta
+            // label70
             // 
-            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTarjeta.FormattingEnabled = true;
-            this.cmbTarjeta.Location = new System.Drawing.Point(78, 21);
-            this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(246, 24);
-            this.cmbTarjeta.TabIndex = 12;
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(490, 134);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(39, 16);
+            this.label70.TabIndex = 53;
+            this.label70.Text = "Total";
             // 
-            // txtImporteTarjeta
+            // GrillaTarjeta
             // 
-            this.txtImporteTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteTarjeta.Location = new System.Drawing.Point(335, 21);
-            this.txtImporteTarjeta.Name = "txtImporteTarjeta";
-            this.txtImporteTarjeta.Size = new System.Drawing.Size(172, 22);
-            this.txtImporteTarjeta.TabIndex = 33;
-            this.txtImporteTarjeta.Leave += new System.EventHandler(this.txtImporteTarjeta_Leave);
+            this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaTarjeta.Location = new System.Drawing.Point(24, 52);
+            this.GrillaTarjeta.Name = "GrillaTarjeta";
+            this.GrillaTarjeta.ReadOnly = true;
+            this.GrillaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaTarjeta.Size = new System.Drawing.Size(607, 79);
+            this.GrillaTarjeta.TabIndex = 52;
             // 
             // btnQuitarTarjeta
             // 
@@ -2676,39 +2478,252 @@
             this.btnAgregarTarjeta.UseVisualStyleBackColor = true;
             this.btnAgregarTarjeta.Click += new System.EventHandler(this.btnAgregarTarjeta_Click);
             // 
-            // GrillaTarjeta
+            // txtImporteTarjeta
             // 
-            this.GrillaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaTarjeta.Location = new System.Drawing.Point(24, 52);
-            this.GrillaTarjeta.Name = "GrillaTarjeta";
-            this.GrillaTarjeta.ReadOnly = true;
-            this.GrillaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaTarjeta.Size = new System.Drawing.Size(607, 79);
-            this.GrillaTarjeta.TabIndex = 52;
+            this.txtImporteTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteTarjeta.Location = new System.Drawing.Point(335, 21);
+            this.txtImporteTarjeta.Name = "txtImporteTarjeta";
+            this.txtImporteTarjeta.Size = new System.Drawing.Size(172, 22);
+            this.txtImporteTarjeta.TabIndex = 33;
+            this.txtImporteTarjeta.Leave += new System.EventHandler(this.txtImporteTarjeta_Leave);
             // 
-            // label70
+            // cmbTarjeta
             // 
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(490, 134);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(39, 16);
-            this.label70.TabIndex = 53;
-            this.label70.Text = "Total";
+            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTarjeta.FormattingEnabled = true;
+            this.cmbTarjeta.Location = new System.Drawing.Point(78, 21);
+            this.cmbTarjeta.Name = "cmbTarjeta";
+            this.cmbTarjeta.Size = new System.Drawing.Size(246, 24);
+            this.cmbTarjeta.TabIndex = 12;
             // 
-            // txtMontoTarjeta
+            // label69
             // 
-            this.txtMontoTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMontoTarjeta.Location = new System.Drawing.Point(535, 134);
-            this.txtMontoTarjeta.Name = "txtMontoTarjeta";
-            this.txtMontoTarjeta.Size = new System.Drawing.Size(96, 22);
-            this.txtMontoTarjeta.TabIndex = 54;
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(21, 21);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(51, 16);
+            this.label69.TabIndex = 11;
+            this.label69.Text = "Tarjeta";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox5.Controls.Add(this.label50);
+            this.groupBox5.Controls.Add(this.txtTotalCheque);
+            this.groupBox5.Controls.Add(this.label38);
+            this.groupBox5.Controls.Add(this.txtSubTotal);
+            this.groupBox5.Controls.Add(this.txtTotalEfectivo);
+            this.groupBox5.Controls.Add(this.txtTotalCobranza);
+            this.groupBox5.Controls.Add(this.label30);
+            this.groupBox5.Controls.Add(this.txtTotalVenta);
+            this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.txtTotalPrenda);
+            this.groupBox5.Controls.Add(this.txtTotalDocumentos);
+            this.groupBox5.Controls.Add(this.label27);
+            this.groupBox5.Controls.Add(this.label26);
+            this.groupBox5.Controls.Add(this.txtTotalVehiculoPartePago);
+            this.groupBox5.Controls.Add(this.label25);
+            this.groupBox5.Controls.Add(this.label24);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.groupBox5.Location = new System.Drawing.Point(16, 446);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1007, 84);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Resumen";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(545, 22);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(63, 17);
+            this.label50.TabIndex = 18;
+            this.label50.Text = "Cheque";
+            // 
+            // txtTotalCheque
+            // 
+            this.txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalCheque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalCheque.Location = new System.Drawing.Point(548, 42);
+            this.txtTotalCheque.Name = "txtTotalCheque";
+            this.txtTotalCheque.ReadOnly = true;
+            this.txtTotalCheque.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalCheque.TabIndex = 17;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(658, 22);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(68, 17);
+            this.label38.TabIndex = 16;
+            this.label38.Text = "Subtotal";
+            // 
+            // txtSubTotal
+            // 
+            this.txtSubTotal.BackColor = System.Drawing.Color.LightGreen;
+            this.txtSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtSubTotal.Location = new System.Drawing.Point(663, 42);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
+            this.txtSubTotal.Size = new System.Drawing.Size(100, 23);
+            this.txtSubTotal.TabIndex = 15;
+            // 
+            // txtTotalEfectivo
+            // 
+            this.txtTotalEfectivo.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalEfectivo.Location = new System.Drawing.Point(13, 39);
+            this.txtTotalEfectivo.Name = "txtTotalEfectivo";
+            this.txtTotalEfectivo.ReadOnly = true;
+            this.txtTotalEfectivo.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalEfectivo.TabIndex = 14;
+            // 
+            // txtTotalCobranza
+            // 
+            this.txtTotalCobranza.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalCobranza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalCobranza.Location = new System.Drawing.Point(441, 42);
+            this.txtTotalCobranza.Name = "txtTotalCobranza";
+            this.txtTotalCobranza.ReadOnly = true;
+            this.txtTotalCobranza.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalCobranza.TabIndex = 13;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(438, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(77, 17);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "Cobranza";
+            // 
+            // txtTotalVenta
+            // 
+            this.txtTotalVenta.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalVenta.Location = new System.Drawing.Point(769, 42);
+            this.txtTotalVenta.Name = "txtTotalVenta";
+            this.txtTotalVenta.ReadOnly = true;
+            this.txtTotalVenta.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalVenta.TabIndex = 8;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(766, 19);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(45, 17);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Total";
+            // 
+            // txtTotalPrenda
+            // 
+            this.txtTotalPrenda.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalPrenda.Location = new System.Drawing.Point(335, 39);
+            this.txtTotalPrenda.Name = "txtTotalPrenda";
+            this.txtTotalPrenda.ReadOnly = true;
+            this.txtTotalPrenda.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalPrenda.TabIndex = 7;
+            // 
+            // txtTotalDocumentos
+            // 
+            this.txtTotalDocumentos.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalDocumentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalDocumentos.Location = new System.Drawing.Point(225, 39);
+            this.txtTotalDocumentos.Name = "txtTotalDocumentos";
+            this.txtTotalDocumentos.ReadOnly = true;
+            this.txtTotalDocumentos.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalDocumentos.TabIndex = 6;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(335, 19);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 17);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Prenda";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(228, 19);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(97, 17);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Documentos";
+            // 
+            // txtTotalVehiculoPartePago
+            // 
+            this.txtTotalVehiculoPartePago.BackColor = System.Drawing.Color.LightGreen;
+            this.txtTotalVehiculoPartePago.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            this.txtTotalVehiculoPartePago.Location = new System.Drawing.Point(119, 39);
+            this.txtTotalVehiculoPartePago.Name = "txtTotalVehiculoPartePago";
+            this.txtTotalVehiculoPartePago.ReadOnly = true;
+            this.txtTotalVehiculoPartePago.Size = new System.Drawing.Size(100, 23);
+            this.txtTotalVehiculoPartePago.TabIndex = 3;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(116, 19);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 17);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Vehículos";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(10, 19);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 17);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Efectivo";
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Location = new System.Drawing.Point(602, 526);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(131, 36);
+            this.btnGrabar.TabIndex = 4;
+            this.btnGrabar.Text = "Grabar venta";
+            this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.Location = new System.Drawing.Point(470, 526);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(119, 36);
+            this.btnAnular.TabIndex = 5;
+            this.btnAnular.Text = "&Anular";
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Visible = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnGrabarPreVenta
+            // 
+            this.btnGrabarPreVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabarPreVenta.Location = new System.Drawing.Point(752, 526);
+            this.btnGrabarPreVenta.Name = "btnGrabarPreVenta";
+            this.btnGrabarPreVenta.Size = new System.Drawing.Size(131, 36);
+            this.btnGrabarPreVenta.TabIndex = 6;
+            this.btnGrabarPreVenta.Text = "Grabar pre venta";
+            this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
+            this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(942, 584);
+            this.ClientSize = new System.Drawing.Size(892, 574);
             this.Controls.Add(this.btnGrabarPreVenta);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGrabar);
@@ -2770,11 +2785,11 @@
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tabPage17.ResumeLayout(false);
             this.tabPage17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
