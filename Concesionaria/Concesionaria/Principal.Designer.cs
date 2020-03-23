@@ -44,6 +44,7 @@
             this.tarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAgregarCosto = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,7 @@
             this.mnuControlOperaciones = new System.Windows.Forms.ToolStripMenuItem();
             this.crearAlertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeOperacionesGeneralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoDeChequeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cobranzasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,8 +102,7 @@
             this.BtnCopia = new System.Windows.Forms.ToolStripButton();
             this.btnConsultaAgenda = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.mnuAgregarCosto = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoDeChequeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -241,6 +242,14 @@
             this.editMenu.Size = new System.Drawing.Size(101, 21);
             this.editMenu.Text = "Operaciones";
             // 
+            // mnuAgregarCosto
+            // 
+            this.mnuAgregarCosto.ImageTransparentColor = System.Drawing.Color.Black;
+            this.mnuAgregarCosto.Name = "mnuAgregarCosto";
+            this.mnuAgregarCosto.Size = new System.Drawing.Size(293, 22);
+            this.mnuAgregarCosto.Text = "Agregar Costo";
+            this.mnuAgregarCosto.Click += new System.EventHandler(this.mnuAgregarCosto_Click);
+            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
@@ -307,6 +316,13 @@
             this.controlDeOperacionesGeneralesToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
             this.controlDeOperacionesGeneralesToolStripMenuItem.Text = "Control de operaciones Generales";
             this.controlDeOperacionesGeneralesToolStripMenuItem.Click += new System.EventHandler(this.controlDeOperacionesGeneralesToolStripMenuItem_Click);
+            // 
+            // ingresoDeChequeToolStripMenuItem
+            // 
+            this.ingresoDeChequeToolStripMenuItem.Name = "ingresoDeChequeToolStripMenuItem";
+            this.ingresoDeChequeToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
+            this.ingresoDeChequeToolStripMenuItem.Text = "Ingreso de Cheque";
+            this.ingresoDeChequeToolStripMenuItem.Click += new System.EventHandler(this.ingresoDeChequeToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -578,7 +594,8 @@
             this.toolStripButton1,
             this.BtnCopia,
             this.btnConsultaAgenda,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip.Location = new System.Drawing.Point(0, 25);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 39);
@@ -705,20 +722,15 @@
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Vehículos";
             // 
-            // mnuAgregarCosto
+            // toolStripButton3
             // 
-            this.mnuAgregarCosto.ImageTransparentColor = System.Drawing.Color.Black;
-            this.mnuAgregarCosto.Name = "mnuAgregarCosto";
-            this.mnuAgregarCosto.Size = new System.Drawing.Size(293, 22);
-            this.mnuAgregarCosto.Text = "Agregar Costo";
-            this.mnuAgregarCosto.Click += new System.EventHandler(this.mnuAgregarCosto_Click);
-            // 
-            // ingresoDeChequeToolStripMenuItem
-            // 
-            this.ingresoDeChequeToolStripMenuItem.Name = "ingresoDeChequeToolStripMenuItem";
-            this.ingresoDeChequeToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
-            this.ingresoDeChequeToolStripMenuItem.Text = "Ingreso de Cheque";
-            this.ingresoDeChequeToolStripMenuItem.Click += new System.EventHandler(this.ingresoDeChequeToolStripMenuItem_Click);
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::Concesionaria.Properties.Resources.COMPRA222;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton3.Text = "bTNcOMPRA";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // Principal
             // 
@@ -819,6 +831,7 @@
         private System.Windows.Forms.ToolStripMenuItem ventasPorTarjetasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuAgregarCosto;
         private System.Windows.Forms.ToolStripMenuItem ingresoDeChequeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }
 
