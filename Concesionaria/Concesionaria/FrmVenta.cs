@@ -3118,11 +3118,15 @@ namespace Concesionaria
             GrillaCuotas.Columns[2].HeaderText = "Vencimiento";
             GrillaCuotas.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
             GrillaCuotas.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.BottomRight;
-            GrillaCuotas.Columns[0].Width = 50;
-            GrillaCuotas.Columns[1].Width = 150;
-            GrillaCuotas.Columns[2].Width = 150;
-            GrillaCuotas.Columns[3].Width = 180;
+         //   GrillaCuotas.Columns[0].Width = 50;
+            // GrillaCuotas.Columns[1].Width = 150;
+            //GrillaCuotas.Columns[2].Width = 150;
+            //GrillaCuotas.Columns[3].Width = 180;
+            GrillaCuotas.Columns[0].Width = 180;
             GrillaCuotas.Columns[3].HeaderText = "Importe s/Interés";
+            GrillaCuotas.Columns[1].Width = 195;
+            GrillaCuotas.Columns[2].Width = 180;
+            GrillaCuotas.Columns[3].Width = 210;
         }
 
         private void BuscarChequesxCodVenta(Int32 CodVenta)
@@ -3141,6 +3145,10 @@ namespace Concesionaria
             trdo = fun.TablaaMiles(trdo, "Importe");
             GrillaCheques.DataSource = trdo;
             txtTotalCheque.Text = fun.FormatoEnteroMiles(Total.ToString());
+            GrillaCheques.Columns[3].Visible = false;
+            GrillaCheques.Columns[0].Width = 145;
+            GrillaCheques.Columns[1].Width = 120;
+            GrillaCheques.Columns[4].Width = 390;
         }
 
         private void BuscarAutoPartePago(Int32 CodAuto)

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnReporte2 = new System.Windows.Forms.Button();
             this.BtnVerGanancia = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.txtPrenda = new System.Windows.Forms.TextBox();
             this.txtVehículo = new System.Windows.Forms.TextBox();
             this.txtDocumentos = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -86,10 +86,27 @@
             this.groupBox1.Text = "Listado de ventas";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtApellido
+            // 
+            this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtApellido.Location = new System.Drawing.Point(710, 36);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(186, 22);
+            this.txtApellido.TabIndex = 60;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(646, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Apellido";
+            // 
             // btnReporte2
             // 
             this.btnReporte2.Image = global::Concesionaria.Properties.Resources.printer1;
-            this.btnReporte2.Location = new System.Drawing.Point(1134, 37);
+            this.btnReporte2.Location = new System.Drawing.Point(1086, 35);
             this.btnReporte2.Name = "btnReporte2";
             this.btnReporte2.Size = new System.Drawing.Size(40, 28);
             this.btnReporte2.TabIndex = 58;
@@ -100,7 +117,7 @@
             // BtnVerGanancia
             // 
             this.BtnVerGanancia.Image = global::Concesionaria.Properties.Resources.Linterna;
-            this.BtnVerGanancia.Location = new System.Drawing.Point(1088, 36);
+            this.BtnVerGanancia.Location = new System.Drawing.Point(1040, 35);
             this.BtnVerGanancia.Name = "BtnVerGanancia";
             this.BtnVerGanancia.Size = new System.Drawing.Size(40, 28);
             this.BtnVerGanancia.TabIndex = 57;
@@ -119,6 +136,7 @@
             // 
             // txtCantidadVentas
             // 
+            this.txtCantidadVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidadVentas.Location = new System.Drawing.Point(936, 506);
             this.txtCantidadVentas.Name = "txtCantidadVentas";
             this.txtCantidadVentas.Size = new System.Drawing.Size(100, 22);
@@ -127,7 +145,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Concesionaria.Properties.Resources.printer1;
-            this.btnImprimir.Location = new System.Drawing.Point(1042, 36);
+            this.btnImprimir.Location = new System.Drawing.Point(994, 35);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(40, 28);
             this.btnImprimir.TabIndex = 54;
@@ -154,8 +172,8 @@
             // 
             // btnAbrirVenta
             // 
-            this.btnAbrirVenta.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirVenta.Location = new System.Drawing.Point(996, 35);
+            this.btnAbrirVenta.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnAbrirVenta.Location = new System.Drawing.Point(948, 35);
             this.btnAbrirVenta.Name = "btnAbrirVenta";
             this.btnAbrirVenta.Size = new System.Drawing.Size(40, 28);
             this.btnAbrirVenta.TabIndex = 43;
@@ -174,6 +192,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(1156, 506);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
@@ -181,11 +200,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(902, 33);
+            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnBuscar.Location = new System.Drawing.Point(902, 35);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(88, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(40, 28);
             this.btnBuscar.TabIndex = 40;
-            this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -262,23 +281,6 @@
             this.txtDocumentos.ReadOnly = true;
             this.txtDocumentos.Size = new System.Drawing.Size(136, 22);
             this.txtDocumentos.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(646, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Apellido";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(710, 36);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(186, 22);
-            this.txtApellido.TabIndex = 60;
             // 
             // FrmListadoVentas
             // 

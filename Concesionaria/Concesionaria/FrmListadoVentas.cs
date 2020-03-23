@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmListadoVentas : Form
@@ -18,9 +18,17 @@ namespace Concesionaria
             DateTime fecha1 = fecha.AddMonths(-1);
             txtFechaDesde.Text = fecha1.ToShortDateString();
             txtFechaHasta.Text = fecha.ToShortDateString();
+            txtTotal.BackColor = cColor.CajaTexto();
+            txtCantidadVentas.BackColor = cColor.CajaTexto();
+            Buscar();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        private void Buscar()
         {
             Clases.cFunciones fun = new Clases.cFunciones();
             if (fun.ValidarFecha(txtFechaDesde.Text) == false)
@@ -41,12 +49,12 @@ namespace Concesionaria
                 return;
             }
             string Apellido = null;
-            if (txtApellido.Text !="")
-                Apellido = txtApellido.Text ;
+            if (txtApellido.Text != "")
+                Apellido = txtApellido.Text;
             Clases.cVenta objVenta = new Clases.cVenta();
             DateTime FechaDesde = Convert.ToDateTime(txtFechaDesde.Text);
             DateTime FechaHasta = Convert.ToDateTime(txtFechaHasta.Text);
-            DataTable trdo = objVenta.GetVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim (),Apellido);
+            DataTable trdo = objVenta.GetVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
             Clases.cPreVenta objPreVenta = new Clases.cPreVenta();
 
             DataTable trdo2 = objPreVenta.GetPreVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
@@ -58,17 +66,17 @@ namespace Concesionaria
             {
                 DataRow fila;
                 fila = trdo.NewRow();
-                for (int j=0;j< trdo2.Columns.Count ;j++)
+                for (int j = 0; j < trdo2.Columns.Count; j++)
                 {
                     Dato = trdo2.Rows[i][j].ToString();
-                    fila[j] = Dato; 
+                    fila[j] = Dato;
                 }
                 trdo.Rows.Add(fila);
             }
 
-            
 
-            Int32 Cant = trdo.Rows.Count ;
+
+            Int32 Cant = trdo.Rows.Count;
             txtCantidadVentas.Text = Cant.ToString();
             trdo = fun.TablaaMiles(trdo, "ImporteVenta");
             trdo = fun.TablaaMiles(trdo, "ImporteEfectivo");
@@ -97,7 +105,7 @@ namespace Concesionaria
                     {
                         ImporteDocumento = GetSaldoCuotaxCodVenta(CodVenta);
                     }
-                    
+
                     if (Grilla.Rows[k].Cells[11].Value.ToString() != "")
                     {
                         Prenda = GetSaldoPrendaxCodVenta(CodVenta);
@@ -123,7 +131,7 @@ namespace Concesionaria
                         Grilla.Rows[k].DefaultCellStyle.BackColor = Color.LightCyan;
 
 
-                    
+
                 }
             }
             //
@@ -136,7 +144,7 @@ namespace Concesionaria
             Grilla.Columns[11].HeaderText = "Prenda";
             Grilla.Columns[13].HeaderText = "Cobranza";
             Grilla.Columns[15].Visible = false;
-            
+
             Grilla.Columns[1].Width = 105;
             Grilla.Columns[5].Visible = false;
             Grilla.Columns[3].HeaderText = "Parte Pago";
@@ -149,12 +157,9 @@ namespace Concesionaria
             Grilla.Columns[13].Width = 80;
             for (int k = 0; k < Grilla.Rows.Count - 1; k++)
             {
-                if (k>=PosPintar)
+                if (k >= PosPintar)
                     Grilla.Rows[k].DefaultCellStyle.BackColor = Color.LightGray;
             }
-
-           
-                    
         }
 
         private void btnAbrirVenta_Click(object sender, EventArgs e)
