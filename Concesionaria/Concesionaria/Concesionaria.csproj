@@ -65,6 +65,7 @@
     <Compile Include="Clases\cCliente.cs" />
     <Compile Include="Clases\cCobranza.cs" />
     <Compile Include="Clases\cCobranzaGeneral.cs" />
+    <Compile Include="Clases\cColor.cs" />
     <Compile Include="Clases\cComisionVendedor.cs" />
     <Compile Include="Clases\cCompra.cs" />
     <Compile Include="Clases\cConexion.cs" />

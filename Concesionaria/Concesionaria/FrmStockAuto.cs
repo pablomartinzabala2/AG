@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmStockAuto : Form
@@ -22,7 +22,10 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmbMarca, "Marca", "Nombre", "CodMarca");
             Buscar();
-            //BuscarAutosdeStock("",null);
+            txtTotalVehiculos.BackColor = cColor.CajaTexto();
+            txtMontoTotal.BackColor = cColor.CajaTexto();
+            txtConcesion.BackColor = cColor.CajaTexto();
+            
         }
 
         private void BuscarAutosdeStock(string Patente,Int32? CodMarca)
