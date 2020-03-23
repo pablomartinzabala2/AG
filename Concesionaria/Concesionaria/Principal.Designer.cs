@@ -125,6 +125,7 @@
             // 
             // fileMenu
             // 
+            this.fileMenu.DoubleClickEnabled = true;
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
@@ -588,14 +589,14 @@
             this.newToolStripButton,
             this.openToolStripButton,
             this.saveToolStripButton,
+            this.toolStripButton3,
             this.helpToolStripButton,
             this.btnAnularVenta,
             this.btnMovimientos,
             this.toolStripButton1,
             this.BtnCopia,
             this.btnConsultaAgenda,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton2});
             this.toolStrip.Location = new System.Drawing.Point(0, 25);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 39);
