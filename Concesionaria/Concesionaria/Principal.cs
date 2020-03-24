@@ -190,6 +190,7 @@ namespace Concesionaria
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
+            Principal.CodigoPrincipalAbm = null;
             FrmVenta childForm = new FrmVenta();
             childForm.MdiParent = this;
             childForm.Text = "Formulario de ventas";

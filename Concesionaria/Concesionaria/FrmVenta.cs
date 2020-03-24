@@ -62,6 +62,7 @@ namespace Concesionaria
                 GetVentaxtarjeta(Convert.ToInt32(Cod));
                 btnGrabar.Visible = false;
                 btnAnular.Visible = false;
+                btnGrabarPreVenta.Visible = false;
                 btnAgregarGarantias.Enabled = true;
                 CargarGarantias(Convert.ToInt32(Cod));
                 button3.Enabled = true;
@@ -2226,7 +2227,7 @@ namespace Concesionaria
             GrillaGastos.Columns[2].Visible = false;
             txtImporteGastoTransferencia.Text = "";
             txtImporteGastoRecepcion.Text = "";
-            GrillaGastos.Columns[1].Width = 250;
+            GrillaGastos.Columns[1].Width = 260;
 
             txtTotalGastosRecepcion.Text = fun.CalcularTotalGrilla(GrillaGastosRecepcion, "Importe").ToString();
             if (txtTotalGastosRecepcion.Text != "")
@@ -4194,9 +4195,15 @@ namespace Concesionaria
             }
         }
 
-        
+        private void tabPage12_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void CmbGastosTransferencia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 };
 
