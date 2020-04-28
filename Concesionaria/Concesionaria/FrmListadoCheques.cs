@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases:
 namespace Concesionaria
 {
     public partial class FrmListadoCheques : Form
@@ -23,6 +23,7 @@ namespace Concesionaria
             fechahoy = fechahoy.AddMonths(-1);
             txtFechaDesde.Text = fechahoy.ToShortDateString();
             CargarBancos();
+            txtTotal.BackColor = cColor.CajaTexto();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
