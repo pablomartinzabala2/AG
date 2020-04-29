@@ -1912,6 +1912,11 @@ namespace Concesionaria
             txtKms2.Text = "";
             txtCodAuto2.Text = "";
             txtKms2.Text = "";
+            txtAnio2.Text = "";
+            if (CmbCiudad2.Items.Count >0 )
+            {
+                CmbCiudad2.SelectedIndex = 0;
+            }
             txtImporteVehiculoCompra.Text = "";
             CmbMarca2.SelectedIndex = 0;
             GrillaVehiculos.Columns[0].Visible = false;
