@@ -10,8 +10,8 @@ namespace Concesionaria.Clases
         public static  string Cadenacon()
         {
             //*****CASA**********
-         //   string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
-            string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
+            string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
+          //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
           //     string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
            // string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
            // string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;Integrated Security=True";
