@@ -1794,9 +1794,9 @@
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(442, 43);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(42, 16);
+            this.label51.Size = new System.Drawing.Size(71, 16);
             this.label51.TabIndex = 34;
-            this.label51.Text = "Motor";
+            this.label51.Text = "Kilómetros";
             // 
             // btnAgregarAuto
             // 
