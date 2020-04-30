@@ -10,13 +10,17 @@ namespace Concesionaria.Clases
         public static  string Cadenacon()
         {
             //*****CASA**********
-            string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
-          //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
-          //     string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
-           // string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
-           // string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;Integrated Security=True";
-          //  string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;User ID=sa;Password=123";
-           
+            //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
+            //*****TEST2**********
+              string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=TEST2;Integrated Security=True";
+            //CHACO
+            // string cadena = "Data Source=DESKTOP-4I4D3O9\\SQLEXPRESS;Initial Catalog=CHACO;Integrated Security=True";
+            //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
+            //     string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
+            // string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
+            // string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;Integrated Security=True";
+            //  string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;User ID=sa;Password=123";
+
             return cadena;
         }
     }

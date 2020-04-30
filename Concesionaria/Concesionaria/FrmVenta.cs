@@ -39,11 +39,11 @@ namespace Concesionaria
             fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
             fun.LlenarCombo(CmbMarca2, "Marca", "Nombre", "CodMarca");
             fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
-            if (cmbCiudad.SelectedIndex > 0)
+            if (cmbCiudad.Items.Count > 1)
                 cmbCiudad.SelectedValue = 1;
             fun.LlenarCombo(CmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
             fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
-            if (cmbDocumento.Items.Count > 0)
+            if (cmbDocumento.Items.Count > 1)
                 cmbDocumento.SelectedIndex = 1;
             fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             fun.LlenarCombo(CmbGastosTransferencia, "CategoriaGastoTransferencia", "Descripcion", "Codigo");
@@ -2534,7 +2534,7 @@ namespace Concesionaria
 
         private void FrmVenta_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtImporteCheque_Leave(object sender, EventArgs e)
