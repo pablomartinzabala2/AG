@@ -247,12 +247,14 @@ namespace Concesionaria.Clases
             Int32? CodCiudad, int Propio, int Concesion,
             string Observacion, string Anio, Double? Importe,
             string Motor, string Chasis, string Color, Int32? CodTipoCombustible
+            ,Int32? CodSucursal,Int32? CodTipoUtilitario
             )
         {
             string sql = "Insert into auto(";
             sql = sql + "Patente,CodMarca,Descripcion";
             sql = sql + ",Kilometros,CodCiudad,Propio,Concesion";
             sql = sql + ",Observacion,Anio,Importe,Motor,Chasis,Color,CodTipoCombustible";
+            sql = sql + ",CodSucursal,CodTipoUtilitario";
             sql = sql + ")";
             sql = sql + "Values (";
             sql = sql + "'" + Patente + "'";
@@ -285,6 +287,16 @@ namespace Concesionaria.Clases
                 sql = sql + ",null";
             else
                 sql = sql + "," + CodTipoCombustible.ToString();
+            if (CodSucursal == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + CodSucursal.ToString();
+             
+            if (CodTipoUtilitario == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + CodTipoUtilitario.ToString();
+
             sql = sql + ")";
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;
@@ -311,6 +323,62 @@ namespace Concesionaria.Clases
             string sql = "select a.* from auto a";
             sql = sql + " where patente like " + "'%" + Patente + "%'";
             return cDb.ExecuteDataTable(sql);
+        }
+
+        public void ModificarAutoTransaccion(SqlConnection con, SqlTransaction Transaccion,string Patente, Int32? CodMarca,
+          string Descripcion, Int32? Kilometros,
+          Int32? CodCiudad, int Propio, int Concesion,
+          string Observacion, string Anio, Double? Importe, string Motor, string Chasis, 
+          string Color , Int32? CodSucursal, Int32? CodTipoUtilitario)
+        {
+            string sql = "";
+            sql = "update auto set";
+            if (CodMarca != null)
+                sql = sql + " CodMarca=" + CodMarca.ToString();
+            else
+                sql = sql + " CodMarca=null";
+            sql = sql + ",Descripcion =" + "'" + Descripcion + "'";
+            if (Kilometros != null)
+                sql = sql + ",Kilometros =" + Kilometros.ToString();
+            else
+                sql = sql + ",Kilometros =null ";
+
+            if (CodCiudad != null)
+                sql = sql + ",CodCiudad =" + CodCiudad.ToString();
+            else
+                sql = sql + ",CodCiudad=null";
+
+            sql = sql + ",Propio = " + Propio.ToString();
+            sql = sql + ",Concesion = " + Concesion.ToString();
+            sql = sql + ",Observacion =" + "'" + Observacion + "'";
+            sql = sql + ",Anio =" + "'" + Anio + "'";
+            if (Importe == null)
+                sql = sql + ",Importe =null";
+            else
+                sql = sql + ",Importe =" + Importe.ToString();
+
+
+            sql = sql + ",Motor =" + "'" + Motor + "'";
+            sql = sql + ",Chasis =" + "'" + Chasis + "'";
+            sql = sql + ",Color =" + "'" + Color + "'";
+             
+            if (CodSucursal == null)
+                sql = sql + ",CodSucursal =null";
+            else
+                sql = sql + ",CodSucursal =" + CodSucursal.ToString();
+             
+            if (CodTipoUtilitario == null)
+                sql = sql + ",CodTipoUtilitario =null";
+            else
+                sql = sql + ",CodTipoUtilitario =" + CodTipoUtilitario.ToString();
+
+            sql = sql + " where patente =" + "'" + Patente + "'";
+
+            SqlCommand comand = new SqlCommand();
+            comand.Connection = con;
+            comand.Transaction = Transaccion;
+            comand.CommandText = sql;
+            comand.ExecuteNonQuery();
         }
     }
 }

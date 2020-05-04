@@ -50,13 +50,14 @@ namespace Concesionaria
             fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
             if (cmbDocumento.Items.Count > 0)
                 cmbDocumento.SelectedIndex = 1;
-            cmbDocumento.Enabled = false;
+            cmbDocumento.Enabled = false;  
             fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
             fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
-            
+            fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
+            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
         }
 
         private void GrabarAutos(SqlConnection con, SqlTransaction Transaccion)
@@ -76,7 +77,8 @@ namespace Concesionaria
             string Motor = "";
             string Chasis = "";
             string Color = "";
-
+            Int32? CodTipoUtilitario = null;
+            Int32? CodSucursal = null;
 
             Patente = txtPatente.Text;
             Color = txtColor.Text;
@@ -114,6 +116,12 @@ namespace Concesionaria
             if (CmbTipoCombustible.SelectedIndex > 0)
                 CodTipoCombustible = Convert.ToInt32(CmbTipoCombustible.SelectedValue);
 
+            if (cmbSucursal.SelectedIndex > 0)
+                CodSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
+
+            if (cmbTipoUtilitario.SelectedIndex > 0)
+                CodTipoUtilitario = Convert.ToInt32(cmbTipoUtilitario.SelectedValue);
+
             Clases.cAuto auto = new Clases.cAuto();
             Boolean Graba = true;
             if (txtCodAuto.Text != "")
@@ -122,7 +130,7 @@ namespace Concesionaria
             {
                 //inserto el auto
                 auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario);
                 CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
                 txtCodAuto.Text = CodAuto.ToString();
 
@@ -130,8 +138,8 @@ namespace Concesionaria
             }
             else
             {
-                auto.ModificarAuto(Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color);
+                auto.ModificarAutoTransaccion(con,Transaccion , Patente, CodMarca, Descripcion,
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color,CodSucursal ,CodTipoUtilitario);
             }
             if (txtCodStock.Text == "")
             {
@@ -516,6 +524,14 @@ namespace Concesionaria
                     case "CategoriaGastoRecepcion":
                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
                         CmbGastoRecepcion.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        break;
+                    case "tipoutilitario":
+                        fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
+                        cmbTipoUtilitario.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        break;
+                    case "Sucursal":  
+                        fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
+                        cmbSucursal.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
 
                 }
@@ -1475,6 +1491,26 @@ namespace Concesionaria
                 comandVenta.CommandText = sql;
                 comandVenta.ExecuteNonQuery();
             }
+        }
+
+        private void btnNuevoTipoUtilitario_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodTipo";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "tipoutilitario";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void btnNuevaSucursal_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodSucursal";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Sucursal";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
         }
     }
 }

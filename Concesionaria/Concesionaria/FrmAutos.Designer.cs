@@ -99,6 +99,19 @@
             this.label40 = new System.Windows.Forms.Label();
             this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
             this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.GrillaCheques = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnAgregarCheque = new System.Windows.Forms.Button();
+            this.btnNuevaBanco = new System.Windows.Forms.Button();
+            this.CmbBanco = new System.Windows.Forms.ComboBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
+            this.txtImporteCheque = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.txtCheque = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.Efectivo = new System.Windows.Forms.TabPage();
             this.txtEfectivo = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -114,19 +127,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.txtPatente2 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.GrillaCheques = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BtnAgregarCheque = new System.Windows.Forms.Button();
-            this.btnNuevaBanco = new System.Windows.Forms.Button();
-            this.CmbBanco = new System.Windows.Forms.ComboBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
-            this.txtImporteCheque = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.txtCheque = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtEfectivoaPagar = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -140,6 +140,12 @@
             this.label30 = new System.Windows.Forms.Label();
             this.txtTotalEfectivosaPagar = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cmbTipoUtilitario = new System.Windows.Forms.ComboBox();
+            this.btnNuevoTipoUtilitario = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.btnNuevaSucursal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -149,15 +155,21 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosRecepcion)).BeginInit();
             this.tabControl3.SuspendLayout();
-            this.Efectivo.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
+            this.Efectivo.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNuevaSucursal);
+            this.groupBox1.Controls.Add(this.cmbSucursal);
+            this.groupBox1.Controls.Add(this.label35);
+            this.groupBox1.Controls.Add(this.btnNuevoTipoUtilitario);
+            this.groupBox1.Controls.Add(this.cmbTipoUtilitario);
+            this.groupBox1.Controls.Add(this.label34);
             this.groupBox1.Controls.Add(this.CmbTipoCombustible);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.txtColor);
@@ -209,11 +221,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(416, 172);
+            this.label16.Location = new System.Drawing.Point(422, 172);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 16);
+            this.label16.Size = new System.Drawing.Size(83, 16);
             this.label16.TabIndex = 38;
-            this.label16.Text = "Tipo";
+            this.label16.Text = "Combustible";
             // 
             // txtColor
             // 
@@ -225,7 +237,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(416, 143);
+            this.label23.Location = new System.Drawing.Point(422, 143);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 16);
             this.label23.TabIndex = 36;
@@ -251,7 +263,7 @@
             // 
             // txtChasis
             // 
-            this.txtChasis.Location = new System.Drawing.Point(506, 113);
+            this.txtChasis.Location = new System.Drawing.Point(506, 112);
             this.txtChasis.Name = "txtChasis";
             this.txtChasis.Size = new System.Drawing.Size(289, 22);
             this.txtChasis.TabIndex = 33;
@@ -869,6 +881,141 @@
             this.tabControl3.Size = new System.Drawing.Size(823, 197);
             this.tabControl3.TabIndex = 23;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage4.Controls.Add(this.GrillaCheques);
+            this.tabPage4.Controls.Add(this.button2);
+            this.tabPage4.Controls.Add(this.BtnAgregarCheque);
+            this.tabPage4.Controls.Add(this.btnNuevaBanco);
+            this.tabPage4.Controls.Add(this.CmbBanco);
+            this.tabPage4.Controls.Add(this.label49);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.txtFechaVencimiento);
+            this.tabPage4.Controls.Add(this.txtImporteCheque);
+            this.tabPage4.Controls.Add(this.label47);
+            this.tabPage4.Controls.Add(this.txtCheque);
+            this.tabPage4.Controls.Add(this.label46);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(815, 168);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "Cheques";
+            // 
+            // GrillaCheques
+            // 
+            this.GrillaCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaCheques.Location = new System.Drawing.Point(33, 82);
+            this.GrillaCheques.Name = "GrillaCheques";
+            this.GrillaCheques.ReadOnly = true;
+            this.GrillaCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaCheques.Size = new System.Drawing.Size(763, 79);
+            this.GrillaCheques.TabIndex = 57;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(749, 50);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 28);
+            this.button2.TabIndex = 56;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BtnAgregarCheque
+            // 
+            this.BtnAgregarCheque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarCheque.Image")));
+            this.BtnAgregarCheque.Location = new System.Drawing.Point(703, 51);
+            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
+            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCheque.TabIndex = 55;
+            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
+            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
+            // 
+            // btnNuevaBanco
+            // 
+            this.btnNuevaBanco.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaBanco.Image")));
+            this.btnNuevaBanco.Location = new System.Drawing.Point(343, 48);
+            this.btnNuevaBanco.Name = "btnNuevaBanco";
+            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevaBanco.TabIndex = 54;
+            this.btnNuevaBanco.UseVisualStyleBackColor = true;
+            // 
+            // CmbBanco
+            // 
+            this.CmbBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbBanco.FormattingEnabled = true;
+            this.CmbBanco.Location = new System.Drawing.Point(91, 51);
+            this.CmbBanco.Name = "CmbBanco";
+            this.CmbBanco.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CmbBanco.Size = new System.Drawing.Size(246, 24);
+            this.CmbBanco.TabIndex = 53;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(33, 48);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(48, 17);
+            this.label49.TabIndex = 52;
+            this.label49.Text = "Banco";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(456, 51);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(85, 17);
+            this.label48.TabIndex = 51;
+            this.label48.Text = "Vencimiento";
+            // 
+            // txtFechaVencimiento
+            // 
+            this.txtFechaVencimiento.BackColor = System.Drawing.SystemColors.Control;
+            this.txtFechaVencimiento.Location = new System.Drawing.Point(564, 53);
+            this.txtFechaVencimiento.Mask = "00/00/0000";
+            this.txtFechaVencimiento.Name = "txtFechaVencimiento";
+            this.txtFechaVencimiento.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtFechaVencimiento.Size = new System.Drawing.Size(80, 23);
+            this.txtFechaVencimiento.TabIndex = 50;
+            this.txtFechaVencimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtImporteCheque
+            // 
+            this.txtImporteCheque.BackColor = System.Drawing.SystemColors.Control;
+            this.txtImporteCheque.Location = new System.Drawing.Point(91, 22);
+            this.txtImporteCheque.Name = "txtImporteCheque";
+            this.txtImporteCheque.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtImporteCheque.Size = new System.Drawing.Size(246, 23);
+            this.txtImporteCheque.TabIndex = 46;
+            this.txtImporteCheque.Leave += new System.EventHandler(this.txtImporteCheque_Leave);
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(30, 22);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(55, 17);
+            this.label47.TabIndex = 45;
+            this.label47.Text = "Importe";
+            // 
+            // txtCheque
+            // 
+            this.txtCheque.Location = new System.Drawing.Point(566, 25);
+            this.txtCheque.Name = "txtCheque";
+            this.txtCheque.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtCheque.Size = new System.Drawing.Size(223, 23);
+            this.txtCheque.TabIndex = 44;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(456, 25);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(109, 17);
+            this.label46.TabIndex = 43;
+            this.label46.Text = "Número cheque";
+            // 
             // Efectivo
             // 
             this.Efectivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1015,141 +1162,6 @@
             this.label26.TabIndex = 31;
             this.label26.Text = "Patente";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage4.Controls.Add(this.GrillaCheques);
-            this.tabPage4.Controls.Add(this.button2);
-            this.tabPage4.Controls.Add(this.BtnAgregarCheque);
-            this.tabPage4.Controls.Add(this.btnNuevaBanco);
-            this.tabPage4.Controls.Add(this.CmbBanco);
-            this.tabPage4.Controls.Add(this.label49);
-            this.tabPage4.Controls.Add(this.label48);
-            this.tabPage4.Controls.Add(this.txtFechaVencimiento);
-            this.tabPage4.Controls.Add(this.txtImporteCheque);
-            this.tabPage4.Controls.Add(this.label47);
-            this.tabPage4.Controls.Add(this.txtCheque);
-            this.tabPage4.Controls.Add(this.label46);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(815, 168);
-            this.tabPage4.TabIndex = 2;
-            this.tabPage4.Text = "Cheques";
-            // 
-            // GrillaCheques
-            // 
-            this.GrillaCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCheques.Location = new System.Drawing.Point(33, 82);
-            this.GrillaCheques.Name = "GrillaCheques";
-            this.GrillaCheques.ReadOnly = true;
-            this.GrillaCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaCheques.Size = new System.Drawing.Size(763, 79);
-            this.GrillaCheques.TabIndex = 57;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(749, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 28);
-            this.button2.TabIndex = 56;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // BtnAgregarCheque
-            // 
-            this.BtnAgregarCheque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarCheque.Image")));
-            this.BtnAgregarCheque.Location = new System.Drawing.Point(703, 51);
-            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
-            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarCheque.TabIndex = 55;
-            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
-            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
-            // 
-            // btnNuevaBanco
-            // 
-            this.btnNuevaBanco.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaBanco.Image")));
-            this.btnNuevaBanco.Location = new System.Drawing.Point(343, 48);
-            this.btnNuevaBanco.Name = "btnNuevaBanco";
-            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
-            this.btnNuevaBanco.TabIndex = 54;
-            this.btnNuevaBanco.UseVisualStyleBackColor = true;
-            // 
-            // CmbBanco
-            // 
-            this.CmbBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBanco.FormattingEnabled = true;
-            this.CmbBanco.Location = new System.Drawing.Point(91, 51);
-            this.CmbBanco.Name = "CmbBanco";
-            this.CmbBanco.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CmbBanco.Size = new System.Drawing.Size(246, 24);
-            this.CmbBanco.TabIndex = 53;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(33, 48);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(48, 17);
-            this.label49.TabIndex = 52;
-            this.label49.Text = "Banco";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(456, 51);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(85, 17);
-            this.label48.TabIndex = 51;
-            this.label48.Text = "Vencimiento";
-            // 
-            // txtFechaVencimiento
-            // 
-            this.txtFechaVencimiento.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFechaVencimiento.Location = new System.Drawing.Point(564, 53);
-            this.txtFechaVencimiento.Mask = "00/00/0000";
-            this.txtFechaVencimiento.Name = "txtFechaVencimiento";
-            this.txtFechaVencimiento.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtFechaVencimiento.Size = new System.Drawing.Size(80, 23);
-            this.txtFechaVencimiento.TabIndex = 50;
-            this.txtFechaVencimiento.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtImporteCheque
-            // 
-            this.txtImporteCheque.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteCheque.Location = new System.Drawing.Point(91, 22);
-            this.txtImporteCheque.Name = "txtImporteCheque";
-            this.txtImporteCheque.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtImporteCheque.Size = new System.Drawing.Size(246, 23);
-            this.txtImporteCheque.TabIndex = 46;
-            this.txtImporteCheque.Leave += new System.EventHandler(this.txtImporteCheque_Leave);
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(30, 22);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(55, 17);
-            this.label47.TabIndex = 45;
-            this.label47.Text = "Importe";
-            // 
-            // txtCheque
-            // 
-            this.txtCheque.Location = new System.Drawing.Point(566, 25);
-            this.txtCheque.Name = "txtCheque";
-            this.txtCheque.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtCheque.Size = new System.Drawing.Size(223, 23);
-            this.txtCheque.TabIndex = 44;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(456, 25);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(109, 17);
-            this.label46.TabIndex = 43;
-            this.label46.Text = "Número cheque";
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1282,6 +1294,62 @@
             this.label33.TabIndex = 51;
             this.label33.Text = "Efectivo a pagar";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(29, 203);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(36, 16);
+            this.label34.TabIndex = 39;
+            this.label34.Text = "Tipo";
+            // 
+            // cmbTipoUtilitario
+            // 
+            this.cmbTipoUtilitario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoUtilitario.FormattingEnabled = true;
+            this.cmbTipoUtilitario.Location = new System.Drawing.Point(120, 199);
+            this.cmbTipoUtilitario.Name = "cmbTipoUtilitario";
+            this.cmbTipoUtilitario.Size = new System.Drawing.Size(246, 24);
+            this.cmbTipoUtilitario.TabIndex = 40;
+            // 
+            // btnNuevoTipoUtilitario
+            // 
+            this.btnNuevoTipoUtilitario.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevoTipoUtilitario.Location = new System.Drawing.Point(372, 195);
+            this.btnNuevoTipoUtilitario.Name = "btnNuevoTipoUtilitario";
+            this.btnNuevoTipoUtilitario.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevoTipoUtilitario.TabIndex = 41;
+            this.btnNuevoTipoUtilitario.UseVisualStyleBackColor = true;
+            this.btnNuevoTipoUtilitario.Click += new System.EventHandler(this.btnNuevoTipoUtilitario_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(422, 202);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(69, 16);
+            this.label35.TabIndex = 42;
+            this.label35.Text = "Ubicación";
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(507, 199);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(259, 24);
+            this.cmbSucursal.TabIndex = 43;
+            // 
+            // btnNuevaSucursal
+            // 
+            this.btnNuevaSucursal.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevaSucursal.Location = new System.Drawing.Point(772, 196);
+            this.btnNuevaSucursal.Name = "btnNuevaSucursal";
+            this.btnNuevaSucursal.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevaSucursal.TabIndex = 42;
+            this.btnNuevaSucursal.UseVisualStyleBackColor = true;
+            this.btnNuevaSucursal.Click += new System.EventHandler(this.btnNuevaSucursal_Click);
+            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1321,13 +1389,13 @@
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosRecepcion)).EndInit();
             this.tabControl3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.Efectivo.ResumeLayout(false);
             this.Efectivo.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -1448,5 +1516,11 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtTotalEfectivosaPagar;
         private System.Windows.Forms.TextBox txtCodAuto2;
+        private System.Windows.Forms.Button btnNuevoTipoUtilitario;
+        private System.Windows.Forms.ComboBox cmbTipoUtilitario;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnNuevaSucursal;
+        private System.Windows.Forms.ComboBox cmbSucursal;
+        private System.Windows.Forms.Label label35;
     }
 }
