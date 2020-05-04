@@ -57,7 +57,9 @@ namespace Concesionaria
             fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
-            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
+            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");  
+            fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
+             
         }
 
         private void GrabarAutos(SqlConnection con, SqlTransaction Transaccion)
@@ -361,6 +363,16 @@ namespace Concesionaria
                     {
                         cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
                     }
+                      
+                    if (trdo.Rows[0]["CodSucursal"].ToString() != "")
+                    {
+                        cmbSucursal.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
+                    }
+
+                    if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                    {
+                        cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                    }
 
                     if (trdo.Rows[0]["CodMarca"].ToString() != "")
                     {
@@ -420,7 +432,8 @@ namespace Concesionaria
         {
             txtCodAuto.Text = "";
             txtCodStock.Text = "";
-            cmb_CodMarca.SelectedIndex = 0;
+            if (cmb_CodMarca.Items.Count >0)
+                cmb_CodMarca.SelectedIndex = 0;
             txtDescripcion.Text = "";
             txtAnio.Text = "";
             txtKilometros.Text = "";
@@ -428,7 +441,11 @@ namespace Concesionaria
             txtChasis.Text = "";
             txtMotor.Text = "";
             GetGastos(-1);
-            txtColor.Text = "";
+            txtColor.Text = "";   
+            if (cmbTipoUtilitario.Items.Count > 0)
+                cmbTipoUtilitario.SelectedIndex = 0;
+            if (cmbSucursal.Items.Count > 0)
+                cmbSucursal.SelectedIndex = 0;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -532,6 +549,10 @@ namespace Concesionaria
                     case "Sucursal":  
                         fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
                         cmbSucursal.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        break;
+                    case "Provincia":  
+                        fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
+                        cmbProvincia.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
 
                 }
@@ -1508,6 +1529,16 @@ namespace Concesionaria
             Principal.CampoIdSecundario = "CodSucursal";
             Principal.CampoNombreSecundario = "Nombre";
             Principal.NombreTablaSecundario = "Sucursal";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void btnAgregarProvincia_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodProvincia";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Provincia";
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
