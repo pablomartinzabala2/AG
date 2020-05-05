@@ -647,5 +647,11 @@ namespace Concesionaria
             FrmAutos Frm = new Concesionaria.FrmAutos();
             Frm.Show();
         }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmListadoCompra frm = new FrmListadoCompra();
+            frm.ShowDialog();
+        }
     }
 }

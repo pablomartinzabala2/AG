@@ -27,5 +27,17 @@ namespace Concesionaria.Clases
             sql = sql + " where CodCompra=" + CodCompra.ToString ();
             return cDb.ExecuteDataTable(sql);
         }
+
+        public DataTable getComprasxFecha(DateTime FechaDesde,DateTime FechaHasta)
+        {
+            string sql = " select c.CodCompra, a.Patente,a.Descripcion,m.nombre,c.Fecha,c.ImporteCompra";
+            sql = sql + " From Compra c,StockAuto s, auto a,Marca m";
+            sql = sql + " where c.CodStockEntrada= s.CodStock";
+            sql = sql + " and s.CodAuto=a.CodAuto";
+            sql = sql + " and a.CodMarca= m.CodMarca";
+            sql = sql + " and c.Fecha >=" + "'" + FechaDesde.ToShortDateString() + "'";
+            sql = sql + " and c.Fecha <=" + "'" + FechaHasta.ToShortDateString() + "'";
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }
