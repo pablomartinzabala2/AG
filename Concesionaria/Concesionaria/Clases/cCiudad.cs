@@ -31,5 +31,7 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
+      
+
     }
 }
