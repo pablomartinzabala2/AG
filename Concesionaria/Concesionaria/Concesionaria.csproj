@@ -62,6 +62,7 @@
     <Compile Include="Clases\cCheque.cs" />
     <Compile Include="Clases\cChequeCobrar.cs" />
     <Compile Include="Clases\cChequesaPagar.cs" />
+    <Compile Include="Clases\cCiudad.cs" />
     <Compile Include="Clases\cCliente.cs" />
     <Compile Include="Clases\cCobranza.cs" />
     <Compile Include="Clases\cCobranzaGeneral.cs" />

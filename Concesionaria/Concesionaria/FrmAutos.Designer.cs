@@ -331,7 +331,7 @@
             // btnAgregarCiudad
             // 
             this.btnAgregarCiudad.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad.Location = new System.Drawing.Point(758, 110);
+            this.btnAgregarCiudad.Location = new System.Drawing.Point(758, 106);
             this.btnAgregarCiudad.Name = "btnAgregarCiudad";
             this.btnAgregarCiudad.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarCiudad.TabIndex = 17;
@@ -381,7 +381,7 @@
             // 
             this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCiudad.FormattingEnabled = true;
-            this.cmbCiudad.Location = new System.Drawing.Point(506, 113);
+            this.cmbCiudad.Location = new System.Drawing.Point(506, 109);
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(246, 24);
             this.cmbCiudad.TabIndex = 6;
@@ -1374,6 +1374,7 @@
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(246, 24);
             this.cmbProvincia.TabIndex = 44;
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // label36
             // 

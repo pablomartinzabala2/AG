@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
 
@@ -44,7 +44,7 @@ namespace Concesionaria
             txtFecha.Text = DateTime.Now.ToShortDateString();
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
-            fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
+          //  fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
             if (cmbCiudad.Items.Count >0)
                 cmbCiudad.SelectedValue = 1;
             fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
@@ -361,6 +361,16 @@ namespace Concesionaria
 
                     if (trdo.Rows[0]["CodCiudad"].ToString() != "")
                     {
+                        Int32 CodCiudad = Convert.ToInt32(trdo.Rows[0]["CodCiudad"].ToString());
+                        cCiudad obj = new cCiudad();
+                        DataTable tbProv = obj.GetProvinciaxCodCiudad(CodCiudad);
+                        if (tbProv.Rows.Count >0)
+                        {
+                            if (tbProv.Rows[0]["CodProvincia"].ToString ()!="")
+                            {
+                                cmbProvincia.SelectedValue = tbProv.Rows[0]["CodProvincia"].ToString();
+                            }
+                        }
                         cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
                     }
                       
@@ -507,6 +517,11 @@ namespace Concesionaria
 
         private void btnAgregarCiudad_Click(object sender, EventArgs e)
         {
+            if (cmbProvincia.SelectedIndex <1)
+            {
+                MessageBox.Show("Debe seleccionar una provincia para continuar");
+                return;
+            }
             Principal.CampoIdSecundario = "CodCiudad";
             Principal.CampoNombreSecundario = "Nombre";
             Principal.NombreTablaSecundario = "Ciudad";
@@ -525,6 +540,10 @@ namespace Concesionaria
                     case "Ciudad":
                         fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
                         cmbCiudad.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        Int32 CodCiudad = Convert.ToInt32(cmbCiudad.SelectedValue);
+                        Int32 CodProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
+                        cCiudad city = new Clases.cCiudad();
+                        city.ActualizarProvincia(CodCiudad, CodProvincia);
                         break;
                     case "Marca":
                         fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
@@ -549,6 +568,7 @@ namespace Concesionaria
                     case "Sucursal":  
                         fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
                         cmbSucursal.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        
                         break;
                     case "Provincia":  
                         fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
@@ -1542,6 +1562,19 @@ namespace Concesionaria
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
+        }
+
+        private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProvincia.SelectedIndex <1)
+            {
+                return;
+            }
+            Int32 CodProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
+            cCiudad ciudad = new Clases.cCiudad();
+            DataTable trdo = ciudad.GetCiudadxCodProvincia(CodProvincia);
+            cFunciones fun = new cFunciones();
+            fun.LlenarComboDatatable (cmbCiudad,trdo, "Nombre", "CodCiudad");
         }
     }
 }
