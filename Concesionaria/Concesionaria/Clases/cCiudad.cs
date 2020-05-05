@@ -31,7 +31,11 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
-      
-
+        public DataTable GetCiudadxId(Int32 CodCiudad)
+        {
+            string sql = "select * from ciudad ";
+            sql = sql + " where CodCiudad=" + CodCiudad.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }

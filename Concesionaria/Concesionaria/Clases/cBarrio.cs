@@ -30,5 +30,12 @@ namespace Concesionaria.Clases
             sql = sql + " where CodCiudad =" + CodCiudad.ToString();
             return cDb.ExecuteDataTable(sql);
         }
+
+        public DataTable GetBarrioxId(Int32 CodBarrio)
+        {
+            string sql = "select * from Barrio ";
+            sql = sql + " where CodBarrio=" + CodBarrio.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }

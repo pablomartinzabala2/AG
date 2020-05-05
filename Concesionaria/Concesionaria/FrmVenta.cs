@@ -284,7 +284,11 @@ namespace Concesionaria
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
-                    CmbBarrio.SelectedValue = trdo.Rows[0]["CodBarrio"].ToString();
+                {
+                    Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
+                    
+                }
+                    
                 txtCodCLiente.Text = trdo.Rows[0]["CodCliente"].ToString();
             }
             else
