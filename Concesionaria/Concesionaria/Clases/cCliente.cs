@@ -194,11 +194,13 @@ namespace Concesionaria.Clases
 
         public void InsertarClienteTransaccion(SqlConnection con, SqlTransaction Transaccion, Int32? CodTipoDoc, string NroDocumento,
             string Nombre, string Apellido, string Telefono, string Celular,
-            string Calle, string Altura, Int32? CodBarrio
+            string Calle, string Altura, Int32? CodBarrio,
+            DateTime? FechaNacimiento,string Email,string Observacion
             )
         {
             string sql = "Insert into Cliente(CodTipoDoc,NroDocumento,Nombre,Apellido";
-            sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio)";
+            sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio";
+            sql = sql + ",FechaNacimiento,Email,Observacion)";
             sql = sql + "Values(";
             if (CodTipoDoc == null)
                 sql = sql + "null";
@@ -215,6 +217,12 @@ namespace Concesionaria.Clases
                 sql = sql + ",null";
             else
                 sql = sql + "," + CodBarrio.ToString();
+            if (FechaNacimiento == null)
+                sql = sql + ",null";
+            else
+                sql = sql + "," + "'" + FechaNacimiento.ToString() + "'";
+            sql = sql + "," + "'" + Email + "'";
+            sql = sql + ","  +"'" + Observacion + "'";
             sql = sql + ")";
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;

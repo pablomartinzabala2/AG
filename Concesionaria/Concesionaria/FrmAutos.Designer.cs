@@ -155,6 +155,12 @@
             this.label38 = new System.Windows.Forms.Label();
             this.CmbBarrio = new System.Windows.Forms.ComboBox();
             this.btnNuevoBarrio = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -627,6 +633,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtObservacion);
+            this.groupBox2.Controls.Add(this.label42);
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.label41);
+            this.groupBox2.Controls.Add(this.txtFechaNacimiento);
+            this.groupBox2.Controls.Add(this.label39);
             this.groupBox2.Controls.Add(this.CmbBarrio);
             this.groupBox2.Controls.Add(this.btnNuevoBarrio);
             this.groupBox2.Controls.Add(this.label38);
@@ -705,7 +717,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(457, 112);
+            this.label13.Location = new System.Drawing.Point(451, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 16);
             this.label13.TabIndex = 21;
@@ -732,7 +744,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(457, 86);
+            this.label11.Location = new System.Drawing.Point(452, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
@@ -1430,7 +1442,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(457, 144);
+            this.label38.Location = new System.Drawing.Point(450, 145);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(51, 16);
             this.label38.TabIndex = 26;
@@ -1454,6 +1466,58 @@
             this.btnNuevoBarrio.TabIndex = 35;
             this.btnNuevoBarrio.UseVisualStyleBackColor = true;
             this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click_1);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(450, 174);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(74, 16);
+            this.label39.TabIndex = 36;
+            this.label39.Text = "Fecha Nac";
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(531, 176);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaNacimiento.TabIndex = 37;
+            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(19, 201);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(42, 16);
+            this.label41.TabIndex = 38;
+            this.label41.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Location = new System.Drawing.Point(143, 201);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(246, 22);
+            this.txtEmail.TabIndex = 39;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtObservacion.Location = new System.Drawing.Point(521, 204);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(242, 22);
+            this.txtObservacion.TabIndex = 41;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(450, 201);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(55, 16);
+            this.label42.TabIndex = 40;
+            this.label42.Text = "Observ.";
             // 
             // FrmAutos
             // 
@@ -1636,5 +1700,11 @@
         private System.Windows.Forms.ComboBox cmbProvincia2;
         private System.Windows.Forms.ComboBox CmbBarrio;
         private System.Windows.Forms.Button btnNuevoBarrio;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
+        private System.Windows.Forms.Label label39;
     }
 }

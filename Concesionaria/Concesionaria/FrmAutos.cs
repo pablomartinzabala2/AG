@@ -495,6 +495,13 @@ namespace Concesionaria
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
+                txtEmail.Text = trdo.Rows[0]["Email"].ToString();
+                txtObservacion.Text = trdo.Rows[0]["Observacion"].ToString();
+                if (trdo.Rows[0]["FechaNacimiento"].ToString()!="")
+                {
+                    DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
+                    txtFechaNacimiento.Text = FechaNac.ToShortDateString();
+                }
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                 {
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
@@ -541,6 +548,13 @@ namespace Concesionaria
                 CmbBarrio.SelectedIndex = 0;
             txtCalle.Text = "";
             txtAltura.Text = "";
+            txtFechaNacimiento.Text = "";
+            txtObservacion.Text = "";
+            txtEmail.Text = "";
+            cmbCiudad2.Items.Clear();
+            CmbBarrio.Items.Clear();
+            if (cmbProvincia.Items.Count > 0)
+                cmbProvincia.SelectedIndex = 0;
         }
 
         private void btnAgregarCiudad_Click(object sender, EventArgs e)
@@ -654,6 +668,7 @@ namespace Concesionaria
                   return false;
               }
              * */
+            cFunciones fun = new cFunciones();
             if (txtNombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar un nombre de un nombre para continuar.", Clases.cMensaje.Mensaje());
@@ -680,6 +695,11 @@ namespace Concesionaria
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
             Int32? CodBarrio = null;
+            DateTime? FechaNacimiento = null;
+            if (fun.ValidarFecha(txtFechaNacimiento.Text) == true)
+                FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            string Email = txtEmail.Text;
+            string Observacion = txtObservacion.Text;
 
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
@@ -687,7 +707,7 @@ namespace Concesionaria
             if (Nuevo == true)
             {
                 cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
-                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio);
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio,FechaNacimiento,Email,Observacion);
                 txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
             }
             else
