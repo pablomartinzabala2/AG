@@ -245,7 +245,7 @@ namespace Concesionaria.Clases
 
         public void ModificarClientetTransaccion(SqlConnection con,SqlTransaction Transaccion,Int32 CodCliente, Int32? CodTipoDoc, string NroDocumento,
            string Nombre, string Apellido, string Telefono, string Celular,
-           string Calle, string Numero, Int32? CodBarrio)
+           string Calle, string Numero, Int32? CodBarrio, DateTime? FechaNacimiento, string Email, string Observacion)
         {
             string sql = "Update Cliente ";
 
@@ -264,6 +264,19 @@ namespace Concesionaria.Clases
                 sql = sql + ",CodBarrio =null";
             else
                 sql = sql + ",CodBarrio =" + CodBarrio.ToString();
+
+            if (FechaNacimiento ==null)
+            {
+                sql = sql + ",FechaNacimiento=null";
+            }
+            else
+            {
+                sql = sql + ",FechaNacimiento =" + "'" + FechaNacimiento.ToString() + "'";
+
+            }
+            sql = sql + ",Email =" + "'" + Email + "'";
+            sql = sql + ",Observacion =" + "'" + Observacion + "'";
+
             sql = sql + " where CodCliente=" + CodCliente.ToString();
             SqlCommand comand = new SqlCommand();
             comand.Connection = con;

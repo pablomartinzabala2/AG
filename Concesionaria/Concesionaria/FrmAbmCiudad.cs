@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmAbmCiudad : Form
@@ -14,6 +14,8 @@ namespace Concesionaria
         public FrmAbmCiudad()
         {
             InitializeComponent();
+            cFunciones func = new cFunciones();
+            func.LlenarCombo(cmb_CodProvincia, "Provincia", "Nombre", "CodProvincia");
         }
 
         private void Botonera(int Jugada)
@@ -69,6 +71,11 @@ namespace Concesionaria
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (cmb_CodProvincia.SelectedIndex<1 )
+            {
+                MessageBox.Show("Debe seleccionar una provincia para continuar", Clases.cMensaje.Mensaje());
+                return;
+            }
             if (txt_Nombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar un nombre para continuar", Clases.cMensaje.Mensaje());
@@ -129,6 +136,11 @@ namespace Concesionaria
         private void btnCancelar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

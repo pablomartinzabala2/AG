@@ -314,6 +314,10 @@ namespace Concesionaria
             txtCostoxAuto.Text = "";
             LimpiarCliente();
             txtCodAuto2.Text = "";
+            if (cmbProvincia.Items.Count > 0)
+                cmbProvincia.SelectedIndex = 0;
+            if (cmbCiudad.Items.Count  > 0)
+                cmbCiudad.SelectedIndex = 0;
         }
 
         private void txtPatente_TextChanged(object sender, EventArgs e)
@@ -551,10 +555,11 @@ namespace Concesionaria
             txtFechaNacimiento.Text = "";
             txtObservacion.Text = "";
             txtEmail.Text = "";
-            cmbCiudad2.Items.Clear();
-            CmbBarrio.Items.Clear();
-            if (cmbProvincia.Items.Count > 0)
-                cmbProvincia.SelectedIndex = 0;
+            if (cmbCiudad2.Items.Count > 0)
+                cmbCiudad2.SelectedIndex = 0;
+            
+            if (cmbProvincia2.Items.Count > 0)
+                cmbProvincia2.SelectedIndex = 0;
         }
 
         private void btnAgregarCiudad_Click(object sender, EventArgs e)
@@ -714,7 +719,7 @@ namespace Concesionaria
             {
                 cliente.ModificarClientetTransaccion(con, Transaccion, Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                     Apellido, Telefono, Celular,
-                    Calle, Altura, CodBarrio);
+                    Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion);
             }
             return true;
         }

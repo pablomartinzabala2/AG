@@ -43,19 +43,25 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAgregarProvincia2 = new System.Windows.Forms.Button();
+            this.cmb_CodProvincia = new System.Windows.Forms.ComboBox();
             this.Grupo.SuspendLayout();
             this.BarraBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grupo
             // 
+            this.Grupo.Controls.Add(this.btnAgregarProvincia2);
+            this.Grupo.Controls.Add(this.cmb_CodProvincia);
+            this.Grupo.Controls.Add(this.label2);
             this.Grupo.Controls.Add(this.txtCodigo);
             this.Grupo.Controls.Add(this.label1);
             this.Grupo.Controls.Add(this.txt_Nombre);
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Grupo.Location = new System.Drawing.Point(12, 51);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(391, 97);
+            this.Grupo.Size = new System.Drawing.Size(391, 117);
             this.Grupo.TabIndex = 0;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información de la ciudad";
@@ -71,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 39);
+            this.label1.Location = new System.Drawing.Point(6, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 1;
@@ -80,9 +86,9 @@
             // txt_Nombre
             // 
             this.txt_Nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Nombre.Location = new System.Drawing.Point(77, 39);
+            this.txt_Nombre.Location = new System.Drawing.Point(77, 58);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(308, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(270, 23);
             this.txt_Nombre.TabIndex = 0;
             // 
             // BarraBotones
@@ -184,13 +190,41 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.Text = "Salir";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Provincia";
+            // 
+            // btnAgregarProvincia2
+            // 
+            this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(329, 28);
+            this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
+            this.btnAgregarProvincia2.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarProvincia2.TabIndex = 32;
+            this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
+            // 
+            // cmb_CodProvincia
+            // 
+            this.cmb_CodProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_CodProvincia.FormattingEnabled = true;
+            this.cmb_CodProvincia.Location = new System.Drawing.Point(77, 28);
+            this.cmb_CodProvincia.Name = "cmb_CodProvincia";
+            this.cmb_CodProvincia.Size = new System.Drawing.Size(246, 24);
+            this.cmb_CodProvincia.TabIndex = 33;
             // 
             // FrmAbmCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(424, 160);
+            this.ClientSize = new System.Drawing.Size(424, 180);
             this.Controls.Add(this.BarraBotones);
             this.Controls.Add(this.Grupo);
             this.MaximizeBox = false;
@@ -224,6 +258,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.TextBox txtCodigo;
-
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAgregarProvincia2;
+        private System.Windows.Forms.ComboBox cmb_CodProvincia;
     }
 }
