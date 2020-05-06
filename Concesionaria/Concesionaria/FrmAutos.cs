@@ -29,7 +29,7 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-                BuscarCompra(471);
+               // BuscarCompra(471);
             }
             catch (Exception ex)
             {
