@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTarjeta = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtEfectivosaPagar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCobranzaGeneral = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDocumentos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtTarjeta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,9 +106,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resumen de cuentas";
             // 
+            // txtTarjeta
+            // 
+            this.txtTarjeta.Location = new System.Drawing.Point(151, 295);
+            this.txtTarjeta.Name = "txtTarjeta";
+            this.txtTarjeta.ReadOnly = true;
+            this.txtTarjeta.Size = new System.Drawing.Size(136, 23);
+            this.txtTarjeta.TabIndex = 31;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(32, 295);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 17);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Tarjeta";
+            // 
             // txtEfectivosaPagar
             // 
-            this.txtEfectivosaPagar.Enabled = false;
             this.txtEfectivosaPagar.Location = new System.Drawing.Point(444, 152);
             this.txtEfectivosaPagar.Name = "txtEfectivosaPagar";
             this.txtEfectivosaPagar.Size = new System.Drawing.Size(136, 23);
@@ -125,7 +141,6 @@
             // 
             // txtCobranzaGeneral
             // 
-            this.txtCobranzaGeneral.Enabled = false;
             this.txtCobranzaGeneral.Location = new System.Drawing.Point(151, 266);
             this.txtCobranzaGeneral.Name = "txtCobranzaGeneral";
             this.txtCobranzaGeneral.ReadOnly = true;
@@ -152,7 +167,6 @@
             // 
             // txtTotalDeudaCheque
             // 
-            this.txtTotalDeudaCheque.Enabled = false;
             this.txtTotalDeudaCheque.Location = new System.Drawing.Point(444, 125);
             this.txtTotalDeudaCheque.Name = "txtTotalDeudaCheque";
             this.txtTotalDeudaCheque.Size = new System.Drawing.Size(136, 23);
@@ -160,7 +174,6 @@
             // 
             // txtGastosPendientes
             // 
-            this.txtGastosPendientes.Enabled = false;
             this.txtGastosPendientes.Location = new System.Drawing.Point(444, 97);
             this.txtGastosPendientes.Name = "txtGastosPendientes";
             this.txtGastosPendientes.ReadOnly = true;
@@ -178,7 +191,6 @@
             // 
             // txtComisiones
             // 
-            this.txtComisiones.Enabled = false;
             this.txtComisiones.Location = new System.Drawing.Point(444, 68);
             this.txtComisiones.Name = "txtComisiones";
             this.txtComisiones.ReadOnly = true;
@@ -196,7 +208,6 @@
             // 
             // txtDeudaxPrestamo
             // 
-            this.txtDeudaxPrestamo.Enabled = false;
             this.txtDeudaxPrestamo.Location = new System.Drawing.Point(444, 36);
             this.txtDeudaxPrestamo.Name = "txtDeudaxPrestamo";
             this.txtDeudaxPrestamo.ReadOnly = true;
@@ -214,7 +225,6 @@
             // 
             // txtTotalCheque
             // 
-            this.txtTotalCheque.Enabled = false;
             this.txtTotalCheque.Location = new System.Drawing.Point(151, 239);
             this.txtTotalCheque.Name = "txtTotalCheque";
             this.txtTotalCheque.ReadOnly = true;
@@ -241,7 +251,6 @@
             // 
             // txtDocumentosSinInteres
             // 
-            this.txtDocumentosSinInteres.Enabled = false;
             this.txtDocumentosSinInteres.Location = new System.Drawing.Point(151, 97);
             this.txtDocumentosSinInteres.Name = "txtDocumentosSinInteres";
             this.txtDocumentosSinInteres.ReadOnly = true;
@@ -259,7 +268,6 @@
             // 
             // txtBanco
             // 
-            this.txtBanco.Enabled = false;
             this.txtBanco.Location = new System.Drawing.Point(151, 210);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.ReadOnly = true;
@@ -287,7 +295,6 @@
             // 
             // txtCobranzas
             // 
-            this.txtCobranzas.Enabled = false;
             this.txtCobranzas.Location = new System.Drawing.Point(151, 181);
             this.txtCobranzas.Name = "txtCobranzas";
             this.txtCobranzas.ReadOnly = true;
@@ -306,7 +313,6 @@
             // 
             // txtPrenda
             // 
-            this.txtPrenda.Enabled = false;
             this.txtPrenda.Location = new System.Drawing.Point(151, 152);
             this.txtPrenda.Name = "txtPrenda";
             this.txtPrenda.ReadOnly = true;
@@ -324,7 +330,6 @@
             // 
             // txtVehículo
             // 
-            this.txtVehículo.Enabled = false;
             this.txtVehículo.Location = new System.Drawing.Point(151, 126);
             this.txtVehículo.Name = "txtVehículo";
             this.txtVehículo.ReadOnly = true;
@@ -342,7 +347,6 @@
             // 
             // txtEfectivo
             // 
-            this.txtEfectivo.Enabled = false;
             this.txtEfectivo.Location = new System.Drawing.Point(151, 36);
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.ReadOnly = true;
@@ -360,7 +364,6 @@
             // 
             // txtDocumentos
             // 
-            this.txtDocumentos.Enabled = false;
             this.txtDocumentos.Location = new System.Drawing.Point(151, 68);
             this.txtDocumentos.Name = "txtDocumentos";
             this.txtDocumentos.ReadOnly = true;
@@ -375,24 +378,6 @@
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Documentos";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(32, 295);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 17);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Tarjeta";
-            // 
-            // txtTarjeta
-            // 
-            this.txtTarjeta.Enabled = false;
-            this.txtTarjeta.Location = new System.Drawing.Point(151, 295);
-            this.txtTarjeta.Name = "txtTarjeta";
-            this.txtTarjeta.ReadOnly = true;
-            this.txtTarjeta.Size = new System.Drawing.Size(136, 23);
-            this.txtTarjeta.TabIndex = 31;
             // 
             // FrmInformeCuentas
             // 

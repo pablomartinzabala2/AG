@@ -93,6 +93,7 @@ namespace Concesionaria
                 GetTotalVehiculo();
                 GetTarjeta();
             }
+            btnActualizar.Focus();
         }
 
         private void GetTarjeta()

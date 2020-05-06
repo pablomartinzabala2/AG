@@ -71,7 +71,7 @@ namespace Concesionaria.Clases
         public DataTable GetChequesxCodCompra(Int32 CodCompra)
         {
             string sql = "select c.NroCheque,c.Fecha, c.Importe,";
-            sql = sql + "c.FechaPago,b.Nombre as Banco";
+            sql = sql + "c.FechaPago,b.Nombre as Banco,c.CodBanco,c.FechaVencimiento";
             sql = sql + " From ChequesPagar c,Banco b";
             sql = sql + " where c.CodBanco = b.CodBanco";
             sql = sql + " and c.CodCompra=" + CodCompra.ToString ();

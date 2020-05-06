@@ -29,7 +29,7 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-                BuscarCompra(473);
+                BuscarCompra(474);
             }
             catch (Exception ex)
             {
@@ -1766,6 +1766,7 @@ namespace Concesionaria
         {  //GetStockxCodigo
             cCompra compra = new cCompra();
             cFunciones fun = new cFunciones();
+            BuscarChequesxCodCompra(CodCompra);
             DataTable trdo = compra.GetCompraxCodigo(CodCompra);
             if (trdo.Rows.Count >0)
             {
@@ -1963,6 +1964,48 @@ namespace Concesionaria
                     }
                 }
             }
+        }
+
+        private void BuscarChequesxCodCompra(Int32 CodCompra)
+        {
+            DataTable tbCheques = new DataTable();
+            tbCheques.Columns.Add("NroCheque");
+            tbCheques.Columns.Add("Importe");
+            tbCheques.Columns.Add("FechaVencimiento");
+            tbCheques.Columns.Add("CodBanco");
+            tbCheques.Columns.Add("Banco");
+            string NroCheque = "";
+            string Importe = "";
+            string FechaVencimiento = "";
+            string CodBanco = "";
+            string Banco = "";
+            cChequesaPagar cheque = new cChequesaPagar();
+            DataTable tb = cheque.GetChequesxCodCompra(CodCompra);
+            for (int i=0;i<tb.Rows.Count;i++)
+            {
+                NroCheque = tb.Rows[i]["NroCheque"].ToString();
+                Importe = tb.Rows[i]["Importe"].ToString();
+                FechaVencimiento = tb.Rows[i]["FechaVencimiento"].ToString();
+                CodBanco = tb.Rows[i]["CodBanco"].ToString();
+                Banco = tb.Rows[i]["Banco"].ToString();
+                DataRow r = tbCheques.NewRow();
+                r[0] = NroCheque;
+                r[1] = Importe;
+                r[2] = FechaVencimiento.ToString();
+                r[3] = CodBanco;
+                r[4] = Banco;
+                tbCheques.Rows.Add(r);
+            }
+            cFunciones fun = new cFunciones();
+            Double Total = fun.TotalizarColumna(tbCheques, "Importe");
+            txtTotalCheque.Text = Total.ToString();
+            txtTotalCheque.Text = fun.FormatoEnteroMiles(txtTotalCheque.Text);
+            tbCheques = fun.TablaaMiles(tbCheques, "Importe");
+            GrillaCheques.DataSource = tbCheques;
+            GrillaCheques.Columns[0].HeaderText = "Cheque";
+            GrillaCheques.Columns[2].HeaderText = "Vencimiento";
+            GrillaCheques.Columns[3].Visible = false;
+            GrillaCheques.Columns[4].Width = 410;
         }
     }
 }

@@ -65,18 +65,20 @@ namespace Concesionaria.Clases
             sql = "delete from gastosnegocio";
             cDb.ExecutarNonQuery(sql);
             //gastosnegocio
-            sql = "delete from PunitorioCuotasAnteriores";
+            sql = "truncate table PunitorioCuotasAnteriores";
             cDb.ExecutarNonQuery(sql);
-            sql = "delete from PunitorioCobranza";
+            sql = "truncate table PunitorioCobranza";
             cDb.ExecutarNonQuery(sql);
-            sql = "delete from PunitorioCuotas";
+            sql = "truncate table PunitorioCuotas";
             cDb.ExecutarNonQuery(sql);
-            sql = "delete from ventaxtarjeta";
+            sql = "truncate table ventaxtarjeta";
             cDb.ExecutarNonQuery(sql);
-            sql = "delete from chequecobrar";
+            sql = "truncate table chequecobrar";
+            cDb.ExecutarNonQuery(sql);
+            sql = "truncate table compra";
             cDb.ExecutarNonQuery(sql);
             //chequecobrar
-            
+
         }
     }
 }
