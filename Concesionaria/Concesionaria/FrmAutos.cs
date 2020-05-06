@@ -29,7 +29,7 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-               // BuscarCompra(471);
+                BuscarCompra(473);
             }
             catch (Exception ex)
             {
@@ -1763,11 +1763,26 @@ namespace Concesionaria
         }
 
         private void BuscarCompra(Int32 CodCompra)
-        {
+        {  //GetStockxCodigo
             cCompra compra = new cCompra();
+            cFunciones fun = new cFunciones();
             DataTable trdo = compra.GetCompraxCodigo(CodCompra);
             if (trdo.Rows.Count >0)
             {
+                if (trdo.Rows[0]["ImporteEfectivo"].ToString() != "")
+                {
+                    txtEfectivo.Text = fun.TransformarEntero(trdo.Rows[0]["ImporteEfectivo"].ToString());
+                    txtEfectivo.Text = fun.FormatoEnteroMiles(txtEfectivo.Text);
+                    txtTotalEfectivo.Text = txtEfectivo.Text;
+                }
+
+                if (trdo.Rows[0]["ImporteAutoPartePago"].ToString() != "")
+                {
+                    txtTotalVehiculo.Text = fun.TransformarEntero(trdo.Rows[0]["ImporteAutoPartePago"].ToString());
+                    txtTotalVehiculo.Text = fun.FormatoEnteroMiles(txtTotalVehiculo.Text);
+                    txtImporteVehiculo2.Text = txtTotalVehiculo.Text;
+                }
+
                 if (trdo.Rows[0]["CodCliente"].ToString ()!="")
                 {
                     Int32 CodCliente = Convert.ToInt32(trdo.Rows[0]["CodCliente"].ToString());
@@ -1780,7 +1795,25 @@ namespace Concesionaria
                     BuscarStockxCodStock(CodStockEntrada);
                 }
 
-                
+                if (trdo.Rows[0]["CodStockSalida"].ToString() != "")
+                {
+                    Int32 CodStockSalida = Convert.ToInt32(trdo.Rows[0]["CodStockSalida"].ToString());
+                    cStockAuto st = new cStockAuto();
+                    DataTable tbSt = st.GetStockxCodigo(CodStockSalida);
+                    if (tbSt.Rows.Count >0)
+                    {
+                        txtCodAuto2.Text = tbSt.Rows[0]["CodAuto"].ToString();
+                        txtCodStock2.Text = CodStockSalida.ToString();
+                        txtPatente2.Text = tbSt.Rows[0]["Patente"].ToString();
+                        txtDescripcion2.Text = tbSt.Rows[0]["Descripcion"].ToString();
+                        cVenta objVenta = new cVenta();
+                        double GastosTotalxAuto = objVenta.GetCostosTotalesxCodStock(Convert.ToInt32(txtCodStock2.Text));
+                        txtCostoxAuto.Text = GastosTotalxAuto.ToString();
+                        txtCostoxAuto.Text = fun.TransformarEntero(txtCostoxAuto.Text);
+                        txtCostoxAuto.Text = fun.FormatoEnteroMiles(txtCostoxAuto.Text);
+                    }
+                }
+
             }
         }
 
