@@ -244,5 +244,20 @@ namespace Concesionaria
                 }
             }
         }
+
+        private void BtnAgregarCheque_Click(object sender, EventArgs e)
+        {
+            if (txtPrecioVenta.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un precio para continuar", Clases.cMensaje.Mensaje());
+                return;
+            }
+            Clases.cFunciones fun = new Clases.cFunciones();
+            double Importe = fun.ToDouble(txtPrecioVenta.Text);
+            Int32 CodStock = Convert.ToInt32(Principal.CodigoPrincipalAbm);
+            Clases.cStockAuto stock = new Clases.cStockAuto();
+            stock.ActualizarPrecioVenta(CodStock, Importe);
+            MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+        }
     }
 }

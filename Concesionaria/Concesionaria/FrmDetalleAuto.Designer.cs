@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetalleAuto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtNroDoc = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -55,10 +60,6 @@
             this.txtDescripcion2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPatente2 = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnGrabarPrecio = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.txtAutoPartePago = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtExTitular = new System.Windows.Forms.TextBox();
@@ -79,10 +80,10 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtNroDoc = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.BtnAgregarCheque = new System.Windows.Forms.Button();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.btnGrabarPrecio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -92,11 +93,14 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnGrabarPrecio);
+            this.groupBox1.Controls.Add(this.txtPrecioVenta);
+            this.groupBox1.Controls.Add(this.BtnAgregarCheque);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.txtFechaIngreso);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.txtNroDoc);
@@ -140,6 +144,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle vehículo";
             // 
+            // txtFechaIngreso
+            // 
+            this.txtFechaIngreso.Location = new System.Drawing.Point(454, 233);
+            this.txtFechaIngreso.Name = "txtFechaIngreso";
+            this.txtFechaIngreso.ReadOnly = true;
+            this.txtFechaIngreso.Size = new System.Drawing.Size(77, 22);
+            this.txtFechaIngreso.TabIndex = 38;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(381, 239);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 16);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Fecha Alta";
+            // 
+            // txtNroDoc
+            // 
+            this.txtNroDoc.Location = new System.Drawing.Point(126, 233);
+            this.txtNroDoc.Name = "txtNroDoc";
+            this.txtNroDoc.ReadOnly = true;
+            this.txtNroDoc.Size = new System.Drawing.Size(245, 22);
+            this.txtNroDoc.TabIndex = 36;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(30, 233);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 16);
+            this.label21.TabIndex = 35;
+            this.label21.Text = "Nro Doc.";
+            // 
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(600, 208);
@@ -151,7 +189,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(570, 208);
+            this.label20.Location = new System.Drawing.Point(566, 208);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(28, 16);
             this.label20.TabIndex = 33;
@@ -231,7 +269,6 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(29, 259);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -383,47 +420,6 @@
             this.txtPatente2.Size = new System.Drawing.Size(127, 22);
             this.txtPatente2.TabIndex = 26;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage5.Controls.Add(this.btnGrabarPrecio);
-            this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.txtPrecioVenta);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(686, 221);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Precio venta";
-            // 
-            // btnGrabarPrecio
-            // 
-            this.btnGrabarPrecio.Location = new System.Drawing.Point(305, 34);
-            this.btnGrabarPrecio.Name = "btnGrabarPrecio";
-            this.btnGrabarPrecio.Size = new System.Drawing.Size(75, 22);
-            this.btnGrabarPrecio.TabIndex = 23;
-            this.btnGrabarPrecio.Text = "Grabar";
-            this.btnGrabarPrecio.UseVisualStyleBackColor = true;
-            this.btnGrabarPrecio.Click += new System.EventHandler(this.btnGrabarPrecio_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 16);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Precio de venta";
-            // 
-            // txtPrecioVenta
-            // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(123, 34);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(167, 22);
-            this.txtPrecioVenta.TabIndex = 3;
-            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
-            this.txtPrecioVenta.Leave += new System.EventHandler(this.txtPrecioVenta_Leave);
-            // 
             // txtAutoPartePago
             // 
             this.txtAutoPartePago.Location = new System.Drawing.Point(126, 177);
@@ -518,10 +514,10 @@
             // 
             // txtanio
             // 
-            this.txtanio.Location = new System.Drawing.Point(454, 40);
+            this.txtanio.Location = new System.Drawing.Point(600, 233);
             this.txtanio.Name = "txtanio";
             this.txtanio.ReadOnly = true;
-            this.txtanio.Size = new System.Drawing.Size(245, 22);
+            this.txtanio.Size = new System.Drawing.Size(99, 22);
             this.txtanio.TabIndex = 8;
             // 
             // label6
@@ -554,7 +550,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(381, 40);
+            this.label3.Location = new System.Drawing.Point(549, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 16);
             this.label3.TabIndex = 4;
@@ -594,39 +590,41 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
             // 
-            // label21
+            // label23
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(30, 233);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(61, 16);
-            this.label21.TabIndex = 35;
-            this.label21.Text = "Nro Doc.";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(380, 37);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 16);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "Valor";
             // 
-            // txtNroDoc
+            // BtnAgregarCheque
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(126, 233);
-            this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.ReadOnly = true;
-            this.txtNroDoc.Size = new System.Drawing.Size(245, 22);
-            this.txtNroDoc.TabIndex = 36;
+            this.BtnAgregarCheque.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarCheque.Image")));
+            this.BtnAgregarCheque.Location = new System.Drawing.Point(660, 34);
+            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
+            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCheque.TabIndex = 56;
+            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
+            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
             // 
-            // label22
+            // txtPrecioVenta
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(396, 236);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(72, 16);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "Fecha Alta";
+            this.txtPrecioVenta.Location = new System.Drawing.Point(454, 37);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(200, 22);
+            this.txtPrecioVenta.TabIndex = 57;
             // 
-            // txtFechaIngreso
+            // btnGrabarPrecio
             // 
-            this.txtFechaIngreso.Location = new System.Drawing.Point(474, 233);
-            this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.ReadOnly = true;
-            this.txtFechaIngreso.Size = new System.Drawing.Size(77, 22);
-            this.txtFechaIngreso.TabIndex = 38;
+            this.btnGrabarPrecio.Location = new System.Drawing.Point(255, 34);
+            this.btnGrabarPrecio.Name = "btnGrabarPrecio";
+            this.btnGrabarPrecio.Size = new System.Drawing.Size(52, 22);
+            this.btnGrabarPrecio.TabIndex = 58;
+            this.btnGrabarPrecio.Text = "Grabar";
+            this.btnGrabarPrecio.UseVisualStyleBackColor = true;
+            this.btnGrabarPrecio.Visible = false;
             // 
             // FrmDetalleAuto
             // 
@@ -653,8 +651,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCheques)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -700,10 +696,6 @@
         private System.Windows.Forms.TextBox txtPatente2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtImporteAutoPartePago;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btnGrabarPrecio;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.TextBox txtEfectivoPagar;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -716,5 +708,9 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtFechaIngreso;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button BtnAgregarCheque;
+        private System.Windows.Forms.TextBox txtPrecioVenta;
+        private System.Windows.Forms.Button btnGrabarPrecio;
     }
 }
