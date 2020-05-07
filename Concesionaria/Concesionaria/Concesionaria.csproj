@@ -98,6 +98,7 @@
     <Compile Include="Clases\cMovimiento.cs" />
     <Compile Include="Clases\cPagoCheque.cs" />
     <Compile Include="Clases\cPagoIntereses.cs" />
+    <Compile Include="Clases\cPapeles.cs" />
     <Compile Include="Clases\cPrenda.cs" />
     <Compile Include="Clases\cPrestamo.cs" />
     <Compile Include="Clases\cPreVenta.cs" />

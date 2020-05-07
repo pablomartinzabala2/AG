@@ -13,7 +13,7 @@ namespace Concesionaria
 
     public partial class FrmAutos : Form
     {
-
+        DataTable tbListaPapeles;
         public FrmAutos()
         {
             InitializeComponent();
@@ -61,7 +61,19 @@ namespace Concesionaria
             fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");  
             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
-            
+            cPapeles papel = new cPapeles();
+            DataTable tbPapeles = papel.GetPapeles();
+            Lista.DataSource = tbPapeles;
+            Lista.DisplayMember = "Nombre";
+            Lista.ValueMember = "CodPapel";
+            txtFechaEntregaPapel.Text = DateTime.Now.ToShortDateString();
+            tbListaPapeles = new DataTable();
+            tbListaPapeles.Columns.Add("CodPapel");
+            tbListaPapeles.Columns.Add("Nombre");
+            tbListaPapeles.Columns.Add("Entrego");
+            tbListaPapeles.Columns.Add("Texto");
+            tbListaPapeles.Columns.Add("Fecha");
+            tbListaPapeles.Columns.Add("FechaVencimiento");
         }
 
         private void GrabarAutos(SqlConnection con, SqlTransaction Transaccion)
@@ -319,6 +331,7 @@ namespace Concesionaria
                 cmbProvincia.SelectedIndex = 0;
             if (cmbCiudad.Items.Count  > 0)
                 cmbCiudad.SelectedIndex = 0;
+            tbListaPapeles.Rows.Clear();
         }
 
         private void txtPatente_TextChanged(object sender, EventArgs e)
@@ -659,6 +672,13 @@ namespace Concesionaria
                             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
                             cmbProvincia2.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
+                        break;
+                    case "Papeles":
+                        cPapeles papel = new cPapeles();
+                        DataTable tbPapeles = papel.GetPapeles();
+                        Lista.DataSource = tbPapeles;
+                        Lista.DisplayMember = "Nombre";
+                        Lista.ValueMember = "CodPapel";
                         break;
 
                 }
@@ -2006,6 +2026,109 @@ namespace Concesionaria
             GrillaCheques.Columns[2].HeaderText = "Vencimiento";
             GrillaCheques.Columns[3].Visible = false;
             GrillaCheques.Columns[4].Width = 410;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodPapel";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Papeles";
+            Principal.CampoIdSecundarioGenerado = "";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        public void Mensaje(string msj)
+        {
+            MessageBox.Show(msj, "Sistema");
+        }
+
+        private void btnAgregarPapel_Click(object sender, EventArgs e)
+        {
+            cFunciones fun = new cFunciones();
+            string CodPapel = Lista.SelectedValue.ToString();
+            string Nombre = Lista.Text;
+            string Entrego = "0";
+            string Fecha = "";
+            string Texto = "No";
+            string FechaVencimiento = "";
+            if (chkEntrego.Checked==true)
+            {
+                if (fun.ValidarFecha(txtFechaEntregaPapel.Text) == false)
+                {
+                    Mensaje("La fecha de entrega del documento es incorrecta");
+                }
+                Entrego = "1";
+                Texto = "Si";
+                Fecha = txtFechaEntregaPapel.Text;
+            }
+            string xx = txtFechaVtoPapel.Text;
+            if (fun.ValidarFecha (txtFechaVtoPapel.Text)==true)
+            {
+                FechaVencimiento = txtFechaVtoPapel.Text;
+            }
+
+            if (fun.Buscar(tbListaPapeles,"CodPapel",CodPapel)==true)
+            {
+                Mensaje("Ya se ha ingresado el documento");
+                return;
+            }
+
+            string Valor = CodPapel + ";" + Nombre;
+            Valor = Valor + ";" + Entrego;
+            Valor = Valor + ";" + Texto;
+            Valor = Valor + ";" + Fecha;
+            Valor = Valor + ";" + FechaVencimiento;
+            tbListaPapeles = fun.AgregarFilas(tbListaPapeles, Valor);
+            GrillaPapeles.DataSource = tbListaPapeles;
+        }
+
+        private void btnQuitarPapel_Click(object sender, EventArgs e)
+        {
+            if (GrillaPapeles.CurrentRow ==null )
+            {
+                Mensaje("Debe seleccionar un registro");
+                return;
+            }
+            string CodPapel = GrillaPapeles.CurrentRow.Cells[0].Value.ToString();
+            cFunciones fun = new cFunciones();
+            tbListaPapeles = fun.EliminarFila(tbListaPapeles, "CodPapel", CodPapel);
+            GrillaPapeles.DataSource = tbListaPapeles;
+        }
+
+        private void GrabarPapelesxStock(SqlConnection con, SqlTransaction Transaccion,Int32 CodCompra, Int32 CodStock)
+        {
+            int i = 0;
+            Int32 CodPapel = 0;
+            string Entrego = "";
+            string Texto = "";
+            DateTime? Fecha = null;
+            DateTime? FechaVencimiento = null;
+            cFunciones fun = new cFunciones();
+            cPapeles papel = new cPapeles();
+            for (i=0;i<tbListaPapeles.Rows.Count; i++)
+            {
+                CodPapel =Convert.ToInt32 (tbListaPapeles.Rows[i]["CodPapel"]);
+                Entrego = tbListaPapeles.Rows[i]["Entrego"].ToString();
+                Texto = tbListaPapeles.Rows[i]["Texto"].ToString();
+                if (fun.ValidarFecha (tbListaPapeles.Rows[i]["Fecha"].ToString()) ==true)
+                {
+                    Fecha = Convert.ToDateTime(tbListaPapeles.Rows[i]["Fecha"].ToString());
+                }
+
+                if (fun.ValidarFecha(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString()) == true)
+                {
+                    FechaVencimiento = Convert.ToDateTime(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString());
+                }
+                papel.InsertarPapeles(con, Transaccion, CodPapel, CodStock,Entrego , Texto, Fecha, FechaVencimiento, CodCompra);
+            }
+            tbListaPapeles.Columns.Add("CodPapel");
+            tbListaPapeles.Columns.Add("Nombre");
+            tbListaPapeles.Columns.Add("Entrego");
+            tbListaPapeles.Columns.Add("Texto");
+            tbListaPapeles.Columns.Add("Fecha");
+            tbListaPapeles.Columns.Add("FechaVencimiento");
         }
     }
 }

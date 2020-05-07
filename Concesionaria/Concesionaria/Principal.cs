@@ -653,5 +653,11 @@ namespace Concesionaria
             FrmListadoCompra frm = new FrmListadoCompra();
             frm.ShowDialog();
         }
+
+        private void BtnBorrarTablas_Click(object sender, EventArgs e)
+        {
+            FrmBorrarTablas frm = new FrmBorrarTablas();
+            frm.Show();
+        }
     }
 }

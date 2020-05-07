@@ -14,7 +14,7 @@ namespace Concesionaria.Clases
             //*****TEST2**********
             //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=TEST2;Integrated Security=True";
             //CHACO
-          //   string cadena = "Data Source=DESKTOP-4I4D3O9\\SQLEXPRESS;Initial Catalog=CHACO;Integrated Security=True";
+           //  string cadena = "Data Source=DESKTOP-4I4D3O9\\SQLEXPRESS;Initial Catalog=CHACO;Integrated Security=True";
             //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
             //     string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CONCESIONARIA;Integrated Security=True";
             // string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";

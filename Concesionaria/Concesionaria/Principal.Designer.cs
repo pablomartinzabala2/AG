@@ -59,6 +59,7 @@
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cobranzasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.chcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnBorrarTablas = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -370,6 +371,13 @@
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
+            // comprasToolStripMenuItem
+            // 
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
@@ -598,7 +606,8 @@
             this.toolStripButton1,
             this.BtnCopia,
             this.btnConsultaAgenda,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.BtnBorrarTablas});
             this.toolStrip.Location = new System.Drawing.Point(0, 25);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 39);
@@ -735,12 +744,17 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // comprasToolStripMenuItem
+            // BtnBorrarTablas
             // 
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
-            this.comprasToolStripMenuItem.Text = "Compras";
-            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
+            this.BtnBorrarTablas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnBorrarTablas.Image = ((System.Drawing.Image)(resources.GetObject("BtnBorrarTablas.Image")));
+            this.BtnBorrarTablas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnBorrarTablas.Name = "BtnBorrarTablas";
+            this.BtnBorrarTablas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtnBorrarTablas.Size = new System.Drawing.Size(36, 36);
+            this.BtnBorrarTablas.Text = "Borrar Tablas";
+            this.BtnBorrarTablas.ToolTipText = "Borrar Tablas";
+            this.BtnBorrarTablas.Click += new System.EventHandler(this.BtnBorrarTablas_Click);
             // 
             // Principal
             // 
@@ -843,6 +857,7 @@
         private System.Windows.Forms.ToolStripMenuItem ingresoDeChequeToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton BtnBorrarTablas;
     }
 }
 
