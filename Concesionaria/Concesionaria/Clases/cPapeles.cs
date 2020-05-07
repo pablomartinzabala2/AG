@@ -49,5 +49,15 @@ namespace Concesionaria.Clases
             sql = sql + ")";
             cDb.EjecutarNonQueryTransaccion (con, Transaccion, sql);
         }
+
+        public DataTable GetPapelesxCodCompra(Int32  CodCompra)
+        {
+            string sql = " select ps.CodPapel,p.Nombre,";
+            sql = sql + "ps.Entrego,ps.Texto,ps.Fecha,ps.FechaVencimiento";
+            sql = sql + " from Papeles p,PapelesxStock ps";
+            sql = sql + " where p.CodPapel = ps.CodPapel";
+            sql = sql + " and CodCompra=" + CodCompra.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
     }
 }

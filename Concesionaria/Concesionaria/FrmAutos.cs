@@ -29,7 +29,7 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-                BuscarCompra(474);
+                BuscarCompra(2);
             }
             catch (Exception ex)
             {
@@ -286,6 +286,7 @@ namespace Concesionaria
                     }
                     if (txtTotalVehiculo.Text !="")
                         GrabarVenta(con, Transaccion);
+                    GrabarPapelesxStock(con, Transaccion, CodCompra, Convert.ToInt32(txtCodStock.Text));
                     Transaccion.Commit();
                     con.Close();
                     MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
@@ -1787,6 +1788,7 @@ namespace Concesionaria
             cCompra compra = new cCompra();
             cFunciones fun = new cFunciones();
             BuscarChequesxCodCompra(CodCompra);
+            BuscarPapeles(CodCompra);
             DataTable trdo = compra.GetCompraxCodigo(CodCompra);
             if (trdo.Rows.Count >0)
             {
@@ -2082,6 +2084,14 @@ namespace Concesionaria
             Valor = Valor + ";" + FechaVencimiento;
             tbListaPapeles = fun.AgregarFilas(tbListaPapeles, Valor);
             GrillaPapeles.DataSource = tbListaPapeles;
+            GrillaPapeles.Columns[0].Visible = false;
+            GrillaPapeles.Columns[2].Visible = false;
+            GrillaPapeles.Columns[1].Width = 130;
+            GrillaPapeles.Columns[3].Width = 80;
+            GrillaPapeles.Columns[4].Width = 80;
+            GrillaPapeles.Columns[5].Width = 90;
+            GrillaPapeles.Columns[5].HeaderText = "Vencimiento";
+            GrillaPapeles.Columns[3].HeaderText = "Entrego";
         }
 
         private void btnQuitarPapel_Click(object sender, EventArgs e)
@@ -2123,12 +2133,22 @@ namespace Concesionaria
                 }
                 papel.InsertarPapeles(con, Transaccion, CodPapel, CodStock,Entrego , Texto, Fecha, FechaVencimiento, CodCompra);
             }
-            tbListaPapeles.Columns.Add("CodPapel");
-            tbListaPapeles.Columns.Add("Nombre");
-            tbListaPapeles.Columns.Add("Entrego");
-            tbListaPapeles.Columns.Add("Texto");
-            tbListaPapeles.Columns.Add("Fecha");
-            tbListaPapeles.Columns.Add("FechaVencimiento");
+           
+        }
+
+        private void BuscarPapeles(Int32 CodCompra)
+        {
+            cPapeles papel = new Clases.cPapeles();
+            DataTable trdo = papel.GetPapelesxCodCompra(CodCompra);
+            GrillaPapeles.DataSource = trdo;
+            GrillaPapeles.Columns[0].Visible = false;
+            GrillaPapeles.Columns[2].Visible = false;
+            GrillaPapeles.Columns[1].Width = 130;
+            GrillaPapeles.Columns[3].Width = 80;
+            GrillaPapeles.Columns[4].Width = 80;
+            GrillaPapeles.Columns[5].Width = 90;
+            GrillaPapeles.Columns[5].HeaderText = "Vencimiento";
+            GrillaPapeles.Columns[3].HeaderText = "Entrego";
         }
     }
 }
