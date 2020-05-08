@@ -101,10 +101,11 @@
             this.BtnCopia = new System.Windows.Forms.ToolStripButton();
             this.btnConsultaAgenda = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.BtnBorrarTablas = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.BtnBorrarTablas = new System.Windows.Forms.ToolStripButton();
+            this.papelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -139,6 +140,7 @@
             this.toolStripMenuItem10,
             this.categoriaDeGastosDeRecepciónToolStripMenuItem,
             this.tarjetaToolStripMenuItem,
+            this.papelesToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
@@ -728,6 +730,18 @@
             this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton2.Text = "Vehículos";
             // 
+            // BtnBorrarTablas
+            // 
+            this.BtnBorrarTablas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnBorrarTablas.Image = ((System.Drawing.Image)(resources.GetObject("BtnBorrarTablas.Image")));
+            this.BtnBorrarTablas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnBorrarTablas.Name = "BtnBorrarTablas";
+            this.BtnBorrarTablas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtnBorrarTablas.Size = new System.Drawing.Size(36, 36);
+            this.BtnBorrarTablas.Text = "Borrar Tablas";
+            this.BtnBorrarTablas.ToolTipText = "Borrar Tablas";
+            this.BtnBorrarTablas.Click += new System.EventHandler(this.BtnBorrarTablas_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -744,17 +758,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // BtnBorrarTablas
+            // papelesToolStripMenuItem
             // 
-            this.BtnBorrarTablas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnBorrarTablas.Image = ((System.Drawing.Image)(resources.GetObject("BtnBorrarTablas.Image")));
-            this.BtnBorrarTablas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnBorrarTablas.Name = "BtnBorrarTablas";
-            this.BtnBorrarTablas.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtnBorrarTablas.Size = new System.Drawing.Size(36, 36);
-            this.BtnBorrarTablas.Text = "Borrar Tablas";
-            this.BtnBorrarTablas.ToolTipText = "Borrar Tablas";
-            this.BtnBorrarTablas.Click += new System.EventHandler(this.BtnBorrarTablas_Click);
+            this.papelesToolStripMenuItem.Name = "papelesToolStripMenuItem";
+            this.papelesToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.papelesToolStripMenuItem.Text = "Papeles";
+            this.papelesToolStripMenuItem.Click += new System.EventHandler(this.papelesToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -858,6 +867,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BtnBorrarTablas;
+        private System.Windows.Forms.ToolStripMenuItem papelesToolStripMenuItem;
     }
 }
 

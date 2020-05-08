@@ -64,6 +64,18 @@
             this.txtDescripcion2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPatente2 = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtCodCompra = new System.Windows.Forms.TextBox();
+            this.GrillaPapeles = new System.Windows.Forms.DataGridView();
+            this.btnQuitarPapel = new System.Windows.Forms.Button();
+            this.btnAgregarPapel = new System.Windows.Forms.Button();
+            this.txtFechaVtoPapel = new System.Windows.Forms.MaskedTextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtFechaEntregaPapel = new System.Windows.Forms.MaskedTextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.chkEntrego = new System.Windows.Forms.CheckBox();
+            this.Lista = new System.Windows.Forms.ListBox();
+            this.BtnGraparPapel = new System.Windows.Forms.Button();
             this.txtAutoPartePago = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtExTitular = new System.Windows.Forms.TextBox();
@@ -84,18 +96,7 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnQuitarPapel = new System.Windows.Forms.Button();
-            this.btnAgregarPapel = new System.Windows.Forms.Button();
-            this.txtFechaVtoPapel = new System.Windows.Forms.MaskedTextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtFechaEntregaPapel = new System.Windows.Forms.MaskedTextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.chkEntrego = new System.Windows.Forms.CheckBox();
-            this.Lista = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.GrillaPapeles = new System.Windows.Forms.DataGridView();
-            this.txtCodCompra = new System.Windows.Forms.TextBox();
+            this.txtCodStock = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -111,6 +112,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCodStock);
             this.groupBox1.Controls.Add(this.btnGrabarPrecio);
             this.groupBox1.Controls.Add(this.txtPrecioVenta);
             this.groupBox1.Controls.Add(this.BtnAgregarCheque);
@@ -160,9 +162,9 @@
             // 
             // btnGrabarPrecio
             // 
-            this.btnGrabarPrecio.Location = new System.Drawing.Point(255, 34);
+            this.btnGrabarPrecio.Location = new System.Drawing.Point(288, 34);
             this.btnGrabarPrecio.Name = "btnGrabarPrecio";
-            this.btnGrabarPrecio.Size = new System.Drawing.Size(52, 22);
+            this.btnGrabarPrecio.Size = new System.Drawing.Size(87, 22);
             this.btnGrabarPrecio.TabIndex = 58;
             this.btnGrabarPrecio.Text = "Grabar";
             this.btnGrabarPrecio.UseVisualStyleBackColor = true;
@@ -471,6 +473,130 @@
             this.txtPatente2.Size = new System.Drawing.Size(127, 22);
             this.txtPatente2.TabIndex = 26;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage5.Controls.Add(this.txtCodCompra);
+            this.tabPage5.Controls.Add(this.GrillaPapeles);
+            this.tabPage5.Controls.Add(this.btnQuitarPapel);
+            this.tabPage5.Controls.Add(this.btnAgregarPapel);
+            this.tabPage5.Controls.Add(this.txtFechaVtoPapel);
+            this.tabPage5.Controls.Add(this.label43);
+            this.tabPage5.Controls.Add(this.txtFechaEntregaPapel);
+            this.tabPage5.Controls.Add(this.label42);
+            this.tabPage5.Controls.Add(this.chkEntrego);
+            this.tabPage5.Controls.Add(this.Lista);
+            this.tabPage5.Controls.Add(this.BtnGraparPapel);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(764, 221);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Papeles";
+            // 
+            // txtCodCompra
+            // 
+            this.txtCodCompra.Location = new System.Drawing.Point(199, 152);
+            this.txtCodCompra.Name = "txtCodCompra";
+            this.txtCodCompra.ReadOnly = true;
+            this.txtCodCompra.Size = new System.Drawing.Size(100, 22);
+            this.txtCodCompra.TabIndex = 69;
+            this.txtCodCompra.Visible = false;
+            // 
+            // GrillaPapeles
+            // 
+            this.GrillaPapeles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaPapeles.Location = new System.Drawing.Point(333, 9);
+            this.GrillaPapeles.Name = "GrillaPapeles";
+            this.GrillaPapeles.ReadOnly = true;
+            this.GrillaPapeles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaPapeles.Size = new System.Drawing.Size(404, 190);
+            this.GrillaPapeles.TabIndex = 68;
+            // 
+            // btnQuitarPapel
+            // 
+            this.btnQuitarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarPapel.Image")));
+            this.btnQuitarPapel.Location = new System.Drawing.Point(251, 0);
+            this.btnQuitarPapel.Name = "btnQuitarPapel";
+            this.btnQuitarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarPapel.TabIndex = 67;
+            this.btnQuitarPapel.UseVisualStyleBackColor = true;
+            this.btnQuitarPapel.Click += new System.EventHandler(this.btnQuitarPapel_Click);
+            // 
+            // btnAgregarPapel
+            // 
+            this.btnAgregarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPapel.Image")));
+            this.btnAgregarPapel.Location = new System.Drawing.Point(205, 3);
+            this.btnAgregarPapel.Name = "btnAgregarPapel";
+            this.btnAgregarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarPapel.TabIndex = 66;
+            this.btnAgregarPapel.UseVisualStyleBackColor = true;
+            this.btnAgregarPapel.Click += new System.EventHandler(this.btnAgregarPapel_Click);
+            // 
+            // txtFechaVtoPapel
+            // 
+            this.txtFechaVtoPapel.Location = new System.Drawing.Point(251, 97);
+            this.txtFechaVtoPapel.Mask = "00/00/0000";
+            this.txtFechaVtoPapel.Name = "txtFechaVtoPapel";
+            this.txtFechaVtoPapel.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaVtoPapel.TabIndex = 65;
+            this.txtFechaVtoPapel.ValidatingType = typeof(System.DateTime);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(170, 97);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(82, 16);
+            this.label43.TabIndex = 64;
+            this.label43.Text = "Vencimiento";
+            // 
+            // txtFechaEntregaPapel
+            // 
+            this.txtFechaEntregaPapel.Location = new System.Drawing.Point(251, 72);
+            this.txtFechaEntregaPapel.Mask = "00/00/0000";
+            this.txtFechaEntregaPapel.Name = "txtFechaEntregaPapel";
+            this.txtFechaEntregaPapel.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaEntregaPapel.TabIndex = 63;
+            this.txtFechaEntregaPapel.ValidatingType = typeof(System.DateTime);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(168, 72);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(46, 16);
+            this.label42.TabIndex = 62;
+            this.label42.Text = "Fecha";
+            // 
+            // chkEntrego
+            // 
+            this.chkEntrego.AutoSize = true;
+            this.chkEntrego.Location = new System.Drawing.Point(171, 37);
+            this.chkEntrego.Name = "chkEntrego";
+            this.chkEntrego.Size = new System.Drawing.Size(74, 20);
+            this.chkEntrego.TabIndex = 61;
+            this.chkEntrego.Text = "Entrego";
+            this.chkEntrego.UseVisualStyleBackColor = true;
+            // 
+            // Lista
+            // 
+            this.Lista.FormattingEnabled = true;
+            this.Lista.ItemHeight = 16;
+            this.Lista.Location = new System.Drawing.Point(3, 3);
+            this.Lista.Name = "Lista";
+            this.Lista.Size = new System.Drawing.Size(157, 196);
+            this.Lista.TabIndex = 60;
+            // 
+            // BtnGraparPapel
+            // 
+            this.BtnGraparPapel.Image = global::Concesionaria.Properties.Resources.disk;
+            this.BtnGraparPapel.Location = new System.Drawing.Point(166, 3);
+            this.BtnGraparPapel.Name = "BtnGraparPapel";
+            this.BtnGraparPapel.Size = new System.Drawing.Size(40, 28);
+            this.BtnGraparPapel.TabIndex = 59;
+            this.BtnGraparPapel.UseVisualStyleBackColor = true;
+            this.BtnGraparPapel.Click += new System.EventHandler(this.BtnGraparPapel_Click);
+            // 
             // txtAutoPartePago
             // 
             this.txtAutoPartePago.Location = new System.Drawing.Point(97, 174);
@@ -641,126 +767,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Patente";
             // 
-            // tabPage5
+            // txtCodStock
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage5.Controls.Add(this.txtCodCompra);
-            this.tabPage5.Controls.Add(this.GrillaPapeles);
-            this.tabPage5.Controls.Add(this.btnQuitarPapel);
-            this.tabPage5.Controls.Add(this.btnAgregarPapel);
-            this.tabPage5.Controls.Add(this.txtFechaVtoPapel);
-            this.tabPage5.Controls.Add(this.label43);
-            this.tabPage5.Controls.Add(this.txtFechaEntregaPapel);
-            this.tabPage5.Controls.Add(this.label42);
-            this.tabPage5.Controls.Add(this.chkEntrego);
-            this.tabPage5.Controls.Add(this.Lista);
-            this.tabPage5.Controls.Add(this.button3);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(764, 221);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Papeles";
-            // 
-            // btnQuitarPapel
-            // 
-            this.btnQuitarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarPapel.Image")));
-            this.btnQuitarPapel.Location = new System.Drawing.Point(259, 3);
-            this.btnQuitarPapel.Name = "btnQuitarPapel";
-            this.btnQuitarPapel.Size = new System.Drawing.Size(40, 28);
-            this.btnQuitarPapel.TabIndex = 67;
-            this.btnQuitarPapel.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarPapel
-            // 
-            this.btnAgregarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPapel.Image")));
-            this.btnAgregarPapel.Location = new System.Drawing.Point(212, 3);
-            this.btnAgregarPapel.Name = "btnAgregarPapel";
-            this.btnAgregarPapel.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarPapel.TabIndex = 66;
-            this.btnAgregarPapel.UseVisualStyleBackColor = true;
-            this.btnAgregarPapel.Click += new System.EventHandler(this.btnAgregarPapel_Click);
-            // 
-            // txtFechaVtoPapel
-            // 
-            this.txtFechaVtoPapel.Location = new System.Drawing.Point(251, 97);
-            this.txtFechaVtoPapel.Mask = "00/00/0000";
-            this.txtFechaVtoPapel.Name = "txtFechaVtoPapel";
-            this.txtFechaVtoPapel.Size = new System.Drawing.Size(76, 22);
-            this.txtFechaVtoPapel.TabIndex = 65;
-            this.txtFechaVtoPapel.ValidatingType = typeof(System.DateTime);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(170, 97);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(82, 16);
-            this.label43.TabIndex = 64;
-            this.label43.Text = "Vencimiento";
-            // 
-            // txtFechaEntregaPapel
-            // 
-            this.txtFechaEntregaPapel.Location = new System.Drawing.Point(251, 72);
-            this.txtFechaEntregaPapel.Mask = "00/00/0000";
-            this.txtFechaEntregaPapel.Name = "txtFechaEntregaPapel";
-            this.txtFechaEntregaPapel.Size = new System.Drawing.Size(76, 22);
-            this.txtFechaEntregaPapel.TabIndex = 63;
-            this.txtFechaEntregaPapel.ValidatingType = typeof(System.DateTime);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(168, 72);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(46, 16);
-            this.label42.TabIndex = 62;
-            this.label42.Text = "Fecha";
-            // 
-            // chkEntrego
-            // 
-            this.chkEntrego.AutoSize = true;
-            this.chkEntrego.Location = new System.Drawing.Point(171, 37);
-            this.chkEntrego.Name = "chkEntrego";
-            this.chkEntrego.Size = new System.Drawing.Size(74, 20);
-            this.chkEntrego.TabIndex = 61;
-            this.chkEntrego.Text = "Entrego";
-            this.chkEntrego.UseVisualStyleBackColor = true;
-            // 
-            // Lista
-            // 
-            this.Lista.FormattingEnabled = true;
-            this.Lista.ItemHeight = 16;
-            this.Lista.Location = new System.Drawing.Point(3, 3);
-            this.Lista.Name = "Lista";
-            this.Lista.Size = new System.Drawing.Size(157, 196);
-            this.Lista.TabIndex = 60;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.button3.Location = new System.Drawing.Point(166, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 28);
-            this.button3.TabIndex = 59;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // GrillaPapeles
-            // 
-            this.GrillaPapeles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaPapeles.Location = new System.Drawing.Point(333, 9);
-            this.GrillaPapeles.Name = "GrillaPapeles";
-            this.GrillaPapeles.ReadOnly = true;
-            this.GrillaPapeles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaPapeles.Size = new System.Drawing.Size(404, 190);
-            this.GrillaPapeles.TabIndex = 68;
-            // 
-            // txtCodCompra
-            // 
-            this.txtCodCompra.Location = new System.Drawing.Point(199, 152);
-            this.txtCodCompra.Name = "txtCodCompra";
-            this.txtCodCompra.ReadOnly = true;
-            this.txtCodCompra.Size = new System.Drawing.Size(100, 22);
-            this.txtCodCompra.TabIndex = 69;
+            this.txtCodStock.Location = new System.Drawing.Point(209, 31);
+            this.txtCodStock.Name = "txtCodStock";
+            this.txtCodStock.ReadOnly = true;
+            this.txtCodStock.Size = new System.Drawing.Size(79, 22);
+            this.txtCodStock.TabIndex = 59;
+            this.txtCodStock.Visible = false;
             // 
             // FrmDetalleAuto
             // 
@@ -860,8 +874,9 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.CheckBox chkEntrego;
         private System.Windows.Forms.ListBox Lista;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnGraparPapel;
         private System.Windows.Forms.DataGridView GrillaPapeles;
         private System.Windows.Forms.TextBox txtCodCompra;
+        private System.Windows.Forms.TextBox txtCodStock;
     }
 }

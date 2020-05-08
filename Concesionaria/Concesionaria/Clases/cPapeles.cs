@@ -59,5 +59,12 @@ namespace Concesionaria.Clases
             sql = sql + " and CodCompra=" + CodCompra.ToString();
             return cDb.ExecuteDataTable(sql);
         }
+
+        public void BorrarPapeles(SqlConnection con, SqlTransaction Transaccion,Int32 CodCompra)
+        {
+            string sql = "delete from PapelesxStock ";
+            sql = sql + " where CodCompra=" + CodCompra.ToString ();
+            cDb.EjecutarNonQueryTransaccion(con, Transaccion, sql);
+        }
     }
 }

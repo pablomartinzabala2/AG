@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Concesionaria.Clases;
+using System.Data.SqlClient;
 namespace Concesionaria
 {
     public partial class FrmDetalleAuto : Form
@@ -18,6 +19,7 @@ namespace Concesionaria
             
             if (Principal.CodigoPrincipalAbm != "")
             {
+                txtCodStock.Text = Principal.CodigoPrincipalAbm.ToString();
                 CargarAuto(Convert.ToInt32(Principal.CodigoPrincipalAbm));
                 CargarCostoxstock(Convert.ToInt32(Principal.CodigoPrincipalAbm));
                 CargarGastosGeneralesxCodStoxk(Convert.ToInt32(Principal.CodigoPrincipalAbm));
@@ -372,6 +374,77 @@ namespace Concesionaria
         public void Mensaje(string msj)
         {
             MessageBox.Show(msj, "Sistema");
+        }
+
+        private void btnQuitarPapel_Click(object sender, EventArgs e)
+        {
+            if (GrillaPapeles.CurrentRow == null)
+            {
+                Mensaje("Debe seleccionar un registro");
+                return;
+            }
+            string CodPapel = GrillaPapeles.CurrentRow.Cells[0].Value.ToString();
+            cFunciones fun = new cFunciones();
+            tbListaPapeles = fun.EliminarFila(tbListaPapeles, "CodPapel", CodPapel);
+            GrillaPapeles.DataSource = tbListaPapeles;
+        }
+
+        private void BtnGraparPapel_Click(object sender, EventArgs e)
+        {
+            cPapeles objPapel = new cPapeles();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Clases.cConexion.Cadenacon();
+            con.Open();
+            SqlTransaction Transaccion;  
+            Int32 CodCompra = Convert.ToInt32(txtCodCompra.Text);
+            Int32 CodStock = Convert.ToInt32(txtCodStock.Text); 
+            Transaccion = con.BeginTransaction();
+            try
+            {
+                objPapel.BorrarPapeles(con, Transaccion, CodCompra);
+                GrabarPapelesxStock(con, Transaccion, CodCompra, CodStock);
+                Transaccion.Commit();
+                con.Close();
+                MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+
+            }
+            catch (Exception ex)
+            {
+                string msj = "Hubo un error en el proceso " + ex.Message.ToString();
+                MessageBox.Show(msj, Clases.cMensaje.Mensaje());
+               
+                Transaccion.Rollback();
+                con.Close();
+            }
+        }
+
+        private void GrabarPapelesxStock(SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra, Int32 CodStock)
+        {
+            int i = 0;
+            Int32 CodPapel = 0;
+            string Entrego = "";
+            string Texto = "";
+            DateTime? Fecha = null;
+            DateTime? FechaVencimiento = null;
+            cFunciones fun = new cFunciones();
+            cPapeles papel = new cPapeles();
+            for (i = 0; i < tbListaPapeles.Rows.Count; i++)
+            {
+                CodPapel = Convert.ToInt32(tbListaPapeles.Rows[i]["CodPapel"]);
+                Entrego = tbListaPapeles.Rows[i]["Entrego"].ToString();
+                Texto = tbListaPapeles.Rows[i]["Texto"].ToString();
+                if (fun.ValidarFecha(tbListaPapeles.Rows[i]["Fecha"].ToString()) == true)
+                {
+                    Fecha = Convert.ToDateTime(tbListaPapeles.Rows[i]["Fecha"].ToString());
+                }
+
+                if (fun.ValidarFecha(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString()) == true)
+                {
+                    FechaVencimiento = Convert.ToDateTime(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString());
+                }
+                papel.InsertarPapeles(con, Transaccion, CodPapel, CodStock, Entrego, Texto, Fecha, FechaVencimiento, CodCompra);
+            }
+
         }
     }
 }

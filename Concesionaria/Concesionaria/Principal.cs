@@ -661,5 +661,11 @@ namespace Concesionaria
             FrmBorrarTablas frm = new FrmBorrarTablas();
             frm.Show();
         }
+
+        private void papelesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbmPapeles frm = new Concesionaria.FrmAbmPapeles();
+            frm.Show();
+        }
     }
 }

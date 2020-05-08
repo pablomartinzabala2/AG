@@ -186,6 +186,12 @@
     <Compile Include="FrmAbmMarca.Designer.cs">
       <DependentUpon>FrmAbmMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAbmPapeles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmPapeles.Designer.cs">
+      <DependentUpon>FrmAbmPapeles.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAbmTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -697,6 +703,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmMarca.resx">
       <DependentUpon>FrmAbmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmPapeles.resx">
+      <DependentUpon>FrmAbmPapeles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbmTarjeta.resx">
       <DependentUpon>FrmAbmTarjeta.cs</DependentUpon>
