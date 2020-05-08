@@ -124,7 +124,7 @@
     <value>31</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnQuitarPapel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAXtJREFUOE+tkV1LAkEYhfda0AtNJJGiT0uwSPrAkiChrYySJSoqiYiI+p9eeeEP
@@ -136,7 +136,7 @@
         7EVPmvSXF9WUlWSvFMF/YS9owgl7Yq++ZFWTZ/MKTfsBdOHAD08ameoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAgregarPapel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnAgregarCheque.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
@@ -148,6 +148,21 @@
         6fPaT1EscYTelMJtrQ29/3hxD/WhSjmFNWGgWTsjz1xAyOZINVditYytBzjs3l8sC1pGjfKKIhsPfxVW
         EHfKotAKd1lpgMAwdJLWcYMM6Usq2CYv0P7MIJ+lHKzmoLJvd7mAuJ4T/WX0zNoIvPQTSPtxaq1y7KLm
         9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnNuevaBanco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAidJREFUOE91kt9LU2EYx/dndJddddNF0A8KQuhCYRSCP4ouAi1/sBUtKOqiIygs
+        i3Qek0xB+3UTURjNTbFtGo4yGWXYXMdRhjZzlExsy3nO3PTbeZ5txzOPPfDhvC88z+d93uc9pnwIzyWc
+        6QygqiOAStGI5cEkROcscumFcfXJZ8QSMpZXU0wsoWxDxkw0gcaBCKz3d5DQyfFkChPz6wjkoPX4XApj
+        3xQMS6tQ0ptwh9fQ+OqHUVLumGDB5EJG42MkzRL/rAKPlGTBp8UMAovrsA9FYH8W2pKUtb7XBFM/05xI
+        a+qEBF715O9LSb4K5f1eSaK0yW8UBNXCL9ENhkQk0XcxGPoLVzDOueab44UCGp70a1MTECTUX2Xk6xp3
+        Q7k7CsKqgCARQQLqRC8hDALa0HPlC7d3oZfQyyzFFZTa/yPQF+sFj3z9uNJTjfr2MtTcMaNEELYEZCNr
+        vkAPFfcOP0Xzixq4Q12Yinogeq04Le7D3ZfNWUlJ0ztE/8iocis45ZZROSijwqUw5S4ZZ2+b4ZzugFPq
+        BEWbrw6irwHHbLuzguOCHwvLMi75N/A4DDycAXoloDvHiRv7MRTq4+J8DAS7cPjCrqyg+NoY/ygNoxmm
+        bjSN8yMZjaO2PWj1nMOt19VcTN+CDk4Kb3kGczGZRXpouO39Laho2wuHp5ZPpi/ttRlQ1Ds+oPjyGxy0
+        +AwcsHhxyFqrtlzEbR+5WATbvetqscn0D8RBy4HB6CC2AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="bnAgregarGastosRecepcion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -191,7 +206,7 @@
         9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnQuitarPapel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAXtJREFUOE+tkV1LAkEYhfda0AtNJJGiT0uwSPrAkiChrYySJSoqiYiI+p9eeeEP
@@ -203,7 +218,7 @@
         7EVPmvSXF9WUlWSvFMF/YS9owgl7Yq++ZFWTZ/MKTfsBdOHAD08ameoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnAgregarCheque.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAgregarPapel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAAedJREFUOE+1kWFLU1Ech/ehohcFYSEYFAQ2NIWKmk0dzYxsLt1slhd3WxPWNpW0
@@ -215,21 +230,6 @@
         6fPaT1EscYTelMJtrQ29/3hxD/WhSjmFNWGgWTsjz1xAyOZINVditYytBzjs3l8sC1pGjfKKIhsPfxVW
         EHfKotAKd1lpgMAwdJLWcYMM6Usq2CYv0P7MIJ+lHKzmoLJvd7mAuJ4T/WX0zNoIvPQTSPtxaq1y7KLm
         9+L0gJ6jOaE813al79jfi/+GTvcDzNCuqiqzz1gAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnNuevaBanco.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAidJREFUOE91kt9LU2EYx/dndJddddNF0A8KQuhCYRSCP4ouAi1/sBUtKOqiIygs
-        i3Qek0xB+3UTURjNTbFtGo4yGWXYXMdRhjZzlExsy3nO3PTbeZ5txzOPPfDhvC88z+d93uc9pnwIzyWc
-        6QygqiOAStGI5cEkROcscumFcfXJZ8QSMpZXU0wsoWxDxkw0gcaBCKz3d5DQyfFkChPz6wjkoPX4XApj
-        3xQMS6tQ0ptwh9fQ+OqHUVLumGDB5EJG42MkzRL/rAKPlGTBp8UMAovrsA9FYH8W2pKUtb7XBFM/05xI
-        a+qEBF715O9LSb4K5f1eSaK0yW8UBNXCL9ENhkQk0XcxGPoLVzDOueab44UCGp70a1MTECTUX2Xk6xp3
-        Q7k7CsKqgCARQQLqRC8hDALa0HPlC7d3oZfQyyzFFZTa/yPQF+sFj3z9uNJTjfr2MtTcMaNEELYEZCNr
-        vkAPFfcOP0Xzixq4Q12Yinogeq04Le7D3ZfNWUlJ0ztE/8iocis45ZZROSijwqUw5S4ZZ2+b4ZzugFPq
-        BEWbrw6irwHHbLuzguOCHwvLMi75N/A4DDycAXoloDvHiRv7MRTq4+J8DAS7cPjCrqyg+NoY/ygNoxmm
-        bjSN8yMZjaO2PWj1nMOt19VcTN+CDk4Kb3kGczGZRXpouO39Laho2wuHp5ZPpi/ttRlQ1Ds+oPjyGxy0
-        +AwcsHhxyFqrtlzEbR+5WATbvetqscn0D8RBy4HB6CC2AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

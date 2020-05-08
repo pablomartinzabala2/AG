@@ -69,6 +69,7 @@ namespace Concesionaria.Clases
             sql = sql + ",Concesion";
             sql = sql + ",a.Ubicacion";
             sql = sql + ",sa.PrecioVenta";
+            
             sql = sql + " from auto a, StockAuto sa,cliente cli,marca m";
             sql = sql + " where a.Codauto =sa.CodAuto ";
             sql = sql + " and sa.CodCliente = cli.CodCliente";
@@ -103,6 +104,7 @@ namespace Concesionaria.Clases
             sql = sql + ", (select Nombre from ciudad c where c.CodCiudad = a.CodCiudad) as Ciudad";
             sql = sql + ",(select (apellido + ' ' + nombre) from cliente cli where cli.CodCliente =s.CodCliente) as ApeNom";
             sql = sql + ",(select t.Nombre from TipoCombustible t where t.Codigo = a.CodTipoCombustible) as Combustible";
+            sql = sql + ",(select com.CodCompra from Compra com where com.CodStockEntrada=s.CodStock) as CodCompra";
             sql = sql + " from StockAuto s,Auto a";
             sql = sql + " where s.CodAuto =a.CodAuto";
             sql = sql + " and CodStock =" + CodStock.ToString();

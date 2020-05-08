@@ -28,7 +28,7 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
-        public DataTable getComprasxFecha(DateTime FechaDesde,DateTime FechaHasta)
+        public DataTable getComprasxFecha(DateTime FechaDesde,DateTime FechaHasta,string Patente)
         {
             string sql = " select c.CodCompra, a.Patente,a.Descripcion,m.nombre,c.Fecha,c.ImporteCompra";
             sql = sql + " From Compra c,StockAuto s, auto a,Marca m";
@@ -37,6 +37,10 @@ namespace Concesionaria.Clases
             sql = sql + " and a.CodMarca= m.CodMarca";
             sql = sql + " and c.Fecha >=" + "'" + FechaDesde.ToShortDateString() + "'";
             sql = sql + " and c.Fecha <=" + "'" + FechaHasta.ToShortDateString() + "'";
+            if (Patente !="")
+            {
+                sql = sql + " and a.Patente like " + "'%" + Patente + "%'";
+            }
             return cDb.ExecuteDataTable(sql);
         }
     }

@@ -40,14 +40,56 @@ namespace Concesionaria
             }
             DateTime FechaDesde = Convert.ToDateTime(txtFechaDesde.Text);
             DateTime FechaHasta = Convert.ToDateTime(txtFechaHasta.Text);
+            string Patente = txtPatente.Text.Trim();
             cCompra compra = new cCompra();
-            DataTable trdo = compra.getComprasxFecha(FechaDesde, FechaHasta);
+            DataTable trdo = compra.getComprasxFecha(FechaDesde, FechaHasta, Patente);
             Grilla.DataSource = trdo;
         }
 
         private void Mensaje(string msj)
         {
             MessageBox.Show(msj, "Sistema");
+        }
+
+        private void btnBuscarCompra_Click(object sender, EventArgs e)
+        {
+            cFunciones fun = new cFunciones();
+            if (fun.ValidarFecha(txtFechaDesde.Text) == false)
+            {
+                Mensaje("La fecha desde es incorrecta");
+                return;
+            }
+
+            if (fun.ValidarFecha(txtFechaHasta.Text) == false)
+            {
+                Mensaje("La fecha Hasta es incorrecta");
+                return;
+            }
+            DateTime FechaDesde = Convert.ToDateTime(txtFechaDesde.Text);
+            DateTime FechaHasta = Convert.ToDateTime(txtFechaHasta.Text);
+            string Patente = txtPatente.Text.Trim();
+            cCompra compra = new cCompra();
+            DataTable trdo = compra.getComprasxFecha(FechaDesde, FechaHasta, Patente);
+            trdo = fun.TablaaMiles(trdo, "ImporteCompra");
+            Grilla.DataSource = trdo;
+            Grilla.Columns[0].Visible = false;
+            Grilla.Columns[2].Width = 150;
+            Grilla.Columns[3].Width = 150;
+            Grilla.Columns[5].Width = 250;
+            Grilla.Columns[5].HeaderText = "Importe Compra";
+        }
+
+        private void btnAbrirCompra_Click(object sender, EventArgs e)
+        {
+            if (Grilla.CurrentRow ==null)
+            {
+                Mensaje("Debe seleccionar un registro");
+                return;
+            }
+            string CodCompra = Grilla.CurrentRow.Cells[0].Value.ToString();
+            Principal.CodCompra = CodCompra;
+            FrmAutos frm = new Concesionaria.FrmAutos();
+            frm.ShowDialog();
         }
     }
 }

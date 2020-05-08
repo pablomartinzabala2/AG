@@ -31,6 +31,7 @@ namespace Concesionaria
         public static string ColumnasVisibles;
         public static string ColumnasAncho;
         public static string Comodin;
+        public static String CodCompra;
 
         public Principal()
         {
@@ -259,6 +260,7 @@ namespace Concesionaria
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            Principal.CodCompra = null;
             FrmAutos childForm = new FrmAutos();
             childForm.MdiParent = this;
             childForm.Text = "Formulario de compra de auto";

@@ -29,7 +29,14 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-               // BuscarCompra(2);
+                if (Principal.CodCompra !=null)
+                {
+                    Int32 Cod = Convert.ToInt32(Principal.CodCompra);
+                    BuscarCompra(Cod);
+                    btnGrabar.Visible = false;
+                    btnCancelar.Visible = false;
+                }
+               
             }
             catch (Exception ex)
             {

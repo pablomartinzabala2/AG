@@ -37,12 +37,22 @@
             this.txtFechaDesde = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPatente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCompra = new System.Windows.Forms.Button();
+            this.btnAbrirCompra = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnAbrirCompra);
+            this.groupBox1.Controls.Add(this.btnBuscarCompra);
+            this.groupBox1.Controls.Add(this.txtPatente);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.Grilla);
@@ -89,31 +99,32 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(465, 27);
+            this.btnBuscar.Location = new System.Drawing.Point(785, 29);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(88, 31);
             this.btnBuscar.TabIndex = 44;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Visible = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtFechaHasta
             // 
             this.txtFechaHasta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFechaHasta.Location = new System.Drawing.Point(359, 34);
+            this.txtFechaHasta.Location = new System.Drawing.Point(287, 37);
             this.txtFechaHasta.Mask = "00/00/0000";
             this.txtFechaHasta.Name = "txtFechaHasta";
-            this.txtFechaHasta.Size = new System.Drawing.Size(100, 23);
+            this.txtFechaHasta.Size = new System.Drawing.Size(74, 23);
             this.txtFechaHasta.TabIndex = 43;
             this.txtFechaHasta.ValidatingType = typeof(System.DateTime);
             // 
             // txtFechaDesde
             // 
             this.txtFechaDesde.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFechaDesde.Location = new System.Drawing.Point(121, 34);
+            this.txtFechaDesde.Location = new System.Drawing.Point(112, 34);
             this.txtFechaDesde.Mask = "00/00/0000";
             this.txtFechaDesde.Name = "txtFechaDesde";
-            this.txtFechaDesde.Size = new System.Drawing.Size(100, 23);
+            this.txtFechaDesde.Size = new System.Drawing.Size(75, 23);
             this.txtFechaDesde.TabIndex = 42;
             this.txtFechaDesde.ValidatingType = typeof(System.DateTime);
             // 
@@ -129,11 +140,56 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 37);
+            this.label2.Location = new System.Drawing.Point(193, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 40;
             this.label2.Text = "Fecha Hasta";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(376, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 17);
+            this.label3.TabIndex = 49;
+            this.label3.Text = "Patente";
+            // 
+            // txtPatente
+            // 
+            this.txtPatente.Location = new System.Drawing.Point(439, 34);
+            this.txtPatente.Name = "txtPatente";
+            this.txtPatente.Size = new System.Drawing.Size(184, 23);
+            this.txtPatente.TabIndex = 50;
+            // 
+            // btnBuscarCompra
+            // 
+            this.btnBuscarCompra.Image = global::Concesionaria.Properties.Resources.zoom;
+            this.btnBuscarCompra.Location = new System.Drawing.Point(629, 29);
+            this.btnBuscarCompra.Name = "btnBuscarCompra";
+            this.btnBuscarCompra.Size = new System.Drawing.Size(34, 30);
+            this.btnBuscarCompra.TabIndex = 51;
+            this.btnBuscarCompra.UseVisualStyleBackColor = true;
+            this.btnBuscarCompra.Click += new System.EventHandler(this.btnBuscarCompra_Click);
+            // 
+            // btnAbrirCompra
+            // 
+            this.btnAbrirCompra.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnAbrirCompra.Location = new System.Drawing.Point(669, 29);
+            this.btnAbrirCompra.Name = "btnAbrirCompra";
+            this.btnAbrirCompra.Size = new System.Drawing.Size(34, 30);
+            this.btnAbrirCompra.TabIndex = 52;
+            this.btnAbrirCompra.UseVisualStyleBackColor = true;
+            this.btnAbrirCompra.Click += new System.EventHandler(this.btnAbrirCompra_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminar.Location = new System.Drawing.Point(709, 27);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(34, 30);
+            this.btnEliminar.TabIndex = 53;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // FrmListadoCompra
             // 
@@ -146,7 +202,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmListadoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmListadoCompra";
+            this.Text = "Listado de compras";
             this.Load += new System.EventHandler(this.FrmListadoCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -166,5 +222,10 @@
         private System.Windows.Forms.MaskedTextBox txtFechaDesde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPatente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAbrirCompra;
+        private System.Windows.Forms.Button btnBuscarCompra;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
