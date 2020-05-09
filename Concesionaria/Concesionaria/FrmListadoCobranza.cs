@@ -81,8 +81,9 @@ namespace Concesionaria
                 MessageBox.Show("Debe seleccionar un registro para continuar", Clases.cMensaje.Mensaje());
                 return;
             }
-            string Patente = Grilla.CurrentRow.Cells[1].Value.ToString ();
-            Principal.CodigoPrincipalAbm = Patente;
+           // string Patente = Grilla.CurrentRow.Cells[1].Value.ToString ();
+            string CodCobranza = Grilla.CurrentRow.Cells[8].Value.ToString();
+            Principal.CodigoPrincipalAbm = CodCobranza;
             FrmCobroDocumentos cobro = new FrmCobroDocumentos();
             cobro.ShowDialog();
         }

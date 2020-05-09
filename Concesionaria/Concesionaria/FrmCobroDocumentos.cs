@@ -45,10 +45,10 @@ namespace Concesionaria
         }
 
         private void CargarGrilla()
-        {
+        {   //GetDetalleCobranzaxCod este debo usar
             Clases.cCobranza cob = new Clases.cCobranza();
             Clases.cFunciones fun = new Clases.cFunciones();
-            DataTable trdo = cob.GetCobranzaxPatente(txtPatente.Text);
+            DataTable trdo = cob.GetDetalleCobranzaxCod(Convert.ToInt32(txtCodCobranza.Text));
             trdo = fun.TablaaMiles(trdo, "Importe");
             trdo = fun.TablaaMiles(trdo, "ImportePagado");
             trdo = fun.TablaaMiles(trdo, "Punitorio");
@@ -149,7 +149,7 @@ namespace Concesionaria
         {
             if (Principal.CodigoPrincipalAbm != null)
             {
-                txtPatente.Text = Principal.CodigoPrincipalAbm.ToString();
+                txtCodCobranza.Text = Principal.CodigoPrincipalAbm.ToString();
                 CargarGrilla();
                 btnGrabar.Enabled = false;
                 btnAnular.Enabled = false;

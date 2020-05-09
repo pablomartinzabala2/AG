@@ -57,6 +57,7 @@ namespace Concesionaria.Clases
             sql = sql + ",c.Fecha,c.FechaPago,";
             sql = sql + "(select cli.apellido from cliente cli where cli.CodCliente = c.CodCliente ) as Apellido";
             sql = sql + ",c.FechaCompromiso,c.Saldo";
+            sql = sql + ",c.CodCobranza";
             sql = sql + " from Cobranza c, auto aut,Cliente Cli";
             sql = sql + " where c.CodAuto = aut.CodAuto";
             sql = sql + " and c.CodCliente = Cli.CodCliente";
@@ -203,6 +204,20 @@ namespace Concesionaria.Clases
             }
             return Saldo;
         }
-       
+
+        public DataTable GetDetalleCobranzaxCod(Int32 CodCobranza)
+        {  //GetDetalleCobranzaxCod
+            
+           
+            string sql = "select c.CodCobranza,c.CodVenta,c.Importe,c.Fecha,c.FechaPago,Cli.Apellido,Cli.Nombre,A.Descripcion,c.ImportePagado,c.Saldo";
+            sql = sql + ",( select isnull(sum(pun.Importe),0)  from PunitorioCobranza pun where pun.CodCobranza =c.CodCobranza) as Punitorio ";
+            sql = sql + " from Cobranza c,Venta v,Cliente Cli,Auto a";
+            sql = sql + " where c.CodVenta = v.CodVenta ";
+            sql = sql + " and v.CodCliente = cli.CodCliente ";
+            sql = sql + " and c.CodAuto = a.CodAuto ";
+            sql = sql + " and c.CodCobranza =" + CodCobranza.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
+
     }
 }

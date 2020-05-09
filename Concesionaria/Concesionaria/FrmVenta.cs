@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmVenta : Form
@@ -17,6 +17,7 @@ namespace Concesionaria
         private Int32 SigueCiudad;
         DataTable tprenda;
         DataTable tbTarjeta;
+        DataTable tbCobranza;
         //se utiliza para indicar en que combo debe seguir
         //cuadno regrese del alta basica y tengas dos
         //tablas iguales
@@ -98,6 +99,9 @@ namespace Concesionaria
             txtTotalCheque.BackColor = System.Drawing.Color.LightGreen;
             txtTotalVenta.BackColor = System.Drawing.Color.LightGreen;
             txtSubTotal.BackColor = System.Drawing.Color.LightGreen;
+            tbCobranza = new DataTable();
+            string ColCob = "Cuota;Importe;FechaVencimiento;FechaPago";
+            tbCobranza = fun.CrearTabla(ColCob);
         }
 
         private void txtPatente_TextChanged(object sender, EventArgs e)
@@ -902,21 +906,33 @@ namespace Concesionaria
                     {
                         Clases.cFunciones fun = new Clases.cFunciones();
                         string sqlCobranza = "";
-                        sqlCobranza = "Insert into Cobranza(CodVenta,Importe,Fecha,CodAuto,CodCliente,FechaCompromiso,ImportePagado,Saldo)";
-                        sqlCobranza = sqlCobranza + " values (" + CodVenta.ToString();
-                        sqlCobranza = sqlCobranza + "," + fun.ToDouble(txtTotalCobranza.Text);
-                        sqlCobranza = sqlCobranza + "," + "'" + txtFecha.Text + "'";
-                        sqlCobranza = sqlCobranza + "," + txtCodAuto.Text;
-                        sqlCobranza = sqlCobranza + "," + txtCodCLiente.Text;
-                        sqlCobranza = sqlCobranza + "," + "'" + txtFechaCompromiso.Text + "'";
-                        sqlCobranza = sqlCobranza + ",0";
-                        sqlCobranza = sqlCobranza + "," + fun.ToDouble(txtTotalCobranza.Text);
-                        sqlCobranza = sqlCobranza + ")";
-                        SqlCommand ComandCobranza = new SqlCommand();
-                        ComandCobranza.Connection = con;
-                        ComandCobranza.Transaction = Transaccion;
-                        ComandCobranza.CommandText = sqlCobranza;
-                        ComandCobranza.ExecuteNonQuery();
+                        string FechaCompromisoPago = "";
+                        string Cuota = "";
+                        Double ImporteCobranzaCuota = 0;
+                        for (int kk=0;kk<tbCobranza.Rows.Count;kk++)
+                        {
+                            FechaCompromisoPago = tbCobranza.Rows[kk]["FechaVencimiento"].ToString();
+                            ImporteCobranzaCuota = fun.ToDouble(tbCobranza.Rows[kk]["Importe"].ToString ());
+                            Cuota = tbCobranza.Rows[kk]["Cuota"].ToString();
+                            //agregar la cuota en la tabla cobranza
+                            sqlCobranza = "Insert into Cobranza(CodVenta,Importe,Fecha,CodAuto,CodCliente,FechaCompromiso,ImportePagado,Saldo,Cuota)";
+                            sqlCobranza = sqlCobranza + " values (" + CodVenta.ToString();
+                            sqlCobranza = sqlCobranza + "," + ImporteCobranzaCuota.ToString();
+                            sqlCobranza = sqlCobranza + "," + "'" + txtFecha.Text + "'";
+                            sqlCobranza = sqlCobranza + "," + txtCodAuto.Text;
+                            sqlCobranza = sqlCobranza + "," + txtCodCLiente.Text;
+                            sqlCobranza = sqlCobranza + "," + "'" + FechaCompromisoPago + "'";
+                            sqlCobranza = sqlCobranza + ",0";
+                            sqlCobranza = sqlCobranza + "," + ImporteCobranzaCuota.ToString();
+                            sqlCobranza = sqlCobranza + "," + Cuota.ToString();
+                            sqlCobranza = sqlCobranza + ")";
+                            SqlCommand ComandCobranza = new SqlCommand();
+                            ComandCobranza.Connection = con;
+                            ComandCobranza.Transaction = Transaccion;
+                            ComandCobranza.CommandText = sqlCobranza;
+                            ComandCobranza.ExecuteNonQuery();
+                        }
+                       
                     }
                 Clases.cFunciones func = new Clases.cFunciones();
                 //grabo los gastos a pagar
@@ -1446,6 +1462,7 @@ namespace Concesionaria
             GrillaCheques.DataSource = null;
             txtImporteCobranza.Text = "";
             txtFechaCompromiso.Text = "";
+            tbCobranza.Rows.Clear();
         }
 
         private Double CalcularTotalCuotas()
@@ -1621,7 +1638,7 @@ namespace Concesionaria
 
         private void txtImporteCobranza_TextChanged(object sender, EventArgs e)
         {
-            txtTotalCobranza.Text = txtImporteCobranza.Text;
+            
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -4212,6 +4229,64 @@ namespace Concesionaria
         private void CmbGastosTransferencia_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Mensaje(string msj)
+        {
+            MessageBox.Show(msj, "Sistema");
+        }
+        private void BtnAgregarCobranza_Click(object sender, EventArgs e)
+        {
+            cFunciones fun = new Clases.cFunciones();
+            if (txtImporteCobranza.Text =="")
+            {
+                Mensaje("Debe ingresar el importe de la cobranza");
+                return;
+            }
+            if (txtCuotasCobranza.Text =="")
+            {
+                Mensaje("Debe ingresar el número de cuotas");
+                return;
+            }
+
+            if (txtFechaCompromiso.Text =="")
+            {
+                Mensaje("Debe ingresar una fecha de compromiso");
+                return;
+            }
+
+            if (fun.ValidarFecha (txtFechaCompromiso.Text) ==false)
+            {
+                Mensaje("La fecha ingresada es incorrecta");
+                return;
+            }
+            
+            Double Capital = fun.ToDouble(txtImporteCobranza.Text);
+            int Cuotas = Convert.ToInt32(txtCuotasCobranza.Text);
+            Double ImporteCuota = Capital / Cuotas;
+            string val = "";
+            string NroCuota = "";
+            string FechaPago = "";
+            DateTime Fecha = Convert.ToDateTime(txtFechaCompromiso.Text);
+            for (int i=0;i< Cuotas;i++)
+            {
+                NroCuota = (i + 1).ToString();
+                val = NroCuota + ";" + ImporteCuota.ToString() + ";" + Fecha.ToShortDateString() + ";" + FechaPago;
+                tbCobranza = fun.AgregarFilas(tbCobranza, val);
+                Fecha = Fecha.AddMonths(1);
+            }
+            tbCobranza = fun.TablaaMiles(tbCobranza, "Importe");
+            GrillaCobranza.DataSource = tbCobranza;
+            txtTotalCobranza.Text = txtImporteCobranza.Text;
+            CalcularSubTotal();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            tbCobranza.Rows.Clear();
+            txtTotalCobranza.Text = "";
+            txtImporteCobranza.Text = "";
+            CalcularSubTotal();
         }
     }
 };
