@@ -100,7 +100,7 @@ namespace Concesionaria
             txtTotalVenta.BackColor = System.Drawing.Color.LightGreen;
             txtSubTotal.BackColor = System.Drawing.Color.LightGreen;
             tbCobranza = new DataTable();
-            string ColCob = "Cuota;Importe;FechaVencimiento;FechaPago";
+            string ColCob = "Cuota;Importe;FechaVencimiento;FechaPago;Saldo;CodCobranza";
             tbCobranza = fun.CrearTabla(ColCob);
         }
 
@@ -2960,6 +2960,13 @@ namespace Concesionaria
                     txtImporteCobranza.Text = fun.FormatoEnteroMiles(vec[0]);
                     txtTotalCobranza.Text = txtImporteCobranza.Text;
                     txtFechaCompromiso.Text = tVenta.Rows[0]["FechaCompromiso"].ToString();
+                    cCobranza cobDet = new cCobranza(); ;
+                    DataTable tbCob = cobDet.GetDetalleCobranzaxCodVenta(CodVenta);
+                    GrillaCobranza.DataSource = tbCob;
+                    GrillaCobranza.Columns[0].Width = 180;
+                    GrillaCobranza.Columns[1].Width = 180;
+                    GrillaCobranza.Columns[4].Width = 190;
+                    GrillaCobranza.Columns[5].Visible = false;
                 }
                 else
                 {
@@ -3513,8 +3520,13 @@ namespace Concesionaria
 
         private void btnAbrirCobranzas_Click(object sender, EventArgs e)
         {
-            string Patente = txtPatente.Text;
-            Principal.CodigoPrincipalAbm = Patente;
+            if (GrillaCobranza.CurrentRow ==null)
+            {
+                Mensaje("Debe seleccionar un registro");
+                return;
+            }
+            string CodCobranza = GrillaCobranza.CurrentRow.Cells[5].Value.ToString();
+            Principal.CodigoPrincipalAbm = CodCobranza;
             FrmCobroDocumentos cobro = new FrmCobroDocumentos();
             cobro.ShowDialog();
         }
@@ -4267,11 +4279,13 @@ namespace Concesionaria
             string val = "";
             string NroCuota = "";
             string FechaPago = "";
+            string CodCob = "0";
             DateTime Fecha = Convert.ToDateTime(txtFechaCompromiso.Text);
             for (int i=0;i< Cuotas;i++)
             {
                 NroCuota = (i + 1).ToString();
-                val = NroCuota + ";" + ImporteCuota.ToString() + ";" + Fecha.ToShortDateString() + ";" + FechaPago;
+                val = NroCuota + ";" + ImporteCuota.ToString() + ";" + Fecha.ToShortDateString() + ";" + FechaPago + ";" + ImporteCuota.ToString();
+                val = val + ";" + CodCob;
                 tbCobranza = fun.AgregarFilas(tbCobranza, val);
                 Fecha = Fecha.AddMonths(1);
             }
@@ -4279,6 +4293,10 @@ namespace Concesionaria
             GrillaCobranza.DataSource = tbCobranza;
             txtTotalCobranza.Text = txtImporteCobranza.Text;
             CalcularSubTotal();
+            GrillaCobranza.Columns[0].Width = 180;
+            GrillaCobranza.Columns[1].Width = 180;
+            GrillaCobranza.Columns[4].Width = 190;
+            GrillaCobranza.Columns[5].Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)

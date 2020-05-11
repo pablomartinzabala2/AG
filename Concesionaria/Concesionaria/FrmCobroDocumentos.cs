@@ -56,6 +56,8 @@ namespace Concesionaria
             Grilla.DataSource = trdo;
             int ban = 0;
             if (trdo.Rows.Count >0)
+            {
+                txtCuota.Text = trdo.Rows[0]["Cuota"].ToString();
                 if (trdo.Rows[0]["CodVenta"].ToString() != "")
                 {
                     ban = 1;
@@ -63,6 +65,8 @@ namespace Concesionaria
                     txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
                     txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
                 }
+            }
+                
             if (ban == 0)
             {
                 txtNombre.Text = "";

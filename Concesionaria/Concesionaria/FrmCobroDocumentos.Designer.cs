@@ -55,12 +55,16 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCuota = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCuota);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtPunitorio);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.button2);
@@ -226,7 +230,7 @@
             this.txtFecha.Location = new System.Drawing.Point(130, 101);
             this.txtFecha.Mask = "00/00/0000";
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(100, 23);
+            this.txtFecha.Size = new System.Drawing.Size(75, 23);
             this.txtFecha.TabIndex = 46;
             this.txtFecha.ValidatingType = typeof(System.DateTime);
             // 
@@ -340,6 +344,24 @@
             this.label16.TabIndex = 34;
             this.label16.Text = "Patente";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(211, 105);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 17);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Cuota";
+            // 
+            // txtCuota
+            // 
+            this.txtCuota.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuota.Location = new System.Drawing.Point(262, 103);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.ReadOnly = true;
+            this.txtCuota.Size = new System.Drawing.Size(75, 23);
+            this.txtCuota.TabIndex = 64;
+            // 
             // FrmCobroDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,5 +411,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtPunitorio;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCuota;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -58,11 +58,12 @@ namespace Concesionaria
             Grilla.DataSource = trdo;
             Grilla.Columns[4].HeaderText = "Fecha Pago";
             Grilla.Columns[6].HeaderText = "Fecha Comp.";
-            Grilla.Columns[1].Width = 150;
+            Grilla.Columns[1].Width = 100;
             Grilla.Columns[2].Width = 200;
-            Grilla.Columns[4].Width = 120;
+            Grilla.Columns[4].Width = 110;
             Grilla.Columns[5].Width = 120;
-            Grilla.Columns[6].Width = 158;
+            Grilla.Columns[6].Width = 120;
+            Grilla.Columns[8].Visible = false;
         }
 
         private void FrmListadoCobranza_Load(object sender, EventArgs e)

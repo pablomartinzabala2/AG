@@ -26,7 +26,7 @@ namespace Concesionaria.Clases
             string sql = "";
             sql = "select v.*,a.Patente";
             //sql = sql + "( select p.CodEntidad from prenda p where p.CodVenta = v.CodVenta) as CodEntidad";
-            sql = sql + ",(select cob.FechaCompromiso from Cobranza cob where cob.CodVenta = v.CodVenta) as FechaCompromiso";
+            sql = sql + ",(select top 1 cob.FechaCompromiso from Cobranza cob where cob.CodVenta = v.CodVenta) as FechaCompromiso";
             sql = sql + ",(select importe from ComisionVendedor comVen where comVen.CodVenta = v.CodVenta) as ImporteVendedor";
             sql = sql + " from venta v,auto a";
             sql = sql + " where v.CodAutoVendido=a.CodAuto";

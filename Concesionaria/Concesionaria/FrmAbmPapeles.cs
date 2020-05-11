@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmAbmPapeles : Form
@@ -137,6 +137,33 @@ namespace Concesionaria
                 }
 
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            string msj = "Confirma eliminar el registro ";
+            var result = MessageBox.Show(msj, "Información",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+            // If the no button was pressed ...
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            cFunciones fun = new Clases.cFunciones();
+            try
+            {
+                fun.EliminarGenerico ("Papeles", "CodPapel", txtCodigo.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede eliminar el registro, tiene información asociada");
+            }
+            fun.LimpiarGenerico(this);
+            Botonera(1);
+
+           
         }
     }
 }
