@@ -396,6 +396,12 @@
     <Compile Include="FrmListadoAnotaciones.Designer.cs">
       <DependentUpon>FrmListadoAnotaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListadoAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoAvisos.Designer.cs">
+      <DependentUpon>FrmListadoAvisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListadoChequeCobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -808,6 +814,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoAnotaciones.resx">
       <DependentUpon>FrmListadoAnotaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoAvisos.resx">
+      <DependentUpon>FrmListadoAvisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoChequeCobrar.resx">
       <DependentUpon>FrmListadoChequeCobrar.cs</DependentUpon>

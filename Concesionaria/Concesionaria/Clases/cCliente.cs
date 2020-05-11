@@ -286,12 +286,48 @@ namespace Concesionaria.Clases
             //cDb.ExecutarNonQuery(sql);
         }
 
+
         public DataTable GetClientexApellido(string Ape)
         {
             string sql = "select * from Cliente where Apellido like " + "'%" + Ape + "%'";
             return cDb.ExecuteDataTable(sql);
         }
 
-        
+        public void ActuaizarCumpleanios()
+        {
+            Int32 CodCliente = 0;
+            string sql2 = "";
+            string sql = "select CodCliente,FechaNacimiento ";
+            sql = sql + " from Cliente ";
+            sql = sql + " where FechaNacimiento is not null";
+            DataTable trdo = cDb.ExecuteDataTable(sql);
+            for (int i=0;i< trdo.Rows.Count;i++)
+            {
+                CodCliente = Convert.ToInt32(trdo.Rows[i]["CodCliente"]);
+                if (trdo.Rows[i]["FechaNacimiento"].ToString ()!="")
+                {
+                    DateTime Hoy = DateTime.Now;
+                    String FechaCumple = "";
+                    DateTime FechaNac = Convert.ToDateTime(trdo.Rows[i]["FechaNacimiento"].ToString());
+                    String Dia = FechaNac.ToShortDateString().Substring(0, 2);
+                    String Mes = FechaNac.ToShortDateString().Substring(3, 2);
+                    String Anio = Hoy.Year.ToString();
+                    FechaCumple = Dia + "/" + Mes + "/" + Anio;
+                    sql2 = "update Cliente set FechaCumple=" + "'" + FechaCumple + "'";
+                    sql2 = sql2 + " where CodCliente=" + CodCliente.ToString();
+                    cDb.ExecutarNonQuery(sql2);
+                }
+            }
+        }
+
+        public DataTable GetCumpleanios(DateTime FechaDesde, DateTime FechaHasta)
+        {
+            string sql = "select * from Cliente ";
+            sql = sql + " where FechaCumple >=" + "'" + FechaDesde.ToShortDateString() + "'";
+            sql = sql + " and FechaCumple<=" + "'" + FechaHasta.ToShortDateString() + "'";
+            return cDb.ExecuteDataTable(sql);
+        }
+
+
     }
 }

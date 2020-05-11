@@ -32,7 +32,7 @@ namespace Concesionaria
         {
             tprenda = new DataTable();
             Clases.cFunciones fun = new Clases.cFunciones();
-            string Lista = "CodEntidad;Nombre;Fecha;Importe;CodPrenda";
+            string Lista = "CodEntidad;Nombre;Fecha;Importe;CodPrenda;FechaVencimiento";
             tprenda = fun.CrearTabla(Lista);
             PintarFormulario();
             //Clases.cFunciones fun = new Clases.cFunciones();
@@ -2914,6 +2914,7 @@ namespace Concesionaria
                 txtPatente.Text = Patente;
                 BuscarAutoxPatente(Patente);
                 BuscarCuotasxCodVenta(CodVenta);
+                BuscarPrenda(CodVenta);
                 //if (tVenta.Rows[0]["CodEntidad"].ToString() != "")
                     //CmbEntidadPrendaria.SelectedValue = tVenta.Rows[0]["CodEntidad"].ToString();
                 if (tVenta.Rows[0]["ImporteEfectivo"].ToString() != "")
@@ -4032,8 +4033,14 @@ namespace Concesionaria
                 MessageBox.Show("Debe seleccionar una entidad prendaria", "Sistema");
                 return;
             }
+            if (fun.ValidarFecha (txtFechaVencimientoPrenda.Text)==false)
+            {
+                Mensaje("La fecha de fin es incorrecta");
+                return;
+            }
             string Importe = txtImportePrenda.Text;
             string CodEntidad = CmbEntidadPrendaria.SelectedValue.ToString();
+            string FechaVencimiento = txtFechaVencimientoPrenda.Text;
             if (fun.Buscar(tprenda , "CodEntidad", CodEntidad) == true)
             {
                 MessageBox.Show("Ya se ha ingresado la entidad");
@@ -4044,6 +4051,7 @@ namespace Concesionaria
             string CodPrenda = "-1";
 
             string Valores = CodEntidad + ";" + Nombre + ";" + Fecha + ";" + Importe + ";" + CodPrenda;
+            Valores = Valores + ";" + FechaVencimiento;
             tprenda = fun.AgregarFilas(tprenda, Valores);
             GrillaPrendas.DataSource = tprenda;
             double Total = fun.TotalizarColumna(tprenda, "Importe");
@@ -4054,10 +4062,25 @@ namespace Concesionaria
             }
             GrillaPrendas.Columns[0].Visible = false;
            // GrillaPrendas.Columns[2].Visible = false;
-            GrillaPrendas.Columns[1].Width = 505;
+            GrillaPrendas.Columns[1].Width = 425;
             GrillaPrendas.Columns[3].Width = 150;
-            GrillaPrendas.Columns[4].Visible = false; 
+            GrillaPrendas.Columns[4].Visible = false;
+            GrillaPrendas.Columns[5].Width = 80;
+            GrillaPrendas.Columns[5].HeaderText = "Vencimiento";
             CalcularSubTotal();
+        }
+
+        private void BuscarPrenda(Int32 CodVenta)
+        {
+            cPrenda Prenda = new cPrenda();
+            DataTable tbPre = Prenda.GetDetallePredaxCodVenta(CodVenta);
+            GrillaPrendas.DataSource = tbPre;
+            GrillaPrendas.Columns[0].Visible = false;
+            GrillaPrendas.Columns[1].Width = 425;
+            GrillaPrendas.Columns[3].Width = 150;
+            GrillaPrendas.Columns[4].Visible = false;
+            GrillaPrendas.Columns[5].Width = 80;
+            GrillaPrendas.Columns[5].HeaderText = "Vencimiento";
         }
 
         private void btnEliminarPrenda_Click(object sender, EventArgs e)
@@ -4087,8 +4110,9 @@ namespace Concesionaria
             {
                 string CodEntidad = tprenda.Rows[i][0].ToString(); 
                 string CodCliente = txtCodCLiente.Text;
-                double Importe =fun.ToDouble (tprenda.Rows[i][3].ToString()); 
-                string sql = "Insert into Prenda(CodVenta,Importe,CodCliente,CodEntidad,Fecha,CodAuto,Saldo,Diferencia)";
+                double Importe =fun.ToDouble (tprenda.Rows[i][3].ToString());
+                string FechaVencimiento = tprenda.Rows[i]["FechaVencimiento"].ToString();
+                string sql = "Insert into Prenda(CodVenta,Importe,CodCliente,CodEntidad,Fecha,CodAuto,Saldo,Diferencia,FechaVencimiento)";
                 sql = sql + "Values (" + CodVenta.ToString();
                 sql = sql + "," + Importe.ToString();
                 sql = sql + "," + CodCliente.ToString();
@@ -4097,6 +4121,7 @@ namespace Concesionaria
                 sql = sql + "," + txtCodAuto.Text.ToString();
                 sql = sql + "," + Importe.ToString();
                 sql = sql + ",0";
+                sql = sql + "," + "'" + FechaVencimiento + "'";
                 sql = sql + ")";
                 SqlCommand ComandPrenda = new SqlCommand();
                 ComandPrenda.Connection = con;
@@ -4107,7 +4132,7 @@ namespace Concesionaria
         }
 
         private void GetPrendaxCodVenta(Int32 CodVenta)
-        {
+        {/*
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cPrenda prenda = new Clases.cPrenda ();
             DataTable trdo = prenda.GetPrendaxCodVenta(CodVenta);
@@ -4131,6 +4156,7 @@ namespace Concesionaria
                 GrillaPrendas.Columns[4].Visible = false; 
                 
             }
+            */
         }
 
         private void ActualizarCodVentaEnGastosRecepcion(Int32 CodVenta, SqlConnection con, SqlTransaction Transaccion)

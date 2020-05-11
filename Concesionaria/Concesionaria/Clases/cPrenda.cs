@@ -202,6 +202,27 @@ namespace Concesionaria.Clases
             return Importe;
         }
 
-        
+        public DataTable GetDetallePredaxCodVenta(Int32 CodVenta)
+        {
+            string sql = "select ep.CodEntidad,ep.Descripcion";
+            sql = sql + ",p.Fecha,p.Importe,p.CodPrenda";
+            sql = sql + ",p.FechaVencimiento ";
+            sql = sql + " from EntidadPrendaria ep, Prenda p ";
+            sql = sql + " where ep.CodEntidad=p.CodEntidad ";
+            sql = sql + " and p.CodVenta=" + CodVenta.ToString();
+            return cDb.ExecuteDataTable(sql);
+        }
+
+        public DataTable GetPrendasFinalizadas(DateTime FechaDesde, DateTime FechaHasta)
+        {
+            string sql = "select c.Apellido,c.Nombre,c.Telefono,p.FechaVencimiento";
+            sql = sql + " from Prenda p, Cliente c";
+            sql = sql + " where p.CodCliente= c.CodCliente";
+            sql = sql + " and FechaVencimiento >=" + "'" + FechaDesde.ToShortDateString() + "'";
+            sql = sql + " and FechaVencimiento<=" + "'" + FechaHasta.ToShortDateString() + "'";
+            return cDb.ExecuteDataTable(sql);
+        }
+
+
     }
 }
