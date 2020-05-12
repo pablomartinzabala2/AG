@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class Principal : Form
@@ -32,7 +32,7 @@ namespace Concesionaria
         public static string ColumnasAncho;
         public static string Comodin;
         public static String CodCompra;
-
+        private DataTable tbLista;
         public Principal()
         {
             InitializeComponent();
@@ -153,6 +153,17 @@ namespace Concesionaria
                 frm.ShowDialog();
             }
             VerificarPablo();
+            cFunciones fun = new cFunciones();
+            string Col = "Fecha;Apellido;Nombre;Telefono;Texto";
+            tbLista = fun.CrearTabla(Col);
+            cCliente cli = new cCliente();
+            cli.ActuaizarCumpleanios();
+            DateTime Hoy = DateTime.Now;
+            DateTime Ant = Hoy.AddDays(-3);
+            DateTime Fut = Hoy.AddDays(3);
+            //busca los cumpleaños y vencimiento prendas
+            GetInfo(Ant, Fut);
+           
         }
 
         public void VerificarPablo()
@@ -667,5 +678,51 @@ namespace Concesionaria
             FrmAbmPapeles frm = new Concesionaria.FrmAbmPapeles();
             frm.Show();
         }
+
+        private void GetInfo(DateTime FechaDesde, DateTime FechaHasta)
+        {
+            cCliente cli = new Clases.cCliente();
+            String Fecha = "";
+            string Apellido = "";
+            string Nombre = "";
+            string Telefono = "";
+            string Texto = "";
+            string Val = "";
+            cFunciones fun = new cFunciones();
+            DataTable tbCli = cli.GetCumpleanios(FechaDesde, FechaHasta);
+            for (int i = 0; i < tbCli.Rows.Count; i++)
+            {
+                Fecha = tbCli.Rows[i]["FechaCumple"].ToString();
+                Apellido = tbCli.Rows[i]["Apellido"].ToString();
+                Nombre = tbCli.Rows[i]["Nombre"].ToString();
+                Telefono = tbCli.Rows[i]["Telefono"].ToString();
+                Texto = "Cumpleaños";
+                Val = Fecha + ";" + Apellido;
+                Val = Val + ";" + Nombre + ";" + Telefono;
+                Val = Val + ";" + Texto;
+                tbLista = fun.AgregarFilas(tbLista, Val);
+            }
+            cPrenda pre = new Clases.cPrenda();
+            DataTable tbCli2 = pre.GetPrendasFinalizadas(FechaDesde, FechaHasta);
+            for (int i = 0; i < tbCli.Rows.Count; i++)
+            {
+                Fecha = tbCli2.Rows[i]["FechaVencimiento"].ToString();
+                Apellido = tbCli2.Rows[i]["Apellido"].ToString();
+                Nombre = tbCli2.Rows[i]["Nombre"].ToString();
+                Telefono = tbCli2.Rows[i]["Telefono"].ToString();
+                Texto = "Vencimiento prenda";
+                Val = Fecha + ";" + Apellido;
+                Val = Val + ";" + Nombre + ";" + Telefono;
+                Val = Val + ";" + Texto;
+                tbLista = fun.AgregarFilas(tbLista, Val);
+            }
+            if (tbLista.Rows.Count >0)
+            {
+                FrmListadoAvisos foravso = new FrmListadoAvisos();
+                foravso.ShowDialog();
+            }
+        }
+
+        
     }
 }

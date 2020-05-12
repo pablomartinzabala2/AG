@@ -11,7 +11,7 @@ namespace Concesionaria
 {
     public partial class FrmListadoAvisos : Form
     {
-        DataTable tbLista;
+        private DataTable tbLista;
         public FrmListadoAvisos()
         {
             InitializeComponent();
