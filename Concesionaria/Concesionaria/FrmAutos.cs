@@ -973,7 +973,21 @@ namespace Concesionaria
         {
             Clases.cFunciones fun = new Clases.cFunciones();
             txtImporte.Text = fun.FormatoEnteroMiles(txtImporte.Text);
-            txtTotal.Text = txtImporte.Text;
+            CalcularTotalCompra();
+        }
+
+        private void CalcularTotalCompra()
+        {
+            cFunciones fun = new cFunciones();
+            Double TotalAuto = 0;
+            Double TotalGasto = 0;
+            if (txtImporte.Text != "")
+                TotalAuto = fun.ToDouble(txtImporte.Text);
+            if (txtTotalGastosRecepcion.Text != "")
+                TotalGasto = fun.ToDouble(txtTotalGastosRecepcion.Text);
+
+            Double Total = TotalAuto + TotalGasto;
+            txtTotal.Text = fun.FormatoEnteroMiles(Total.ToString ());
         }
 
         private void txtImporteGasto_Leave(object sender, EventArgs e)
@@ -1082,6 +1096,7 @@ namespace Concesionaria
             Clases.cGasto gasto = new Clases.cGasto();
             string Descripcion = gasto.GetNombreGastoRecepcionxCodigo(Convert.ToInt32(CmbGastoRecepcion.SelectedValue));
             AgregarGastoRecepcion(CmbGastoRecepcion.SelectedValue.ToString(), Descripcion, txtImporteGastoRecepcion.Text, "Recepcion");
+            CalcularTotalCompra();
         }
 
         private void AgregarGastoRecepcion(string Codigo, string Descripcion, string Importe, string Tipo)

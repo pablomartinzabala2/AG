@@ -690,32 +690,40 @@ namespace Concesionaria
             string Val = "";
             cFunciones fun = new cFunciones();
             DataTable tbCli = cli.GetCumpleanios(FechaDesde, FechaHasta);
-            for (int i = 0; i < tbCli.Rows.Count; i++)
+            if (tbCli.Rows.Count > 0)
             {
-                Fecha = tbCli.Rows[i]["FechaCumple"].ToString();
-                Apellido = tbCli.Rows[i]["Apellido"].ToString();
-                Nombre = tbCli.Rows[i]["Nombre"].ToString();
-                Telefono = tbCli.Rows[i]["Telefono"].ToString();
-                Texto = "Cumpleaños";
-                Val = Fecha + ";" + Apellido;
-                Val = Val + ";" + Nombre + ";" + Telefono;
-                Val = Val + ";" + Texto;
-                tbLista = fun.AgregarFilas(tbLista, Val);
+                for (int i = 0; i < tbCli.Rows.Count; i++)
+                {
+                    Fecha = tbCli.Rows[i]["FechaCumple"].ToString();
+                    Apellido = tbCli.Rows[i]["Apellido"].ToString();
+                    Nombre = tbCli.Rows[i]["Nombre"].ToString();
+                    Telefono = tbCli.Rows[i]["Telefono"].ToString();
+                    Texto = "Cumpleaños";
+                    Val = Fecha + ";" + Apellido;
+                    Val = Val + ";" + Nombre + ";" + Telefono;
+                    Val = Val + ";" + Texto;
+                    tbLista = fun.AgregarFilas(tbLista, Val);
+                }
             }
+           
             cPrenda pre = new Clases.cPrenda();
             DataTable tbCli2 = pre.GetPrendasFinalizadas(FechaDesde, FechaHasta);
-            for (int i = 0; i < tbCli.Rows.Count; i++)
+            if (tbCli2.Rows.Count >0)
             {
-                Fecha = tbCli2.Rows[i]["FechaVencimiento"].ToString();
-                Apellido = tbCli2.Rows[i]["Apellido"].ToString();
-                Nombre = tbCli2.Rows[i]["Nombre"].ToString();
-                Telefono = tbCli2.Rows[i]["Telefono"].ToString();
-                Texto = "Vencimiento prenda";
-                Val = Fecha + ";" + Apellido;
-                Val = Val + ";" + Nombre + ";" + Telefono;
-                Val = Val + ";" + Texto;
-                tbLista = fun.AgregarFilas(tbLista, Val);
+                for (int i = 0; i < tbCli.Rows.Count; i++)
+                {
+                    Fecha = tbCli2.Rows[i]["FechaVencimiento"].ToString();
+                    Apellido = tbCli2.Rows[i]["Apellido"].ToString();
+                    Nombre = tbCli2.Rows[i]["Nombre"].ToString();
+                    Telefono = tbCli2.Rows[i]["Telefono"].ToString();
+                    Texto = "Vencimiento prenda";
+                    Val = Fecha + ";" + Apellido;
+                    Val = Val + ";" + Nombre + ";" + Telefono;
+                    Val = Val + ";" + Texto;
+                    tbLista = fun.AgregarFilas(tbLista, Val);
+                }
             }
+            
             if (tbLista.Rows.Count >0)
             {
                 FrmListadoAvisos foravso = new FrmListadoAvisos();

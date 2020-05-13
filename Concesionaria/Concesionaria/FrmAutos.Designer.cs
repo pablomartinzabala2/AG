@@ -1009,6 +1009,7 @@
             // txtTotalGastosRecepcion
             // 
             this.txtTotalGastosRecepcion.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTotalGastosRecepcion.ForeColor = System.Drawing.Color.Violet;
             this.txtTotalGastosRecepcion.Location = new System.Drawing.Point(727, 210);
             this.txtTotalGastosRecepcion.Name = "txtTotalGastosRecepcion";
             this.txtTotalGastosRecepcion.ReadOnly = true;
