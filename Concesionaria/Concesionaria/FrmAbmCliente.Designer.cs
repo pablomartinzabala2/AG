@@ -59,12 +59,28 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
+            this.label38 = new System.Windows.Forms.Label();
+            this.btnAgregarCiudad2 = new System.Windows.Forms.Button();
+            this.cmbCiudad2 = new System.Windows.Forms.ComboBox();
+            this.btnAgregarProvincia2 = new System.Windows.Forms.Button();
+            this.cmbProvincia2 = new System.Windows.Forms.ComboBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Grupo.SuspendLayout();
             this.BarraBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grupo
             // 
+            this.Grupo.Controls.Add(this.label2);
+            this.Grupo.Controls.Add(this.txt_Email);
+            this.Grupo.Controls.Add(this.label1);
+            this.Grupo.Controls.Add(this.label38);
+            this.Grupo.Controls.Add(this.btnAgregarCiudad2);
+            this.Grupo.Controls.Add(this.cmbCiudad2);
+            this.Grupo.Controls.Add(this.btnAgregarProvincia2);
+            this.Grupo.Controls.Add(this.cmbProvincia2);
             this.Grupo.Controls.Add(this.txtM_Celular);
             this.Grupo.Controls.Add(this.txtM_Telefono);
             this.Grupo.Controls.Add(this.txtCodCLiente);
@@ -88,14 +104,14 @@
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Grupo.Location = new System.Drawing.Point(12, 42);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(741, 179);
+            this.Grupo.Size = new System.Drawing.Size(777, 224);
             this.Grupo.TabIndex = 4;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del Cliente";
             // 
             // txtM_Celular
             // 
-            this.txtM_Celular.Location = new System.Drawing.Point(470, 87);
+            this.txtM_Celular.Location = new System.Drawing.Point(489, 87);
             this.txtM_Celular.Mask = "000-000-000000";
             this.txtM_Celular.Name = "txtM_Celular";
             this.txtM_Celular.Size = new System.Drawing.Size(249, 23);
@@ -111,7 +127,7 @@
             // 
             // txtCodCLiente
             // 
-            this.txtCodCLiente.Location = new System.Drawing.Point(468, 147);
+            this.txtCodCLiente.Location = new System.Drawing.Point(373, 84);
             this.txtCodCLiente.Name = "txtCodCLiente";
             this.txtCodCLiente.Size = new System.Drawing.Size(50, 23);
             this.txtCodCLiente.TabIndex = 29;
@@ -119,7 +135,7 @@
             // btnNuevoBarrio
             // 
             this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(399, 141);
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(373, 175);
             this.btnNuevoBarrio.Name = "btnNuevoBarrio";
             this.btnNuevoBarrio.Size = new System.Drawing.Size(40, 28);
             this.btnNuevoBarrio.TabIndex = 25;
@@ -130,7 +146,7 @@
             // 
             this.cmb_CodBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_CodBarrio.FormattingEnabled = true;
-            this.cmb_CodBarrio.Location = new System.Drawing.Point(121, 138);
+            this.cmb_CodBarrio.Location = new System.Drawing.Point(121, 171);
             this.cmb_CodBarrio.Name = "cmb_CodBarrio";
             this.cmb_CodBarrio.Size = new System.Drawing.Size(246, 24);
             this.cmb_CodBarrio.TabIndex = 19;
@@ -138,7 +154,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 141);
+            this.label14.Location = new System.Drawing.Point(19, 171);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 17);
             this.label14.TabIndex = 23;
@@ -146,7 +162,7 @@
             // 
             // txt_Numero
             // 
-            this.txt_Numero.Location = new System.Drawing.Point(470, 118);
+            this.txt_Numero.Location = new System.Drawing.Point(492, 116);
             this.txt_Numero.Name = "txt_Numero";
             this.txt_Numero.Size = new System.Drawing.Size(246, 23);
             this.txt_Numero.TabIndex = 18;
@@ -154,7 +170,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(396, 118);
+            this.label13.Location = new System.Drawing.Point(428, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(45, 17);
             this.label13.TabIndex = 21;
@@ -180,7 +196,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(392, 87);
+            this.label11.Location = new System.Drawing.Point(428, 83);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 17);
             this.label11.TabIndex = 16;
@@ -206,7 +222,7 @@
             // txt_Apellido
             // 
             this.txt_Apellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_Apellido.Location = new System.Drawing.Point(468, 58);
+            this.txt_Apellido.Location = new System.Drawing.Point(492, 58);
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(246, 23);
             this.txt_Apellido.TabIndex = 14;
@@ -222,7 +238,7 @@
             // 
             // txt_NroDocumento
             // 
-            this.txt_NroDocumento.Location = new System.Drawing.Point(468, 29);
+            this.txt_NroDocumento.Location = new System.Drawing.Point(492, 29);
             this.txt_NroDocumento.Name = "txt_NroDocumento";
             this.txt_NroDocumento.Size = new System.Drawing.Size(246, 23);
             this.txt_NroDocumento.TabIndex = 12;
@@ -231,7 +247,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(396, 60);
+            this.label9.Location = new System.Drawing.Point(422, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 17);
             this.label9.TabIndex = 10;
@@ -249,7 +265,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(392, 29);
+            this.label7.Location = new System.Drawing.Point(422, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 8;
@@ -279,7 +295,7 @@
             this.BarraBotones.Location = new System.Drawing.Point(0, 0);
             this.BarraBotones.Name = "BarraBotones";
             this.BarraBotones.ShowItemToolTips = false;
-            this.BarraBotones.Size = new System.Drawing.Size(764, 39);
+            this.BarraBotones.Size = new System.Drawing.Size(845, 39);
             this.BarraBotones.TabIndex = 9;
             this.BarraBotones.Text = "toolStrip1";
             this.BarraBotones.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BarraBotones_ItemClicked);
@@ -367,12 +383,86 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(428, 149);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(52, 17);
+            this.label38.TabIndex = 34;
+            this.label38.Text = "Ciudad";
+            // 
+            // btnAgregarCiudad2
+            // 
+            this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(741, 141);
+            this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
+            this.btnAgregarCiudad2.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarCiudad2.TabIndex = 37;
+            this.btnAgregarCiudad2.UseVisualStyleBackColor = true;
+            this.btnAgregarCiudad2.Click += new System.EventHandler(this.btnAgregarCiudad2_Click);
+            // 
+            // cmbCiudad2
+            // 
+            this.cmbCiudad2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad2.FormattingEnabled = true;
+            this.cmbCiudad2.Location = new System.Drawing.Point(492, 145);
+            this.cmbCiudad2.Name = "cmbCiudad2";
+            this.cmbCiudad2.Size = new System.Drawing.Size(246, 24);
+            this.cmbCiudad2.TabIndex = 38;
+            this.cmbCiudad2.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad2_SelectedIndexChanged);
+            // 
+            // btnAgregarProvincia2
+            // 
+            this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(373, 141);
+            this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
+            this.btnAgregarProvincia2.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarProvincia2.TabIndex = 35;
+            this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
+            this.btnAgregarProvincia2.Click += new System.EventHandler(this.btnAgregarProvincia2_Click);
+            // 
+            // cmbProvincia2
+            // 
+            this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincia2.FormattingEnabled = true;
+            this.cmbProvincia2.Location = new System.Drawing.Point(121, 141);
+            this.cmbProvincia2.Name = "cmbProvincia2";
+            this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
+            this.cmbProvincia2.TabIndex = 36;
+            this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(492, 175);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(246, 23);
+            this.txt_Email.TabIndex = 39;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(428, 174);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Altura";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 17);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Provincia";
+            // 
             // FrmAbmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(764, 235);
+            this.ClientSize = new System.Drawing.Size(845, 296);
             this.Controls.Add(this.BarraBotones);
             this.Controls.Add(this.Grupo);
             this.MaximizeBox = false;
@@ -422,5 +512,13 @@
         private System.Windows.Forms.ToolStripButton btnAbrir;
         private System.Windows.Forms.ToolStripButton btnImprimir;
         private System.Windows.Forms.ToolStripButton btnSalir;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button btnAgregarCiudad2;
+        private System.Windows.Forms.ComboBox cmbCiudad2;
+        private System.Windows.Forms.Button btnAgregarProvincia2;
+        private System.Windows.Forms.ComboBox cmbProvincia2;
     }
 }

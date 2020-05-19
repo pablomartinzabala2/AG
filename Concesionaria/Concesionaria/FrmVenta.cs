@@ -40,7 +40,7 @@ namespace Concesionaria
             fun.LlenarCombo(cmbMarca, "Marca", "Nombre", "CodMarca");
             fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
             fun.LlenarCombo(CmbMarca2, "Marca", "Nombre", "CodMarca");
-            fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
+           // fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
             if (cmbCiudad.Items.Count > 1)
                 cmbCiudad.SelectedValue = 1;
             fun.LlenarCombo(CmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
@@ -135,9 +135,18 @@ namespace Concesionaria
                         txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);
                     }
                     txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
-                    if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                    
+
+                    if (trdo.Rows[0]["CodProvincia"].ToString() != "")
                     {
-                        cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
+                        Int32 CodPro = Convert.ToInt32(trdo.Rows[0]["CodProvincia"].ToString());
+                        cCiudad objCiudad = new cCiudad();
+                        DataTable tbCiudad = objCiudad.GetCiudadxCodProvincia(CodPro);
+                        fun.LlenarComboDatatable(cmbCiudad, tbCiudad, "Nombre", "CodCiudad");
+                        if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                        {
+                            cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
+                        }
                     }
 
                     if (trdo.Rows[0]["CodMarca"].ToString() != "")
@@ -1453,8 +1462,13 @@ namespace Concesionaria
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtTelefono.Text = "";
-            txtCelular.Text = "";
-            CmbBarrio.SelectedIndex = 0;
+            txtCelular.Text = ""; 
+            if (cmbProvincia2.Items.Count > 0)
+                cmbProvincia2.SelectedIndex = 0;
+            if (CmbProvinciaAuto.Items.Count >0)
+                CmbProvinciaAuto.SelectedIndex = 0;
+            if (CmbBarrio.Items.Count >0)
+                CmbBarrio.SelectedIndex = 0;
             txtCalle.Text = "";
             txtAltura.Text = "";
             txtEfectivo.Text = "";
@@ -1798,9 +1812,9 @@ namespace Concesionaria
                         break;
                     case "Provincia":
                         if (Principal.CodigoPrincipalAbm == "1")
-                        {
-                         //   fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
-                        //    cmbProvincia.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        {  
+                            fun.LlenarCombo(CmbProvinciaAuto, "Provincia", "Nombre", "CodProvincia");
+                            CmbProvinciaAuto.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
 
                         if (Principal.CodigoPrincipalAbm == "2")
@@ -4480,6 +4494,17 @@ namespace Concesionaria
             DataTable trdo = ciudad.GetCiudadxCodProvincia(CodProvincia);
             cFunciones fun = new cFunciones();
             fun.LlenarComboDatatable(CmbCiudad2, trdo, "Nombre", "CodCiudad");
+        }
+
+        private void btnAgregarProvinciaAuto_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodProvincia";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Provincia";
+            Principal.CodigoPrincipalAbm = "1";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
         }
     }
 };

@@ -19,6 +19,7 @@ namespace Concesionaria.Clases
         {
             string sql = " select * from Ciudad ";
             sql = sql + " where CodProvincia =" + CodProvincia.ToString();
+            sql = sql + " order by Nombre";
             return cDb.ExecuteDataTable(sql);
         }
 

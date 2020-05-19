@@ -98,7 +98,9 @@ namespace Concesionaria.Clases
 
         public DataTable GetAutoxPatente(string Patente)
         {
-            string sql = "select a.* from auto a";
+            string sql = "select a.* ";
+            sql = sql + ",(select c.CodProvincia from Ciudad c where c.CodCiudad = a.CodCiudad) as CodProvincia" ;
+            sql = sql + " from auto a ";
            sql = sql + " where patente=" + "'" + Patente + "'";
            return cDb.ExecuteDataTable(sql);
         }

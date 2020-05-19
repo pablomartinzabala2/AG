@@ -282,6 +282,7 @@
             this.label76 = new System.Windows.Forms.Label();
             this.CmbProvinciaAuto = new System.Windows.Forms.ComboBox();
             this.label77 = new System.Windows.Forms.Label();
+            this.btnAgregarProvinciaAuto = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -481,7 +482,7 @@
             // txtMotor
             // 
             this.txtMotor.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMotor.Location = new System.Drawing.Point(535, 83);
+            this.txtMotor.Location = new System.Drawing.Point(541, 80);
             this.txtMotor.Name = "txtMotor";
             this.txtMotor.Size = new System.Drawing.Size(107, 22);
             this.txtMotor.TabIndex = 37;
@@ -517,7 +518,7 @@
             // txtImporteCompra
             // 
             this.txtImporteCompra.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteCompra.Location = new System.Drawing.Point(555, 136);
+            this.txtImporteCompra.Location = new System.Drawing.Point(542, 137);
             this.txtImporteCompra.Name = "txtImporteCompra";
             this.txtImporteCompra.ReadOnly = true;
             this.txtImporteCompra.Size = new System.Drawing.Size(116, 22);
@@ -527,11 +528,11 @@
             // lblImporteCompra
             // 
             this.lblImporteCompra.AutoSize = true;
-            this.lblImporteCompra.Location = new System.Drawing.Point(445, 139);
+            this.lblImporteCompra.Location = new System.Drawing.Point(440, 139);
             this.lblImporteCompra.Name = "lblImporteCompra";
-            this.lblImporteCompra.Size = new System.Drawing.Size(104, 16);
+            this.lblImporteCompra.Size = new System.Drawing.Size(43, 16);
             this.lblImporteCompra.TabIndex = 32;
-            this.lblImporteCompra.Text = "Importe Compra";
+            this.lblImporteCompra.Text = "Costo";
             this.lblImporteCompra.Visible = false;
             // 
             // button1
@@ -642,7 +643,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(450, 109);
+            this.label4.Location = new System.Drawing.Point(440, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 8;
@@ -1697,6 +1698,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBox4.Controls.Add(this.btnAgregarProvinciaAuto);
             this.groupBox4.Controls.Add(this.label77);
             this.groupBox4.Controls.Add(this.CmbProvinciaAuto);
             this.groupBox4.Controls.Add(this.CmbTipoCombustible2);
@@ -1942,7 +1944,7 @@
             // txtDescripcion2
             // 
             this.txtDescripcion2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtDescripcion2.Location = new System.Drawing.Point(539, 12);
+            this.txtDescripcion2.Location = new System.Drawing.Point(519, 8);
             this.txtDescripcion2.Name = "txtDescripcion2";
             this.txtDescripcion2.Size = new System.Drawing.Size(246, 22);
             this.txtDescripcion2.TabIndex = 3;
@@ -2930,11 +2932,21 @@
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(41, 68);
+            this.label77.Location = new System.Drawing.Point(36, 68);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(64, 16);
             this.label77.TabIndex = 46;
             this.label77.Text = "Provincia";
+            // 
+            // btnAgregarProvinciaAuto
+            // 
+            this.btnAgregarProvinciaAuto.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvinciaAuto.Location = new System.Drawing.Point(395, 65);
+            this.btnAgregarProvinciaAuto.Name = "btnAgregarProvinciaAuto";
+            this.btnAgregarProvinciaAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarProvinciaAuto.TabIndex = 47;
+            this.btnAgregarProvinciaAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarProvinciaAuto.Click += new System.EventHandler(this.btnAgregarProvinciaAuto_Click);
             // 
             // FrmVenta
             // 
@@ -3269,5 +3281,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.ComboBox CmbProvinciaAuto;
+        private System.Windows.Forms.Button btnAgregarProvinciaAuto;
     }
 }
