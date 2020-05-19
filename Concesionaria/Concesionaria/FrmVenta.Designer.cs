@@ -31,7 +31,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAbrirPreVenta = new System.Windows.Forms.Button();
             this.txtCodPreVenta = new System.Windows.Forms.TextBox();
+            this.btnVerDetalleStock = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
             this.txtExTitular = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.MaskedTextBox();
@@ -40,8 +43,11 @@
             this.txtMotor = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.BtnVerCostoAuto = new System.Windows.Forms.Button();
             this.txtImporteCompra = new System.Windows.Forms.TextBox();
             this.lblImporteCompra = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregarCiudad = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCodStock = new System.Windows.Forms.TextBox();
             this.txtPrecioVenta = new System.Windows.Forms.MaskedTextBox();
@@ -65,6 +71,7 @@
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtCodCLiente = new System.Windows.Forms.TextBox();
+            this.btnNuevoBarrio = new System.Windows.Forms.Button();
             this.CmbBarrio = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
@@ -89,6 +96,7 @@
             this.txtTotalCossto = new System.Windows.Forms.TextBox();
             this.Grilla = new System.Windows.Forms.DataGridView();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.GrillaGastos = new System.Windows.Forms.DataGridView();
             this.txtImporteGastoTransferencia = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -96,6 +104,8 @@
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.CmbGastosTransferencia = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
+            this.bnAgegargastoTranasferencia = new System.Windows.Forms.Button();
+            this.btnAgregarGastoTransferencia = new System.Windows.Forms.Button();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.txtComisionVendedor = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -105,7 +115,11 @@
             this.txtNombreVen = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.CmbVendedor = new System.Windows.Forms.ComboBox();
+            this.btnCancelarVendedor = new System.Windows.Forms.Button();
+            this.btnGrabarVendedor = new System.Windows.Forms.Button();
+            this.btnAgregarVendedor = new System.Windows.Forms.Button();
             this.Garantías = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.GrillaGarantias = new System.Windows.Forms.DataGridView();
             this.txtImporteGarantias = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
@@ -113,7 +127,9 @@
             this.label63 = new System.Windows.Forms.Label();
             this.txtFechaGarantias = new System.Windows.Forms.MaskedTextBox();
             this.label62 = new System.Windows.Forms.Label();
+            this.btnAgregarGarantias = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.btnQuitarImpuesto = new System.Windows.Forms.Button();
             this.GrillaImpuestos = new System.Windows.Forms.DataGridView();
             this.txtImporteImpuesto = new System.Windows.Forms.TextBox();
             this.label65 = new System.Windows.Forms.Label();
@@ -121,9 +137,12 @@
             this.label66 = new System.Windows.Forms.Label();
             this.txtFechaImpuesto = new System.Windows.Forms.MaskedTextBox();
             this.label67 = new System.Windows.Forms.Label();
+            this.btnAgregarImpuesto = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnAbrirCuotas = new System.Windows.Forms.Button();
+            this.btnBorrarCuotas = new System.Windows.Forms.Button();
             this.GrillaCuotas = new System.Windows.Forms.DataGridView();
             this.txtCuotas = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -131,6 +150,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txtCapital = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.btnCalcularCuotas = new System.Windows.Forms.Button();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.txtImporteSenia = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -147,10 +167,13 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txtColor2 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
+            this.btnAgregarRadicacion = new System.Windows.Forms.Button();
             this.txtChasis2 = new System.Windows.Forms.TextBox();
             this.txtMotor2 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
+            this.btnAgregarAuto = new System.Windows.Forms.Button();
+            this.BtnAgregarMarca2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCodStock2 = new System.Windows.Forms.TextBox();
             this.txtImporteVehiculoCompra = new System.Windows.Forms.MaskedTextBox();
@@ -168,6 +191,7 @@
             this.txtPatente2 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.btnEliminarAuto = new System.Windows.Forms.Button();
             this.GrillaVehiculos = new System.Windows.Forms.DataGridView();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.txtTotalGastosRecepcion = new System.Windows.Forms.TextBox();
@@ -177,12 +201,21 @@
             this.label42 = new System.Windows.Forms.Label();
             this.CmbGastoRecepcion = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
+            this.btnEliminarGastoRecepcion = new System.Windows.Forms.Button();
+            this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
+            this.btnAgegarGastodeRecepcion = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txtFechaVencimientoPrenda = new System.Windows.Forms.MaskedTextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.btnEliminarPrenda = new System.Windows.Forms.Button();
+            this.btnAgregarPrenda = new System.Windows.Forms.Button();
             this.GrillaPrendas = new System.Windows.Forms.DataGridView();
             this.CmbEntidadPrendaria = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.txtImportePrenda = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
+            this.btnAbrircPrenda = new System.Windows.Forms.Button();
+            this.btnAgregarEntidadPrendaria = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.txtCuotasCobranza = new System.Windows.Forms.TextBox();
             this.label71 = new System.Windows.Forms.Label();
@@ -191,7 +224,12 @@
             this.txtFechaCompromiso = new System.Windows.Forms.MaskedTextBox();
             this.txtImporteCobranza = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.BtnAgregarCobranza = new System.Windows.Forms.Button();
+            this.btnAbrirCobranzas = new System.Windows.Forms.Button();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.btnAbrirCheques = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.GrillaCheques = new System.Windows.Forms.DataGridView();
             this.CmbBanco = new System.Windows.Forms.ComboBox();
             this.label49 = new System.Windows.Forms.Label();
@@ -201,6 +239,8 @@
             this.txtFechaVencimiento = new System.Windows.Forms.MaskedTextBox();
             this.txtCheque = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
+            this.BtnAgregarCheque = new System.Windows.Forms.Button();
+            this.btnNuevaBanco = new System.Windows.Forms.Button();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.txtMontoTarjeta = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
@@ -208,6 +248,8 @@
             this.txtImporteTarjeta = new System.Windows.Forms.TextBox();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.label69 = new System.Windows.Forms.Label();
+            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
+            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
             this.groupBox55 = new System.Windows.Forms.GroupBox();
             this.label50 = new System.Windows.Forms.Label();
             this.txtTotalCheque = new System.Windows.Forms.TextBox();
@@ -228,48 +270,18 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.btnAbrirCuotas = new System.Windows.Forms.Button();
-            this.btnBorrarCuotas = new System.Windows.Forms.Button();
-            this.btnCalcularCuotas = new System.Windows.Forms.Button();
-            this.btnAgregarRadicacion = new System.Windows.Forms.Button();
-            this.btnAgregarAuto = new System.Windows.Forms.Button();
-            this.BtnAgregarMarca2 = new System.Windows.Forms.Button();
-            this.btnEliminarAuto = new System.Windows.Forms.Button();
-            this.btnEliminarGastoRecepcion = new System.Windows.Forms.Button();
-            this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
-            this.btnAgegarGastodeRecepcion = new System.Windows.Forms.Button();
-            this.btnEliminarPrenda = new System.Windows.Forms.Button();
-            this.btnAgregarPrenda = new System.Windows.Forms.Button();
-            this.btnAbrircPrenda = new System.Windows.Forms.Button();
-            this.btnAgregarEntidadPrendaria = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.BtnAgregarCobranza = new System.Windows.Forms.Button();
-            this.btnAbrirCobranzas = new System.Windows.Forms.Button();
-            this.btnAbrirCheques = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.BtnAgregarCheque = new System.Windows.Forms.Button();
-            this.btnNuevaBanco = new System.Windows.Forms.Button();
-            this.btnQuitarTarjeta = new System.Windows.Forms.Button();
-            this.btnAgregarTarjeta = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnAbrirPreVenta = new System.Windows.Forms.Button();
-            this.btnVerDetalleStock = new System.Windows.Forms.Button();
-            this.BtnVerCostoAuto = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAgregarCiudad = new System.Windows.Forms.Button();
-            this.btnNuevoBarrio = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.bnAgegargastoTranasferencia = new System.Windows.Forms.Button();
-            this.btnAgregarGastoTransferencia = new System.Windows.Forms.Button();
-            this.btnCancelarVendedor = new System.Windows.Forms.Button();
-            this.btnGrabarVendedor = new System.Windows.Forms.Button();
-            this.btnAgregarVendedor = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnAgregarGarantias = new System.Windows.Forms.Button();
-            this.btnQuitarImpuesto = new System.Windows.Forms.Button();
-            this.btnAgregarImpuesto = new System.Windows.Forms.Button();
-            this.txtFechaVencimientoPrenda = new System.Windows.Forms.MaskedTextBox();
-            this.label72 = new System.Windows.Forms.Label();
+            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.btnAgregarProvincia2 = new System.Windows.Forms.Button();
+            this.cmbProvincia2 = new System.Windows.Forms.ComboBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.btnAgregarCiudad2 = new System.Windows.Forms.Button();
+            this.CmbCiudadCliente2 = new System.Windows.Forms.ComboBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.CmbProvinciaAuto = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -383,6 +395,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // button4
+            // 
+            this.button4.Image = global::Concesionaria.Properties.Resources.email;
+            this.button4.Location = new System.Drawing.Point(794, 133);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(34, 28);
+            this.button4.TabIndex = 60;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnAbrirPreVenta
+            // 
+            this.btnAbrirPreVenta.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnAbrirPreVenta.Location = new System.Drawing.Point(754, 133);
+            this.btnAbrirPreVenta.Name = "btnAbrirPreVenta";
+            this.btnAbrirPreVenta.Size = new System.Drawing.Size(34, 28);
+            this.btnAbrirPreVenta.TabIndex = 45;
+            this.btnAbrirPreVenta.Text = "Listado de preventa";
+            this.btnAbrirPreVenta.UseVisualStyleBackColor = true;
+            this.btnAbrirPreVenta.Click += new System.EventHandler(this.btnAbrirPreVenta_Click);
+            // 
             // txtCodPreVenta
             // 
             this.txtCodPreVenta.Location = new System.Drawing.Point(386, 19);
@@ -390,6 +423,16 @@
             this.txtCodPreVenta.Size = new System.Drawing.Size(50, 22);
             this.txtCodPreVenta.TabIndex = 44;
             this.txtCodPreVenta.Visible = false;
+            // 
+            // btnVerDetalleStock
+            // 
+            this.btnVerDetalleStock.Image = global::Concesionaria.Properties.Resources.car_add;
+            this.btnVerDetalleStock.Location = new System.Drawing.Point(714, 133);
+            this.btnVerDetalleStock.Name = "btnVerDetalleStock";
+            this.btnVerDetalleStock.Size = new System.Drawing.Size(34, 28);
+            this.btnVerDetalleStock.TabIndex = 43;
+            this.btnVerDetalleStock.UseVisualStyleBackColor = true;
+            this.btnVerDetalleStock.Click += new System.EventHandler(this.btnVerDetalleStock_Click);
             // 
             // label61
             // 
@@ -461,6 +504,16 @@
             this.label53.TabIndex = 35;
             this.label53.Text = "Motor";
             // 
+            // BtnVerCostoAuto
+            // 
+            this.BtnVerCostoAuto.Image = global::Concesionaria.Properties.Resources.Linterna;
+            this.BtnVerCostoAuto.Location = new System.Drawing.Point(677, 134);
+            this.BtnVerCostoAuto.Name = "BtnVerCostoAuto";
+            this.BtnVerCostoAuto.Size = new System.Drawing.Size(34, 28);
+            this.BtnVerCostoAuto.TabIndex = 34;
+            this.BtnVerCostoAuto.UseVisualStyleBackColor = true;
+            this.BtnVerCostoAuto.Click += new System.EventHandler(this.BtnVerCostoAuto_Click);
+            // 
             // txtImporteCompra
             // 
             this.txtImporteCompra.BackColor = System.Drawing.SystemColors.Control;
@@ -480,6 +533,26 @@
             this.lblImporteCompra.TabIndex = 32;
             this.lblImporteCompra.Text = "Importe Compra";
             this.lblImporteCompra.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.button1.Location = new System.Drawing.Point(365, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 28);
+            this.button1.TabIndex = 31;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAgregarCiudad
+            // 
+            this.btnAgregarCiudad.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarCiudad.Location = new System.Drawing.Point(365, 105);
+            this.btnAgregarCiudad.Name = "btnAgregarCiudad";
+            this.btnAgregarCiudad.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarCiudad.TabIndex = 30;
+            this.btnAgregarCiudad.UseVisualStyleBackColor = true;
+            this.btnAgregarCiudad.Click += new System.EventHandler(this.btnAgregarCiudad_Click);
             // 
             // label15
             // 
@@ -660,6 +733,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.label76);
+            this.groupBox1.Controls.Add(this.label75);
+            this.groupBox1.Controls.Add(this.btnAgregarCiudad2);
+            this.groupBox1.Controls.Add(this.CmbCiudadCliente2);
+            this.groupBox1.Controls.Add(this.label74);
+            this.groupBox1.Controls.Add(this.btnAgregarProvincia2);
+            this.groupBox1.Controls.Add(this.cmbProvincia2);
+            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
+            this.groupBox1.Controls.Add(this.label73);
             this.groupBox1.Controls.Add(this.txtCelular);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.txtCodCLiente);
@@ -689,7 +772,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(551, 71);
+            this.txtCelular.Location = new System.Drawing.Point(550, 56);
             this.txtCelular.Mask = "000-000-000000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(239, 22);
@@ -697,7 +780,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(123, 69);
+            this.txtTelefono.Location = new System.Drawing.Point(121, 56);
             this.txtTelefono.Mask = "(999)0000-0000";
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(143, 22);
@@ -705,17 +788,27 @@
             // 
             // txtCodCLiente
             // 
-            this.txtCodCLiente.Location = new System.Drawing.Point(317, 10);
+            this.txtCodCLiente.Location = new System.Drawing.Point(287, 56);
             this.txtCodCLiente.Name = "txtCodCLiente";
             this.txtCodCLiente.Size = new System.Drawing.Size(50, 22);
             this.txtCodCLiente.TabIndex = 29;
             this.txtCodCLiente.Visible = false;
             // 
+            // btnNuevoBarrio
+            // 
+            this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevoBarrio.Location = new System.Drawing.Point(373, 131);
+            this.btnNuevoBarrio.Name = "btnNuevoBarrio";
+            this.btnNuevoBarrio.Size = new System.Drawing.Size(25, 25);
+            this.btnNuevoBarrio.TabIndex = 25;
+            this.btnNuevoBarrio.UseVisualStyleBackColor = true;
+            this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click);
+            // 
             // CmbBarrio
             // 
             this.CmbBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbBarrio.FormattingEnabled = true;
-            this.CmbBarrio.Location = new System.Drawing.Point(121, 128);
+            this.CmbBarrio.Location = new System.Drawing.Point(121, 134);
             this.CmbBarrio.Name = "CmbBarrio";
             this.CmbBarrio.Size = new System.Drawing.Size(246, 24);
             this.CmbBarrio.TabIndex = 19;
@@ -723,7 +816,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(19, 128);
+            this.label14.Location = new System.Drawing.Point(19, 135);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 16);
             this.label14.TabIndex = 23;
@@ -732,7 +825,7 @@
             // txtAltura
             // 
             this.txtAltura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAltura.Location = new System.Drawing.Point(551, 99);
+            this.txtAltura.Location = new System.Drawing.Point(550, 83);
             this.txtAltura.MaxLength = 20;
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(246, 22);
@@ -741,7 +834,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(467, 99);
+            this.label13.Location = new System.Drawing.Point(461, 86);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 16);
             this.label13.TabIndex = 21;
@@ -750,7 +843,7 @@
             // txtCalle
             // 
             this.txtCalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCalle.Location = new System.Drawing.Point(123, 99);
+            this.txtCalle.Location = new System.Drawing.Point(121, 83);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(246, 22);
             this.txtCalle.TabIndex = 17;
@@ -758,7 +851,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 99);
+            this.label12.Location = new System.Drawing.Point(19, 83);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 16);
             this.label12.TabIndex = 19;
@@ -767,7 +860,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(467, 69);
+            this.label11.Location = new System.Drawing.Point(459, 59);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 16);
             this.label11.TabIndex = 16;
@@ -776,7 +869,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 69);
+            this.label10.Location = new System.Drawing.Point(14, 59);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 15;
@@ -785,7 +878,7 @@
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(121, 40);
+            this.txtNombre.Location = new System.Drawing.Point(121, 28);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(246, 22);
             this.txtNombre.TabIndex = 13;
@@ -793,7 +886,7 @@
             // txtApellido
             // 
             this.txtApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApellido.Location = new System.Drawing.Point(551, 43);
+            this.txtApellido.Location = new System.Drawing.Point(551, 28);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(246, 22);
             this.txtApellido.TabIndex = 14;
@@ -802,23 +895,23 @@
             // 
             this.cmbDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Location = new System.Drawing.Point(121, 10);
+            this.cmbDocumento.Location = new System.Drawing.Point(121, 0);
             this.cmbDocumento.Name = "cmbDocumento";
-            this.cmbDocumento.Size = new System.Drawing.Size(135, 24);
+            this.cmbDocumento.Size = new System.Drawing.Size(83, 24);
             this.cmbDocumento.TabIndex = 12;
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(551, 14);
+            this.txtNroDoc.Location = new System.Drawing.Point(271, 0);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(246, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(96, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(463, 43);
+            this.label9.Location = new System.Drawing.Point(459, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 16);
             this.label9.TabIndex = 10;
@@ -827,7 +920,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 40);
+            this.label8.Location = new System.Drawing.Point(14, 37);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 16);
             this.label8.TabIndex = 9;
@@ -836,7 +929,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(465, 14);
+            this.label7.Location = new System.Drawing.Point(213, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 8;
@@ -845,7 +938,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 10);
+            this.label6.Location = new System.Drawing.Point(19, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 7;
@@ -942,6 +1035,16 @@
             this.tabPage12.Text = "Gastos Generales";
             this.tabPage12.Click += new System.EventHandler(this.tabPage12_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminar.Location = new System.Drawing.Point(384, 80);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(40, 28);
+            this.btnEliminar.TabIndex = 44;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // GrillaGastos
             // 
             this.GrillaGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1005,6 +1108,26 @@
             this.label39.Size = new System.Drawing.Size(150, 16);
             this.label39.TabIndex = 0;
             this.label39.Text = "Gastos de transferencia";
+            // 
+            // bnAgegargastoTranasferencia
+            // 
+            this.bnAgegargastoTranasferencia.Image = global::Concesionaria.Properties.Resources.add;
+            this.bnAgegargastoTranasferencia.Location = new System.Drawing.Point(384, 48);
+            this.bnAgegargastoTranasferencia.Name = "bnAgegargastoTranasferencia";
+            this.bnAgegargastoTranasferencia.Size = new System.Drawing.Size(40, 28);
+            this.bnAgegargastoTranasferencia.TabIndex = 37;
+            this.bnAgegargastoTranasferencia.UseVisualStyleBackColor = true;
+            this.bnAgegargastoTranasferencia.Click += new System.EventHandler(this.bnAgegargastoTranasferencia_Click);
+            // 
+            // btnAgregarGastoTransferencia
+            // 
+            this.btnAgregarGastoTransferencia.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarGastoTransferencia.Location = new System.Drawing.Point(384, 18);
+            this.btnAgregarGastoTransferencia.Name = "btnAgregarGastoTransferencia";
+            this.btnAgregarGastoTransferencia.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarGastoTransferencia.TabIndex = 33;
+            this.btnAgregarGastoTransferencia.UseVisualStyleBackColor = true;
+            this.btnAgregarGastoTransferencia.Click += new System.EventHandler(this.btnAgregarGastoTransferencia_Click);
             // 
             // tabPage15
             // 
@@ -1096,6 +1219,36 @@
             this.CmbVendedor.Size = new System.Drawing.Size(246, 24);
             this.CmbVendedor.TabIndex = 7;
             // 
+            // btnCancelarVendedor
+            // 
+            this.btnCancelarVendedor.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnCancelarVendedor.Location = new System.Drawing.Point(152, 119);
+            this.btnCancelarVendedor.Name = "btnCancelarVendedor";
+            this.btnCancelarVendedor.Size = new System.Drawing.Size(40, 28);
+            this.btnCancelarVendedor.TabIndex = 38;
+            this.btnCancelarVendedor.UseVisualStyleBackColor = true;
+            this.btnCancelarVendedor.Click += new System.EventHandler(this.btnCancelarVendedor_Click);
+            // 
+            // btnGrabarVendedor
+            // 
+            this.btnGrabarVendedor.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnGrabarVendedor.Location = new System.Drawing.Point(106, 119);
+            this.btnGrabarVendedor.Name = "btnGrabarVendedor";
+            this.btnGrabarVendedor.Size = new System.Drawing.Size(40, 28);
+            this.btnGrabarVendedor.TabIndex = 37;
+            this.btnGrabarVendedor.UseVisualStyleBackColor = true;
+            this.btnGrabarVendedor.Click += new System.EventHandler(this.btnGrabarVendedor_Click);
+            // 
+            // btnAgregarVendedor
+            // 
+            this.btnAgregarVendedor.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarVendedor.Location = new System.Drawing.Point(358, 27);
+            this.btnAgregarVendedor.Name = "btnAgregarVendedor";
+            this.btnAgregarVendedor.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarVendedor.TabIndex = 31;
+            this.btnAgregarVendedor.UseVisualStyleBackColor = true;
+            this.btnAgregarVendedor.Click += new System.EventHandler(this.btnAgregarVendedor_Click);
+            // 
             // Garantías
             // 
             this.Garantías.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1114,6 +1267,17 @@
             this.Garantías.Size = new System.Drawing.Size(863, 168);
             this.Garantías.TabIndex = 5;
             this.Garantías.Text = "Garantías";
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.button3.Location = new System.Drawing.Point(761, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(40, 28);
+            this.button3.TabIndex = 49;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // GrillaGarantias
             // 
@@ -1179,6 +1343,17 @@
             this.label62.TabIndex = 41;
             this.label62.Text = "Fecha";
             // 
+            // btnAgregarGarantias
+            // 
+            this.btnAgregarGarantias.Enabled = false;
+            this.btnAgregarGarantias.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarGarantias.Location = new System.Drawing.Point(722, 18);
+            this.btnAgregarGarantias.Name = "btnAgregarGarantias";
+            this.btnAgregarGarantias.Size = new System.Drawing.Size(33, 28);
+            this.btnAgregarGarantias.TabIndex = 47;
+            this.btnAgregarGarantias.UseVisualStyleBackColor = true;
+            this.btnAgregarGarantias.Click += new System.EventHandler(this.btnAgregarGarantias_Click);
+            // 
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1196,6 +1371,17 @@
             this.tabPage8.Size = new System.Drawing.Size(863, 168);
             this.tabPage8.TabIndex = 6;
             this.tabPage8.Text = "Impuestos";
+            // 
+            // btnQuitarImpuesto
+            // 
+            this.btnQuitarImpuesto.Enabled = false;
+            this.btnQuitarImpuesto.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnQuitarImpuesto.Location = new System.Drawing.Point(737, 15);
+            this.btnQuitarImpuesto.Name = "btnQuitarImpuesto";
+            this.btnQuitarImpuesto.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarImpuesto.TabIndex = 58;
+            this.btnQuitarImpuesto.UseVisualStyleBackColor = true;
+            this.btnQuitarImpuesto.Click += new System.EventHandler(this.btnQuitarImpuesto_Click);
             // 
             // GrillaImpuestos
             // 
@@ -1259,6 +1445,17 @@
             this.label67.TabIndex = 50;
             this.label67.Text = "Fecha";
             // 
+            // btnAgregarImpuesto
+            // 
+            this.btnAgregarImpuesto.Enabled = false;
+            this.btnAgregarImpuesto.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarImpuesto.Location = new System.Drawing.Point(698, 15);
+            this.btnAgregarImpuesto.Name = "btnAgregarImpuesto";
+            this.btnAgregarImpuesto.Size = new System.Drawing.Size(33, 28);
+            this.btnAgregarImpuesto.TabIndex = 56;
+            this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
+            this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tabControl2);
@@ -1305,6 +1502,27 @@
             this.tabPage5.Size = new System.Drawing.Size(867, 168);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Documentos";
+            // 
+            // btnAbrirCuotas
+            // 
+            this.btnAbrirCuotas.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnAbrirCuotas.Location = new System.Drawing.Point(712, 15);
+            this.btnAbrirCuotas.Name = "btnAbrirCuotas";
+            this.btnAbrirCuotas.Size = new System.Drawing.Size(34, 24);
+            this.btnAbrirCuotas.TabIndex = 45;
+            this.btnAbrirCuotas.UseVisualStyleBackColor = true;
+            this.btnAbrirCuotas.Visible = false;
+            this.btnAbrirCuotas.Click += new System.EventHandler(this.btnAbrirCuotas_Click);
+            // 
+            // btnBorrarCuotas
+            // 
+            this.btnBorrarCuotas.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnBorrarCuotas.Location = new System.Drawing.Point(672, 15);
+            this.btnBorrarCuotas.Name = "btnBorrarCuotas";
+            this.btnBorrarCuotas.Size = new System.Drawing.Size(34, 24);
+            this.btnBorrarCuotas.TabIndex = 26;
+            this.btnBorrarCuotas.UseVisualStyleBackColor = true;
+            this.btnBorrarCuotas.Click += new System.EventHandler(this.btnBorrarCuotas_Click);
             // 
             // GrillaCuotas
             // 
@@ -1369,6 +1587,16 @@
             this.label31.Size = new System.Drawing.Size(50, 16);
             this.label31.TabIndex = 0;
             this.label31.Text = "Capital";
+            // 
+            // btnCalcularCuotas
+            // 
+            this.btnCalcularCuotas.Image = global::Concesionaria.Properties.Resources.money_euro;
+            this.btnCalcularCuotas.Location = new System.Drawing.Point(632, 15);
+            this.btnCalcularCuotas.Name = "btnCalcularCuotas";
+            this.btnCalcularCuotas.Size = new System.Drawing.Size(34, 24);
+            this.btnCalcularCuotas.TabIndex = 24;
+            this.btnCalcularCuotas.UseVisualStyleBackColor = true;
+            this.btnCalcularCuotas.Click += new System.EventHandler(this.btnCalcularCuotas_Click);
             // 
             // tabPage16
             // 
@@ -1469,6 +1697,8 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBox4.Controls.Add(this.label77);
+            this.groupBox4.Controls.Add(this.CmbProvinciaAuto);
             this.groupBox4.Controls.Add(this.CmbTipoCombustible2);
             this.groupBox4.Controls.Add(this.label60);
             this.groupBox4.Controls.Add(this.label59);
@@ -1511,7 +1741,7 @@
             this.CmbTipoCombustible2.FormattingEnabled = true;
             this.CmbTipoCombustible2.Location = new System.Drawing.Point(693, 104);
             this.CmbTipoCombustible2.Name = "CmbTipoCombustible2";
-            this.CmbTipoCombustible2.Size = new System.Drawing.Size(105, 24);
+            this.CmbTipoCombustible2.Size = new System.Drawing.Size(137, 24);
             this.CmbTipoCombustible2.TabIndex = 44;
             // 
             // label60
@@ -1544,19 +1774,29 @@
             // txtColor2
             // 
             this.txtColor2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtColor2.Location = new System.Drawing.Point(290, 71);
+            this.txtColor2.Location = new System.Drawing.Point(698, 71);
             this.txtColor2.Name = "txtColor2";
-            this.txtColor2.Size = new System.Drawing.Size(145, 22);
+            this.txtColor2.Size = new System.Drawing.Size(132, 22);
             this.txtColor2.TabIndex = 40;
             // 
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(249, 73);
+            this.label56.Location = new System.Drawing.Point(647, 74);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(40, 16);
             this.label56.TabIndex = 39;
             this.label56.Text = "Color";
+            // 
+            // btnAgregarRadicacion
+            // 
+            this.btnAgregarRadicacion.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarRadicacion.Location = new System.Drawing.Point(395, 96);
+            this.btnAgregarRadicacion.Name = "btnAgregarRadicacion";
+            this.btnAgregarRadicacion.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarRadicacion.TabIndex = 38;
+            this.btnAgregarRadicacion.UseVisualStyleBackColor = true;
+            this.btnAgregarRadicacion.Click += new System.EventHandler(this.btnAgregarRadicacion_Click);
             // 
             // txtChasis2
             // 
@@ -1567,15 +1807,15 @@
             // 
             // txtMotor2
             // 
-            this.txtMotor2.Location = new System.Drawing.Point(539, 45);
+            this.txtMotor2.Location = new System.Drawing.Point(519, 43);
             this.txtMotor2.Name = "txtMotor2";
-            this.txtMotor2.Size = new System.Drawing.Size(100, 22);
+            this.txtMotor2.Size = new System.Drawing.Size(120, 22);
             this.txtMotor2.TabIndex = 36;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(643, 48);
+            this.label52.Location = new System.Drawing.Point(645, 48);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(49, 16);
             this.label52.TabIndex = 35;
@@ -1590,6 +1830,26 @@
             this.label51.TabIndex = 34;
             this.label51.Text = "Kilómetros";
             // 
+            // btnAgregarAuto
+            // 
+            this.btnAgregarAuto.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarAuto.Location = new System.Drawing.Point(798, 12);
+            this.btnAgregarAuto.Name = "btnAgregarAuto";
+            this.btnAgregarAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarAuto.TabIndex = 33;
+            this.btnAgregarAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
+            // 
+            // BtnAgregarMarca2
+            // 
+            this.BtnAgregarMarca2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.BtnAgregarMarca2.Location = new System.Drawing.Point(280, 39);
+            this.BtnAgregarMarca2.Name = "BtnAgregarMarca2";
+            this.BtnAgregarMarca2.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarMarca2.TabIndex = 32;
+            this.BtnAgregarMarca2.UseVisualStyleBackColor = true;
+            this.BtnAgregarMarca2.Click += new System.EventHandler(this.BtnAgregarMarca2_Click_1);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -1601,7 +1861,7 @@
             // 
             // txtCodStock2
             // 
-            this.txtCodStock2.Location = new System.Drawing.Point(269, 12);
+            this.txtCodStock2.Location = new System.Drawing.Point(249, 12);
             this.txtCodStock2.Name = "txtCodStock2";
             this.txtCodStock2.Size = new System.Drawing.Size(50, 22);
             this.txtCodStock2.TabIndex = 28;
@@ -1610,16 +1870,16 @@
             // txtImporteVehiculoCompra
             // 
             this.txtImporteVehiculoCompra.BackColor = System.Drawing.SystemColors.Control;
-            this.txtImporteVehiculoCompra.Location = new System.Drawing.Point(539, 102);
+            this.txtImporteVehiculoCompra.Location = new System.Drawing.Point(519, 101);
             this.txtImporteVehiculoCompra.Name = "txtImporteVehiculoCompra";
-            this.txtImporteVehiculoCompra.Size = new System.Drawing.Size(106, 22);
+            this.txtImporteVehiculoCompra.Size = new System.Drawing.Size(120, 22);
             this.txtImporteVehiculoCompra.TabIndex = 7;
             this.txtImporteVehiculoCompra.ValidatingType = typeof(int);
             this.txtImporteVehiculoCompra.Leave += new System.EventHandler(this.txtImporteVehiculoCompra_Leave_2);
             // 
             // txtCodAuto2
             // 
-            this.txtCodAuto2.Location = new System.Drawing.Point(339, 12);
+            this.txtCodAuto2.Location = new System.Drawing.Point(306, 12);
             this.txtCodAuto2.Name = "txtCodAuto2";
             this.txtCodAuto2.Size = new System.Drawing.Size(50, 22);
             this.txtCodAuto2.TabIndex = 14;
@@ -1639,16 +1899,16 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(36, 95);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 16);
+            this.label18.Size = new System.Drawing.Size(51, 16);
             this.label18.TabIndex = 10;
-            this.label18.Text = "Radicación";
+            this.label18.Text = "Ciudad";
             // 
             // txtKms2
             // 
             this.txtKms2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtKms2.Location = new System.Drawing.Point(539, 73);
+            this.txtKms2.Location = new System.Drawing.Point(519, 71);
             this.txtKms2.Name = "txtKms2";
-            this.txtKms2.Size = new System.Drawing.Size(259, 22);
+            this.txtKms2.Size = new System.Drawing.Size(122, 22);
             this.txtKms2.TabIndex = 5;
             this.txtKms2.Leave += new System.EventHandler(this.txtKms2_Leave);
             // 
@@ -1664,16 +1924,16 @@
             // txtAnio2
             // 
             this.txtAnio2.BackColor = System.Drawing.SystemColors.Control;
-            this.txtAnio2.Location = new System.Drawing.Point(143, 70);
+            this.txtAnio2.Location = new System.Drawing.Point(362, 42);
             this.txtAnio2.MaxLength = 4;
             this.txtAnio2.Name = "txtAnio2";
-            this.txtAnio2.Size = new System.Drawing.Size(100, 22);
+            this.txtAnio2.Size = new System.Drawing.Size(55, 22);
             this.txtAnio2.TabIndex = 4;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(36, 66);
+            this.label20.Location = new System.Drawing.Point(326, 43);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(32, 16);
             this.label20.TabIndex = 6;
@@ -1702,7 +1962,7 @@
             this.CmbMarca2.FormattingEnabled = true;
             this.CmbMarca2.Location = new System.Drawing.Point(143, 40);
             this.CmbMarca2.Name = "CmbMarca2";
-            this.CmbMarca2.Size = new System.Drawing.Size(246, 24);
+            this.CmbMarca2.Size = new System.Drawing.Size(131, 24);
             this.CmbMarca2.TabIndex = 2;
             // 
             // label22
@@ -1725,7 +1985,7 @@
             // 
             // label23
             // 
-            this.label23.Location = new System.Drawing.Point(36, 11);
+            this.label23.Location = new System.Drawing.Point(36, 5);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(80, 36);
             this.label23.TabIndex = 0;
@@ -1742,6 +2002,16 @@
             this.tabPage11.Size = new System.Drawing.Size(929, 126);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "Listado de vehículo en parte de pago";
+            // 
+            // btnEliminarAuto
+            // 
+            this.btnEliminarAuto.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminarAuto.Location = new System.Drawing.Point(796, 6);
+            this.btnEliminarAuto.Name = "btnEliminarAuto";
+            this.btnEliminarAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnEliminarAuto.TabIndex = 12;
+            this.btnEliminarAuto.UseVisualStyleBackColor = true;
+            this.btnEliminarAuto.Click += new System.EventHandler(this.btnEliminarAuto_Click);
             // 
             // GrillaVehiculos
             // 
@@ -1836,6 +2106,36 @@
             this.label40.TabIndex = 5;
             this.label40.Text = "Gastos de recepción";
             // 
+            // btnEliminarGastoRecepcion
+            // 
+            this.btnEliminarGastoRecepcion.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminarGastoRecepcion.Location = new System.Drawing.Point(453, 78);
+            this.btnEliminarGastoRecepcion.Name = "btnEliminarGastoRecepcion";
+            this.btnEliminarGastoRecepcion.Size = new System.Drawing.Size(40, 28);
+            this.btnEliminarGastoRecepcion.TabIndex = 49;
+            this.btnEliminarGastoRecepcion.UseVisualStyleBackColor = true;
+            this.btnEliminarGastoRecepcion.Click += new System.EventHandler(this.btnEliminarGastoRecepcion_Click);
+            // 
+            // btnAgregarGastodeRecepcion
+            // 
+            this.btnAgregarGastodeRecepcion.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarGastodeRecepcion.Location = new System.Drawing.Point(453, 49);
+            this.btnAgregarGastodeRecepcion.Name = "btnAgregarGastodeRecepcion";
+            this.btnAgregarGastodeRecepcion.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarGastodeRecepcion.TabIndex = 47;
+            this.btnAgregarGastodeRecepcion.UseVisualStyleBackColor = true;
+            this.btnAgregarGastodeRecepcion.Click += new System.EventHandler(this.btnAgregarGastodeRecepcion_Click);
+            // 
+            // btnAgegarGastodeRecepcion
+            // 
+            this.btnAgegarGastodeRecepcion.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgegarGastodeRecepcion.Location = new System.Drawing.Point(453, 19);
+            this.btnAgegarGastodeRecepcion.Name = "btnAgegarGastodeRecepcion";
+            this.btnAgegarGastodeRecepcion.Size = new System.Drawing.Size(40, 28);
+            this.btnAgegarGastodeRecepcion.TabIndex = 46;
+            this.btnAgegarGastodeRecepcion.UseVisualStyleBackColor = true;
+            this.btnAgegarGastodeRecepcion.Click += new System.EventHandler(this.btnAgegarGastodeRecepcion_Click);
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1856,6 +2156,44 @@
             this.tabPage7.Size = new System.Drawing.Size(867, 168);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Prenda";
+            // 
+            // txtFechaVencimientoPrenda
+            // 
+            this.txtFechaVencimientoPrenda.Location = new System.Drawing.Point(639, 18);
+            this.txtFechaVencimientoPrenda.Mask = "00/00/0000";
+            this.txtFechaVencimientoPrenda.Name = "txtFechaVencimientoPrenda";
+            this.txtFechaVencimientoPrenda.Size = new System.Drawing.Size(70, 22);
+            this.txtFechaVencimientoPrenda.TabIndex = 53;
+            this.txtFechaVencimientoPrenda.ValidatingType = typeof(System.DateTime);
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(510, 24);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(123, 16);
+            this.label72.TabIndex = 52;
+            this.label72.Text = "Fecha Vencimiento";
+            // 
+            // btnEliminarPrenda
+            // 
+            this.btnEliminarPrenda.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnEliminarPrenda.Location = new System.Drawing.Point(807, 12);
+            this.btnEliminarPrenda.Name = "btnEliminarPrenda";
+            this.btnEliminarPrenda.Size = new System.Drawing.Size(40, 28);
+            this.btnEliminarPrenda.TabIndex = 51;
+            this.btnEliminarPrenda.UseVisualStyleBackColor = true;
+            this.btnEliminarPrenda.Click += new System.EventHandler(this.btnEliminarPrenda_Click);
+            // 
+            // btnAgregarPrenda
+            // 
+            this.btnAgregarPrenda.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarPrenda.Location = new System.Drawing.Point(761, 12);
+            this.btnAgregarPrenda.Name = "btnAgregarPrenda";
+            this.btnAgregarPrenda.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarPrenda.TabIndex = 50;
+            this.btnAgregarPrenda.UseVisualStyleBackColor = true;
+            this.btnAgregarPrenda.Click += new System.EventHandler(this.btnAgregarPrenda_Click);
             // 
             // GrillaPrendas
             // 
@@ -1901,6 +2239,27 @@
             this.label34.Size = new System.Drawing.Size(53, 16);
             this.label34.TabIndex = 0;
             this.label34.Text = "Importe";
+            // 
+            // btnAbrircPrenda
+            // 
+            this.btnAbrircPrenda.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnAbrircPrenda.Location = new System.Drawing.Point(212, 18);
+            this.btnAbrircPrenda.Name = "btnAbrircPrenda";
+            this.btnAbrircPrenda.Size = new System.Drawing.Size(40, 28);
+            this.btnAbrircPrenda.TabIndex = 44;
+            this.btnAbrircPrenda.UseVisualStyleBackColor = true;
+            this.btnAbrircPrenda.Visible = false;
+            this.btnAbrircPrenda.Click += new System.EventHandler(this.btnAbrircPrenda_Click);
+            // 
+            // btnAgregarEntidadPrendaria
+            // 
+            this.btnAgregarEntidadPrendaria.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarEntidadPrendaria.Location = new System.Drawing.Point(715, 12);
+            this.btnAgregarEntidadPrendaria.Name = "btnAgregarEntidadPrendaria";
+            this.btnAgregarEntidadPrendaria.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarEntidadPrendaria.TabIndex = 31;
+            this.btnAgregarEntidadPrendaria.UseVisualStyleBackColor = true;
+            this.btnAgregarEntidadPrendaria.Click += new System.EventHandler(this.btnAgregarEntidadPrendaria_Click);
             // 
             // tabPage9
             // 
@@ -1985,6 +2344,37 @@
             this.label35.TabIndex = 7;
             this.label35.Text = "Importe cobranza";
             // 
+            // button6
+            // 
+            this.button6.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.button6.Location = new System.Drawing.Point(743, 7);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(40, 28);
+            this.button6.TabIndex = 51;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // BtnAgregarCobranza
+            // 
+            this.BtnAgregarCobranza.Image = global::Concesionaria.Properties.Resources.add;
+            this.BtnAgregarCobranza.Location = new System.Drawing.Point(697, 7);
+            this.BtnAgregarCobranza.Name = "BtnAgregarCobranza";
+            this.BtnAgregarCobranza.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCobranza.TabIndex = 48;
+            this.BtnAgregarCobranza.UseVisualStyleBackColor = true;
+            this.BtnAgregarCobranza.Click += new System.EventHandler(this.BtnAgregarCobranza_Click);
+            // 
+            // btnAbrirCobranzas
+            // 
+            this.btnAbrirCobranzas.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnAbrirCobranzas.Location = new System.Drawing.Point(789, 8);
+            this.btnAbrirCobranzas.Name = "btnAbrirCobranzas";
+            this.btnAbrirCobranzas.Size = new System.Drawing.Size(34, 24);
+            this.btnAbrirCobranzas.TabIndex = 46;
+            this.btnAbrirCobranzas.UseVisualStyleBackColor = true;
+            this.btnAbrirCobranzas.Visible = false;
+            this.btnAbrirCobranzas.Click += new System.EventHandler(this.btnAbrirCobranzas_Click);
+            // 
             // tabPage14
             // 
             this.tabPage14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -2006,6 +2396,27 @@
             this.tabPage14.Size = new System.Drawing.Size(867, 168);
             this.tabPage14.TabIndex = 7;
             this.tabPage14.Text = "Cheques";
+            // 
+            // btnAbrirCheques
+            // 
+            this.btnAbrirCheques.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnAbrirCheques.Location = new System.Drawing.Point(733, 55);
+            this.btnAbrirCheques.Name = "btnAbrirCheques";
+            this.btnAbrirCheques.Size = new System.Drawing.Size(40, 26);
+            this.btnAbrirCheques.TabIndex = 50;
+            this.btnAbrirCheques.UseVisualStyleBackColor = true;
+            this.btnAbrirCheques.Visible = false;
+            this.btnAbrirCheques.Click += new System.EventHandler(this.btnAbrirCheques_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.button2.Location = new System.Drawing.Point(687, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 28);
+            this.button2.TabIndex = 49;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GrillaCheques
             // 
@@ -2089,6 +2500,26 @@
             this.label46.TabIndex = 36;
             this.label46.Text = "Número cheque";
             // 
+            // BtnAgregarCheque
+            // 
+            this.BtnAgregarCheque.Image = global::Concesionaria.Properties.Resources.add;
+            this.BtnAgregarCheque.Location = new System.Drawing.Point(641, 54);
+            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
+            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
+            this.BtnAgregarCheque.TabIndex = 47;
+            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
+            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
+            // 
+            // btnNuevaBanco
+            // 
+            this.btnNuevaBanco.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevaBanco.Location = new System.Drawing.Point(356, 51);
+            this.btnNuevaBanco.Name = "btnNuevaBanco";
+            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevaBanco.TabIndex = 46;
+            this.btnNuevaBanco.UseVisualStyleBackColor = true;
+            this.btnNuevaBanco.Click += new System.EventHandler(this.btnNuevaBanco_Click);
+            // 
             // tabPage17
             // 
             this.tabPage17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -2159,6 +2590,26 @@
             this.label69.Size = new System.Drawing.Size(51, 16);
             this.label69.TabIndex = 11;
             this.label69.Text = "Tarjeta";
+            // 
+            // btnQuitarTarjeta
+            // 
+            this.btnQuitarTarjeta.Image = global::Concesionaria.Properties.Resources.cancel;
+            this.btnQuitarTarjeta.Location = new System.Drawing.Point(561, 18);
+            this.btnQuitarTarjeta.Name = "btnQuitarTarjeta";
+            this.btnQuitarTarjeta.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarTarjeta.TabIndex = 51;
+            this.btnQuitarTarjeta.UseVisualStyleBackColor = true;
+            this.btnQuitarTarjeta.Click += new System.EventHandler(this.btnQuitarTarjeta_Click);
+            // 
+            // btnAgregarTarjeta
+            // 
+            this.btnAgregarTarjeta.Image = global::Concesionaria.Properties.Resources.add;
+            this.btnAgregarTarjeta.Location = new System.Drawing.Point(515, 18);
+            this.btnAgregarTarjeta.Name = "btnAgregarTarjeta";
+            this.btnAgregarTarjeta.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarTarjeta.TabIndex = 50;
+            this.btnAgregarTarjeta.UseVisualStyleBackColor = true;
+            this.btnAgregarTarjeta.Click += new System.EventHandler(this.btnAgregarTarjeta_Click);
             // 
             // groupBox55
             // 
@@ -2373,432 +2824,117 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // btnAbrirCuotas
-            // 
-            this.btnAbrirCuotas.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirCuotas.Location = new System.Drawing.Point(712, 15);
-            this.btnAbrirCuotas.Name = "btnAbrirCuotas";
-            this.btnAbrirCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnAbrirCuotas.TabIndex = 45;
-            this.btnAbrirCuotas.UseVisualStyleBackColor = true;
-            this.btnAbrirCuotas.Visible = false;
-            this.btnAbrirCuotas.Click += new System.EventHandler(this.btnAbrirCuotas_Click);
-            // 
-            // btnBorrarCuotas
-            // 
-            this.btnBorrarCuotas.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnBorrarCuotas.Location = new System.Drawing.Point(672, 15);
-            this.btnBorrarCuotas.Name = "btnBorrarCuotas";
-            this.btnBorrarCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnBorrarCuotas.TabIndex = 26;
-            this.btnBorrarCuotas.UseVisualStyleBackColor = true;
-            this.btnBorrarCuotas.Click += new System.EventHandler(this.btnBorrarCuotas_Click);
-            // 
-            // btnCalcularCuotas
-            // 
-            this.btnCalcularCuotas.Image = global::Concesionaria.Properties.Resources.money_euro;
-            this.btnCalcularCuotas.Location = new System.Drawing.Point(632, 15);
-            this.btnCalcularCuotas.Name = "btnCalcularCuotas";
-            this.btnCalcularCuotas.Size = new System.Drawing.Size(34, 24);
-            this.btnCalcularCuotas.TabIndex = 24;
-            this.btnCalcularCuotas.UseVisualStyleBackColor = true;
-            this.btnCalcularCuotas.Click += new System.EventHandler(this.btnCalcularCuotas_Click);
-            // 
-            // btnAgregarRadicacion
-            // 
-            this.btnAgregarRadicacion.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarRadicacion.Location = new System.Drawing.Point(395, 96);
-            this.btnAgregarRadicacion.Name = "btnAgregarRadicacion";
-            this.btnAgregarRadicacion.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarRadicacion.TabIndex = 38;
-            this.btnAgregarRadicacion.UseVisualStyleBackColor = true;
-            this.btnAgregarRadicacion.Click += new System.EventHandler(this.btnAgregarRadicacion_Click);
-            // 
-            // btnAgregarAuto
-            // 
-            this.btnAgregarAuto.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarAuto.Location = new System.Drawing.Point(798, 12);
-            this.btnAgregarAuto.Name = "btnAgregarAuto";
-            this.btnAgregarAuto.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarAuto.TabIndex = 33;
-            this.btnAgregarAuto.UseVisualStyleBackColor = true;
-            this.btnAgregarAuto.Click += new System.EventHandler(this.btnAgregarAuto_Click);
-            // 
-            // BtnAgregarMarca2
-            // 
-            this.BtnAgregarMarca2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.BtnAgregarMarca2.Location = new System.Drawing.Point(392, 39);
-            this.BtnAgregarMarca2.Name = "BtnAgregarMarca2";
-            this.BtnAgregarMarca2.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarMarca2.TabIndex = 32;
-            this.BtnAgregarMarca2.UseVisualStyleBackColor = true;
-            this.BtnAgregarMarca2.Click += new System.EventHandler(this.BtnAgregarMarca2_Click_1);
-            // 
-            // btnEliminarAuto
-            // 
-            this.btnEliminarAuto.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnEliminarAuto.Location = new System.Drawing.Point(796, 6);
-            this.btnEliminarAuto.Name = "btnEliminarAuto";
-            this.btnEliminarAuto.Size = new System.Drawing.Size(40, 28);
-            this.btnEliminarAuto.TabIndex = 12;
-            this.btnEliminarAuto.UseVisualStyleBackColor = true;
-            this.btnEliminarAuto.Click += new System.EventHandler(this.btnEliminarAuto_Click);
-            // 
-            // btnEliminarGastoRecepcion
-            // 
-            this.btnEliminarGastoRecepcion.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnEliminarGastoRecepcion.Location = new System.Drawing.Point(453, 78);
-            this.btnEliminarGastoRecepcion.Name = "btnEliminarGastoRecepcion";
-            this.btnEliminarGastoRecepcion.Size = new System.Drawing.Size(40, 28);
-            this.btnEliminarGastoRecepcion.TabIndex = 49;
-            this.btnEliminarGastoRecepcion.UseVisualStyleBackColor = true;
-            this.btnEliminarGastoRecepcion.Click += new System.EventHandler(this.btnEliminarGastoRecepcion_Click);
-            // 
-            // btnAgregarGastodeRecepcion
-            // 
-            this.btnAgregarGastodeRecepcion.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarGastodeRecepcion.Location = new System.Drawing.Point(453, 49);
-            this.btnAgregarGastodeRecepcion.Name = "btnAgregarGastodeRecepcion";
-            this.btnAgregarGastodeRecepcion.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarGastodeRecepcion.TabIndex = 47;
-            this.btnAgregarGastodeRecepcion.UseVisualStyleBackColor = true;
-            this.btnAgregarGastodeRecepcion.Click += new System.EventHandler(this.btnAgregarGastodeRecepcion_Click);
-            // 
-            // btnAgegarGastodeRecepcion
-            // 
-            this.btnAgegarGastodeRecepcion.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgegarGastodeRecepcion.Location = new System.Drawing.Point(453, 19);
-            this.btnAgegarGastodeRecepcion.Name = "btnAgegarGastodeRecepcion";
-            this.btnAgegarGastodeRecepcion.Size = new System.Drawing.Size(40, 28);
-            this.btnAgegarGastodeRecepcion.TabIndex = 46;
-            this.btnAgegarGastodeRecepcion.UseVisualStyleBackColor = true;
-            this.btnAgegarGastodeRecepcion.Click += new System.EventHandler(this.btnAgegarGastodeRecepcion_Click);
-            // 
-            // btnEliminarPrenda
-            // 
-            this.btnEliminarPrenda.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnEliminarPrenda.Location = new System.Drawing.Point(807, 12);
-            this.btnEliminarPrenda.Name = "btnEliminarPrenda";
-            this.btnEliminarPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnEliminarPrenda.TabIndex = 51;
-            this.btnEliminarPrenda.UseVisualStyleBackColor = true;
-            this.btnEliminarPrenda.Click += new System.EventHandler(this.btnEliminarPrenda_Click);
-            // 
-            // btnAgregarPrenda
-            // 
-            this.btnAgregarPrenda.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarPrenda.Location = new System.Drawing.Point(761, 12);
-            this.btnAgregarPrenda.Name = "btnAgregarPrenda";
-            this.btnAgregarPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarPrenda.TabIndex = 50;
-            this.btnAgregarPrenda.UseVisualStyleBackColor = true;
-            this.btnAgregarPrenda.Click += new System.EventHandler(this.btnAgregarPrenda_Click);
-            // 
-            // btnAbrircPrenda
-            // 
-            this.btnAbrircPrenda.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrircPrenda.Location = new System.Drawing.Point(212, 18);
-            this.btnAbrircPrenda.Name = "btnAbrircPrenda";
-            this.btnAbrircPrenda.Size = new System.Drawing.Size(40, 28);
-            this.btnAbrircPrenda.TabIndex = 44;
-            this.btnAbrircPrenda.UseVisualStyleBackColor = true;
-            this.btnAbrircPrenda.Visible = false;
-            this.btnAbrircPrenda.Click += new System.EventHandler(this.btnAbrircPrenda_Click);
-            // 
-            // btnAgregarEntidadPrendaria
-            // 
-            this.btnAgregarEntidadPrendaria.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarEntidadPrendaria.Location = new System.Drawing.Point(715, 12);
-            this.btnAgregarEntidadPrendaria.Name = "btnAgregarEntidadPrendaria";
-            this.btnAgregarEntidadPrendaria.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarEntidadPrendaria.TabIndex = 31;
-            this.btnAgregarEntidadPrendaria.UseVisualStyleBackColor = true;
-            this.btnAgregarEntidadPrendaria.Click += new System.EventHandler(this.btnAgregarEntidadPrendaria_Click);
-            // 
-            // button6
-            // 
-            this.button6.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.button6.Location = new System.Drawing.Point(743, 7);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(40, 28);
-            this.button6.TabIndex = 51;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // BtnAgregarCobranza
-            // 
-            this.BtnAgregarCobranza.Image = global::Concesionaria.Properties.Resources.add;
-            this.BtnAgregarCobranza.Location = new System.Drawing.Point(697, 7);
-            this.BtnAgregarCobranza.Name = "BtnAgregarCobranza";
-            this.BtnAgregarCobranza.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarCobranza.TabIndex = 48;
-            this.BtnAgregarCobranza.UseVisualStyleBackColor = true;
-            this.BtnAgregarCobranza.Click += new System.EventHandler(this.BtnAgregarCobranza_Click);
-            // 
-            // btnAbrirCobranzas
-            // 
-            this.btnAbrirCobranzas.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirCobranzas.Location = new System.Drawing.Point(789, 8);
-            this.btnAbrirCobranzas.Name = "btnAbrirCobranzas";
-            this.btnAbrirCobranzas.Size = new System.Drawing.Size(34, 24);
-            this.btnAbrirCobranzas.TabIndex = 46;
-            this.btnAbrirCobranzas.UseVisualStyleBackColor = true;
-            this.btnAbrirCobranzas.Visible = false;
-            this.btnAbrirCobranzas.Click += new System.EventHandler(this.btnAbrirCobranzas_Click);
-            // 
-            // btnAbrirCheques
-            // 
-            this.btnAbrirCheques.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnAbrirCheques.Location = new System.Drawing.Point(733, 55);
-            this.btnAbrirCheques.Name = "btnAbrirCheques";
-            this.btnAbrirCheques.Size = new System.Drawing.Size(40, 26);
-            this.btnAbrirCheques.TabIndex = 50;
-            this.btnAbrirCheques.UseVisualStyleBackColor = true;
-            this.btnAbrirCheques.Visible = false;
-            this.btnAbrirCheques.Click += new System.EventHandler(this.btnAbrirCheques_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.button2.Location = new System.Drawing.Point(687, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 28);
-            this.button2.TabIndex = 49;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // BtnAgregarCheque
-            // 
-            this.BtnAgregarCheque.Image = global::Concesionaria.Properties.Resources.add;
-            this.BtnAgregarCheque.Location = new System.Drawing.Point(641, 54);
-            this.BtnAgregarCheque.Name = "BtnAgregarCheque";
-            this.BtnAgregarCheque.Size = new System.Drawing.Size(40, 28);
-            this.BtnAgregarCheque.TabIndex = 47;
-            this.BtnAgregarCheque.UseVisualStyleBackColor = true;
-            this.BtnAgregarCheque.Click += new System.EventHandler(this.BtnAgregarCheque_Click);
-            // 
-            // btnNuevaBanco
-            // 
-            this.btnNuevaBanco.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevaBanco.Location = new System.Drawing.Point(356, 51);
-            this.btnNuevaBanco.Name = "btnNuevaBanco";
-            this.btnNuevaBanco.Size = new System.Drawing.Size(40, 28);
-            this.btnNuevaBanco.TabIndex = 46;
-            this.btnNuevaBanco.UseVisualStyleBackColor = true;
-            this.btnNuevaBanco.Click += new System.EventHandler(this.btnNuevaBanco_Click);
-            // 
-            // btnQuitarTarjeta
-            // 
-            this.btnQuitarTarjeta.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnQuitarTarjeta.Location = new System.Drawing.Point(561, 18);
-            this.btnQuitarTarjeta.Name = "btnQuitarTarjeta";
-            this.btnQuitarTarjeta.Size = new System.Drawing.Size(40, 28);
-            this.btnQuitarTarjeta.TabIndex = 51;
-            this.btnQuitarTarjeta.UseVisualStyleBackColor = true;
-            this.btnQuitarTarjeta.Click += new System.EventHandler(this.btnQuitarTarjeta_Click);
-            // 
-            // btnAgregarTarjeta
-            // 
-            this.btnAgregarTarjeta.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarTarjeta.Location = new System.Drawing.Point(515, 18);
-            this.btnAgregarTarjeta.Name = "btnAgregarTarjeta";
-            this.btnAgregarTarjeta.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarTarjeta.TabIndex = 50;
-            this.btnAgregarTarjeta.UseVisualStyleBackColor = true;
-            this.btnAgregarTarjeta.Click += new System.EventHandler(this.btnAgregarTarjeta_Click);
-            // 
-            // button4
-            // 
-            this.button4.Image = global::Concesionaria.Properties.Resources.email;
-            this.button4.Location = new System.Drawing.Point(794, 133);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 28);
-            this.button4.TabIndex = 60;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnAbrirPreVenta
-            // 
-            this.btnAbrirPreVenta.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnAbrirPreVenta.Location = new System.Drawing.Point(754, 133);
-            this.btnAbrirPreVenta.Name = "btnAbrirPreVenta";
-            this.btnAbrirPreVenta.Size = new System.Drawing.Size(34, 28);
-            this.btnAbrirPreVenta.TabIndex = 45;
-            this.btnAbrirPreVenta.Text = "Listado de preventa";
-            this.btnAbrirPreVenta.UseVisualStyleBackColor = true;
-            this.btnAbrirPreVenta.Click += new System.EventHandler(this.btnAbrirPreVenta_Click);
-            // 
-            // btnVerDetalleStock
-            // 
-            this.btnVerDetalleStock.Image = global::Concesionaria.Properties.Resources.car_add;
-            this.btnVerDetalleStock.Location = new System.Drawing.Point(714, 133);
-            this.btnVerDetalleStock.Name = "btnVerDetalleStock";
-            this.btnVerDetalleStock.Size = new System.Drawing.Size(34, 28);
-            this.btnVerDetalleStock.TabIndex = 43;
-            this.btnVerDetalleStock.UseVisualStyleBackColor = true;
-            this.btnVerDetalleStock.Click += new System.EventHandler(this.btnVerDetalleStock_Click);
-            // 
-            // BtnVerCostoAuto
-            // 
-            this.BtnVerCostoAuto.Image = global::Concesionaria.Properties.Resources.Linterna;
-            this.BtnVerCostoAuto.Location = new System.Drawing.Point(677, 134);
-            this.BtnVerCostoAuto.Name = "BtnVerCostoAuto";
-            this.BtnVerCostoAuto.Size = new System.Drawing.Size(34, 28);
-            this.BtnVerCostoAuto.TabIndex = 34;
-            this.BtnVerCostoAuto.UseVisualStyleBackColor = true;
-            this.BtnVerCostoAuto.Click += new System.EventHandler(this.BtnVerCostoAuto_Click);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.button1.Location = new System.Drawing.Point(365, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 28);
-            this.button1.TabIndex = 31;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnAgregarCiudad
-            // 
-            this.btnAgregarCiudad.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad.Location = new System.Drawing.Point(365, 105);
-            this.btnAgregarCiudad.Name = "btnAgregarCiudad";
-            this.btnAgregarCiudad.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarCiudad.TabIndex = 30;
-            this.btnAgregarCiudad.UseVisualStyleBackColor = true;
-            this.btnAgregarCiudad.Click += new System.EventHandler(this.btnAgregarCiudad_Click);
-            // 
-            // btnNuevoBarrio
-            // 
-            this.btnNuevoBarrio.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnNuevoBarrio.Location = new System.Drawing.Point(373, 124);
-            this.btnNuevoBarrio.Name = "btnNuevoBarrio";
-            this.btnNuevoBarrio.Size = new System.Drawing.Size(40, 28);
-            this.btnNuevoBarrio.TabIndex = 25;
-            this.btnNuevoBarrio.UseVisualStyleBackColor = true;
-            this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnEliminar.Location = new System.Drawing.Point(384, 80);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(40, 28);
-            this.btnEliminar.TabIndex = 44;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // bnAgegargastoTranasferencia
-            // 
-            this.bnAgegargastoTranasferencia.Image = global::Concesionaria.Properties.Resources.add;
-            this.bnAgegargastoTranasferencia.Location = new System.Drawing.Point(384, 48);
-            this.bnAgegargastoTranasferencia.Name = "bnAgegargastoTranasferencia";
-            this.bnAgegargastoTranasferencia.Size = new System.Drawing.Size(40, 28);
-            this.bnAgegargastoTranasferencia.TabIndex = 37;
-            this.bnAgegargastoTranasferencia.UseVisualStyleBackColor = true;
-            this.bnAgegargastoTranasferencia.Click += new System.EventHandler(this.bnAgegargastoTranasferencia_Click);
-            // 
-            // btnAgregarGastoTransferencia
-            // 
-            this.btnAgregarGastoTransferencia.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarGastoTransferencia.Location = new System.Drawing.Point(384, 18);
-            this.btnAgregarGastoTransferencia.Name = "btnAgregarGastoTransferencia";
-            this.btnAgregarGastoTransferencia.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarGastoTransferencia.TabIndex = 33;
-            this.btnAgregarGastoTransferencia.UseVisualStyleBackColor = true;
-            this.btnAgregarGastoTransferencia.Click += new System.EventHandler(this.btnAgregarGastoTransferencia_Click);
-            // 
-            // btnCancelarVendedor
-            // 
-            this.btnCancelarVendedor.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnCancelarVendedor.Location = new System.Drawing.Point(152, 119);
-            this.btnCancelarVendedor.Name = "btnCancelarVendedor";
-            this.btnCancelarVendedor.Size = new System.Drawing.Size(40, 28);
-            this.btnCancelarVendedor.TabIndex = 38;
-            this.btnCancelarVendedor.UseVisualStyleBackColor = true;
-            this.btnCancelarVendedor.Click += new System.EventHandler(this.btnCancelarVendedor_Click);
-            // 
-            // btnGrabarVendedor
-            // 
-            this.btnGrabarVendedor.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnGrabarVendedor.Location = new System.Drawing.Point(106, 119);
-            this.btnGrabarVendedor.Name = "btnGrabarVendedor";
-            this.btnGrabarVendedor.Size = new System.Drawing.Size(40, 28);
-            this.btnGrabarVendedor.TabIndex = 37;
-            this.btnGrabarVendedor.UseVisualStyleBackColor = true;
-            this.btnGrabarVendedor.Click += new System.EventHandler(this.btnGrabarVendedor_Click);
-            // 
-            // btnAgregarVendedor
-            // 
-            this.btnAgregarVendedor.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarVendedor.Location = new System.Drawing.Point(358, 27);
-            this.btnAgregarVendedor.Name = "btnAgregarVendedor";
-            this.btnAgregarVendedor.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarVendedor.TabIndex = 31;
-            this.btnAgregarVendedor.UseVisualStyleBackColor = true;
-            this.btnAgregarVendedor.Click += new System.EventHandler(this.btnAgregarVendedor_Click);
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.button3.Location = new System.Drawing.Point(761, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 28);
-            this.button3.TabIndex = 49;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnAgregarGarantias
-            // 
-            this.btnAgregarGarantias.Enabled = false;
-            this.btnAgregarGarantias.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarGarantias.Location = new System.Drawing.Point(722, 18);
-            this.btnAgregarGarantias.Name = "btnAgregarGarantias";
-            this.btnAgregarGarantias.Size = new System.Drawing.Size(33, 28);
-            this.btnAgregarGarantias.TabIndex = 47;
-            this.btnAgregarGarantias.UseVisualStyleBackColor = true;
-            this.btnAgregarGarantias.Click += new System.EventHandler(this.btnAgregarGarantias_Click);
-            // 
-            // btnQuitarImpuesto
-            // 
-            this.btnQuitarImpuesto.Enabled = false;
-            this.btnQuitarImpuesto.Image = global::Concesionaria.Properties.Resources.cancel;
-            this.btnQuitarImpuesto.Location = new System.Drawing.Point(737, 15);
-            this.btnQuitarImpuesto.Name = "btnQuitarImpuesto";
-            this.btnQuitarImpuesto.Size = new System.Drawing.Size(40, 28);
-            this.btnQuitarImpuesto.TabIndex = 58;
-            this.btnQuitarImpuesto.UseVisualStyleBackColor = true;
-            this.btnQuitarImpuesto.Click += new System.EventHandler(this.btnQuitarImpuesto_Click);
-            // 
-            // btnAgregarImpuesto
-            // 
-            this.btnAgregarImpuesto.Enabled = false;
-            this.btnAgregarImpuesto.Image = global::Concesionaria.Properties.Resources.add;
-            this.btnAgregarImpuesto.Location = new System.Drawing.Point(698, 15);
-            this.btnAgregarImpuesto.Name = "btnAgregarImpuesto";
-            this.btnAgregarImpuesto.Size = new System.Drawing.Size(33, 28);
-            this.btnAgregarImpuesto.TabIndex = 56;
-            this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
-            this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
-            // 
-            // txtFechaVencimientoPrenda
-            // 
-            this.txtFechaVencimientoPrenda.Location = new System.Drawing.Point(639, 18);
-            this.txtFechaVencimientoPrenda.Mask = "00/00/0000";
-            this.txtFechaVencimientoPrenda.Name = "txtFechaVencimientoPrenda";
-            this.txtFechaVencimientoPrenda.Size = new System.Drawing.Size(70, 22);
-            this.txtFechaVencimientoPrenda.TabIndex = 53;
-            this.txtFechaVencimientoPrenda.ValidatingType = typeof(System.DateTime);
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(510, 24);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(123, 16);
-            this.label72.TabIndex = 52;
-            this.label72.Text = "Fecha Vencimiento";
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(551, 0);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaNacimiento.TabIndex = 39;
+            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(458, 3);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(59, 16);
+            this.label73.TabIndex = 38;
+            this.label73.Text = "Fec Nac";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(19, 107);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(64, 16);
+            this.label74.TabIndex = 42;
+            this.label74.Text = "Provincia";
+            // 
+            // btnAgregarProvincia2
+            // 
+            this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(373, 99);
+            this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
+            this.btnAgregarProvincia2.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarProvincia2.TabIndex = 40;
+            this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
+            this.btnAgregarProvincia2.Click += new System.EventHandler(this.btnAgregarProvincia2_Click);
+            // 
+            // cmbProvincia2
+            // 
+            this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincia2.FormattingEnabled = true;
+            this.cmbProvincia2.Location = new System.Drawing.Point(121, 107);
+            this.cmbProvincia2.Name = "cmbProvincia2";
+            this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
+            this.cmbProvincia2.TabIndex = 41;
+            this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(466, 115);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(51, 16);
+            this.label75.TabIndex = 43;
+            this.label75.Text = "Ciudad";
+            // 
+            // btnAgregarCiudad2
+            // 
+            this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(799, 112);
+            this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
+            this.btnAgregarCiudad2.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarCiudad2.TabIndex = 44;
+            this.btnAgregarCiudad2.UseVisualStyleBackColor = true;
+            this.btnAgregarCiudad2.Click += new System.EventHandler(this.btnAgregarCiudad2_Click);
+            // 
+            // CmbCiudadCliente2
+            // 
+            this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCiudadCliente2.FormattingEnabled = true;
+            this.CmbCiudadCliente2.Location = new System.Drawing.Point(547, 111);
+            this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
+            this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
+            this.CmbCiudadCliente2.TabIndex = 45;
+            this.CmbCiudadCliente2.SelectedIndexChanged += new System.EventHandler(this.CmbCiudadCliente2_SelectedIndexChanged);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Location = new System.Drawing.Point(550, 141);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(246, 22);
+            this.txtEmail.TabIndex = 47;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(466, 140);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(42, 16);
+            this.label76.TabIndex = 46;
+            this.label76.Text = "Email";
+            // 
+            // CmbProvinciaAuto
+            // 
+            this.CmbProvinciaAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbProvinciaAuto.FormattingEnabled = true;
+            this.CmbProvinciaAuto.Location = new System.Drawing.Point(143, 71);
+            this.CmbProvinciaAuto.Name = "CmbProvinciaAuto";
+            this.CmbProvinciaAuto.Size = new System.Drawing.Size(246, 24);
+            this.CmbProvinciaAuto.TabIndex = 45;
+            this.CmbProvinciaAuto.SelectedIndexChanged += new System.EventHandler(this.CmbProvinciaAuto_SelectedIndexChanged);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(41, 68);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(64, 16);
+            this.label77.TabIndex = 46;
+            this.label77.Text = "Provincia";
             // 
             // FrmVenta
             // 
@@ -3121,5 +3257,17 @@
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.MaskedTextBox txtFechaVencimientoPrenda;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Button btnAgregarProvincia2;
+        private System.Windows.Forms.ComboBox cmbProvincia2;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Button btnAgregarCiudad2;
+        private System.Windows.Forms.ComboBox CmbCiudadCliente2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.ComboBox CmbProvinciaAuto;
     }
 }

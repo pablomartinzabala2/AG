@@ -614,7 +614,7 @@ namespace Concesionaria
                             
                             //fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
                             
-                             CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
+                            CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
                             Int32 CodProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
                             cCiudad city = new Clases.cCiudad();
                             city.ActualizarProvincia(CodCiudad, CodProvincia);

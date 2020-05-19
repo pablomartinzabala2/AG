@@ -705,7 +705,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(517, 176);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(514, 173);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
@@ -715,11 +715,11 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(452, 174);
+            this.label39.Location = new System.Drawing.Point(449, 171);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(74, 16);
+            this.label39.Size = new System.Drawing.Size(59, 16);
             this.label39.TabIndex = 36;
-            this.label39.Text = "Fecha Nac";
+            this.label39.Text = "Fec Nac";
             // 
             // CmbBarrio
             // 

@@ -15,6 +15,7 @@ namespace Concesionaria
         private Boolean GrabaClienteNuevo;
         private Int32 SigueMarca;
         private Int32 SigueCiudad;
+        private Int32 SigueBarrio;
         DataTable tprenda;
         DataTable tbTarjeta;
         DataTable tbCobranza;
@@ -52,6 +53,8 @@ namespace Concesionaria
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTarjeta, "Tarjeta", "Nombre", "CodTarjeta");
             fun.LlenarCombo(CmbTipoCombustible2, "TipoCombustible", "Nombre", "Codigo");
+            fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+            fun.LlenarCombo(CmbProvinciaAuto , "Provincia", "Nombre", "CodProvincia");
             CargarVendedor();
             tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe");
             OcultarVendedor(false);
@@ -287,12 +290,42 @@ namespace Concesionaria
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
+               txtEmail.Text = trdo.Rows[0]["Email"].ToString();
+
+                if (trdo.Rows[0]["FechaNacimiento"].ToString() != "")
+                {
+                    DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
+                    txtFechaNacimiento.Text = FechaNac.ToShortDateString();
+                }
                 if (trdo.Rows[0]["CodBarrio"].ToString() != "")
                 {
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
-                    
+                    cBarrio barrio = new cBarrio();
+                    DataTable tbBarrio = barrio.GetBarrioxId(CodBarrio);
+                    if (tbBarrio.Rows.Count > 0)
+                    {
+                        if (tbBarrio.Rows[0]["CodCiudad"].ToString() != "")
+                        {
+                            Int32 CodCiudad = Convert.ToInt32(tbBarrio.Rows[0]["CodCiudad"].ToString());
+                            cCiudad objCiudad = new cCiudad();
+                            DataTable tbCiudad = objCiudad.GetCiudadxId(CodCiudad);
+                            if (tbCiudad.Rows.Count > 0)
+                            {
+                                if (tbCiudad.Rows[0]["CodProvincia"].ToString() != "")
+                                {  
+                                    Int32 CodProvincia = Convert.ToInt32(tbCiudad.Rows[0]["CodProvincia"].ToString());
+                                    cmbProvincia2.SelectedValue = CodProvincia.ToString();
+                                    DataTable trCiudad = objCiudad.GetCiudadxCodProvincia(CodProvincia);
+                                    cFunciones fun = new cFunciones(); 
+                                    fun.LlenarComboDatatable(CmbCiudadCliente2, trCiudad, "Nombre", "CodCiudad");
+                                    CmbCiudadCliente2.SelectedValue = CodCiudad.ToString();
+                                    CmbBarrio.SelectedValue = CodBarrio.ToString();
+                                }
+                            }
+                        }
+                    }
                 }
-                    
+
                 txtCodCLiente.Text = trdo.Rows[0]["CodCliente"].ToString();
             }
             else
@@ -436,7 +469,8 @@ namespace Concesionaria
             double Interes = 0;
             double Cuotas = 0;
             double ValorCuota = 0;
-
+            Double PorAplicar = 0;
+            Double CapitalConInteres = 0;
             if (txtCapital.Text == "")
             {
                 MessageBox.Show("Debe ingresar un capital", Clases.cMensaje.Mensaje());
@@ -473,14 +507,17 @@ namespace Concesionaria
             if (txtInteres.Text != "")
             {
                 Interes = Convert.ToDouble(txtInteres.Text);
-
             }
 
-
+            PorAplicar = Cuotas * Interes / 12;
+            /*
             double d1 = Cuotas * Interes;
             d1 = d1 / 100;
             double d2 = Capital * d1;
             ValorCuota = (Capital + d2) / Cuotas;
+            */
+            CapitalConInteres = Capital + Capital * PorAplicar / 100;
+            ValorCuota = CapitalConInteres / Cuotas;
             Int32 ValorCuotaEntero = Convert.ToInt32(ValorCuota);
             Int32 ValorCuotaSinInteres = Convert.ToInt32(Capital / Cuotas);
             DateTime FechaVencimiento = Convert.ToDateTime(txtFecha.Text);
@@ -1685,9 +1722,37 @@ namespace Concesionaria
                             cmbCiudad.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
                         if (SigueCiudad == 2)
-                        {
-                            fun.LlenarCombo(CmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
+                        {  
+                            Int32 CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
+                            Int32 CodProvincia = Convert.ToInt32(CmbProvinciaAuto.SelectedValue);
+                            cCiudad city = new Clases.cCiudad();
+                            city.ActualizarProvincia(CodCiudad, CodProvincia);
+                            DataTable tbCiudad = city.GetCiudadxCodProvincia(CodProvincia);
+                            fun.LlenarComboDatatable(CmbCiudad2 , tbCiudad, "Nombre", "CodCiudad");
                             CmbCiudad2.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        }
+                        if (SigueCiudad ==3)
+                        {  
+                            Int32  CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
+                            Int32 CodProvincia = Convert.ToInt32(cmbProvincia2.SelectedValue);
+                            cCiudad city = new Clases.cCiudad();
+                            city.ActualizarProvincia(CodCiudad, CodProvincia);
+                            DataTable tbCiudad = city.GetCiudadxCodProvincia(CodProvincia);
+                            fun.LlenarComboDatatable(CmbCiudadCliente2, tbCiudad, "Nombre", "CodCiudad");
+                            CmbCiudadCliente2.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        }
+                        break;
+                    case "Barrio":
+                        if (SigueBarrio ==2)
+                        {  
+                            Int32 CodCity = Convert.ToInt32(CmbCiudadCliente2.SelectedValue);
+                            Int32 CodBarrio = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
+                            cBarrio obj = new cBarrio();
+                            obj.ActualizarCiudad(CodBarrio, CodCity);
+                            DataTable tbBarrio = obj.GetBarrioxCiudad(CodCity);
+                            fun.LlenarComboDatatable(CmbBarrio, tbBarrio, "Nombre", "CodBarrio");
+                            // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
+                            CmbBarrio.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
                         break;
                     case "Marca":
@@ -1707,10 +1772,6 @@ namespace Concesionaria
                     case "Marca2":
                         fun.LlenarCombo(CmbMarca2, "Marca", "Nombre", "CodMarca");
                         CmbMarca2.SelectedValue = Principal.CampoIdSecundarioGenerado;
-                        break;
-                    case "Barrio":
-                        fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
-                        CmbBarrio.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "EntidadPrendaria":
                         fun.LlenarCombo(CmbEntidadPrendaria, "EntidadPrendaria", "Descripcion", "CodEntidad");
@@ -1735,6 +1796,19 @@ namespace Concesionaria
                             BuscarPreVenta(Convert.ToInt32(Principal.CodigoSenia));
                         }
                         break;
+                    case "Provincia":
+                        if (Principal.CodigoPrincipalAbm == "1")
+                        {
+                         //   fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
+                        //    cmbProvincia.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        }
+
+                        if (Principal.CodigoPrincipalAbm == "2")
+                        {
+                            fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
+                            cmbProvincia2.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        }
+                        break;
 
                 }
             }
@@ -1754,7 +1828,13 @@ namespace Concesionaria
         }
 
         private void btnNuevoBarrio_Click(object sender, EventArgs e)
-        {
+        {  
+            if (CmbCiudadCliente2.SelectedIndex < 1)
+            {
+                MessageBox.Show("Debe seleccionar una ciudad");
+                return;
+            }
+            SigueBarrio = 2;
             Principal.CampoIdSecundario = "CodBarrio";
             Principal.CampoNombreSecundario = "Nombre";
             Principal.NombreTablaSecundario = "Barrio";
@@ -4331,6 +4411,75 @@ namespace Concesionaria
             txtTotalCobranza.Text = "";
             txtImporteCobranza.Text = "";
             CalcularSubTotal();
+        }
+
+        private void cmbProvincia2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProvincia2.SelectedIndex < 1)
+            {
+                return;
+            }
+            Int32 CodProvincia = Convert.ToInt32(cmbProvincia2.SelectedValue);
+            cCiudad ciudad = new Clases.cCiudad();
+            DataTable trdo = ciudad.GetCiudadxCodProvincia(CodProvincia);
+            cFunciones fun = new cFunciones(); 
+            fun.LlenarComboDatatable(CmbCiudadCliente2, trdo, "Nombre", "CodCiudad");
+        }
+
+        private void CmbCiudadCliente2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbCiudadCliente2.SelectedIndex < 1)
+            {
+                // MessageBox.Show("Seleccione una ciudad");
+                return;
+            }
+              
+            Int32 CodCiudad = Convert.ToInt32(CmbCiudadCliente2.SelectedValue);
+            cBarrio barrio = new cBarrio();
+            DataTable tbBarrio = barrio.GetBarrioxCiudad(CodCiudad);
+            cFunciones fun = new cFunciones();
+            fun.LlenarComboDatatable(CmbBarrio, tbBarrio, "Nombre", "CodBarrio");
+        }
+
+        private void btnAgregarProvincia2_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodProvincia";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Provincia";
+            Principal.CodigoPrincipalAbm = "2";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void btnAgregarCiudad2_Click(object sender, EventArgs e)
+        {
+            if (cmbProvincia2.SelectedIndex < 1)
+            {
+                MessageBox.Show("Debe seleccionar una provincia para continuar");
+                return;
+            }
+            Principal.CodigoPrincipalAbm = "4";
+            SigueCiudad = 3;
+            Principal.CampoIdSecundario = "CodCiudad";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Ciudad";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void CmbProvinciaAuto_SelectedIndexChanged(object sender, EventArgs e)
+        {  
+            if (CmbProvinciaAuto.SelectedIndex < 1)
+            {
+                return;
+            }  
+            Int32 CodProvincia = Convert.ToInt32(CmbProvinciaAuto.SelectedValue);
+            cCiudad ciudad = new Clases.cCiudad();
+            DataTable trdo = ciudad.GetCiudadxCodProvincia(CodProvincia);
+            cFunciones fun = new cFunciones();
+            fun.LlenarComboDatatable(CmbCiudad2, trdo, "Nombre", "CodCiudad");
         }
     }
 };
