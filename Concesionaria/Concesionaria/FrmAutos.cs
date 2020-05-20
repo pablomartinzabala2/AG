@@ -232,7 +232,7 @@ namespace Concesionaria
             if (txtTotalGasto.Text != "")
                 Gastos = fun.ToDouble(txtTotalGasto.Text);
 
-            double dif = Total + Gastos - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
+            double dif = Total  - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
             if (Concesion == 0)
                 if (dif != 0)
                 {
@@ -1601,15 +1601,21 @@ namespace Concesionaria
         private void GrabarMovimientoGastoRecepcion(SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra)
         {
             Clases.cFunciones fun = new Clases.cFunciones();
+            Clases.cMovimiento mov = new Clases.cMovimiento();
             if (txtTotalGastosRecepcion.Text != "")
             {
                 if (txtTotalGastosRecepcion.Text != "0")
                 {
-                    DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
-                    double Importe = fun.ToDouble(txtTotalGastosRecepcion.Text);
-                    string Descripcion = "INGRESO GASTOS DE TRANSFERECIA " + txtPatente.Text;
-                    Clases.cMovimiento mov = new Clases.cMovimiento();
-                    mov.RegistrarMovimientoDescripcionTransaccion(con, Transaccion, -1, Principal.CodUsuarioLogueado, Importe, 0, 0, 0, 0, Fecha, Descripcion, CodCompra);
+                    for (int i = 0; i < GrillaGastosRecepcion.Rows.Count - 1;i++)
+                    {
+                        DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+                        double Importe = fun.ToDouble(GrillaGastosRecepcion.Rows[i].Cells[3].Value.ToString ());
+                        string Descripcion = GrillaGastosRecepcion.Rows[i].Cells[1].Value.ToString();
+                        mov.RegistrarMovimientoDescripcionTransaccion(con, Transaccion, -1, Principal.CodUsuarioLogueado,-1* Importe, 0, 0, 0, 0, Fecha, Descripcion, CodCompra);
+                    }
+                    
+                   
+                    
                 }
             }
 
