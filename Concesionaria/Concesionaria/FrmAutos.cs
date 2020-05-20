@@ -61,7 +61,7 @@ namespace Concesionaria
             cmbDocumento.Enabled = false;  
            // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
-            fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
+            fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
@@ -212,6 +212,8 @@ namespace Concesionaria
             double Vehiculos = 0;
             double TotalCheques = 0;
             double EfectivoaPagar = 0;
+            double Gastos = 0;
+
             if (txtTotal.Text != "")
                 Total = fun.ToDouble(txtTotal.Text);
 
@@ -227,7 +229,10 @@ namespace Concesionaria
             if (txtEfectivoaPagar.Text != "")
                 EfectivoaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
 
-            double dif = Total - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
+            if (txtTotalGasto.Text != "")
+                Gastos = fun.ToDouble(txtTotalGasto.Text);
+
+            double dif = Total + Gastos - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
             if (Concesion == 0)
                 if (dif != 0)
                 {
@@ -652,8 +657,8 @@ namespace Concesionaria
                         CmbBarrio.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "CategoriaGasto":
-                        // fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
-                        // CmbCategoriaGasto.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
+                         CmbGastoRecepcion.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "CategoriaGastoRecepcion":
                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
@@ -973,7 +978,8 @@ namespace Concesionaria
         {
             Clases.cFunciones fun = new Clases.cFunciones();
             txtImporte.Text = fun.FormatoEnteroMiles(txtImporte.Text);
-            CalcularTotalCompra();
+            txtTotal.Text = txtImporte.Text;
+           // CalcularTotalCompra();
         }
 
         private void CalcularTotalCompra()
@@ -1095,21 +1101,14 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cGasto gasto = new Clases.cGasto();
             string Descripcion = gasto.GetNombreGastoRecepcionxCodigo(Convert.ToInt32(CmbGastoRecepcion.SelectedValue));
-            AgregarGastoRecepcion(CmbGastoRecepcion.SelectedValue.ToString(), Descripcion, txtImporteGastoRecepcion.Text, "Recepcion");
-            CalcularTotalCompra();
+            AgregarGastoRecepcion(CmbGastoRecepcion.SelectedValue.ToString(), Descripcion, txtImporteGastoRecepcion.Text, "Generales");
+            txtTotalGasto.Text = txtTotalGastosRecepcion.Text;
+          //  CalcularTotalCompra();
         }
 
         private void AgregarGastoRecepcion(string Codigo, string Descripcion, string Importe, string Tipo)
         {
-            /*  for (int i = 0; i < GrillaGastosRecepcion.Rows.Count - 1; i++)
-              {
-                  if (GrillaGastosRecepcion.Rows[i].Cells[0].Value.ToString() == Codigo.ToString() && GrillaGastos.Rows[i].Cells[2].Value.ToString() == Tipo)
-                  {
-                      MessageBox.Show("Ya se ha ingresado el gasto", Clases.cMensaje.Mensaje());
-                      return;
-                  }
-              }
-             */
+           
             DataTable tListado = new DataTable();
             tListado.Columns.Add("Codigo");
             tListado.Columns.Add("Descripcion");
@@ -1259,20 +1258,24 @@ namespace Concesionaria
         private void GrabarGastosPagar(SqlConnection con, SqlTransaction Transaccion, Int32 CodAuto,Int32 CodCompra)
         {
             DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
-
             Clases.cFunciones fun = new Clases.cFunciones();
             string Nombre = "";
             Int32 CodStock = Convert.ToInt32(txtCodStock.Text);
             double Importe = 0;
-            Clases.cGastosPagar gasto = new Clases.cGastosPagar();
+            Int32 Codigo = 0;
+            
+            cGasto objGasto = new Clases.cGasto();
+           // Clases.cGastosPagar gasto = new Clases.cGastosPagar();
             for (int i = 0; i < GrillaGastosRecepcion.Rows.Count - 1; i++)
             {
+                Codigo = Convert.ToInt32(GrillaGastosRecepcion.Rows[i].Cells[0].Value.ToString());
                 Nombre = GrillaGastosRecepcion.Rows[i].Cells[1].Value.ToString();
                 if (GrillaGastosRecepcion.Rows[i].Cells[3].Value.ToString() != "")
                     Importe = fun.ToDouble(GrillaGastosRecepcion.Rows[i].Cells[3].Value.ToString());
                 else
                     Importe = 0;
-                gasto.InsertarGastosPagarTransaccion(con, Transaccion, CodAuto, Nombre, Fecha, Importe, null, CodStock, CodCompra);
+                // gasto.InsertarGastosPagarTransaccion(con, Transaccion, CodAuto, Nombre, Fecha, Importe, null, CodStock, CodCompra);
+                objGasto.InsertarGastotransaccion(con, Transaccion, CodStock, Codigo, Importe, Fecha);
             }
         }
 
@@ -1639,9 +1642,9 @@ namespace Concesionaria
 
         private void bnAgregarGastosRecepcion_Click_1(object sender, EventArgs e)
         {
-            Principal.CampoIdSecundario = "Codigo";
-            Principal.CampoNombreSecundario = "Descripcion";
-            Principal.NombreTablaSecundario = "CategoriaGastoRecepcion";
+            Principal.CampoIdSecundario = "CodCategoriaGasto";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "CategoriaGasto";
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
@@ -2171,6 +2174,11 @@ namespace Concesionaria
             GrillaPapeles.Columns[5].Width = 90;
             GrillaPapeles.Columns[5].HeaderText = "Vencimiento";
             GrillaPapeles.Columns[3].HeaderText = "Entrego";
+        }
+
+        private void txtImporte_Layout(object sender, LayoutEventArgs e)
+        {
+
         }
     }
 }

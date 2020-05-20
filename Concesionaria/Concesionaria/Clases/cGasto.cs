@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 namespace Concesionaria.Clases
 {
     public  class cGasto
@@ -35,6 +36,23 @@ namespace Concesionaria.Clases
             sql = sql + "," + "'" + Fecha.ToShortDateString() + "'";
             sql = sql + ")";
             cDb.ExecutarNonQuery(sql);
+        }
+
+        public void InsertarGastotransaccion(SqlConnection con, SqlTransaction Transaccion, Int32 CodStock, Int32 CodCategoriaGasto, double Importe, DateTime Fecha)
+        {
+            string sql = "";
+            sql = "Insert into Gasto(CodStock,CodCategoriaGasto,Importe,Fecha)";
+            sql = sql + "values (" + CodStock.ToString();
+            sql = sql + "," + CodCategoriaGasto.ToString();
+            sql = sql + "," + Importe.ToString();
+            sql = sql + "," + "'" + Fecha.ToShortDateString() + "'";
+            sql = sql + ")";
+            SqlCommand comand = new SqlCommand();
+            comand.Connection = con;
+            comand.Transaction = Transaccion;
+            comand.CommandText = sql;
+            comand.ExecuteNonQuery();
+
         }
 
         public DataTable GetGastosxCodStock(Int32 CodStock)
