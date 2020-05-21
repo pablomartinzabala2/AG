@@ -20,7 +20,7 @@ namespace Concesionaria.Clases
             // string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=COPIACONCESIONARIA;Integrated Security=True";
             // string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;Integrated Security=True";
             //  string cadena = "Data Source=ALLINONE;Initial Catalog=AUTOMOTORES;User ID=sa;Password=123";
-
+            //jjj
             return cadena;
         }
     }

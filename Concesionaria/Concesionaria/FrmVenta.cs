@@ -2909,8 +2909,8 @@ namespace Concesionaria
 
             Clases.cGasto gasto = new Clases.cGasto();
             Clases.cGastosPagar GastosPagar = new Clases.cGastosPagar();
-            //DataTable trdo = gasto.GetGastosxCodStock(CodStock);
-            DataTable trdo = GastosPagar.GetGastosPagarxCodStock(CodStock);
+            DataTable trdo = gasto.GetGastosxCodStock(CodStock);
+          //  DataTable trdo = GastosPagar.GetGastosPagarxCodStock(CodStock);
             int i = 0;
 
             for (i = 0; i < trdo.Rows.Count; i++)
@@ -2919,9 +2919,9 @@ namespace Concesionaria
                 if (sImporte != "")
                     Total = Total + Convert.ToDouble(sImporte);
                 string sFecha = trdo.Rows[i]["Fecha"].ToString();
-                string sDescripcion = trdo.Rows[i]["Descripcion"].ToString();
+                string sDescripcion = trdo.Rows[i]["Nombre"].ToString();
                 DataRow r = tGastos.NewRow();
-                r["CodGasto"] = trdo.Rows[i]["CodGasto"].ToString();
+                r["CodGasto"] = trdo.Rows[i]["CodCategoriaGasto"].ToString();
                 r["Descripcion"] = sDescripcion;
                 r["Fecha"] = sFecha;
                 r["Importe"] = sImporte;
