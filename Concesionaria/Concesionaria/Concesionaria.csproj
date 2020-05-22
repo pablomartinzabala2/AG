@@ -59,6 +59,7 @@
     <Compile Include="Clases\cAuto.cs" />
     <Compile Include="Clases\cBanco.cs" />
     <Compile Include="Clases\cBarrio.cs" />
+    <Compile Include="Clases\cCategoriaGasto.cs" />
     <Compile Include="Clases\cCheque.cs" />
     <Compile Include="Clases\cChequeCobrar.cs" />
     <Compile Include="Clases\cChequesaPagar.cs" />

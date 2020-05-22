@@ -232,7 +232,7 @@ namespace Concesionaria
             if (txtTotalGasto.Text != "")
                 Gastos = fun.ToDouble(txtTotalGasto.Text);
 
-            double dif = Total  - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
+            double dif = Total - Efectivo - Vehiculos - TotalCheques - EfectivoaPagar;
             if (Concesion == 0)
                 if (dif != 0)
                 {
@@ -979,7 +979,7 @@ namespace Concesionaria
             Clases.cFunciones fun = new Clases.cFunciones();
             txtImporte.Text = fun.FormatoEnteroMiles(txtImporte.Text);
             txtTotal.Text = txtImporte.Text;
-           // CalcularTotalCompra();
+            CalcularTotalCompra();
         }
 
         private void CalcularTotalCompra()
@@ -1098,12 +1098,15 @@ namespace Concesionaria
                 MessageBox.Show("Debe ingresar un importe de gasto de recepción ", Clases.cMensaje.Mensaje());
                 return;
             }
+            
+            cCategoriaGasto cat = new cCategoriaGasto();
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cGasto gasto = new Clases.cGasto();
-            string Descripcion = gasto.GetNombreGastoRecepcionxCodigo(Convert.ToInt32(CmbGastoRecepcion.SelectedValue));
+            string Descripcion = cat.GetGastoxId(Convert.ToInt32 (CmbGastoRecepcion.SelectedValue.ToString()));
             AgregarGastoRecepcion(CmbGastoRecepcion.SelectedValue.ToString(), Descripcion, txtImporteGastoRecepcion.Text, "Generales");
             txtTotalGasto.Text = txtTotalGastosRecepcion.Text;
-          //  CalcularTotalCompra();
+            txtTotalGastosRecepcion.Text = txtTotalGasto.Text;
+            CalcularTotalCompra();
         }
 
         private void AgregarGastoRecepcion(string Codigo, string Descripcion, string Importe, string Tipo)
@@ -1131,6 +1134,13 @@ namespace Concesionaria
 
                 tListado.Rows.Add(r);
             }
+            
+            cFunciones fun = new cFunciones();
+            if (fun.Buscar (tListado ,"Codigo",Codigo)==true)
+            {
+                Mensaje("Ya se a agregado el gasto");
+                return;
+            }
             DataRow r1;
             r1 = tListado.NewRow();
             r1[0] = Codigo;
@@ -1140,7 +1150,7 @@ namespace Concesionaria
 
             tListado.Rows.Add(r1);
             GrillaGastosRecepcion.DataSource = tListado;
-            Clases.cFunciones fun = new Clases.cFunciones();
+          
             GrillaGastosRecepcion.Columns[0].Visible = false;
             GrillaGastosRecepcion.Columns[2].Visible = false;
 
@@ -1573,9 +1583,14 @@ namespace Concesionaria
             string Descripcion = "COMPRA DE AUTO " + txtPatente.Text;
             Clases.cFunciones fun = new Clases.cFunciones();
             Double Importe = 0;
+            Double Gastos = 0;
             double ValorCompra = fun.ToDouble(txtTotal.Text);
             if (txtEfectivo.Text != "")
                 Importe = fun.ToDouble(txtEfectivo.Text);
+            if (txtTotalGasto.Text != "")
+                Gastos = fun.ToDouble(txtTotalGasto.Text);
+
+            Importe = Importe - Gastos;
             Clases.cMovimiento mov = new Clases.cMovimiento();
             mov.RegistrarMovimientoDescripcionTransaccion(con, Transaccion, -1, Principal.CodUsuarioLogueado, (-1) * Importe, 0, 0, ValorCompra, 0, Fecha, Descripcion, CodCompra);
 
@@ -1847,6 +1862,7 @@ namespace Concesionaria
                 {
                     Int32 CodStockEntrada = Convert.ToInt32(trdo.Rows[0]["CodStockEntrada"].ToString());
                     BuscarStockxCodStock(CodStockEntrada);
+                    BuscarGasto(CodStockEntrada);
                 }
 
                 if (trdo.Rows[0]["CodStockSalida"].ToString() != "")
@@ -1868,6 +1884,30 @@ namespace Concesionaria
                     }
                 }
 
+            }
+        }
+
+        private void BuscarGasto(Int32 CodStock)
+        {
+            cGasto gasto = new Clases.cGasto();
+            DataTable trdo =gasto.GetGastosxCodStock(CodStock);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["CodCategoriaGasto"].ToString ()!="")
+                {
+                    Int32 Codigo = 0;
+                    string Nombre = "";
+                    string Importe = "";
+                    for (int i = 0; i < trdo.Rows.Count ; i++)
+                    {
+                        Codigo = Convert.ToInt32(trdo.Rows[i]["CodCategoriaGasto"].ToString());
+                        Nombre = trdo.Rows[i]["Nombre"].ToString();
+                        Importe = trdo.Rows[i]["Importe"].ToString();
+                        AgregarGastoRecepcion(Codigo.ToString(), Nombre, Importe, "");
+                    }
+                    txtTotalGasto.Text = txtTotalGastosRecepcion.Text;
+                    CalcularTotalCompra();
+                }
             }
         }
 
