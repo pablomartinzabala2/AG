@@ -238,7 +238,8 @@ namespace Concesionaria.Clases
         public DataTable GetAutoxCodigo(Int32 CodAuto)
         {
             string sql = "select a.*,m.nombre as Marca";
-                sql = sql + " from auto a,Marca m";
+            sql = sql + ",(select c.CodProvincia from Ciudad c where c.CodCiudad = a.CodCiudad) as CodProvincia ";
+            sql = sql + " from auto a,Marca m";
             sql = sql + " where a.CodMarca = m.CodMarca";
             sql = sql + " and CodAuto =" + CodAuto.ToString ();
             return cDb.ExecuteDataTable (sql);

@@ -118,7 +118,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.GrillaPapeles = new System.Windows.Forms.DataGridView();
             this.btnQuitarPapel = new System.Windows.Forms.Button();
@@ -174,6 +173,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -1104,17 +1104,6 @@
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Observación";
             // 
-            // txtObservacion
-            // 
-            this.txtObservacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.txtObservacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservacion.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtObservacion.Location = new System.Drawing.Point(13, 33);
-            this.txtObservacion.Multiline = true;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(783, 185);
-            this.txtObservacion.TabIndex = 42;
-            // 
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
@@ -1675,6 +1664,14 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(12, 14);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(784, 203);
+            this.txtObservacion.TabIndex = 0;
+            // 
             // FrmAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1868,7 +1865,6 @@
         private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.ListBox Lista;
         private System.Windows.Forms.Button button3;
@@ -1882,5 +1878,6 @@
         private System.Windows.Forms.DataGridView GrillaPapeles;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtTotalGasto;
+        private System.Windows.Forms.TextBox txtObservacion;
     }
 }

@@ -519,7 +519,8 @@ namespace Concesionaria.Clases
                             }
                             else
                             {
-                                Combo.SelectedIndex = 0;
+                                if (Combo.Items.Count >0)
+                                    Combo.SelectedIndex = 0;
                             }
 
                         }

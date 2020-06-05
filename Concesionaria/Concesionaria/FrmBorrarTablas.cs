@@ -23,6 +23,18 @@ namespace Concesionaria
                 MessageBox.Show("Ingresar clave");
                 return;
             }
+
+            string msj = "Confirma eliminar";
+            var result = MessageBox.Show(msj, "Información",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+            // If the no button was pressed ...
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
             Clases.cConfiguracion.BorrarTablas();
             MessageBox.Show("datos borrados", Clases.cMensaje.Mensaje()); 
         }

@@ -68,6 +68,16 @@
             this.lblPatente = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.btnAgregarCiudad2 = new System.Windows.Forms.Button();
+            this.CmbCiudadCliente2 = new System.Windows.Forms.ComboBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.btnAgregarProvincia2 = new System.Windows.Forms.Button();
+            this.cmbProvincia2 = new System.Windows.Forms.ComboBox();
+            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
+            this.label73 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtCodCLiente = new System.Windows.Forms.TextBox();
@@ -161,6 +171,9 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarProvinciaAuto = new System.Windows.Forms.Button();
+            this.label77 = new System.Windows.Forms.Label();
+            this.CmbProvinciaAuto = new System.Windows.Forms.ComboBox();
             this.CmbTipoCombustible2 = new System.Windows.Forms.ComboBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
@@ -270,19 +283,8 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.btnAgregarProvincia2 = new System.Windows.Forms.Button();
-            this.cmbProvincia2 = new System.Windows.Forms.ComboBox();
-            this.label75 = new System.Windows.Forms.Label();
-            this.btnAgregarCiudad2 = new System.Windows.Forms.Button();
-            this.CmbCiudadCliente2 = new System.Windows.Forms.ComboBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.CmbProvinciaAuto = new System.Windows.Forms.ComboBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.btnAgregarProvinciaAuto = new System.Windows.Forms.Button();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -321,6 +323,7 @@
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.groupBox55.SuspendLayout();
+            this.tabPage18.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -332,6 +335,7 @@
             this.tabControl1.Controls.Add(this.tabPage15);
             this.tabControl1.Controls.Add(this.Garantías);
             this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage18);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -770,6 +774,99 @@
             this.groupBox1.Size = new System.Drawing.Size(826, 179);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEmail.Location = new System.Drawing.Point(550, 141);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(246, 22);
+            this.txtEmail.TabIndex = 47;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(466, 140);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(42, 16);
+            this.label76.TabIndex = 46;
+            this.label76.Text = "Email";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(466, 115);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(51, 16);
+            this.label75.TabIndex = 43;
+            this.label75.Text = "Ciudad";
+            // 
+            // btnAgregarCiudad2
+            // 
+            this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(799, 112);
+            this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
+            this.btnAgregarCiudad2.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarCiudad2.TabIndex = 44;
+            this.btnAgregarCiudad2.UseVisualStyleBackColor = true;
+            this.btnAgregarCiudad2.Click += new System.EventHandler(this.btnAgregarCiudad2_Click);
+            // 
+            // CmbCiudadCliente2
+            // 
+            this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbCiudadCliente2.FormattingEnabled = true;
+            this.CmbCiudadCliente2.Location = new System.Drawing.Point(547, 111);
+            this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
+            this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
+            this.CmbCiudadCliente2.TabIndex = 45;
+            this.CmbCiudadCliente2.SelectedIndexChanged += new System.EventHandler(this.CmbCiudadCliente2_SelectedIndexChanged);
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(19, 107);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(64, 16);
+            this.label74.TabIndex = 42;
+            this.label74.Text = "Provincia";
+            // 
+            // btnAgregarProvincia2
+            // 
+            this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvincia2.Location = new System.Drawing.Point(373, 99);
+            this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
+            this.btnAgregarProvincia2.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregarProvincia2.TabIndex = 40;
+            this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
+            this.btnAgregarProvincia2.Click += new System.EventHandler(this.btnAgregarProvincia2_Click);
+            // 
+            // cmbProvincia2
+            // 
+            this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincia2.FormattingEnabled = true;
+            this.cmbProvincia2.Location = new System.Drawing.Point(121, 107);
+            this.cmbProvincia2.Name = "cmbProvincia2";
+            this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
+            this.cmbProvincia2.TabIndex = 41;
+            this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(551, 0);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaNacimiento.TabIndex = 39;
+            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(458, 3);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(59, 16);
+            this.label73.TabIndex = 38;
+            this.label73.Text = "Fec Nac";
             // 
             // txtCelular
             // 
@@ -1736,6 +1833,35 @@
             this.groupBox4.Size = new System.Drawing.Size(850, 152);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
+            // 
+            // btnAgregarProvinciaAuto
+            // 
+            this.btnAgregarProvinciaAuto.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnAgregarProvinciaAuto.Location = new System.Drawing.Point(395, 65);
+            this.btnAgregarProvinciaAuto.Name = "btnAgregarProvinciaAuto";
+            this.btnAgregarProvinciaAuto.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarProvinciaAuto.TabIndex = 47;
+            this.btnAgregarProvinciaAuto.UseVisualStyleBackColor = true;
+            this.btnAgregarProvinciaAuto.Click += new System.EventHandler(this.btnAgregarProvinciaAuto_Click);
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(36, 68);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(64, 16);
+            this.label77.TabIndex = 46;
+            this.label77.Text = "Provincia";
+            // 
+            // CmbProvinciaAuto
+            // 
+            this.CmbProvinciaAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbProvinciaAuto.FormattingEnabled = true;
+            this.CmbProvinciaAuto.Location = new System.Drawing.Point(143, 71);
+            this.CmbProvinciaAuto.Name = "CmbProvinciaAuto";
+            this.CmbProvinciaAuto.Size = new System.Drawing.Size(246, 24);
+            this.CmbProvinciaAuto.TabIndex = 45;
+            this.CmbProvinciaAuto.SelectedIndexChanged += new System.EventHandler(this.CmbProvinciaAuto_SelectedIndexChanged);
             // 
             // CmbTipoCombustible2
             // 
@@ -2826,127 +2952,23 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // txtFechaNacimiento
+            // tabPage18
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(551, 0);
-            this.txtFechaNacimiento.Mask = "00/00/0000";
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
-            this.txtFechaNacimiento.TabIndex = 39;
-            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
+            this.tabPage18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage18.Controls.Add(this.txtObservacion);
+            this.tabPage18.Location = new System.Drawing.Point(4, 25);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Size = new System.Drawing.Size(863, 168);
+            this.tabPage18.TabIndex = 7;
+            this.tabPage18.Text = "Observaciones";
             // 
-            // label73
+            // txtObservacion
             // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(458, 3);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(59, 16);
-            this.label73.TabIndex = 38;
-            this.label73.Text = "Fec Nac";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(19, 107);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(64, 16);
-            this.label74.TabIndex = 42;
-            this.label74.Text = "Provincia";
-            // 
-            // btnAgregarProvincia2
-            // 
-            this.btnAgregarProvincia2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvincia2.Location = new System.Drawing.Point(373, 99);
-            this.btnAgregarProvincia2.Name = "btnAgregarProvincia2";
-            this.btnAgregarProvincia2.Size = new System.Drawing.Size(25, 25);
-            this.btnAgregarProvincia2.TabIndex = 40;
-            this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
-            this.btnAgregarProvincia2.Click += new System.EventHandler(this.btnAgregarProvincia2_Click);
-            // 
-            // cmbProvincia2
-            // 
-            this.cmbProvincia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbProvincia2.FormattingEnabled = true;
-            this.cmbProvincia2.Location = new System.Drawing.Point(121, 107);
-            this.cmbProvincia2.Name = "cmbProvincia2";
-            this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
-            this.cmbProvincia2.TabIndex = 41;
-            this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(466, 115);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(51, 16);
-            this.label75.TabIndex = 43;
-            this.label75.Text = "Ciudad";
-            // 
-            // btnAgregarCiudad2
-            // 
-            this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad2.Location = new System.Drawing.Point(799, 112);
-            this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
-            this.btnAgregarCiudad2.Size = new System.Drawing.Size(25, 25);
-            this.btnAgregarCiudad2.TabIndex = 44;
-            this.btnAgregarCiudad2.UseVisualStyleBackColor = true;
-            this.btnAgregarCiudad2.Click += new System.EventHandler(this.btnAgregarCiudad2_Click);
-            // 
-            // CmbCiudadCliente2
-            // 
-            this.CmbCiudadCliente2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbCiudadCliente2.FormattingEnabled = true;
-            this.CmbCiudadCliente2.Location = new System.Drawing.Point(547, 111);
-            this.CmbCiudadCliente2.Name = "CmbCiudadCliente2";
-            this.CmbCiudadCliente2.Size = new System.Drawing.Size(246, 24);
-            this.CmbCiudadCliente2.TabIndex = 45;
-            this.CmbCiudadCliente2.SelectedIndexChanged += new System.EventHandler(this.CmbCiudadCliente2_SelectedIndexChanged);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(550, 141);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(246, 22);
-            this.txtEmail.TabIndex = 47;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(466, 140);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(42, 16);
-            this.label76.TabIndex = 46;
-            this.label76.Text = "Email";
-            // 
-            // CmbProvinciaAuto
-            // 
-            this.CmbProvinciaAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbProvinciaAuto.FormattingEnabled = true;
-            this.CmbProvinciaAuto.Location = new System.Drawing.Point(143, 71);
-            this.CmbProvinciaAuto.Name = "CmbProvinciaAuto";
-            this.CmbProvinciaAuto.Size = new System.Drawing.Size(246, 24);
-            this.CmbProvinciaAuto.TabIndex = 45;
-            this.CmbProvinciaAuto.SelectedIndexChanged += new System.EventHandler(this.CmbProvinciaAuto_SelectedIndexChanged);
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(36, 68);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(64, 16);
-            this.label77.TabIndex = 46;
-            this.label77.Text = "Provincia";
-            // 
-            // btnAgregarProvinciaAuto
-            // 
-            this.btnAgregarProvinciaAuto.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarProvinciaAuto.Location = new System.Drawing.Point(395, 65);
-            this.btnAgregarProvinciaAuto.Name = "btnAgregarProvinciaAuto";
-            this.btnAgregarProvinciaAuto.Size = new System.Drawing.Size(40, 28);
-            this.btnAgregarProvinciaAuto.TabIndex = 47;
-            this.btnAgregarProvinciaAuto.UseVisualStyleBackColor = true;
-            this.btnAgregarProvinciaAuto.Click += new System.EventHandler(this.btnAgregarProvinciaAuto_Click);
+            this.txtObservacion.Location = new System.Drawing.Point(13, 15);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(833, 137);
+            this.txtObservacion.TabIndex = 0;
             // 
             // FrmVenta
             // 
@@ -3021,6 +3043,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3282,5 +3306,7 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.ComboBox CmbProvinciaAuto;
         private System.Windows.Forms.Button btnAgregarProvinciaAuto;
+        private System.Windows.Forms.TabPage tabPage18;
+        private System.Windows.Forms.TextBox txtObservacion;
     }
 }

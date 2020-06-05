@@ -10,7 +10,7 @@ namespace Concesionaria.Clases
         public static  string Cadenacon()
         {
             //*****CASA**********
-            ///  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CHACO;Integrated Security=True";
+          //    string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=CHACO;Integrated Security=True";
             //*****TEST2**********
             //  string cadena = "Data Source=DESKTOP-QKECIIE;Initial Catalog=TEST2;Integrated Security=True";
             //CHACO

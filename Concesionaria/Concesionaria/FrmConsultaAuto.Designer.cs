@@ -109,6 +109,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmConsultaAuto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de vehículos";
             this.Load += new System.EventHandler(this.FrmConsultaAuto_Load);
             this.groupBox1.ResumeLayout(false);

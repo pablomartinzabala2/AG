@@ -299,8 +299,8 @@ namespace Concesionaria
                 txtCelular.Text = trdo.Rows[0]["Celular"].ToString();
                 txtCalle.Text = trdo.Rows[0]["Calle"].ToString();
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
-               txtEmail.Text = trdo.Rows[0]["Email"].ToString();
-
+                txtEmail.Text = trdo.Rows[0]["Email"].ToString();
+                txtObservacion.Text = trdo.Rows[0]["Observacion"].ToString();
                 if (trdo.Rows[0]["FechaNacimiento"].ToString() != "")
                 {
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
@@ -1153,7 +1153,7 @@ namespace Concesionaria
             string Calle = txtCalle.Text;
             string Altura = txtAltura.Text;
             Int32? CodBarrio = null;
-
+            string Observacion = txtObservacion.Text;
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
 
@@ -1161,7 +1161,7 @@ namespace Concesionaria
             {
                 GrabaClienteNuevo = true;
                 sql = cliente.GetSqlInsertarCliente(CodTipoDoc, NroDocumento, Nombre,
-                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio);
+                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio,Observacion);
                 txtCodCLiente.Text = cliente.GetMaxCliente().ToString();
             }
             else
@@ -1169,7 +1169,7 @@ namespace Concesionaria
                 GrabaClienteNuevo = false;
                 sql = cliente.GetSqlModificarCliente(Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                       Apellido, Telefono, Celular,
-                      Calle, Altura, CodBarrio);
+                      Calle, Altura, CodBarrio,Observacion);
             }
             return sql;
         }
@@ -1452,6 +1452,7 @@ namespace Concesionaria
             cmbMarca.SelectedIndex = 0;
             CmbEntidadPrendaria.SelectedIndex = 0;
             txtDescripcion.Text = "";
+            txtObservacion.Text = "";
             txtAnio.Text = "";
             txtKms.Text = "";
             txtPrecioVenta.Text = "";

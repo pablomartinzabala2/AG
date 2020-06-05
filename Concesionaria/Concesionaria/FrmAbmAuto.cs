@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmAbmAuto : Form
@@ -17,16 +17,16 @@ namespace Concesionaria
         }
 
         private void FrmAbmAuto_Load(object sender, EventArgs e)
-        {
+        {  
             Botonera(1);
             Grupo.Enabled = false;  
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
-            fun.LlenarCombo(cmb_CodCiudad, "Ciudad", "Nombre", "CodCiudad");
+            fun.LlenarCombo(cmbProvincia , "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmb_CodTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
-            cmb_CodCiudad.SelectedValue = 1;
-
-        }
+            fun.LlenarCombo(cmb_CodTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
+            fun.LlenarCombo(cmb_CodSucursal, "Sucursal", "Nombre", "CodSucursal");
+         }
 
         private void InicializarComponentes()
         {
@@ -139,6 +139,7 @@ namespace Concesionaria
                     if (Principal.CodigoPrincipalAbm != "")
                         fun.CargarControles(this, "Auto", "CodAuto", txtCodAuto.Text);
                     Grupo.Enabled = false;
+                    UbicarProvincia(Convert.ToInt32(txtCodAuto.Text));
                     return;
                 }
 
@@ -156,6 +157,29 @@ namespace Concesionaria
             //            break;
             //    }
             //}
+        }
+
+        private void UbicarProvincia(Int32 CodAuto)
+        {
+            cAuto auto = new Clases.cAuto();
+            DataTable trdo = auto.GetAutoxCodigo(CodAuto);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["CodProvincia"].ToString ()!="")
+                {
+                    Int32  CodProv =Convert.ToInt32 (trdo.Rows[0]["CodProvincia"].ToString());
+                    cmbProvincia.SelectedValue = CodProv;
+                    cCiudad ciudad = new Clases.cCiudad();
+                    DataTable tr = ciudad.GetCiudadxCodProvincia(CodProv);
+                    cFunciones fun = new cFunciones();
+                    fun.LlenarComboDatatable(cmb_CodCiudad, tr, "Nombre", "CodCiudad");
+                    if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                    {
+                        string CodCiudad = trdo.Rows[0]["CodCiudad"].ToString();
+                        cmb_CodCiudad.SelectedValue = CodCiudad.ToString();
+                    }
+                }
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -303,19 +327,29 @@ namespace Concesionaria
                 return;
             }
             Clases.cAuto cauto = new Clases.cAuto();
-            if (cauto.PuedeBorrar(Convert.ToInt32(txtCodAuto.Text)))
+            try
             {
-                Clases.cFunciones fun = new Clases.cFunciones();
-                fun.EliminarGenerico("Auto", "CodAuto", txtCodAuto.Text);
-                MessageBox.Show("El vehículo se ha eliminado de la base", Clases.cMensaje.Mensaje());
-                fun.LimpiarGenerico(this);
-                txtCodAuto.Text = "";
-                Botonera(1);
+                if (cauto.PuedeBorrar(Convert.ToInt32(txtCodAuto.Text)))
+                {
+                    Clases.cFunciones fun = new Clases.cFunciones();
+                    fun.EliminarGenerico("Auto", "CodAuto", txtCodAuto.Text);
+                    MessageBox.Show("El vehículo se ha eliminado de la base", Clases.cMensaje.Mensaje());
+                    fun.LimpiarGenerico(this);
+                    txtCodAuto.Text = "";
+                    Botonera(1);
+                }
+                else
+                {
+                    MessageBox.Show("El vehículo no se puede eliminar, se perderían datos historicos.", Clases.cMensaje.Mensaje());
+                }
             }
-            else
+            catch (Exception)
             {
                 MessageBox.Show("El vehículo no se puede eliminar, se perderían datos historicos.", Clases.cMensaje.Mensaje());
+                throw;
             }
+           
+           
         }
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
@@ -335,6 +369,8 @@ namespace Concesionaria
                 Botonera(1);
                 fun.LimpiarGenerico(this);
                 txtCodAuto.Text = "";
+                if (cmbProvincia.Items.Count > 0)
+                    cmbProvincia.SelectedIndex = 0;
             }
         }
 
@@ -373,6 +409,19 @@ namespace Concesionaria
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProvincia.SelectedIndex < 1)
+            {
+                return;
+            } 
+            Int32 CodProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
+            cCiudad ciudad = new Clases.cCiudad();
+            DataTable trdo = ciudad.GetCiudadxCodProvincia(CodProvincia);
+            cFunciones fun = new cFunciones();
+            fun.LlenarComboDatatable(cmb_CodCiudad, trdo, "Nombre", "CodCiudad");
         }
     }
 }
