@@ -649,6 +649,12 @@
     <Compile Include="FrmSaldoCuotas.Designer.cs">
       <DependentUpon>FrmSaldoCuotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSql.Designer.cs">
+      <DependentUpon>FrmSql.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStockAuto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -941,6 +947,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaldoCuotas.resx">
       <DependentUpon>FrmSaldoCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSql.resx">
+      <DependentUpon>FrmSql.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStockAuto.resx">
       <DependentUpon>FrmStockAuto.cs</DependentUpon>
