@@ -17,7 +17,7 @@ namespace Concesionaria
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
-        {
+        {  //18-6-2020
             try
             {
                 string sql = txtSql.Text;
