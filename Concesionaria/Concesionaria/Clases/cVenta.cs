@@ -118,6 +118,7 @@ namespace Concesionaria.Clases
             string sql = "select v.CodAuto,a.Patente,a.Descripcion, ";
             sql = sql + "(select m.Nombre from marca m where m.CodMarca = a.CodMarca) as Marca,";
             sql = sql + "v.Importe";
+            sql = sql + ",(select sa.CodStock from stockauto sa where sa.CodAuto=a.CodAuto) as CodStock";
             sql = sql + " from VentasxAuto v, auto a";
             sql = sql + " where v.CodAuto = a.CodAuto";
             sql = sql + " and v.CodVenta =" + CodVenta.ToString ();

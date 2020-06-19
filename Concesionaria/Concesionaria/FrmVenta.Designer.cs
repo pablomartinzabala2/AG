@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVenta));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -148,6 +149,8 @@
             this.txtFechaImpuesto = new System.Windows.Forms.MaskedTextBox();
             this.label67 = new System.Windows.Forms.Label();
             this.btnAgregarImpuesto = new System.Windows.Forms.Button();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -283,8 +286,17 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.tabPage19 = new System.Windows.Forms.TabPage();
+            this.ListaPapeles = new System.Windows.Forms.ListBox();
+            this.btnQuitarPapel = new System.Windows.Forms.Button();
+            this.btnAgregarPapel = new System.Windows.Forms.Button();
+            this.txtFechaVtoPapel = new System.Windows.Forms.MaskedTextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.txtFechaEntregaPapel = new System.Windows.Forms.MaskedTextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.chkEntrego = new System.Windows.Forms.CheckBox();
+            this.btnNuevoPapel = new System.Windows.Forms.Button();
+            this.GrillaPapeles = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -300,6 +312,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGarantias)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaImpuestos)).BeginInit();
+            this.tabPage18.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -323,7 +336,8 @@
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.groupBox55.SuspendLayout();
-            this.tabPage18.SuspendLayout();
+            this.tabPage19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1554,6 +1568,24 @@
             this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
             this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
             // 
+            // tabPage18
+            // 
+            this.tabPage18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage18.Controls.Add(this.txtObservacion);
+            this.tabPage18.Location = new System.Drawing.Point(4, 25);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Size = new System.Drawing.Size(863, 168);
+            this.tabPage18.TabIndex = 7;
+            this.tabPage18.Text = "Observaciones";
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(13, 15);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(833, 137);
+            this.txtObservacion.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tabControl2);
@@ -1775,6 +1807,7 @@
             this.tabControl3.Controls.Add(this.tabPage10);
             this.tabControl3.Controls.Add(this.tabPage11);
             this.tabControl3.Controls.Add(this.tabPage13);
+            this.tabControl3.Controls.Add(this.tabPage19);
             this.tabControl3.Location = new System.Drawing.Point(6, 6);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
@@ -2952,23 +2985,119 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // tabPage18
+            // tabPage19
             // 
-            this.tabPage18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.tabPage18.Controls.Add(this.txtObservacion);
-            this.tabPage18.Location = new System.Drawing.Point(4, 25);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Size = new System.Drawing.Size(863, 168);
-            this.tabPage18.TabIndex = 7;
-            this.tabPage18.Text = "Observaciones";
+            this.tabPage19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage19.Controls.Add(this.GrillaPapeles);
+            this.tabPage19.Controls.Add(this.btnQuitarPapel);
+            this.tabPage19.Controls.Add(this.btnAgregarPapel);
+            this.tabPage19.Controls.Add(this.txtFechaVtoPapel);
+            this.tabPage19.Controls.Add(this.label78);
+            this.tabPage19.Controls.Add(this.txtFechaEntregaPapel);
+            this.tabPage19.Controls.Add(this.label79);
+            this.tabPage19.Controls.Add(this.chkEntrego);
+            this.tabPage19.Controls.Add(this.btnNuevoPapel);
+            this.tabPage19.Controls.Add(this.ListaPapeles);
+            this.tabPage19.Location = new System.Drawing.Point(4, 25);
+            this.tabPage19.Name = "tabPage19";
+            this.tabPage19.Size = new System.Drawing.Size(929, 126);
+            this.tabPage19.TabIndex = 3;
+            this.tabPage19.Text = "Papeles";
             // 
-            // txtObservacion
+            // ListaPapeles
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(13, 15);
-            this.txtObservacion.Multiline = true;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(833, 137);
-            this.txtObservacion.TabIndex = 0;
+            this.ListaPapeles.FormattingEnabled = true;
+            this.ListaPapeles.ItemHeight = 16;
+            this.ListaPapeles.Location = new System.Drawing.Point(3, 12);
+            this.ListaPapeles.Name = "ListaPapeles";
+            this.ListaPapeles.Size = new System.Drawing.Size(175, 100);
+            this.ListaPapeles.TabIndex = 21;
+            // 
+            // btnQuitarPapel
+            // 
+            this.btnQuitarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitarPapel.Image")));
+            this.btnQuitarPapel.Location = new System.Drawing.Point(306, 12);
+            this.btnQuitarPapel.Name = "btnQuitarPapel";
+            this.btnQuitarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnQuitarPapel.TabIndex = 66;
+            this.btnQuitarPapel.UseVisualStyleBackColor = true;
+            this.btnQuitarPapel.Click += new System.EventHandler(this.btnQuitarPapel_Click);
+            // 
+            // btnAgregarPapel
+            // 
+            this.btnAgregarPapel.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPapel.Image")));
+            this.btnAgregarPapel.Location = new System.Drawing.Point(254, 11);
+            this.btnAgregarPapel.Name = "btnAgregarPapel";
+            this.btnAgregarPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnAgregarPapel.TabIndex = 65;
+            this.btnAgregarPapel.UseVisualStyleBackColor = true;
+            this.btnAgregarPapel.Click += new System.EventHandler(this.btnAgregarPapel_Click);
+            // 
+            // txtFechaVtoPapel
+            // 
+            this.txtFechaVtoPapel.Location = new System.Drawing.Point(296, 90);
+            this.txtFechaVtoPapel.Mask = "00/00/0000";
+            this.txtFechaVtoPapel.Name = "txtFechaVtoPapel";
+            this.txtFechaVtoPapel.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaVtoPapel.TabIndex = 64;
+            this.txtFechaVtoPapel.ValidatingType = typeof(System.DateTime);
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(208, 90);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(82, 16);
+            this.label78.TabIndex = 63;
+            this.label78.Text = "Vencimiento";
+            // 
+            // txtFechaEntregaPapel
+            // 
+            this.txtFechaEntregaPapel.Location = new System.Drawing.Point(296, 62);
+            this.txtFechaEntregaPapel.Mask = "00/00/0000";
+            this.txtFechaEntregaPapel.Name = "txtFechaEntregaPapel";
+            this.txtFechaEntregaPapel.Size = new System.Drawing.Size(76, 22);
+            this.txtFechaEntregaPapel.TabIndex = 62;
+            this.txtFechaEntregaPapel.ValidatingType = typeof(System.DateTime);
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(208, 65);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(46, 16);
+            this.label79.TabIndex = 61;
+            this.label79.Text = "Fecha";
+            // 
+            // chkEntrego
+            // 
+            this.chkEntrego.AutoSize = true;
+            this.chkEntrego.Location = new System.Drawing.Point(208, 42);
+            this.chkEntrego.Name = "chkEntrego";
+            this.chkEntrego.Size = new System.Drawing.Size(74, 20);
+            this.chkEntrego.TabIndex = 60;
+            this.chkEntrego.Text = "Entrego";
+            this.chkEntrego.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoPapel
+            // 
+            this.btnNuevoPapel.Image = global::Concesionaria.Properties.Resources.page_add;
+            this.btnNuevoPapel.Location = new System.Drawing.Point(208, 11);
+            this.btnNuevoPapel.Name = "btnNuevoPapel";
+            this.btnNuevoPapel.Size = new System.Drawing.Size(40, 28);
+            this.btnNuevoPapel.TabIndex = 59;
+            this.btnNuevoPapel.UseVisualStyleBackColor = true;
+            this.btnNuevoPapel.Click += new System.EventHandler(this.btnNuevoPapel_Click);
+            // 
+            // GrillaPapeles
+            // 
+            this.GrillaPapeles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaPapeles.Location = new System.Drawing.Point(382, 11);
+            this.GrillaPapeles.Name = "GrillaPapeles";
+            this.GrillaPapeles.ReadOnly = true;
+            this.GrillaPapeles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GrillaPapeles.Size = new System.Drawing.Size(469, 107);
+            this.GrillaPapeles.TabIndex = 67;
             // 
             // FrmVenta
             // 
@@ -3010,6 +3139,8 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaImpuestos)).EndInit();
+            this.tabPage18.ResumeLayout(false);
+            this.tabPage18.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
@@ -3043,8 +3174,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
-            this.tabPage18.ResumeLayout(false);
-            this.tabPage18.PerformLayout();
+            this.tabPage19.ResumeLayout(false);
+            this.tabPage19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaPapeles)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3308,5 +3440,16 @@
         private System.Windows.Forms.Button btnAgregarProvinciaAuto;
         private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.TabPage tabPage19;
+        private System.Windows.Forms.ListBox ListaPapeles;
+        private System.Windows.Forms.Button btnQuitarPapel;
+        private System.Windows.Forms.Button btnAgregarPapel;
+        private System.Windows.Forms.MaskedTextBox txtFechaVtoPapel;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.MaskedTextBox txtFechaEntregaPapel;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.CheckBox chkEntrego;
+        private System.Windows.Forms.Button btnNuevoPapel;
+        private System.Windows.Forms.DataGridView GrillaPapeles;
     }
 }

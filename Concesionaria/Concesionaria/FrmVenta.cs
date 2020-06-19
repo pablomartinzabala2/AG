@@ -12,6 +12,7 @@ namespace Concesionaria
 {
     public partial class FrmVenta : Form
     {
+        DataTable tbListaPapeles;
         private Boolean GrabaClienteNuevo;
         private Int32 SigueMarca;
         private Int32 SigueCiudad;
@@ -59,6 +60,19 @@ namespace Concesionaria
             tbTarjeta = fun.CrearTabla("CodTarjeta;Nombre;Importe");
             OcultarVendedor(false);
             txtFecha.Text = DateTime.Now.ToShortDateString();
+            cPapeles papel = new cPapeles();
+            DataTable tbPapeles = papel.GetPapeles();
+            ListaPapeles.DataSource = tbPapeles;
+            ListaPapeles.DisplayMember = "Nombre";
+            ListaPapeles.ValueMember = "CodPapel";
+            txtFechaEntregaPapel.Text = DateTime.Now.ToShortDateString();
+            tbListaPapeles = new DataTable();
+            tbListaPapeles.Columns.Add("CodPapel");
+            tbListaPapeles.Columns.Add("Nombre");
+            tbListaPapeles.Columns.Add("Entrego");
+            tbListaPapeles.Columns.Add("Texto");
+            tbListaPapeles.Columns.Add("Fecha");
+            tbListaPapeles.Columns.Add("FechaVencimiento");
             if (Principal.CodigoPrincipalAbm != null)
             {
                 string Cod = Principal.CodigoPrincipalAbm;
@@ -746,41 +760,31 @@ namespace Concesionaria
                         for (int k = 0; k < GrillaVehiculos.Rows.Count - 1; k++)
                         {
                             Clases.cFunciones fun = new Clases.cFunciones();
-                            string codAutoStock = GrillaVehiculos.Rows[k].Cells[0].Value.ToString();
+                            string codAuto = GrillaVehiculos.Rows[k].Cells[0].Value.ToString();
                             string ImporteCompra = GrillaVehiculos.Rows[k].Cells[4].Value.ToString();
                             string AutoPartePago = txtPatente.Text + " " + txtDescripcion.Text;
                             sqlInsertStock = "insert into StockAuto(CodAuto,FechaAlta,CodCliente,CodUsuario,ImporteCompra,DescripcionAutoPartePago)";
-                            sqlInsertStock = sqlInsertStock + " values (" + codAutoStock.ToString();
+                            sqlInsertStock = sqlInsertStock + " values (" + codAuto.ToString();
                             sqlInsertStock = sqlInsertStock + "," + "'" + txtFecha.Text + "'";
                             sqlInsertStock = sqlInsertStock + "," + txtCodCLiente.Text;
                             sqlInsertStock = sqlInsertStock + "," + Principal.CodUsuarioLogueado.ToString();
                             sqlInsertStock = sqlInsertStock + "," + fun.ToDouble(ImporteCompra).ToString();
                             sqlInsertStock = sqlInsertStock + "," + "'" + AutoPartePago + "'";
                             sqlInsertStock = sqlInsertStock + ")";
+                            sqlInsertStock = sqlInsertStock + " select SCOPE_IDENTITY()";
+
                             SqlCommand comandStockAuto = new SqlCommand();
                             comandStockAuto.Connection = con;
                             comandStockAuto.Transaction = Transaccion;
                             comandStockAuto.CommandText = sqlInsertStock;
-                            comandStockAuto.ExecuteNonQuery();
+                            Int32 CodStockau =Convert.ToInt32(comandStockAuto.ExecuteScalar());
+                            if (k == 0)
+                            {
+                                GrabarPapelesxStock(con, Transaccion, null, CodStockau);
+                            }
                         }
 
-                        //SqlCommand comandAutoPartePago = new SqlCommand();
-                        //comandAutoPartePago.Connection = con;
-                        //comandAutoPartePago.Transaction = Transaccion;
-                        //comandAutoPartePago.CommandText = sqlIngresarAutoPartePago;
-                        //comandAutoPartePago.ExecuteNonQuery();
-                        ////busco el cod auto 2 ingresado como parte de pago
-                        //if (txtCodAuto2.Text == "")
-                        //{
-                        //    SqlCommand comandCodAutoPartePago = new SqlCommand();
-                        //    comandCodAutoPartePago.Connection = con;
-                        //    comandCodAutoPartePago.Transaction = Transaccion;
-                        //    comandCodAutoPartePago.CommandText = "select max(CodAuto) as CodAuto from Auto";
-                        //    txtCodAuto2.Text = comandCodAutoPartePago.ExecuteScalar().ToString();
-                        //}
-                        //// inserto el auto en el stock   
-                        //Clases.cStockAuto stockAuto = new Clases.cStockAuto();
-                        //string sqlStockAuto = stockAuto.GetSqlInsertarStockAuto(Convert.ToInt32(txtCodAuto2.Text), DateTime.Now.ToShortDateString(), Convert.ToInt32(txtCodCLiente.Text), Principal.CodUsuarioLogueado);
+                       
 
                     }
 
@@ -842,10 +846,11 @@ namespace Concesionaria
                         for (int k = 0; k < GrillaVehiculos.Rows.Count - 1; k++)
                         {
                             Clases.cFunciones fun = new Clases.cFunciones();
-                            string codAutoStock = GrillaVehiculos.Rows[k].Cells[0].Value.ToString();
+                            string CodStockAu = GrillaVehiculos.Rows[k].Cells[5].Value.ToString();
+                            string codAutok = GrillaVehiculos.Rows[k].Cells[0].Value.ToString();
                             string sImporte = GrillaVehiculos.Rows[k].Cells[4].Value.ToString();
                             sqlVentaxAuto = "insert into VentasxAuto(CodAuto,CodVenta,Importe)";
-                            sqlVentaxAuto = sqlVentaxAuto + " values (" + codAutoStock.ToString();
+                            sqlVentaxAuto = sqlVentaxAuto + " values (" + codAutok.ToString();
                             sqlVentaxAuto = sqlVentaxAuto + "," + CodVenta.ToString();
                             sqlVentaxAuto = sqlVentaxAuto + "," + fun.ToDouble(sImporte).ToString();
                             sqlVentaxAuto = sqlVentaxAuto + ")";
@@ -854,6 +859,7 @@ namespace Concesionaria
                             comandVentaxAuto.Transaction = Transaccion;
                             comandVentaxAuto.CommandText = sqlVentaxAuto;
                             comandVentaxAuto.ExecuteNonQuery();
+                          
                         }
                     }
                 }
@@ -1824,6 +1830,13 @@ namespace Concesionaria
                             cmbProvincia2.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
                         break;
+                    case "Papeles":  
+                        cPapeles papel = new cPapeles();
+                        DataTable tbPapeles = papel.GetPapeles();
+                        ListaPapeles.DataSource = tbPapeles;
+                        ListaPapeles.DisplayMember = "Nombre";
+                        ListaPapeles.ValueMember = "CodPapel";
+                        break;
 
                 }
             }
@@ -1941,25 +1954,28 @@ namespace Concesionaria
             if (txtCodAuto2.Text != "")
                 Graba = false;
             if (Graba)
-            {
+            { 
                 //inserto el auto
                 auto.AgregarAuto(Patente, CodMarca, Descripcion,
                     Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible2);
                 CodAuto = auto.GetMaxCodAuto();
                 txtCodAuto2.Text = CodAuto.ToString();
+               
             }
             else
             {
+                cStockAuto sta = new Clases.cStockAuto();
                 auto.ModificarAuto(Patente, CodMarca, Descripcion,
                     Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color);
+              
             }
 
-            AgregarAutoGrilla(Convert.ToInt32(txtCodAuto2.Text), 1);
+            AgregarAutoGrilla(Convert.ToInt32(txtCodAuto2.Text), 1, 0);
             CalcularTotalAutosPartePago();
             CalcularSubTotal();
         }
 
-        private void AgregarAutoGrilla(Int32 CodAuto, int muestraMensaje)
+        private void AgregarAutoGrilla(Int32 CodAuto, int muestraMensaje,Int32 CodStock)
         {
             for (int i = 0; i < GrillaVehiculos.Rows.Count - 1; i++)
             {
@@ -1974,6 +1990,7 @@ namespace Concesionaria
             string Patente = "";
             string Marca = "";
             string Importe = "0";
+            string sCodStock = "";
 
             DataTable tListado = new DataTable();
             tListado.Columns.Add("CodAuto");
@@ -1981,6 +1998,7 @@ namespace Concesionaria
             tListado.Columns.Add("Descripcion");
             tListado.Columns.Add("Marca");
             tListado.Columns.Add("Importe");
+            tListado.Columns.Add("CodStock");
 
             for (int i = 0; i < GrillaVehiculos.Rows.Count - 1; i++)
             {
@@ -1989,6 +2007,7 @@ namespace Concesionaria
                 Descripcion = GrillaVehiculos.Rows[i].Cells[2].Value.ToString();
                 Marca = GrillaVehiculos.Rows[i].Cells[3].Value.ToString();
                 Importe = GrillaVehiculos.Rows[i].Cells[4].Value.ToString();
+                sCodStock = GrillaVehiculos.Rows[i].Cells[5].Value.ToString();
 
                 DataRow r;
                 r = tListado.NewRow();
@@ -1997,7 +2016,7 @@ namespace Concesionaria
                 r[2] = Descripcion;
                 r[3] = Marca;
                 r[4] = Importe;
-
+                r[5] = sCodStock;
                 tListado.Rows.Add(r);
             }
             //agregamos el aute ingresado
@@ -2018,6 +2037,7 @@ namespace Concesionaria
             r1[2] = Descripcion;
             r1[3] = Marca;
             r1[4] = Importe;
+            r1[5] = CodStock.ToString();
 
             tListado.Rows.Add(r1);
             GrillaVehiculos.DataSource = tListado;
@@ -3216,7 +3236,7 @@ namespace Concesionaria
                         CodAutoPartePago = CodAuto;
 
                     }
-                    AgregarAutoGrilla(CodAuto, 0);
+                    AgregarAutoGrilla(CodAuto, 0,Convert.ToInt32(trdo.Rows[i]["CodStock"].ToString())); 
                 }
                 if (b == 1)
                     BuscarAutoPartePago(CodAutoPartePago);
@@ -4506,6 +4526,107 @@ namespace Concesionaria
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
+        }
+
+        private void btnAgregarPapel_Click(object sender, EventArgs e)
+        { 
+            cFunciones fun = new cFunciones();
+            string CodPapel = ListaPapeles.SelectedValue.ToString();
+            string Nombre = ListaPapeles.Text;
+            string Entrego = "0";
+            string Fecha = "";
+            string Texto = "No";
+            string FechaVencimiento = "";
+            if (chkEntrego.Checked == true)
+            {
+                if (fun.ValidarFecha(txtFechaEntregaPapel.Text) == false)
+                {
+                    Mensaje("La fecha de entrega del documento es incorrecta");
+                }
+                Entrego = "1";
+                Texto = "Si";
+                Fecha = txtFechaEntregaPapel.Text;
+            }
+            string xx = txtFechaVtoPapel.Text;
+            if (fun.ValidarFecha(txtFechaVtoPapel.Text) == true)
+            {
+                FechaVencimiento = txtFechaVtoPapel.Text;
+            }
+
+            if (fun.Buscar(tbListaPapeles, "CodPapel", CodPapel) == true)
+            {
+                Mensaje("Ya se ha ingresado el documento");
+                return;
+            }
+
+            string Valor = CodPapel + ";" + Nombre;
+            Valor = Valor + ";" + Entrego;
+            Valor = Valor + ";" + Texto;
+            Valor = Valor + ";" + Fecha;
+            Valor = Valor + ";" + FechaVencimiento;
+            tbListaPapeles = fun.AgregarFilas(tbListaPapeles, Valor);
+            GrillaPapeles.DataSource = tbListaPapeles;
+            GrillaPapeles.Columns[0].Visible = false;
+            GrillaPapeles.Columns[2].Visible = false;
+            GrillaPapeles.Columns[1].Width = 130;
+            GrillaPapeles.Columns[3].Width = 80;
+            GrillaPapeles.Columns[4].Width = 80;
+            GrillaPapeles.Columns[5].Width = 90;
+            GrillaPapeles.Columns[5].HeaderText = "Vencimiento";
+            GrillaPapeles.Columns[3].HeaderText = "Entrego";
+        }
+
+        private void btnQuitarPapel_Click(object sender, EventArgs e)
+        {
+            if (GrillaPapeles.CurrentRow == null)
+            {
+                Mensaje("Debe seleccionar un registro");
+                return;
+            }
+            string CodPapel = GrillaPapeles.CurrentRow.Cells[0].Value.ToString();
+            cFunciones fun = new cFunciones();
+            tbListaPapeles = fun.EliminarFila(tbListaPapeles, "CodPapel", CodPapel);
+            GrillaPapeles.DataSource = tbListaPapeles;
+        }
+
+        private void btnNuevoPapel_Click(object sender, EventArgs e)
+        {
+            Principal.CampoIdSecundario = "CodPapel";
+            Principal.CampoNombreSecundario = "Nombre";
+            Principal.NombreTablaSecundario = "Papeles";
+            Principal.CampoIdSecundarioGenerado = "";
+            FrmAltaBasica form = new FrmAltaBasica();
+            form.FormClosing += new FormClosingEventHandler(form_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void GrabarPapelesxStock(SqlConnection con, SqlTransaction Transaccion, Int32? CodCompra, Int32 CodStock)
+        {
+            int i = 0;
+            Int32 CodPapel = 0;
+            string Entrego = "";
+            string Texto = "";
+            DateTime? Fecha = null;
+            DateTime? FechaVencimiento = null;
+            cFunciones fun = new cFunciones();
+            cPapeles papel = new cPapeles();
+            for (i = 0; i < tbListaPapeles.Rows.Count; i++)
+            {
+                CodPapel = Convert.ToInt32(tbListaPapeles.Rows[i]["CodPapel"]);
+                Entrego = tbListaPapeles.Rows[i]["Entrego"].ToString();
+                Texto = tbListaPapeles.Rows[i]["Texto"].ToString();
+                if (fun.ValidarFecha(tbListaPapeles.Rows[i]["Fecha"].ToString()) == true)
+                {
+                    Fecha = Convert.ToDateTime(tbListaPapeles.Rows[i]["Fecha"].ToString());
+                }
+
+                if (fun.ValidarFecha(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString()) == true)
+                {
+                    FechaVencimiento = Convert.ToDateTime(tbListaPapeles.Rows[i]["FechaVencimiento"].ToString());
+                }
+                papel.InsertarPapeles(con, Transaccion, CodPapel, CodStock, Entrego, Texto, Fecha, FechaVencimiento, CodCompra);
+            }
+
         }
     }
 };

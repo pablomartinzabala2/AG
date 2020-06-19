@@ -15,7 +15,7 @@ namespace Concesionaria.Clases
         } 
 
         public void  InsertarPapeles(SqlConnection con, SqlTransaction Transaccion,Int32 CodPapel,Int32 CodStock,
-            string Entrego,string Texto,DateTime? Fecha,DateTime? FechaVencimiento,Int32 CodCompra)
+            string Entrego,string Texto,DateTime? Fecha,DateTime? FechaVencimiento,Int32? CodCompra)
         {
             string sql = "insert into PapelesxStock";
             sql = sql + "(CodPapel, CodStock,Entrego";
@@ -45,7 +45,15 @@ namespace Concesionaria.Clases
             {
                 sql = sql + ",null";
             }
-            sql = sql + "," + CodCompra.ToString();
+            if (CodCompra !=null)
+            {
+                sql = sql + "," + CodCompra.ToString();
+            }
+            else
+            {
+                sql = sql + ",null";
+            }
+            
             sql = sql + ")";
             cDb.EjecutarNonQueryTransaccion (con, Transaccion, sql);
         }
