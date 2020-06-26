@@ -42,9 +42,18 @@ namespace Concesionaria
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            string sql = txtSql.Text;
-            cDb.ExecutarNonQuery(sql);
-            MessageBox.Show("Datos actualizados");
+            try
+            {
+                string sql = txtSql.Text;
+                cDb.ExecutarNonQuery(sql);
+                MessageBox.Show("Datos actualizados");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error en la consulta");
+                MessageBox.Show(ex.Message.ToString());
+            }
+            
         }
     }
 }

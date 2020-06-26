@@ -118,6 +118,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.GrillaPapeles = new System.Windows.Forms.DataGridView();
             this.btnQuitarPapel = new System.Windows.Forms.Button();
@@ -173,7 +174,10 @@
             this.label33 = new System.Windows.Forms.Label();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.Imagen = new System.Windows.Forms.PictureBox();
+            this.btnSubirImagen = new System.Windows.Forms.Button();
+            this.txtRuta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
@@ -191,6 +195,8 @@
             this.Efectivo.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -952,6 +958,7 @@
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
+            this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl2.Location = new System.Drawing.Point(12, 2);
             this.tabControl2.Name = "tabControl2";
@@ -1103,6 +1110,14 @@
             this.tabPage7.Size = new System.Drawing.Size(815, 235);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Observación";
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(12, 14);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(784, 203);
+            this.txtObservacion.TabIndex = 0;
             // 
             // tabPage8
             // 
@@ -1664,13 +1679,43 @@
             this.label44.TabIndex = 53;
             this.label44.Text = "Gastos";
             // 
-            // txtObservacion
+            // tabPage9
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(12, 14);
-            this.txtObservacion.Multiline = true;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(784, 203);
-            this.txtObservacion.TabIndex = 0;
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.tabPage9.Controls.Add(this.txtRuta);
+            this.tabPage9.Controls.Add(this.btnSubirImagen);
+            this.tabPage9.Controls.Add(this.Imagen);
+            this.tabPage9.Location = new System.Drawing.Point(4, 25);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(815, 235);
+            this.tabPage9.TabIndex = 5;
+            this.tabPage9.Text = "Imagen";
+            // 
+            // Imagen
+            // 
+            this.Imagen.Location = new System.Drawing.Point(10, 13);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(249, 194);
+            this.Imagen.TabIndex = 14;
+            this.Imagen.TabStop = false;
+            // 
+            // btnSubirImagen
+            // 
+            this.btnSubirImagen.Location = new System.Drawing.Point(262, 13);
+            this.btnSubirImagen.Name = "btnSubirImagen";
+            this.btnSubirImagen.Size = new System.Drawing.Size(75, 34);
+            this.btnSubirImagen.TabIndex = 15;
+            this.btnSubirImagen.Text = "Abrir";
+            this.btnSubirImagen.UseVisualStyleBackColor = true;
+            this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
+            // 
+            // txtRuta
+            // 
+            this.txtRuta.Location = new System.Drawing.Point(343, 13);
+            this.txtRuta.Name = "txtRuta";
+            this.txtRuta.Size = new System.Drawing.Size(132, 22);
+            this.txtRuta.TabIndex = 19;
+            this.txtRuta.Visible = false;
             // 
             // FrmAutos
             // 
@@ -1727,6 +1772,9 @@
             this.tabPage5.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1879,5 +1927,9 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txtTotalGasto;
         private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.Button btnSubirImagen;
+        private System.Windows.Forms.PictureBox Imagen;
+        private System.Windows.Forms.TextBox txtRuta;
     }
 }

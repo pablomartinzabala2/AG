@@ -423,5 +423,27 @@ namespace Concesionaria
             cFunciones fun = new cFunciones();
             fun.LlenarComboDatatable(cmb_CodCiudad, trdo, "Nombre", "CodCiudad");
         }
+
+        private void btnSubirImagen_Click(object sender, EventArgs e)
+        {  
+            cImagen imgAuto = new cImagen();
+            string NroImagen = imgAuto.GetProximaImagen().ToString();
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = file.FileName;
+                txt_RutaImagen.Text = ruta;
+                Imagen.Image = System.Drawing.Image.FromFile(ruta);
+                string Extension = System.IO.Path.GetExtension(file.FileName.ToString());
+                string RutaGrabar = imgAuto.GetRuta() + NroImagen + "." + Extension;
+                Imagen.Image.Save(RutaGrabar);
+                imgAuto.Grabar(Convert.ToInt32(NroImagen));
+                txt_RutaImagen.Text = RutaGrabar;
+            }
+            else
+            {
+                txt_RutaImagen.Text = "";
+            }
+        }
     }
 }

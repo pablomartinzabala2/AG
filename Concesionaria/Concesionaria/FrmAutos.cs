@@ -102,6 +102,7 @@ namespace Concesionaria
             string Color = "";
             Int32? CodTipoUtilitario = null;
             Int32? CodSucursal = null;
+            string RutaImagen = "";
 
             Patente = txtPatente.Text;
             Color = txtColor.Text;
@@ -144,6 +145,8 @@ namespace Concesionaria
 
             if (cmbTipoUtilitario.SelectedIndex > 0)
                 CodTipoUtilitario = Convert.ToInt32(cmbTipoUtilitario.SelectedValue);
+            if (txtRuta.Text != "")
+                RutaImagen = txtRuta.Text;
 
             Clases.cAuto auto = new Clases.cAuto();
             Boolean Graba = true;
@@ -153,7 +156,7 @@ namespace Concesionaria
             {
                 //inserto el auto
                 auto.AgregarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario);
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodTipoCombustible, CodSucursal, CodTipoUtilitario, RutaImagen);
                 CodAuto = auto.GetMaxCodAutoTransaccion(con, Transaccion);
                 txtCodAuto.Text = CodAuto.ToString();
 
@@ -161,8 +164,8 @@ namespace Concesionaria
             }
             else
             {
-                auto.ModificarAutoTransaccion(con,Transaccion , Patente, CodMarca, Descripcion,
-                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color,CodSucursal ,CodTipoUtilitario);
+                auto.ModificarAutoTransaccion(con, Transaccion, Patente, CodMarca, Descripcion,
+                    Kilometros, CodCiudad, Propio, Concesion, Observacion, Anio, Importe, Motor, Chasis, Color, CodSucursal, CodTipoUtilitario, RutaImagen);
             }
             if (txtCodStock.Text == "")
             {
@@ -2225,6 +2228,28 @@ namespace Concesionaria
         private void txtImporte_Layout(object sender, LayoutEventArgs e)
         {
 
+        }
+
+        private void btnSubirImagen_Click(object sender, EventArgs e)
+        {
+            cImagen imgAuto = new cImagen();
+            string NroImagen = imgAuto.GetProximaImagen().ToString();
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = file.FileName;
+                txtRuta.Text = ruta;
+                Imagen.Image = System.Drawing.Image.FromFile(ruta);
+                string Extension = System.IO.Path.GetExtension(file.FileName.ToString());
+                string RutaGrabar = imgAuto.GetRuta() + NroImagen + "." + Extension;
+                Imagen.Image.Save(RutaGrabar);
+                imgAuto.Grabar(Convert.ToInt32(NroImagen));
+                txtRuta.Text = RutaGrabar;
+            }
+            else
+            {
+                txtRuta.Text = "";
+            }
         }
     }
 }

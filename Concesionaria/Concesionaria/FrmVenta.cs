@@ -92,7 +92,7 @@ namespace Concesionaria
                 txtPatente.Enabled = false;
                 btnAbrirCobranzas.Visible = true;
                 btnAbrirCheques.Visible = true;
-                
+                GetPapelesxcodVenta(Convert.ToInt32(Cod));
                 GetPrendaxCodVenta(Convert.ToInt32 (Cod));
             }
             else
@@ -772,6 +772,7 @@ namespace Concesionaria
                             sqlInsertStock = sqlInsertStock + "," + "'" + AutoPartePago + "'";
                             sqlInsertStock = sqlInsertStock + ")";
                             sqlInsertStock = sqlInsertStock + " select SCOPE_IDENTITY()";
+
 
                             SqlCommand comandStockAuto = new SqlCommand();
                             comandStockAuto.Connection = con;
@@ -1521,6 +1522,7 @@ namespace Concesionaria
             txtImporteCobranza.Text = "";
             txtFechaCompromiso.Text = "";
             tbCobranza.Rows.Clear();
+            tbListaPapeles.Rows.Clear();
         }
 
         private Double CalcularTotalCuotas()
@@ -4627,6 +4629,42 @@ namespace Concesionaria
                 papel.InsertarPapeles(con, Transaccion, CodPapel, CodStock, Entrego, Texto, Fecha, FechaVencimiento, CodCompra);
             }
 
+        }
+
+        public void GetPapelesxcodVenta(Int32 CodVenta)
+        {
+            cPapeles papeles = new cPapeles();
+            cVenta venta = new cVenta();
+            DataTable trdo = venta.GetAutosxCodVenta(CodVenta);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["CodStock"].ToString ()!="")
+                {
+                    Int32 CodStock = Convert.ToInt32(trdo.Rows[0]["CodStock"].ToString());
+                    DataTable tbPapeles = papeles.GetPapelesxCodStock(CodStock);
+                    GrillaPapeles.DataSource = tbPapeles;
+                    GrillaPapeles.Columns[0].Visible = false;
+                    GrillaPapeles.Columns[2].Visible = false;
+                    GrillaPapeles.Columns[1].Width = 150;
+                    GrillaPapeles.Columns[3].Width = 80;
+                    GrillaPapeles.Columns[4].Width = 80;
+                    GrillaPapeles.Columns[5].Width = 90;
+                    GrillaPapeles.Columns[5].HeaderText = "Vencimiento";
+                    GrillaPapeles.Columns[3].HeaderText = "Entrego";
+                }
+            }
+        }
+
+        private void BtnVerFoto_Click(object sender, EventArgs e)
+        {
+            if (txtCodAuto.Text =="")
+            {
+                Mensaje("Debe ingresar una patente");
+                return;
+            }
+            Principal.CodAutoSeleccionado = Convert.ToInt32(txtCodAuto.Text);
+            FrmVerFotos frm = new FrmVerFotos();
+            frm.ShowDialog();
         }
     }
 };

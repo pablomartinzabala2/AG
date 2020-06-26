@@ -87,6 +87,7 @@
     <Compile Include="Clases\cGastosPagar.cs" />
     <Compile Include="Clases\cGastoTransferencia.cs" />
     <Compile Include="Clases\cGrilla.cs" />
+    <Compile Include="Clases\cImagen.cs" />
     <Compile Include="Clases\cImpuesto.cs" />
     <Compile Include="Clases\cMarca.cs" />
     <Compile Include="Clases\cMensaje.cs" />
@@ -673,6 +674,12 @@
     <Compile Include="FrmVenta.Designer.cs">
       <DependentUpon>FrmVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerFotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerFotos.Designer.cs">
+      <DependentUpon>FrmVerFotos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVistaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -960,6 +967,9 @@
     <EmbeddedResource Include="FrmVenta.resx">
       <DependentUpon>FrmVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerFotos.resx">
+      <DependentUpon>FrmVerFotos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmVistaPrevia.resx">
       <DependentUpon>FrmVistaPrevia.cs</DependentUpon>
     </EmbeddedResource>
@@ -1048,6 +1058,7 @@
     <Content Include="Iconos\Mensaje.jpg" />
     <Content Include="Iconos\money_euro.ico" />
     <Content Include="Iconos\MOVIMIENTOS.ico" />
+    <Content Include="Iconos\new window.ico" />
     <Content Include="Iconos\page_add.ico" />
     <None Include="Iconos\Reloj.ico" />
     <None Include="Iconos\RelojChico.bmp" />

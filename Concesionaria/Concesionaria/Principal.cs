@@ -33,6 +33,7 @@ namespace Concesionaria
         public static string Comodin;
         public static String CodCompra;
         private DataTable tbLista;
+        public static Int32? CodAutoSeleccionado;
         public Principal()
         {
             InitializeComponent();
