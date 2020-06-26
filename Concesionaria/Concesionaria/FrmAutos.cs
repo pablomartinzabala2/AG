@@ -350,6 +350,27 @@ namespace Concesionaria
             tbListaPapeles.Rows.Clear();
         }
 
+        private void CargarImagen(Int32 CodAuto)
+        {
+            try
+            {
+                cAuto auto = new Clases.cAuto();
+                DataTable trdo = auto.GetAutoxCodigo(CodAuto);
+                if (trdo.Rows.Count > 0)
+                {
+                    if (trdo.Rows[0]["RutaImagen"].ToString() != "")
+                    {
+                        string Ruta = trdo.Rows[0]["RutaImagen"].ToString();
+                        Imagen.Image = System.Drawing.Image.FromFile(Ruta);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar la imagen");
+            }
+
+        }
         private void txtPatente_TextChanged(object sender, EventArgs e)
         {
             foreach (Control c in this.Controls)
@@ -386,7 +407,7 @@ namespace Concesionaria
                         txtKilometros.Text = fun.FormatoEnteroMiles(txtKilometros.Text);
                     }
                     txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
-
+                    
                     if (trdo.Rows[0]["Importe"].ToString() != "")
                     {
                         //string xx = trdo.Rows[0]["Importe"].ToString().Replace (",",".").ToString();
@@ -452,6 +473,10 @@ namespace Concesionaria
             }
             if (b == 0)
                 LimpiarAuto();
+            if (txtCodAuto.Text !="")
+            {
+                CargarImagen(Convert.ToInt32(txtCodAuto.Text));
+            }
         }
 
         private void GetGastos(Int32 CodStock)

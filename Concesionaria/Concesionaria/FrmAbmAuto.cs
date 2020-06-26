@@ -135,7 +135,7 @@ namespace Concesionaria
                 {
                     Botonera(3);
                     txtCodAuto.Text = Principal.CodigoPrincipalAbm.ToString();
-
+                    CargarImagen(Convert.ToInt32(txtCodAuto.Text));
                     if (Principal.CodigoPrincipalAbm != "")
                         fun.CargarControles(this, "Auto", "CodAuto", txtCodAuto.Text);
                     Grupo.Enabled = false;
@@ -157,6 +157,28 @@ namespace Concesionaria
             //            break;
             //    }
             //}
+        }
+
+        private void CargarImagen(Int32 CodAuto)
+        {
+            try
+            {
+                cAuto auto = new Clases.cAuto();
+                DataTable trdo = auto.GetAutoxCodigo(CodAuto);
+                if (trdo.Rows.Count > 0)
+                {
+                    if (trdo.Rows[0]["RutaImagen"].ToString() != "")
+                    {
+                        string Ruta = trdo.Rows[0]["RutaImagen"].ToString();
+                        Imagen.Image = System.Drawing.Image.FromFile(Ruta);
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("No se pudo cargar la imagen");
+            }
+            
         }
 
         private void UbicarProvincia(Int32 CodAuto)
@@ -369,6 +391,7 @@ namespace Concesionaria
                 Botonera(1);
                 fun.LimpiarGenerico(this);
                 txtCodAuto.Text = "";
+                Imagen.Image = null;
                 if (cmbProvincia.Items.Count > 0)
                     cmbProvincia.SelectedIndex = 0;
             }
