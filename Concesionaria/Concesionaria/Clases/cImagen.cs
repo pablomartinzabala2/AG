@@ -10,7 +10,7 @@ namespace Concesionaria.Clases
     {
         public string GetRuta()
         {
-            string Ruta = "e:\\ARCHIVO\\";
+            string Ruta = "c:\\ARCHIVO\\";
             return Ruta;
         }
 
