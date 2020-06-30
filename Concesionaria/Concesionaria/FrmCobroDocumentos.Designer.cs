@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCuota = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtPunitorio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,8 +57,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCuota = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -99,6 +99,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de la cobranza";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtCuota
+            // 
+            this.txtCuota.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCuota.Location = new System.Drawing.Point(262, 103);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.ReadOnly = true;
+            this.txtCuota.Size = new System.Drawing.Size(75, 23);
+            this.txtCuota.TabIndex = 64;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(211, 105);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 17);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Cuota";
             // 
             // txtPunitorio
             // 
@@ -343,24 +361,6 @@
             this.label16.Size = new System.Drawing.Size(57, 17);
             this.label16.TabIndex = 34;
             this.label16.Text = "Patente";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(211, 105);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 17);
-            this.label8.TabIndex = 63;
-            this.label8.Text = "Cuota";
-            // 
-            // txtCuota
-            // 
-            this.txtCuota.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCuota.Location = new System.Drawing.Point(262, 103);
-            this.txtCuota.Name = "txtCuota";
-            this.txtCuota.ReadOnly = true;
-            this.txtCuota.Size = new System.Drawing.Size(75, 23);
-            this.txtCuota.TabIndex = 64;
             // 
             // FrmCobroDocumentos
             // 

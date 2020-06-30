@@ -58,8 +58,9 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Concesionaria.ReporteListado.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(977, 649);
+            this.reportViewer1.Size = new System.Drawing.Size(862, 649);
             this.reportViewer1.TabIndex = 0;
             // 
             // ReporteBindingSource
@@ -79,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 673);
+            this.ClientSize = new System.Drawing.Size(875, 673);
             this.Controls.Add(this.reportViewer1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

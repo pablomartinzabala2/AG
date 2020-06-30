@@ -38,8 +38,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.Common\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WinForms\11.0.0.0__89845dcd8080cc91\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -70,6 +76,7 @@
     <Compile Include="Clases\cColor.cs" />
     <Compile Include="Clases\cComisionVendedor.cs" />
     <Compile Include="Clases\cCompra.cs" />
+    <Compile Include="Clases\cCompraxCliente.cs" />
     <Compile Include="Clases\cConexion.cs" />
     <Compile Include="Clases\cConfiguracion.cs" />
     <Compile Include="Clases\cCosto.cs" />
@@ -554,6 +561,12 @@
     <Compile Include="FrmPagoInteres.Designer.cs">
       <DependentUpon>FrmPagoInteres.cs</DependentUpon>
     </Compile>
+    <Compile Include="fRMpRUEBA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRMpRUEBA.Designer.cs">
+      <DependentUpon>fRMpRUEBA.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistarEfectivosaPagar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -907,6 +920,9 @@
     <EmbeddedResource Include="FrmPagoInteres.resx">
       <DependentUpon>FrmPagoInteres.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fRMpRUEBA.resx">
+      <DependentUpon>fRMpRUEBA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistarEfectivosaPagar.resx">
       <DependentUpon>FrmRegistarEfectivosaPagar.cs</DependentUpon>
     </EmbeddedResource>
@@ -1053,6 +1069,7 @@
     <None Include="Iconos\Folder.ico" />
     <Content Include="Iconos\FOLDER100.ico" />
     <Content Include="Iconos\Grilla.ico" />
+    <Content Include="Iconos\joselo.jpg" />
     <Content Include="Iconos\kfloppy_32x32-32.ico" />
     <Content Include="Iconos\llave.ico" />
     <Content Include="Iconos\Mensaje.jpg" />
@@ -1073,6 +1090,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

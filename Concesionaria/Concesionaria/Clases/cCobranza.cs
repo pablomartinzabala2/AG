@@ -229,5 +229,20 @@ namespace Concesionaria.Clases
             return cDb.ExecuteDataTable(sql);
         }
 
+        public DataTable GetDetalleCobranzaxPatente(string Patente)
+        {  //GetDetalleCobranzaxCod
+
+
+            string sql = "select c.CodCobranza,c.CodVenta,c.Importe,c.Fecha,c.FechaPago,Cli.Apellido,Cli.Nombre,A.Descripcion,c.ImportePagado,c.Saldo";
+            sql = sql + ",( select isnull(sum(pun.Importe),0)  from PunitorioCobranza pun where pun.CodCobranza =c.CodCobranza) as Punitorio ";
+            sql = sql + ",c.Cuota ";
+            sql = sql + " from Cobranza c,Venta v,Cliente Cli,Auto a";
+            sql = sql + " where c.CodVenta = v.CodVenta ";
+            sql = sql + " and v.CodCliente = cli.CodCliente ";
+            sql = sql + " and c.CodAuto = a.CodAuto ";
+            sql = sql + " and a.Patente =" + "'" + Patente + "'";
+            return cDb.ExecuteDataTable(sql);
+        }
+
     }
 }

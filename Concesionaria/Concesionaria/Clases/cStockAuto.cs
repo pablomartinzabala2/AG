@@ -69,6 +69,7 @@ namespace Concesionaria.Clases
             sql = sql + ",Concesion";
             sql = sql + ",a.Ubicacion";
             sql = sql + ",sa.PrecioVenta";
+            sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
             
             sql = sql + " from auto a, StockAuto sa,cliente cli,marca m";
             sql = sql + " where a.Codauto =sa.CodAuto ";

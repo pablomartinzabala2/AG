@@ -76,6 +76,7 @@ namespace Concesionaria
             Grilla.DataSource = trdo;
             Grilla.Columns[0].Visible = false;
             Grilla.Columns[5].Visible = false;
+            Grilla.Columns[10].Visible = false;
             Grilla.Columns[7].HeaderText = "Concesión";
             Grilla.Columns[9].HeaderText = "Precio Venta";
             //Grilla.Columns[7].Visible = false; 
@@ -181,6 +182,7 @@ namespace Concesionaria
             string NumeroInterno = "";
             string Ubicacion ="";
             string sql = "";
+           
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cDb.ExecutarNonQuery("delete from ReporteAuto");
             for (int i = 0; i < Grilla.Rows.Count - 1; i++)
@@ -198,11 +200,11 @@ namespace Concesionaria
                     
                 Patente = Grilla.Rows[i].Cells[1].Value.ToString();
                 NumeroInterno = GetNumeroInternoxPatente(Patente);
-                //Ubicacion = GetUbicacion (Patente);
-                
+              //  Ubicacion = GetUbicacion (Patente);
+                Ubicacion = Grilla.Rows[i].Cells[10].Value.ToString();
                 Descripcion = Grilla.Rows[i].Cells[3].Value.ToString();
                 Marca = Grilla.Rows[i].Cells[2].Value.ToString();
-                sql = "Insert into ReporteAuto(Extra1,Descripcion,Marca,Modelo,Precio,Kilometros,Combustible,Extra2)";
+                sql = "Insert into ReporteAuto(Extra1,Descripcion,Marca,Modelo,Precio,Kilometros,Combustible,Extra2,Extra3)";
                 sql = sql + "values(" + "'" + Patente + "'";
                 sql = sql + "," + "'" + Descripcion  +"'";
                 sql = sql + "," + "'" + Marca +"'";
@@ -211,6 +213,7 @@ namespace Concesionaria
                 sql = sql + "," + "'" + Kilometros + "'";
                 sql = sql + "," + "'" + Combustible + "'";
                 sql = sql + "," + "'" + NumeroInterno + "'";
+                sql = sql + "," + "'" + Ubicacion + "'";
                 sql = sql + ")";
                 Clases.cDb.ExecutarNonQuery(sql);
             }

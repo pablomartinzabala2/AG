@@ -41,7 +41,48 @@ namespace Concesionaria
                 MessageBox.Show("Debe ingresar una patente", Clases.cMensaje.Mensaje());
                 return;
             }
-            CargarGrilla();
+            CargarGrillaxPatente(txtPatente.Text);
+        }
+
+        private void CargarGrillaxPatente(string Patente)
+        {   //GetDetalleCobranzaxCod este debo usar
+            Clases.cCobranza cob = new Clases.cCobranza();
+            Clases.cFunciones fun = new Clases.cFunciones();
+            DataTable trdo = cob.GetDetalleCobranzaxPatente(Patente);
+
+            trdo = fun.TablaaMiles(trdo, "Importe");
+            trdo = fun.TablaaMiles(trdo, "ImportePagado");
+            trdo = fun.TablaaMiles(trdo, "Punitorio");
+            trdo = fun.TablaaMiles(trdo, "Saldo");
+            Grilla.DataSource = trdo;
+            int ban = 0;
+            if (trdo.Rows.Count > 0)
+            {
+                txtCuota.Text = trdo.Rows[0]["Cuota"].ToString();
+                if (trdo.Rows[0]["CodVenta"].ToString() != "")
+                {
+                    ban = 1;
+                    txtNombre.Text = trdo.Rows[0]["Nombre"].ToString();
+                    txtApellido.Text = trdo.Rows[0]["Apellido"].ToString();
+                    txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
+                }
+            }
+
+            if (ban == 0)
+            {
+                txtNombre.Text = "";
+                txtApellido.Text = "";
+                txtDescripcion.Text = "";
+            }
+            Grilla.Columns[0].Visible = false;
+            Grilla.Columns[1].Visible = false;
+            Grilla.Columns[6].Visible = false;
+            Grilla.Columns[4].HeaderText = "Fecha Pago";
+            Grilla.Columns[4].Width = 130;
+            Grilla.Columns[7].Width = 180;
+            Grilla.Columns[8].HeaderText = "Imp. pagado";
+            Grilla.Columns[8].Width = 120;
+
         }
 
         private void CargarGrilla()
@@ -170,6 +211,7 @@ namespace Concesionaria
             txtTope.Text = Grilla.CurrentRow.Cells[2].Value.ToString();
             string Saldo = Grilla.CurrentRow.Cells[9].Value.ToString();
             txtCodCobranza.Text = Grilla.CurrentRow.Cells[0].Value.ToString();
+            txtCuota.Text = Grilla.CurrentRow.Cells[11].Value.ToString();
             Int32 CodCobranza = Convert.ToInt32(Grilla.CurrentRow.Cells[0].Value.ToString());
             Clases.cPunitorioCobranza objPun = new Clases.cPunitorioCobranza();
             Double Punitorio = objPun.GetImportePunitorio(CodCobranza);
