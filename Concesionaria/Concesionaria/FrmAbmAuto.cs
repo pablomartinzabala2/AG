@@ -399,7 +399,12 @@ namespace Concesionaria
 
         private void btnAbrir_Click_1(object sender, EventArgs e)
         {
-            FrmConsultaAuto form = new FrmConsultaAuto();
+            Principal.OpcionesdeBusqueda = "Patente";
+            Principal.TablaPrincipal = "Auto";
+            Principal.OpcionesColumnasGrilla = "CodAuto;Patente;Descripcion";
+            Principal.ColumnasVisibles = "0;1;1";
+            Principal.ColumnasAncho = "0;190;390";
+            FrmBuscadorGenerico form = new FrmBuscadorGenerico();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
         }

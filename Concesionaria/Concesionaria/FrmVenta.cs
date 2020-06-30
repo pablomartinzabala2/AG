@@ -139,6 +139,7 @@ namespace Concesionaria
                     }
                     b = 1;
                     Clases.cFunciones fun = new Clases.cFunciones();
+                    txtRutaAuto.Text = trdo.Rows[0]["RutaImagen"].ToString();
                     txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
                     txtAnio.Text = trdo.Rows[0]["Anio"].ToString();
                     txtMotor.Text = trdo.Rows[0]["Motor"].ToString();
@@ -315,6 +316,12 @@ namespace Concesionaria
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
                 txtEmail.Text = trdo.Rows[0]["Email"].ToString();
                 txtObservacion.Text = trdo.Rows[0]["Observacion"].ToString();
+                if (trdo.Rows[0]["RutaImagen"].ToString()!="")
+                {
+                    string Ruta = trdo.Rows[0]["RutaImagen"].ToString();
+                    txtRutaImagenCliente.Text = Ruta;
+                    imgFotoCliente.Image = System.Drawing.Image.FromFile(Ruta);
+                }
                 if (trdo.Rows[0]["FechaNacimiento"].ToString() != "")
                 {
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
@@ -1161,6 +1168,7 @@ namespace Concesionaria
             string Altura = txtAltura.Text;
             Int32? CodBarrio = null;
             string Observacion = txtObservacion.Text;
+            string RutaImagen = txtRutaImagenCliente.Text;
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
 
@@ -1168,7 +1176,7 @@ namespace Concesionaria
             {
                 GrabaClienteNuevo = true;
                 sql = cliente.GetSqlInsertarCliente(CodTipoDoc, NroDocumento, Nombre,
-                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio,Observacion);
+                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio, Observacion, RutaImagen);
                 txtCodCLiente.Text = cliente.GetMaxCliente().ToString();
             }
             else
@@ -1176,7 +1184,7 @@ namespace Concesionaria
                 GrabaClienteNuevo = false;
                 sql = cliente.GetSqlModificarCliente(Convert.ToInt32(txtCodCLiente.Text), CodTipoDoc, NroDocumento, Nombre,
                       Apellido, Telefono, Celular,
-                      Calle, Altura, CodBarrio,Observacion);
+                      Calle, Altura, CodBarrio, Observacion, RutaImagen);
             }
             return sql;
         }
@@ -4659,10 +4667,52 @@ namespace Concesionaria
         {
             if (txtCodAuto.Text =="")
             {
-                Mensaje("Debe ingresar una patente");
+                Mensaje("Debe ingresar un vehículo");
                 return;
             }
-            Principal.CodAutoSeleccionado = Convert.ToInt32(txtCodAuto.Text);
+            Principal.RutaImagen = txtRutaAuto.Text;
+            FrmVerFotos frm = new FrmVerFotos();
+            frm.ShowDialog();
+        }
+
+        private void btnSubirFotoCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cImagen imgAuto = new cImagen();
+                string NroImagen = imgAuto.GetProximaImagen().ToString();
+                OpenFileDialog file = new OpenFileDialog();
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    string ruta = file.FileName;
+                    txtRutaImagenCliente.Text = ruta;
+                    imgFotoCliente.Image = System.Drawing.Image.FromFile(ruta);
+                    string Extension = System.IO.Path.GetExtension(file.FileName.ToString());
+                    string RutaGrabar = imgAuto.GetRuta() + NroImagen + "." + Extension;
+                    imgFotoCliente.Image.Save(RutaGrabar);
+                    imgAuto.Grabar(Convert.ToInt32(NroImagen));
+                    txtRutaImagenCliente.Text = RutaGrabar;
+                }
+                else
+                {
+                    txtRutaImagenCliente.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensaje("Hubo un error al intentar grabar la imagen");
+            }
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (txtRutaImagenCliente.Text  == "")
+            {
+                Mensaje("El cliente no tiene imagenes");
+                return;
+            }
+            Principal.RutaImagen = txtRutaImagenCliente.Text;
             FrmVerFotos frm = new FrmVerFotos();
             frm.ShowDialog();
         }

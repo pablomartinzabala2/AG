@@ -121,7 +121,7 @@ namespace Concesionaria
           //  form.FormClosing += new FormClosingEventHandler(form_FormClosing);
           //  form.ShowDialog();
             //codigo generico
-            Principal.OpcionesdeBusqueda = "Nombre;Apellido";
+            Principal.OpcionesdeBusqueda = "Nombre;Apellido;NroDocumento";
             Principal.TablaPrincipal = "Cliente";
             Principal.OpcionesColumnasGrilla = "CodCliente;Nombre;Apellido";
             Principal.ColumnasVisibles = "0;1;1";
@@ -146,6 +146,11 @@ namespace Concesionaria
                     if (Principal.CodigoPrincipalAbm != "")
                         fun.CargarControles(this, "Cliente", "CodCliente", txtCodCLiente.Text);
                     Grupo.Enabled = false;
+
+                    if (txt_RutaImagen.Text !="")
+                    {
+                        CargarImaagen();
+                    }
                     cCliente cli = new cCliente();
                     DataTable tbCLi = cli.GetClientesxCodigo(Convert.ToInt32(txtCodCLiente.Text));
                     if (tbCLi.Rows.Count >0)
@@ -196,6 +201,19 @@ namespace Concesionaria
             }
         }
 
+        private void CargarImaagen()
+        {
+            try
+            {
+                string Ruta = txt_RutaImagen.Text;
+                Imagen.Image = System.Drawing.Image.FromFile(Ruta);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo cargar la imagen");
+            }
+            
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Botonera(2);
@@ -420,6 +438,28 @@ namespace Concesionaria
             FrmAltaBasica form = new FrmAltaBasica();
             form.FormClosing += new FormClosingEventHandler(form_FormClosing);
             form.ShowDialog();
+        }
+
+        private void btnSubirFotoCliente_Click(object sender, EventArgs e)
+        {
+            cImagen imgAuto = new cImagen();
+            string NroImagen = imgAuto.GetProximaImagen().ToString();
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = file.FileName;
+                txt_RutaImagen.Text = ruta;
+                Imagen.Image = System.Drawing.Image.FromFile(ruta);
+                string Extension = System.IO.Path.GetExtension(file.FileName.ToString());
+                string RutaGrabar = imgAuto.GetRuta() + NroImagen + "." + Extension;
+                Imagen.Image.Save(RutaGrabar);
+                imgAuto.Grabar(Convert.ToInt32(NroImagen));
+                txt_RutaImagen.Text = RutaGrabar;
+            }
+            else
+            {
+                txt_RutaImagen.Text = "";
+            }
         }
     }
 }

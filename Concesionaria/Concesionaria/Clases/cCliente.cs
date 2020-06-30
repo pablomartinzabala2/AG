@@ -47,11 +47,12 @@ namespace Concesionaria.Clases
 
         public string  GetSqlInsertarCliente(Int32? CodTipoDoc, string NroDocumento,
             string Nombre, string Apellido, string Telefono, string Celular,
-            string Calle, string Altura, Int32? CodBarrio, string Observacion
+            string Calle, string Altura, Int32? CodBarrio, string Observacion,
+            string RutaImagen
             )
         {
             string sql = "Insert into Cliente(CodTipoDoc,NroDocumento,Nombre,Apellido";
-            sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio,Observacion)";
+            sql = sql + ",Telefono,Celular, Calle,  Numero, CodBarrio,Observacion,RutaImagen)";
             sql = sql + "Values(";
             if (CodTipoDoc == null)
                 sql = sql + "null";
@@ -69,6 +70,7 @@ namespace Concesionaria.Clases
             else
                 sql = sql + "," + CodBarrio.ToString();
             sql = sql + "," + "'" + Observacion + "'";
+            sql = sql + "," + "'" + RutaImagen + "'";
             sql = sql + ")";
             return sql;
         }
@@ -109,7 +111,7 @@ namespace Concesionaria.Clases
 
         public string GetSqlModificarCliente(Int32 CodCliente, Int32? CodTipoDoc, string NroDocumento,
             string Nombre, string Apellido, string Telefono, string Celular,
-            string Calle, string Numero, Int32? CodBarrio, string Observacion)
+            string Calle, string Numero, Int32? CodBarrio, string Observacion,string RutaImagen)
         {
             string sql = "Update Cliente ";
 
@@ -129,6 +131,7 @@ namespace Concesionaria.Clases
             else
                 sql = sql + ",CodBarrio =" + CodBarrio.ToString();
             sql = sql + ",Observacion=" + "'" + Observacion + "'";
+            sql = sql + ",RutaImagen=" + "'" + RutaImagen + "'";
             sql = sql + " where CodCliente=" + CodCliente.ToString();
             return sql;
         }

@@ -17,9 +17,15 @@ namespace Concesionaria
         }
 
         private void FrmVerFotos_Load(object sender, EventArgs e)
-        {
+        { 
             try
-            {
+            { 
+                if (Principal.RutaImagen!="")
+                {
+                    string Ruta = Principal.RutaImagen;
+                    Imagen.Image = System.Drawing.Image.FromFile(Ruta);
+                }
+                /*
                 if (Principal.CodAutoSeleccionado != null)
                 {
                     Int32 CodAuto = Convert.ToInt32(Principal.CodAutoSeleccionado);
@@ -35,6 +41,7 @@ namespace Concesionaria
                         }
                     }
                 }
+                */
             }
             catch (Exception ex)
             {

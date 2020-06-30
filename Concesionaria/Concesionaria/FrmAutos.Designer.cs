@@ -750,7 +750,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(461, 22);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(461, 25);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
@@ -940,9 +940,9 @@
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(280, 25);
+            this.txtNroDoc.Location = new System.Drawing.Point(232, 25);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(109, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(157, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
