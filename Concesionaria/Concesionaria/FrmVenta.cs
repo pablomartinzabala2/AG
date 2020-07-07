@@ -126,7 +126,7 @@ namespace Concesionaria
             int b = 0;
             string Patente = txtPatente.Text;
             if (Patente.Length > 4)
-            {
+          {
                 Clases.cAuto auto = new Clases.cAuto();
                 DataTable trdo = auto.GetAutoxPatente(Patente);
                 if (trdo.Rows.Count > 0)
@@ -186,7 +186,7 @@ namespace Concesionaria
                     if (trdo2.Rows.Count > 0)
                     {
                         txtCodStock.Text = trdo2.Rows[0]["CodStock"].ToString();
-                        GetExTitular(Convert.ToInt32(trdo2.Rows[0]["CodCliente"].ToString()));
+                       // GetExTitular(Convert.ToInt32(trdo2.Rows[0]["CodCliente"].ToString()));
                         GetCostos(Convert.ToInt32(txtCodStock.Text));
                         CargarGastosGeneralesxCodStoxk(Convert.ToInt32(txtCodStock.Text));
                         if (trdo2.Rows[0]["CodCliente"].ToString() != "")
@@ -293,7 +293,7 @@ namespace Concesionaria
             if (txtTotalCossto.Text != "")
             {
                 txtTotalCossto.Text = fun.FormatoEnteroMiles(txtTotalCossto.Text);
-               // txtImporteCompra.Text = txtTotalCossto.Text;
+                txtImporteCompra.Text = txtTotalCossto.Text;
             }
             Grilla.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
         }

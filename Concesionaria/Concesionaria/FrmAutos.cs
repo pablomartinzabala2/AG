@@ -30,21 +30,21 @@ namespace Concesionaria
             try
             {
                 InicializarComponentes();
-                if (Principal.CodCompra !=null)
+                if (Principal.CodCompra != null)
                 {
                     Int32 Cod = Convert.ToInt32(Principal.CodCompra);
                     BuscarCompra(Cod);
                     btnGrabar.Visible = false;
                     btnCancelar.Visible = false;
                 }
-               
+
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message.ToString()); 
+                MessageBox.Show(ex.Message.ToString());
             }
-            
+
             //PintarTextBox();
         }
 
@@ -53,20 +53,20 @@ namespace Concesionaria
             txtFecha.Text = DateTime.Now.ToShortDateString();
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
-          //  fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
-            if (cmbCiudad.Items.Count >0)
+            //  fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
+            if (cmbCiudad.Items.Count > 0)
                 cmbCiudad.SelectedValue = 1;
             fun.LlenarCombo(cmbDocumento, "TipoDocumento", "Nombre", "CodTipoDoc");
             if (cmbDocumento.Items.Count > 0)
                 cmbDocumento.SelectedIndex = 1;
-            cmbDocumento.Enabled = false;  
-           // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
+            cmbDocumento.Enabled = false;
+            // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
             //fun.LlenarCombo(CmbCategoriaGasto, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
             fun.LlenarCombo(CmbTipoCombustible, "TipoCombustible", "Nombre", "Codigo");
             fun.LlenarCombo(CmbBanco, "Banco", "Nombre", "CodBanco");
             fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
-            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");  
+            fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
             cPapeles papel = new cPapeles();
@@ -178,6 +178,7 @@ namespace Concesionaria
                 Int32? CodCliente = null;
                 if (txtCodCLiente.Text != "")
                     CodCliente = Convert.ToInt32(txtCodCLiente.Text);
+                CodCliente = GetCodClienteGrilla();
                 Clases.cStockAuto stockAuto = new Clases.cStockAuto();
                 stockAuto.InsertarStockAutoTransaccion(con, Transaccion, CodAuto, Fecha.ToShortDateString(), CodCliente, Principal.CodUsuarioLogueado, Importe);
                 Clases.cCosto costo = new Clases.cCosto();
@@ -208,18 +209,18 @@ namespace Concesionaria
                 return;
             }
 
-            if (tbCliente.Rows.Count <1)
+            if (tbCliente.Rows.Count < 1)
             {
                 Mensaje("Debe ingresar un cliente para continuar");
                 return;
             }
 
-            if(tbCliente.Rows[0]["CodCliente"].ToString ()=="")
+            if (tbCliente.Rows[0]["CodCliente"].ToString() == "")
             {
                 Mensaje("Debe ingresar un cliente para continuar");
                 return;
             }
-            
+
             Int32 Concesion = 0;
             if (radioConcesion.Checked)
                 Concesion = 1;
@@ -289,41 +290,41 @@ namespace Concesionaria
             Transaccion = con.BeginTransaction();
             try
             {
-                    Int32 CodCompra = 0;
-                    GrabarAutos(con, Transaccion);
-                    
-                    if (Concesion == 0)
-                        CodCompra = GrabarCompra(con, Transaccion);
-                    if (CodCompra >0)
-                    {
+                Int32 CodCompra = 0;
+                GrabarAutos(con, Transaccion);
+
+                if (Concesion == 0)
+                    CodCompra = GrabarCompra(con, Transaccion);
+                if (CodCompra > 0)
+                {
                     GrabarCompraxCliente(con, Transaccion, CodCompra);
-                    }
-                    if (Concesion == 0)
-                        GrabarGastosPagar(con, Transaccion, Convert.ToInt32(txtCodAuto.Text),CodCompra);
-                    if (Concesion == 0)
-                        GrabarCheques(con, Transaccion, CodCompra);
-                    if (Concesion == 0)
-                        GrabarMovimiento(con, Transaccion, CodCompra);
-                    if (Concesion == 0)
-                        GrabarMovimientoGastoRecepcion(con, Transaccion, CodCompra);
-                    if (txtTotalEfectivosaPagar.Text != "" && txtTotalEfectivosaPagar.Text != "0")
-                    {
-                        Int32 CodAuto = Convert.ToInt32(txtCodAuto.Text);
-                        Int32? CodCliente = null;
-                        if (txtCodCLiente.Text != "")
-                            CodCliente = Convert.ToInt32(txtCodCLiente.Text);
-                        double ImporteaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
-                        Clases.cEfectivoaPagar objEft = new Clases.cEfectivoaPagar();
-                        objEft.Insertar(con, Transaccion, Convert.ToDateTime(txtFecha.Text), ImporteaPagar, CodCompra, CodCliente, CodAuto);
-                    }
-                    if (txtTotalVehiculo.Text !="")
-                        GrabarVenta(con, Transaccion);
-                    GrabarPapelesxStock(con, Transaccion, CodCompra, Convert.ToInt32(txtCodStock.Text));
-                    Transaccion.Commit();
-                    con.Close();
-                    MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
-                    LimpiarTodos();
-                
+                }
+                if (Concesion == 0)
+                    GrabarGastosPagar(con, Transaccion, Convert.ToInt32(txtCodAuto.Text), CodCompra);
+                if (Concesion == 0)
+                    GrabarCheques(con, Transaccion, CodCompra);
+                if (Concesion == 0)
+                    GrabarMovimiento(con, Transaccion, CodCompra);
+                if (Concesion == 0)
+                    GrabarMovimientoGastoRecepcion(con, Transaccion, CodCompra);
+                if (txtTotalEfectivosaPagar.Text != "" && txtTotalEfectivosaPagar.Text != "0")
+                {
+                    Int32 CodAuto = Convert.ToInt32(txtCodAuto.Text);
+                    Int32? CodCliente = null;
+                    if (txtCodCLiente.Text != "")
+                        CodCliente = Convert.ToInt32(txtCodCLiente.Text);
+                    double ImporteaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
+                    Clases.cEfectivoaPagar objEft = new Clases.cEfectivoaPagar();
+                    objEft.Insertar(con, Transaccion, Convert.ToDateTime(txtFecha.Text), ImporteaPagar, CodCompra, CodCliente, CodAuto);
+                }
+                if (txtTotalVehiculo.Text != "")
+                    GrabarVenta(con, Transaccion);
+                GrabarPapelesxStock(con, Transaccion, CodCompra, Convert.ToInt32(txtCodStock.Text));
+                Transaccion.Commit();
+                con.Close();
+                MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+                LimpiarTodos();
+
 
             }
             catch (Exception ex)
@@ -362,11 +363,11 @@ namespace Concesionaria
             txtCodAuto2.Text = "";
             if (cmbProvincia.Items.Count > 0)
                 cmbProvincia.SelectedIndex = 0;
-            if (cmbCiudad.Items.Count  > 0)
+            if (cmbCiudad.Items.Count > 0)
                 cmbCiudad.SelectedIndex = 0;
             tbListaPapeles.Rows.Clear();
             tbCliente.Rows.Clear();
-            GrillaCliente = null;
+            GrillaCliente.DataSource = tbCliente;
         }
 
         private void CargarImagen(Int32 CodAuto)
@@ -426,7 +427,7 @@ namespace Concesionaria
                         txtKilometros.Text = fun.FormatoEnteroMiles(txtKilometros.Text);
                     }
                     txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
-                    
+
                     if (trdo.Rows[0]["Importe"].ToString() != "")
                     {
                         //string xx = trdo.Rows[0]["Importe"].ToString().Replace (",",".").ToString();
@@ -439,16 +440,16 @@ namespace Concesionaria
                         Int32 CodCiudad = Convert.ToInt32(trdo.Rows[0]["CodCiudad"].ToString());
                         cCiudad obj = new cCiudad();
                         DataTable tbProv = obj.GetProvinciaxCodCiudad(CodCiudad);
-                        if (tbProv.Rows.Count >0)
+                        if (tbProv.Rows.Count > 0)
                         {
-                            if (tbProv.Rows[0]["CodProvincia"].ToString ()!="")
+                            if (tbProv.Rows[0]["CodProvincia"].ToString() != "")
                             {
                                 cmbProvincia.SelectedValue = tbProv.Rows[0]["CodProvincia"].ToString();
                             }
                         }
                         cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
                     }
-                      
+
                     if (trdo.Rows[0]["CodSucursal"].ToString() != "")
                     {
                         cmbSucursal.SelectedValue = trdo.Rows[0]["CodSucursal"].ToString();
@@ -492,7 +493,7 @@ namespace Concesionaria
             }
             if (b == 0)
                 LimpiarAuto();
-            if (txtCodAuto.Text !="")
+            if (txtCodAuto.Text != "")
             {
                 CargarImagen(Convert.ToInt32(txtCodAuto.Text));
             }
@@ -521,7 +522,7 @@ namespace Concesionaria
         {
             txtCodAuto.Text = "";
             txtCodStock.Text = "";
-            if (cmb_CodMarca.Items.Count >0)
+            if (cmb_CodMarca.Items.Count > 0)
                 cmb_CodMarca.SelectedIndex = 0;
             txtDescripcion.Text = "";
             txtAnio.Text = "";
@@ -530,7 +531,7 @@ namespace Concesionaria
             txtChasis.Text = "";
             txtMotor.Text = "";
             GetGastos(-1);
-            txtColor.Text = "";   
+            txtColor.Text = "";
             if (cmbTipoUtilitario.Items.Count > 0)
                 cmbTipoUtilitario.SelectedIndex = 0;
             if (cmbSucursal.Items.Count > 0)
@@ -575,7 +576,7 @@ namespace Concesionaria
                 txtAltura.Text = trdo.Rows[0]["Numero"].ToString();
                 txtEmail.Text = trdo.Rows[0]["Email"].ToString();
                 txtObservacion.Text = trdo.Rows[0]["Observacion"].ToString();
-                if (trdo.Rows[0]["FechaNacimiento"].ToString()!="")
+                if (trdo.Rows[0]["FechaNacimiento"].ToString() != "")
                 {
                     DateTime FechaNac = Convert.ToDateTime(trdo.Rows[0]["FechaNacimiento"].ToString());
                     txtFechaNacimiento.Text = FechaNac.ToShortDateString();
@@ -585,16 +586,16 @@ namespace Concesionaria
                     Int32 CodBarrio = Convert.ToInt32(trdo.Rows[0]["CodBarrio"].ToString());
                     cBarrio barrio = new cBarrio();
                     DataTable tbBarrio = barrio.GetBarrioxId(CodBarrio);
-                    if (tbBarrio.Rows.Count >0)
+                    if (tbBarrio.Rows.Count > 0)
                     {
-                        if (tbBarrio.Rows[0]["CodCiudad"].ToString ()!="")
+                        if (tbBarrio.Rows[0]["CodCiudad"].ToString() != "")
                         {
                             Int32 CodCiudad = Convert.ToInt32(tbBarrio.Rows[0]["CodCiudad"].ToString());
                             cCiudad objCiudad = new cCiudad();
                             DataTable tbCiudad = objCiudad.GetCiudadxId(CodCiudad);
-                            if (tbCiudad.Rows.Count >0)
+                            if (tbCiudad.Rows.Count > 0)
                             {
-                                if (tbCiudad.Rows[0]["CodProvincia"].ToString ()!="")
+                                if (tbCiudad.Rows[0]["CodProvincia"].ToString() != "")
                                 {
                                     Int32 CodProvincia = Convert.ToInt32(tbCiudad.Rows[0]["CodProvincia"].ToString());
                                     cmbProvincia2.SelectedValue = CodProvincia.ToString();
@@ -604,11 +605,11 @@ namespace Concesionaria
                                     cmbCiudad2.SelectedValue = CodCiudad.ToString();
                                     CmbBarrio.SelectedValue = CodBarrio.ToString();
                                 }
-                            } 
+                            }
                         }
                     }
                 }
-                    
+
                 txtCodCLiente.Text = trdo.Rows[0]["CodCliente"].ToString();
             }
             else
@@ -631,14 +632,14 @@ namespace Concesionaria
             txtEmail.Text = "";
             if (cmbCiudad2.Items.Count > 0)
                 cmbCiudad2.SelectedIndex = 0;
-            
+
             if (cmbProvincia2.Items.Count > 0)
                 cmbProvincia2.SelectedIndex = 0;
         }
 
         private void btnAgregarCiudad_Click(object sender, EventArgs e)
         {
-            if (cmbProvincia.SelectedIndex <1)
+            if (cmbProvincia.SelectedIndex < 1)
             {
                 MessageBox.Show("Debe seleccionar una provincia para continuar");
                 return;
@@ -663,9 +664,9 @@ namespace Concesionaria
                         Int32 CodCiudad = 0;
                         if (Principal.CodigoPrincipalAbm == "1")
                         {
-                            
+
                             //fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
-                            
+
                             CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
                             Int32 CodProvincia = Convert.ToInt32(cmbProvincia.SelectedValue);
                             cCiudad city = new Clases.cCiudad();
@@ -676,15 +677,15 @@ namespace Concesionaria
                         }
 
                         if (Principal.CodigoPrincipalAbm == "2")
-                        {   
-                           // fun.LlenarCombo(cmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
-                            
-                             CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
+                        {
+                            // fun.LlenarCombo(cmbCiudad2, "Ciudad", "Nombre", "CodCiudad");
+
+                            CodCiudad = Convert.ToInt32(Principal.CampoIdSecundarioGenerado);
                             Int32 CodProvincia = Convert.ToInt32(cmbProvincia2.SelectedValue);
                             cCiudad city = new Clases.cCiudad();
                             city.ActualizarProvincia(CodCiudad, CodProvincia);
                             DataTable tbCiudad = city.GetCiudadxCodProvincia(CodProvincia);
-                            fun.LlenarComboDatatable(cmbCiudad2 , tbCiudad, "Nombre", "CodCiudad");
+                            fun.LlenarComboDatatable(cmbCiudad2, tbCiudad, "Nombre", "CodCiudad");
                             cmbCiudad2.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
 
@@ -700,12 +701,12 @@ namespace Concesionaria
                         obj.ActualizarCiudad(CodBarrio, CodCity);
                         DataTable tbBarrio = obj.GetBarrioxCiudad(CodCity);
                         fun.LlenarComboDatatable(CmbBarrio, tbBarrio, "Nombre", "CodBarrio");
-                       // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
+                        // fun.LlenarCombo(CmbBarrio, "Barrio", "Nombre", "CodBarrio");
                         CmbBarrio.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "CategoriaGasto":
-                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
-                         CmbGastoRecepcion.SelectedValue = Principal.CampoIdSecundarioGenerado;
+                        fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGasto", "Nombre", "CodCategoriaGasto");
+                        CmbGastoRecepcion.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
                     case "CategoriaGastoRecepcion":
                         fun.LlenarCombo(CmbGastoRecepcion, "CategoriaGastoRecepcion", "Descripcion", "Codigo");
@@ -715,12 +716,12 @@ namespace Concesionaria
                         fun.LlenarCombo(cmbTipoUtilitario, "TipoUtilitario", "Nombre", "CodTipo");
                         cmbTipoUtilitario.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         break;
-                    case "Sucursal":  
+                    case "Sucursal":
                         fun.LlenarCombo(cmbSucursal, "Sucursal", "Nombre", "CodSucursal");
                         cmbSucursal.SelectedValue = Principal.CampoIdSecundarioGenerado;
-                        
+
                         break;
-                    case "Provincia":  
+                    case "Provincia":
                         if (Principal.CodigoPrincipalAbm == "1")
                         {
                             fun.LlenarCombo(cmbProvincia, "Provincia", "Nombre", "CodProvincia");
@@ -728,7 +729,7 @@ namespace Concesionaria
                         }
 
                         if (Principal.CodigoPrincipalAbm == "2")
-                        {  
+                        {
                             fun.LlenarCombo(cmbProvincia2, "Provincia", "Nombre", "CodProvincia");
                             cmbProvincia2.SelectedValue = Principal.CampoIdSecundarioGenerado;
                         }
@@ -793,7 +794,7 @@ namespace Concesionaria
             if (Nuevo == true)
             {
                 cliente.InsertarClienteTransaccion(con, Transaccion, CodTipoDoc, NroDocumento, Nombre,
-                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio,FechaNacimiento,Email,Observacion);
+                    Apellido, Telefono, Celular, Calle, Altura, CodBarrio, FechaNacimiento, Email, Observacion);
                 txtCodCLiente.Text = cliente.GetMaxClientetTransaccion(con, Transaccion).ToString();
             }
             else
@@ -807,7 +808,7 @@ namespace Concesionaria
 
         private void btnNuevoBarrio_Click(object sender, EventArgs e)
         {
-            if (cmbCiudad2.SelectedIndex <1)
+            if (cmbCiudad2.SelectedIndex < 1)
             {
                 MessageBox.Show("Debe seleccionar una ciudad");
                 return;
@@ -1040,7 +1041,7 @@ namespace Concesionaria
                 TotalGasto = fun.ToDouble(txtTotalGastosRecepcion.Text);
 
             Double Total = TotalAuto + TotalGasto;
-            txtTotal.Text = fun.FormatoEnteroMiles(Total.ToString ());
+            txtTotal.Text = fun.FormatoEnteroMiles(Total.ToString());
         }
 
         private void txtImporteGasto_Leave(object sender, EventArgs e)
@@ -1145,11 +1146,11 @@ namespace Concesionaria
                 MessageBox.Show("Debe ingresar un importe de gasto de recepción ", Clases.cMensaje.Mensaje());
                 return;
             }
-            
+
             cCategoriaGasto cat = new cCategoriaGasto();
             Clases.cFunciones fun = new Clases.cFunciones();
             Clases.cGasto gasto = new Clases.cGasto();
-            string Descripcion = cat.GetGastoxId(Convert.ToInt32 (CmbGastoRecepcion.SelectedValue.ToString()));
+            string Descripcion = cat.GetGastoxId(Convert.ToInt32(CmbGastoRecepcion.SelectedValue.ToString()));
             AgregarGastoRecepcion(CmbGastoRecepcion.SelectedValue.ToString(), Descripcion, txtImporteGastoRecepcion.Text, "Generales");
             txtTotalGasto.Text = txtTotalGastosRecepcion.Text;
             txtTotalGastosRecepcion.Text = txtTotalGasto.Text;
@@ -1158,7 +1159,7 @@ namespace Concesionaria
 
         private void AgregarGastoRecepcion(string Codigo, string Descripcion, string Importe, string Tipo)
         {
-           
+
             DataTable tListado = new DataTable();
             tListado.Columns.Add("Codigo");
             tListado.Columns.Add("Descripcion");
@@ -1181,9 +1182,9 @@ namespace Concesionaria
 
                 tListado.Rows.Add(r);
             }
-            
+
             cFunciones fun = new cFunciones();
-            if (fun.Buscar (tListado ,"Codigo",Codigo)==true)
+            if (fun.Buscar(tListado, "Codigo", Codigo) == true)
             {
                 Mensaje("Ya se a agregado el gasto");
                 return;
@@ -1197,7 +1198,7 @@ namespace Concesionaria
 
             tListado.Rows.Add(r1);
             GrillaGastosRecepcion.DataSource = tListado;
-          
+
             GrillaGastosRecepcion.Columns[0].Visible = false;
             GrillaGastosRecepcion.Columns[2].Visible = false;
 
@@ -1312,7 +1313,7 @@ namespace Concesionaria
 
         }
 
-        private void GrabarGastosPagar(SqlConnection con, SqlTransaction Transaccion, Int32 CodAuto,Int32 CodCompra)
+        private void GrabarGastosPagar(SqlConnection con, SqlTransaction Transaccion, Int32 CodAuto, Int32 CodCompra)
         {
             DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
             Clases.cFunciones fun = new Clases.cFunciones();
@@ -1320,9 +1321,9 @@ namespace Concesionaria
             Int32 CodStock = Convert.ToInt32(txtCodStock.Text);
             double Importe = 0;
             Int32 Codigo = 0;
-            
+
             cGasto objGasto = new Clases.cGasto();
-           // Clases.cGastosPagar gasto = new Clases.cGastosPagar();
+            // Clases.cGastosPagar gasto = new Clases.cGastosPagar();
             for (int i = 0; i < GrillaGastosRecepcion.Rows.Count - 1; i++)
             {
                 Codigo = Convert.ToInt32(GrillaGastosRecepcion.Rows[i].Cells[0].Value.ToString());
@@ -1520,6 +1521,7 @@ namespace Concesionaria
         private void GrabarCheques(SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra)
         {
             Int32 CodAuto = Convert.ToInt32(txtCodAuto.Text);
+            Int32 CodCLiente = GetCodClienteGrilla();
             if (txtTotalCheque.Text != "")
             {
                 if (txtTotalCheque.Text != "0")
@@ -1534,7 +1536,7 @@ namespace Concesionaria
                         sqlCheque = sqlCheque + "'" + GrillaCheques.Rows[j].Cells[0].Value.ToString() + "'";
                         sqlCheque = sqlCheque + "," + fun.ToDouble(sImporteCheque);
                         sqlCheque = sqlCheque + "," + "'" + txtFecha.Text + "'";
-                        sqlCheque = sqlCheque + "," + txtCodCLiente.Text;
+                        sqlCheque = sqlCheque + "," + CodCLiente.ToString();
                         sqlCheque = sqlCheque + "," + GrillaCheques.Rows[j].Cells[3].Value.ToString();
                         sqlCheque = sqlCheque + "," + CodCompra.ToString();
                         sqlCheque = sqlCheque + "," + CodAuto.ToString();
@@ -1555,6 +1557,17 @@ namespace Concesionaria
             }
         }
 
+        public Int32 GetCodClienteGrilla()
+        {
+            Int32 CodCliente = 0;
+            if (tbCliente.Rows.Count > 0)
+                if (tbCliente.Rows[0]["CodCliente"].ToString() != "")
+                    CodCliente = Convert.ToInt32(tbCliente.Rows[0]["CodCliente"].ToString());
+
+            return CodCliente;
+
+        }
+        
         private Int32 GrabarCompra(SqlConnection con, SqlTransaction Transaccion)
         {
             Clases.cFunciones fun = new Clases.cFunciones();
@@ -1565,6 +1578,8 @@ namespace Concesionaria
             DateTime Fecha = DateTime.Now;
             if (txtCodCLiente.Text != "")
                 CodCliente = Convert.ToInt32(txtCodCLiente.Text);
+
+            CodCliente = GetCodClienteGrilla();
 
             if (txtEfectivo.Text != "")
                 ImporteEfectivo = fun.ToDouble(txtEfectivo.Text);
@@ -2359,19 +2374,19 @@ namespace Concesionaria
                     string Ape = txtApellido.Text;
                     string Nom = txtNombre.Text;
                     string Telefono = txtTelefono.Text;
-                    
-                    Transaccion.Commit();
-                    con.Close();
-                    MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
-                    if (fun.Buscar (tbCliente ,"NroDocumento",NroDocumento)==false)
+                    if (fun.Buscar(tbCliente, "NroDocumento", NroDocumento) == false)
                     {
                         string val = CodCLi + ";" + Ape + ";" + Nom + ";" + NroDocumento + ";" + Telefono;
                         tbCliente = fun.AgregarFilas(tbCliente, val);
+                       
                         GrillaCliente.DataSource = tbCliente;
                         fun.AnchoColumnas(GrillaCliente, "0;30;30;20;20");
                         GrillaCliente.Columns[0].Visible = false;
                     }
-                    
+                    Transaccion.Commit();
+                    con.Close();
+                    MessageBox.Show("Datos grabados correctamente", Clases.cMensaje.Mensaje());
+                    txtNroDoc.Text = "";
                     LimpiarCliente();
                 }
 
@@ -2399,6 +2414,18 @@ namespace Concesionaria
                     obj.Insertar(con, Transaccion, CodCompra, CodCliente);
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cFunciones fun = new Clases.cFunciones();
+            if (GrillaCliente.CurrentRow ==null)
+            {
+                Mensaje("Debe seleccionar un registro");
+            }
+            string Cod = GrillaCliente.CurrentRow.Cells[0].Value.ToString();
+            tbCliente = fun.EliminarFila(tbCliente, "CodCliente", Cod);
+            GrillaCliente.DataSource = tbCliente;
         }
     }
 }

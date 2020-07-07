@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmVistaPrevia : Form
@@ -27,6 +27,8 @@ namespace Concesionaria
             {
                 CargarDatos(Convert.ToInt32(Principal.CodigoPrincipalAbm));
                 BuscarGastosTransferencia(Convert.ToInt32(Principal.CodigoPrincipalAbm));
+                cCuota cuo = new cCuota();
+                string tex = cuo.GetTextoCuota(Convert.ToInt32(Principal.CodigoPrincipalAbm));
             }
         }
 
@@ -50,6 +52,7 @@ namespace Concesionaria
                     txtDireccion.Text = Direccion;
                     txtTelefono.Text = tcli.Rows[0]["Telefono"].ToString();
                     txtNombre.Text = nombre;
+                    txtDni.Text = tcli.Rows[0]["NroDocumento"].ToString();
                 }
             }
             txtEfectivo.Text = trdo.Rows[0]["ImporteEfectivo"].ToString();
@@ -60,11 +63,12 @@ namespace Concesionaria
             {
                 if (tauto.Rows.Count > 0)
                 {
-                    string Descrip = tauto.Rows[0]["Descripcion"].ToString();
-                    Descrip = Descrip + " AÑO " + tauto.Rows[0]["Anio"].ToString();
-                    Descrip = Descrip + " DOMINIO " + tauto.Rows[0]["Patente"].ToString();
-                    Descrip = Descrip + " MOTOR N º" + tauto.Rows[0]["Motor"].ToString();
-                    Descrip = Descrip + " CHASIS N º" + tauto.Rows[0]["Chasis"].ToString();
+                    string Descrip ="Marca "+ tauto.Rows[0]["Marca"].ToString();
+                    Descrip = Descrip + " con Dominio " + tauto.Rows[0]["Patente"].ToString();
+                   // Descrip = Descrip + " AÑO " + tauto.Rows[0]["Anio"].ToString();
+                  //  Descrip = Descrip + " DOMINIO " + tauto.Rows[0]["Patente"].ToString();
+                  //  Descrip = Descrip + " MOTOR N º" + tauto.Rows[0]["Motor"].ToString();
+                  //  Descrip = Descrip + " CHASIS N º" + tauto.Rows[0]["Chasis"].ToString();
                     txtAuto.Text = Descrip; 
                 }
             }
@@ -96,21 +100,25 @@ namespace Concesionaria
             string NombreCliente = txtNombre.Text;
             string DniCliente = txtDni.Text;
             string DireccionCliente = txtDireccion.Text;
-            string Texto1 = "Entre la firma CASTAÑO AUTOMOTORES con domicilio";
-            Texto1 = Texto1 + " en Av Colon 4747 de la ciudad de Córdoba";
-            Texto1 = Texto1 + " adelante VENDEDOR Y La Sr/a NombreCliente";
-            Texto1 = Texto1 + " DNI DniCliente Con domicilio en CALLE DireccionCliente TELEFONO TelefonoCliente";
-            Texto1 = Texto1 + " en adelante COMPRADOR convienen en celebrar el siguiente boleto";
-            Texto1 = Texto1 + " de compra venta, sujeto a las siguientes Cláusulas ";
+            string Texto1 = "Entre JOSELO AUTOMOTORES, por cuenta y orden de Bognanni Paola con domicilio en la calle ";
+            Texto1 = Texto1 + "  Colon 4747 de la ciudad de Córdoba";
+            Texto1 = Texto1 + ", adelante la parte  VENDEDORA Y La Sr/a NombreCliente";
+            Texto1 = Texto1 + " DNI DniCliente Con domicilio en CALLE DireccionCliente ";
+            Texto1 = Texto1 + ", en adelante la parte COMPRADORA, todos mayores de edad y hábiles para contratar, convienen en celebrar el presente contrato";
+            Texto1 = Texto1 + " de compraventa de automotor sujeto a las  Cláusulas y concidiones adjuntas";
             Texto1 = Texto1.Replace("NombreCliente", NombreCliente);
             Texto1 = Texto1.Replace("DniCliente", DniCliente);
             Texto1 = Texto1.Replace("TelefonoCliente", txtTelefono.Text);
             Texto1 = Texto1.Replace("DireccionCliente", DireccionCliente);
 
-            string texto2 = "Un vehículo NombreAuto";
+            string texto2 = "el VENDEDOR vende al COMPRADOR y este adquiere el automotor NombreAuto";
             texto2 = texto2.Replace("NombreAuto", txtAuto.Text);
-
-            string texto3 = "El precio se establece en PESOS " + txtPrecio.Text;
+            texto2 = texto2 + " EL vendedor entrega en este acto el vehículo al ";
+            texto2 = texto2 + "comprador en el estado que se encuentra que el mismo fue revisado y probado por este último, prestando el ";
+            texto2 = texto2 + "comprador su integra conformidad sobre el mismo, por lo cual acuerdan que el VENDEDOR no tendrá ";
+            texto2 = texto2 + "ninguna responsabilidad de resarcimiento por vicios ocultos.";
+            texto2 = texto2 + "El precio total de la unidad mencionada es de  PESOS " + txtPrecio.Text;
+            string texto3 = " que se paga de la siguiente manera "; //aca viene el texto de forma pago
             string Texto4 = "mas transfencia, por un valor de $" + txtGastosTransferencia.Text;
             if (txtTarjetaAzul.Text != "")
                 Texto4 = Texto4 + " con " + txtTarjetaAzul.Text + " cedulas azules";

@@ -394,5 +394,97 @@ namespace Concesionaria.Clases
             }
             return Saldo;
         }
+
+        public string GetTextoCuota(Int32 CodVenta)
+        {
+            string texto = "";
+            string sql = "select * from Cuotas";
+            sql = sql + " where CodVenta=" + CodVenta.ToString();
+            sql = sql + " and Cuota=1";
+            DataTable trdo = cDb.ExecuteDataTable(sql);
+            DateTime Fecha = DateTime.Now;
+            int dia = 0;
+            cFunciones fun = new Clases.cFunciones();
+            string nombreMes = "";
+            int Mes = 0;
+            int anio = 0;
+            Double Monto = 0;
+            int CanCuotas = 0;
+            int b = 0;
+            if (trdo.Rows.Count >0)
+            {
+                CanCuotas = GetCantidadCuotas(CodVenta);
+                CanCuotas = CanCuotas - 1;
+                if (trdo.Rows[0]["FechaVencimiento"].ToString () !="")
+                {
+                    b = 1;
+                    Monto = Convert.ToDouble(trdo.Rows[0]["Importe"].ToString());
+                    Fecha = Convert.ToDateTime(trdo.Rows[0]["FechaVencimiento"].ToString ());
+                    dia = Fecha.Day;
+                    anio = Fecha.Year;
+                    Mes = Fecha.Month;
+                    switch (Mes)
+                    {
+                        case 1:
+                            nombreMes = "Enero";
+                            break;
+                        case 2:
+                            nombreMes = "Febrero";
+                            break;
+                        case 3:
+                            nombreMes = "Marzo";
+                            break;
+                        case 4:
+                            nombreMes = "Abril";
+                            break;
+                        case 5:
+                            nombreMes = "Mayo";
+                            break;
+                        case 6:
+                            nombreMes = "Junio";
+                            break;
+                        case 7:
+                            nombreMes = "Julio";
+                            break;
+                        case 8:
+                            nombreMes = "Agosto";
+                            break;
+                        case 9:
+                            nombreMes = "Septiembre";
+                            break;
+                        case 10:
+                            nombreMes = "Octubre";
+                            break;
+                        case 11:
+                            nombreMes = "Noviembre";
+                            break;
+                        case 12:
+                            nombreMes = "Diciembre";
+                            break;
+                    }
+                }
+            }
+            if (b ==1)
+            {
+                Monto = Math.Round(Monto, 0);
+                texto = " en 1 Cuota de $" + fun.FormatoEnteroMiles(Monto.ToString()) + "()";
+                texto = texto + " con vencimiento el " + dia.ToString();
+                texto = texto + " de " + nombreMes;
+                texto = texto + " de " + anio.ToString();
+                texto = texto + " Mas " + CanCuotas.ToString();
+                texto = texto + " iguales y consecutivas de $ " + Monto.ToString();
+                texto = texto + " (). Cada una con vencimiento el 10 de cada mes.";
+            }
+            return texto;
+        }
+
+        public Int32 GetCantidadCuotas(Int32 CodVenta)
+        {
+            string sql = "select * from cuotas ";
+            sql = sql + " where CodVenta=" + CodVenta.ToString();
+            DataTable trdo = cDb.ExecuteDataTable(sql);
+            int can = trdo.Rows.Count;
+            return can;
+        }
     }
 }

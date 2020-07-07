@@ -710,6 +710,7 @@
             this.button4.Size = new System.Drawing.Size(40, 29);
             this.button4.TabIndex = 64;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnAgregarCliente
             // 
@@ -750,7 +751,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(461, 25);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(461, 22);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);
@@ -797,7 +798,7 @@
             // btnAgregarCiudad2
             // 
             this.btnAgregarCiudad2.Image = global::Concesionaria.Properties.Resources.page_add;
-            this.btnAgregarCiudad2.Location = new System.Drawing.Point(337, 118);
+            this.btnAgregarCiudad2.Location = new System.Drawing.Point(337, 115);
             this.btnAgregarCiudad2.Name = "btnAgregarCiudad2";
             this.btnAgregarCiudad2.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarCiudad2.TabIndex = 32;
@@ -845,7 +846,7 @@
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(290, 70);
+            this.txtCelular.Location = new System.Drawing.Point(232, 70);
             this.txtCelular.Mask = "000-000-000000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(99, 22);
@@ -940,9 +941,9 @@
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(232, 25);
+            this.txtNroDoc.Location = new System.Drawing.Point(220, 22);
             this.txtNroDoc.Name = "txtNroDoc";
-            this.txtNroDoc.Size = new System.Drawing.Size(157, 22);
+            this.txtNroDoc.Size = new System.Drawing.Size(112, 22);
             this.txtNroDoc.TabIndex = 12;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
