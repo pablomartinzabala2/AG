@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAuto = new System.Windows.Forms.TextBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtGastosTransferencia = new System.Windows.Forms.TextBox();
@@ -77,6 +76,13 @@
             this.txtVerificacion = new System.Windows.Forms.TextBox();
             this.txtTextoSenia = new System.Windows.Forms.TextBox();
             this.txtTextoEfectivo = new System.Windows.Forms.TextBox();
+            this.txtTextoDocumento = new System.Windows.Forms.TextBox();
+            this.txtAuto = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtFormaPago = new System.Windows.Forms.TextBox();
+            this.txtExTitular = new System.Windows.Forms.TextBox();
+            this.txtComprador = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,6 +93,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -115,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 127);
+            this.label6.Location = new System.Drawing.Point(27, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 17);
             this.label6.TabIndex = 11;
@@ -147,7 +154,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 64);
+            this.label2.Location = new System.Drawing.Point(27, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 17);
             this.label2.TabIndex = 2;
@@ -184,15 +191,6 @@
             this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Precio";
-            // 
-            // txtAuto
-            // 
-            this.txtAuto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtAuto.Location = new System.Drawing.Point(17, 28);
-            this.txtAuto.Multiline = true;
-            this.txtAuto.Name = "txtAuto";
-            this.txtAuto.Size = new System.Drawing.Size(406, 112);
-            this.txtAuto.TabIndex = 8;
             // 
             // btnImprimir
             // 
@@ -231,16 +229,16 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtFormaPago);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.GrillaGastos);
-            this.groupBox2.Controls.Add(this.txtAuto);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(440, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de vehículo";
+            this.groupBox2.Text = "Forma de Pago";
             // 
             // label4
             // 
@@ -286,6 +284,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtTextoDocumento);
             this.groupBox4.Controls.Add(this.txtTextoEfectivo);
             this.groupBox4.Controls.Add(this.txtTextoSenia);
             this.groupBox4.Controls.Add(this.label13);
@@ -387,6 +386,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtComprador);
+            this.groupBox5.Controls.Add(this.txtExTitular);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.txtMultas);
             this.groupBox5.Controls.Add(this.label20);
@@ -404,9 +405,9 @@
             this.groupBox5.Controls.Add(this.txtAutoPartePago);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(24, 196);
+            this.groupBox5.Location = new System.Drawing.Point(24, 216);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(937, 127);
+            this.groupBox5.Size = new System.Drawing.Size(937, 107);
             this.groupBox5.TabIndex = 46;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Auto en parte de pago";
@@ -551,12 +552,71 @@
             this.txtTextoEfectivo.Size = new System.Drawing.Size(402, 23);
             this.txtTextoEfectivo.TabIndex = 20;
             // 
+            // txtTextoDocumento
+            // 
+            this.txtTextoDocumento.Location = new System.Drawing.Point(218, 90);
+            this.txtTextoDocumento.Name = "txtTextoDocumento";
+            this.txtTextoDocumento.Size = new System.Drawing.Size(402, 23);
+            this.txtTextoDocumento.TabIndex = 21;
+            // 
+            // txtAuto
+            // 
+            this.txtAuto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAuto.Location = new System.Drawing.Point(559, 178);
+            this.txtAuto.Multiline = true;
+            this.txtAuto.Name = "txtAuto";
+            this.txtAuto.Size = new System.Drawing.Size(406, 26);
+            this.txtAuto.TabIndex = 47;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(482, 178);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Vehículo";
+            // 
+            // txtFormaPago
+            // 
+            this.txtFormaPago.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFormaPago.Location = new System.Drawing.Point(6, 17);
+            this.txtFormaPago.Multiline = true;
+            this.txtFormaPago.Name = "txtFormaPago";
+            this.txtFormaPago.Size = new System.Drawing.Size(446, 181);
+            this.txtFormaPago.TabIndex = 48;
+            // 
+            // txtExTitular
+            // 
+            this.txtExTitular.Location = new System.Drawing.Point(535, 3);
+            this.txtExTitular.Name = "txtExTitular";
+            this.txtExTitular.Size = new System.Drawing.Size(199, 23);
+            this.txtExTitular.TabIndex = 49;
+            this.txtExTitular.Visible = false;
+            // 
+            // txtComprador
+            // 
+            this.txtComprador.Location = new System.Drawing.Point(754, 3);
+            this.txtComprador.Name = "txtComprador";
+            this.txtComprador.Size = new System.Drawing.Size(199, 23);
+            this.txtComprador.TabIndex = 50;
+            this.txtComprador.Visible = false;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(360, 127);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(137, 23);
+            this.txtFecha.TabIndex = 16;
+            // 
             // FrmVistaPrevia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(985, 590);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtAuto);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -579,6 +639,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -592,7 +653,6 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.TextBox txtAuto;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -633,5 +693,12 @@
         private System.Windows.Forms.TextBox txtMultas;
         private System.Windows.Forms.TextBox txtTextoEfectivo;
         private System.Windows.Forms.TextBox txtTextoSenia;
+        private System.Windows.Forms.TextBox txtFormaPago;
+        private System.Windows.Forms.TextBox txtTextoDocumento;
+        private System.Windows.Forms.TextBox txtAuto;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtExTitular;
+        private System.Windows.Forms.TextBox txtComprador;
+        private System.Windows.Forms.TextBox txtFecha;
     }
 }

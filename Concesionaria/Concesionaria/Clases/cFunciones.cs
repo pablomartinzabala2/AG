@@ -153,7 +153,10 @@ namespace Concesionaria.Clases
             {
                 anchoCol = Convert.ToInt32(Col) * ancho / 100;
                 Grilla.Columns[i].Width = anchoCol;
+                if (Col == "0")
+                    Grilla.Columns[i].Visible = false;
                 i++;
+               
             }
         }
 
@@ -494,6 +497,7 @@ namespace Concesionaria.Clases
                     }
                 }
             }
+
            
         }
 

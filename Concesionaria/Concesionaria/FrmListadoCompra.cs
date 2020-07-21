@@ -72,10 +72,14 @@ namespace Concesionaria
             DataTable trdo = compra.getComprasxFecha(FechaDesde, FechaHasta, Patente);
             trdo = fun.TablaaMiles(trdo, "ImporteCompra");
             Grilla.DataSource = trdo;
+            string Col = "0;20;20;20;20;20";
+            fun.AnchoColumnas(Grilla, Col);
+            /*
             Grilla.Columns[0].Visible = false;
             Grilla.Columns[2].Width = 150;
             Grilla.Columns[3].Width = 150;
             Grilla.Columns[5].Width = 250;
+            */
             Grilla.Columns[5].HeaderText = "Importe Compra";
         }
 
