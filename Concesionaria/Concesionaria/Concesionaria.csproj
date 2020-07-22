@@ -1084,6 +1084,7 @@
     <Content Include="Iconos\printer.ico" />
     <Content Include="Iconos\printer2.gif" />
     <Content Include="Iconos\statistics3.ico" />
+    <Content Include="Iconos\table.ico" />
     <Content Include="Iconos\tv.ico" />
     <Content Include="Iconos\Ventas.ico" />
     <Content Include="Iconos\zoom.ico" />
