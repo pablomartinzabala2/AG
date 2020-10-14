@@ -11,7 +11,7 @@ using Concesionaria.Clases;
 namespace Concesionaria
 {
     public partial class FrmVenta : Form
-    {
+    {  //comentario
         DataTable tbListaPapeles;
         private Boolean GrabaClienteNuevo;
         private Int32 SigueMarca;

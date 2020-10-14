@@ -32,6 +32,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRutaAuto = new System.Windows.Forms.TextBox();
             this.BtnVerFoto = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnAbrirPreVenta = new System.Windows.Forms.Button();
@@ -69,7 +70,11 @@
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.lblPatente = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRutaImagenCliente = new System.Windows.Forms.TextBox();
+            this.imgFotoCliente = new System.Windows.Forms.PictureBox();
+            this.btnSubirFotoCliente = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label76 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
@@ -298,16 +303,12 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
             this.btnGrabarPreVenta = new System.Windows.Forms.Button();
-            this.imgFotoCliente = new System.Windows.Forms.PictureBox();
-            this.btnSubirFotoCliente = new System.Windows.Forms.Button();
-            this.txtRutaImagenCliente = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.txtRutaAuto = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
@@ -344,7 +345,6 @@
             this.tabPage17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).BeginInit();
             this.groupBox55.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -422,6 +422,14 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtRutaAuto
+            // 
+            this.txtRutaAuto.Location = new System.Drawing.Point(408, 6);
+            this.txtRutaAuto.Name = "txtRutaAuto";
+            this.txtRutaAuto.Size = new System.Drawing.Size(50, 22);
+            this.txtRutaAuto.TabIndex = 62;
+            this.txtRutaAuto.Visible = false;
             // 
             // BtnVerFoto
             // 
@@ -769,6 +777,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Información del Cliente";
             // 
+            // button5
+            // 
+            this.button5.Image = global::Concesionaria.Properties.Resources.tv;
+            this.button5.Location = new System.Drawing.Point(826, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(34, 28);
+            this.button5.TabIndex = 70;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtRutaImagenCliente);
@@ -810,6 +828,33 @@
             this.groupBox1.Size = new System.Drawing.Size(826, 179);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // txtRutaImagenCliente
+            // 
+            this.txtRutaImagenCliente.Location = new System.Drawing.Point(567, 0);
+            this.txtRutaImagenCliente.Name = "txtRutaImagenCliente";
+            this.txtRutaImagenCliente.Size = new System.Drawing.Size(96, 22);
+            this.txtRutaImagenCliente.TabIndex = 69;
+            this.txtRutaImagenCliente.Visible = false;
+            // 
+            // imgFotoCliente
+            // 
+            this.imgFotoCliente.Location = new System.Drawing.Point(729, 3);
+            this.imgFotoCliente.Name = "imgFotoCliente";
+            this.imgFotoCliente.Size = new System.Drawing.Size(82, 99);
+            this.imgFotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFotoCliente.TabIndex = 68;
+            this.imgFotoCliente.TabStop = false;
+            // 
+            // btnSubirFotoCliente
+            // 
+            this.btnSubirFotoCliente.Location = new System.Drawing.Point(657, -6);
+            this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
+            this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
+            this.btnSubirFotoCliente.TabIndex = 67;
+            this.btnSubirFotoCliente.Text = "Abrir";
+            this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
+            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
             // 
             // txtEmail
             // 
@@ -1036,7 +1081,7 @@
             // 
             // txtNroDoc
             // 
-            this.txtNroDoc.Location = new System.Drawing.Point(271, 0);
+            this.txtNroDoc.Location = new System.Drawing.Point(271, 3);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.Size = new System.Drawing.Size(96, 22);
             this.txtNroDoc.TabIndex = 12;
@@ -1054,7 +1099,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 37);
+            this.label8.Location = new System.Drawing.Point(14, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 16);
             this.label8.TabIndex = 9;
@@ -1072,7 +1117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 3);
+            this.label6.Location = new System.Drawing.Point(14, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 16);
             this.label6.TabIndex = 7;
@@ -3121,51 +3166,6 @@
             this.btnGrabarPreVenta.UseVisualStyleBackColor = true;
             this.btnGrabarPreVenta.Click += new System.EventHandler(this.btnGrabarPreVenta_Click);
             // 
-            // imgFotoCliente
-            // 
-            this.imgFotoCliente.Location = new System.Drawing.Point(729, 3);
-            this.imgFotoCliente.Name = "imgFotoCliente";
-            this.imgFotoCliente.Size = new System.Drawing.Size(82, 99);
-            this.imgFotoCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgFotoCliente.TabIndex = 68;
-            this.imgFotoCliente.TabStop = false;
-            // 
-            // btnSubirFotoCliente
-            // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(657, -6);
-            this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
-            this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
-            this.btnSubirFotoCliente.TabIndex = 67;
-            this.btnSubirFotoCliente.Text = "Abrir";
-            this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
-            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
-            // 
-            // txtRutaImagenCliente
-            // 
-            this.txtRutaImagenCliente.Location = new System.Drawing.Point(567, 0);
-            this.txtRutaImagenCliente.Name = "txtRutaImagenCliente";
-            this.txtRutaImagenCliente.Size = new System.Drawing.Size(96, 22);
-            this.txtRutaImagenCliente.TabIndex = 69;
-            this.txtRutaImagenCliente.Visible = false;
-            // 
-            // button5
-            // 
-            this.button5.Image = global::Concesionaria.Properties.Resources.tv;
-            this.button5.Location = new System.Drawing.Point(826, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(34, 28);
-            this.button5.TabIndex = 70;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // txtRutaAuto
-            // 
-            this.txtRutaAuto.Location = new System.Drawing.Point(408, 6);
-            this.txtRutaAuto.Name = "txtRutaAuto";
-            this.txtRutaAuto.Size = new System.Drawing.Size(50, 22);
-            this.txtRutaAuto.TabIndex = 62;
-            this.txtRutaAuto.Visible = false;
-            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3191,6 +3191,7 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGastosGenerales)).EndInit();
@@ -3244,7 +3245,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTarjeta)).EndInit();
             this.groupBox55.ResumeLayout(false);
             this.groupBox55.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
