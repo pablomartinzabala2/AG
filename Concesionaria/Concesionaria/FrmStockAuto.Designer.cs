@@ -55,7 +55,7 @@
             this.Grilla.Name = "Grilla";
             this.Grilla.ReadOnly = true;
             this.Grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grilla.Size = new System.Drawing.Size(1131, 368);
+            this.Grilla.Size = new System.Drawing.Size(1131, 409);
             this.Grilla.TabIndex = 0;
             // 
             // groupBox1
@@ -78,7 +78,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1154, 497);
+            this.groupBox1.Size = new System.Drawing.Size(1154, 523);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de Autos en Stock";
@@ -87,7 +87,7 @@
             // 
             this.txtConcesion.BackColor = System.Drawing.Color.LightGreen;
             this.txtConcesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcesion.Location = new System.Drawing.Point(796, 445);
+            this.txtConcesion.Location = new System.Drawing.Point(793, 494);
             this.txtConcesion.Name = "txtConcesion";
             this.txtConcesion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtConcesion.Size = new System.Drawing.Size(119, 23);
@@ -96,7 +96,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(712, 445);
+            this.label5.Location = new System.Drawing.Point(709, 494);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 56;
@@ -127,7 +127,7 @@
             // 
             this.txtMontoTotal.BackColor = System.Drawing.Color.LightGreen;
             this.txtMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoTotal.Location = new System.Drawing.Point(1018, 442);
+            this.txtMontoTotal.Location = new System.Drawing.Point(1015, 491);
             this.txtMontoTotal.Name = "txtMontoTotal";
             this.txtMontoTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtMontoTotal.Size = new System.Drawing.Size(119, 23);
@@ -137,7 +137,7 @@
             // 
             this.txtTotalVehiculos.BackColor = System.Drawing.Color.LightGreen;
             this.txtTotalVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalVehiculos.Location = new System.Drawing.Point(587, 442);
+            this.txtTotalVehiculos.Location = new System.Drawing.Point(584, 491);
             this.txtTotalVehiculos.Name = "txtTotalVehiculos";
             this.txtTotalVehiculos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTotalVehiculos.Size = new System.Drawing.Size(119, 23);
@@ -146,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(921, 445);
+            this.label4.Location = new System.Drawing.Point(918, 494);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 17);
             this.label4.TabIndex = 27;
@@ -166,7 +166,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(458, 445);
+            this.label3.Location = new System.Drawing.Point(455, 494);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 17);
             this.label3.TabIndex = 26;
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1178, 521);
+            this.ClientSize = new System.Drawing.Size(1178, 547);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

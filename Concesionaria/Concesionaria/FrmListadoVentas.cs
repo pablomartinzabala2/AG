@@ -234,6 +234,7 @@ namespace Concesionaria
 
         private void btnReporte2_Click(object sender, EventArgs e)
         {
+            /*
             Clases.cDb.ExecutarNonQuery("delete from ReporteAuto");
             string sql = "";
             for (int i = 0; i < Grilla.Rows.Count - 1; i++)
@@ -259,6 +260,7 @@ namespace Concesionaria
             }
             FrmReporteVenta frm = new FrmReporteVenta();
             frm.Show();
+            */
         }
 
         private string GetCliente(Int32 CodCLiente, string Campo)

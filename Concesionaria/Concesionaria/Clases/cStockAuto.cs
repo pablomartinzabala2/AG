@@ -68,7 +68,7 @@ namespace Concesionaria.Clases
             sql = sql + " where gap.CodGasto=dif.CodGasto  and gap.CodStock = sa.CodStock)";
             sql = sql + ") as Costo";
             sql = sql + ",Concesion";
-            sql = sql + ",a.Ubicacion";
+            sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
             sql = sql + ",sa.PrecioVenta";
             sql = sql + ",(select suc.Nombre from sucursal suc where suc.CodSucursal=a.CodSucursal) as Ubicacion";
             

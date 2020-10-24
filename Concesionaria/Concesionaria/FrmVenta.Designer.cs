@@ -848,7 +848,7 @@
             // 
             // btnSubirFotoCliente
             // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(657, -6);
+            this.btnSubirFotoCliente.Location = new System.Drawing.Point(669, -4);
             this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
             this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
             this.btnSubirFotoCliente.TabIndex = 67;
@@ -859,7 +859,7 @@
             // txtEmail
             // 
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEmail.Location = new System.Drawing.Point(484, 141);
+            this.txtEmail.Location = new System.Drawing.Point(484, 136);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(246, 22);
             this.txtEmail.TabIndex = 47;
@@ -867,7 +867,7 @@
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(422, 140);
+            this.label76.Location = new System.Drawing.Point(417, 140);
             this.label76.Name = "label76";
             this.label76.Size = new System.Drawing.Size(42, 16);
             this.label76.TabIndex = 46;
@@ -876,7 +876,7 @@
             // label75
             // 
             this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(422, 115);
+            this.label75.Location = new System.Drawing.Point(417, 114);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(51, 16);
             this.label75.TabIndex = 43;
@@ -933,7 +933,7 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(485, 0);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(485, 3);
             this.txtFechaNacimiento.Mask = "00/00/0000";
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(76, 22);

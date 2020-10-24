@@ -31,12 +31,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnReporte2 = new System.Windows.Forms.Button();
+            this.BtnVerGanancia = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCantidadVentas = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnAbrirVenta = new System.Windows.Forms.Button();
             this.lblGanancia = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFechaHasta = new System.Windows.Forms.MaskedTextBox();
             this.txtFechaDesde = new System.Windows.Forms.MaskedTextBox();
@@ -45,11 +50,6 @@
             this.txtPrenda = new System.Windows.Forms.TextBox();
             this.txtVehículo = new System.Windows.Forms.TextBox();
             this.txtDocumentos = new System.Windows.Forms.TextBox();
-            this.btnReporte2 = new System.Windows.Forms.Button();
-            this.BtnVerGanancia = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnAbrirVenta = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
@@ -103,6 +103,28 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Apellido";
             // 
+            // btnReporte2
+            // 
+            this.btnReporte2.Image = global::Concesionaria.Properties.Resources.MOVIMIENTOS;
+            this.btnReporte2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReporte2.Location = new System.Drawing.Point(1086, 36);
+            this.btnReporte2.Name = "btnReporte2";
+            this.btnReporte2.Size = new System.Drawing.Size(43, 27);
+            this.btnReporte2.TabIndex = 58;
+            this.btnReporte2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReporte2.UseVisualStyleBackColor = true;
+            this.btnReporte2.Click += new System.EventHandler(this.btnReporte2_Click);
+            // 
+            // BtnVerGanancia
+            // 
+            this.BtnVerGanancia.Image = global::Concesionaria.Properties.Resources.Linterna;
+            this.BtnVerGanancia.Location = new System.Drawing.Point(1040, 36);
+            this.BtnVerGanancia.Name = "BtnVerGanancia";
+            this.BtnVerGanancia.Size = new System.Drawing.Size(40, 27);
+            this.BtnVerGanancia.TabIndex = 57;
+            this.BtnVerGanancia.UseVisualStyleBackColor = true;
+            this.BtnVerGanancia.Click += new System.EventHandler(this.BtnVerGanancia_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -121,6 +143,19 @@
             this.txtCantidadVentas.Size = new System.Drawing.Size(100, 22);
             this.txtCantidadVentas.TabIndex = 55;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnImprimir.Image = global::Concesionaria.Properties.Resources.COMPRA222;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(994, 36);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(40, 27);
+            this.btnImprimir.TabIndex = 54;
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // txtPatente
             // 
             this.txtPatente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -137,6 +172,16 @@
             this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 52;
             this.label4.Text = "Patente";
+            // 
+            // btnAbrirVenta
+            // 
+            this.btnAbrirVenta.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnAbrirVenta.Location = new System.Drawing.Point(948, 36);
+            this.btnAbrirVenta.Name = "btnAbrirVenta";
+            this.btnAbrirVenta.Size = new System.Drawing.Size(40, 27);
+            this.btnAbrirVenta.TabIndex = 43;
+            this.btnAbrirVenta.UseVisualStyleBackColor = true;
+            this.btnAbrirVenta.Click += new System.EventHandler(this.btnAbrirVenta_Click);
             // 
             // lblGanancia
             // 
@@ -155,6 +200,16 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 22);
             this.txtTotal.TabIndex = 41;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
+            this.btnBuscar.Location = new System.Drawing.Point(902, 36);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(40, 27);
+            this.btnBuscar.TabIndex = 40;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label2
             // 
@@ -230,61 +285,6 @@
             this.txtDocumentos.Size = new System.Drawing.Size(136, 22);
             this.txtDocumentos.TabIndex = 1;
             // 
-            // btnReporte2
-            // 
-            this.btnReporte2.Image = global::Concesionaria.Properties.Resources.MOVIMIENTOS;
-            this.btnReporte2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReporte2.Location = new System.Drawing.Point(1086, 36);
-            this.btnReporte2.Name = "btnReporte2";
-            this.btnReporte2.Size = new System.Drawing.Size(43, 27);
-            this.btnReporte2.TabIndex = 58;
-            this.btnReporte2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReporte2.UseVisualStyleBackColor = true;
-            this.btnReporte2.Click += new System.EventHandler(this.btnReporte2_Click);
-            // 
-            // BtnVerGanancia
-            // 
-            this.BtnVerGanancia.Image = global::Concesionaria.Properties.Resources.Linterna;
-            this.BtnVerGanancia.Location = new System.Drawing.Point(1040, 36);
-            this.BtnVerGanancia.Name = "BtnVerGanancia";
-            this.BtnVerGanancia.Size = new System.Drawing.Size(40, 27);
-            this.BtnVerGanancia.TabIndex = 57;
-            this.BtnVerGanancia.UseVisualStyleBackColor = true;
-            this.BtnVerGanancia.Click += new System.EventHandler(this.BtnVerGanancia_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnImprimir.Image = global::Concesionaria.Properties.Resources.COMPRA222;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(994, 36);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(40, 27);
-            this.btnImprimir.TabIndex = 54;
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnAbrirVenta
-            // 
-            this.btnAbrirVenta.Image = global::Concesionaria.Properties.Resources.carpeta;
-            this.btnAbrirVenta.Location = new System.Drawing.Point(948, 36);
-            this.btnAbrirVenta.Name = "btnAbrirVenta";
-            this.btnAbrirVenta.Size = new System.Drawing.Size(40, 27);
-            this.btnAbrirVenta.TabIndex = 43;
-            this.btnAbrirVenta.UseVisualStyleBackColor = true;
-            this.btnAbrirVenta.Click += new System.EventHandler(this.btnAbrirVenta_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = global::Concesionaria.Properties.Resources.zoom2;
-            this.btnBuscar.Location = new System.Drawing.Point(902, 36);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(40, 27);
-            this.btnBuscar.TabIndex = 40;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // FrmListadoVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,7 +296,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmListadoVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmListadoVentas";
+            this.Text = "Listado de ventas";
             this.Load += new System.EventHandler(this.FrmListadoVentas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -109,7 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmBuscadorGenerico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBuscadorGenerico";
+            this.Text = "Formulario de búsqueda";
             this.Load += new System.EventHandler(this.FrmBuscadorGenerico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
