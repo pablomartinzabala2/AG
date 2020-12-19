@@ -503,7 +503,7 @@
         <Top>2.69911cm</Top>
         <Left>0.33549cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.43401cm</Width>
+        <Width>19.43402cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -605,14 +605,17 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.61458in</Height>
+    <Height>5.46875in</Height>
     <Style />
   </Body>
   <Width>7.88109in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <BottomMargin>6cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
