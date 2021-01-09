@@ -145,6 +145,7 @@ namespace Concesionaria
         }
 
         private void Principal_Load(object sender, EventArgs e)
+
         {
             //CodUsuarioLogueado = "1";
             Clases.cAlarma alarma = new Clases.cAlarma();

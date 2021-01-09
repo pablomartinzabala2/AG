@@ -317,8 +317,14 @@ namespace Concesionaria.Clases
                     String Dia = FechaNac.ToShortDateString().Substring(0, 2);
                     String Mes = FechaNac.ToShortDateString().Substring(3, 2);
                     String Anio = Hoy.Year.ToString();
+                    if (Mes =="02" && Dia =="29")
+                    {
+                        Mes = "03";
+                        Dia = "01";
+                    }
                     FechaCumple = Dia + "/" + Mes + "/" + Anio;
-                    sql2 = "update Cliente set FechaCumple=" + "'" + FechaCumple + "'";
+                    DateTime Fec = Convert.ToDateTime(FechaCumple);
+                    sql2 = "update Cliente set FechaCumple=" + "'" + Fec.ToShortDateString () + "'";
                     sql2 = sql2 + " where CodCliente=" + CodCliente.ToString();
                     cDb.ExecutarNonQuery(sql2);
                 }
