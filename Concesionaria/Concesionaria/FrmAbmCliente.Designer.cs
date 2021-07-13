@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmCliente));
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.Imagen = new System.Windows.Forms.PictureBox();
+            this.txt_RutaImagen = new System.Windows.Forms.TextBox();
+            this.btnSubirFotoCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,12 +70,9 @@
             this.btnAbrir = new System.Windows.Forms.ToolStripButton();
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.txt_RutaImagen = new System.Windows.Forms.TextBox();
-            this.btnSubirFotoCliente = new System.Windows.Forms.Button();
-            this.Imagen = new System.Windows.Forms.PictureBox();
             this.Grupo.SuspendLayout();
-            this.BarraBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
+            this.BarraBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grupo
@@ -115,6 +115,34 @@
             this.Grupo.TabIndex = 4;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del Cliente";
+            // 
+            // Imagen
+            // 
+            this.Imagen.Location = new System.Drawing.Point(121, 201);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(246, 174);
+            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Imagen.TabIndex = 72;
+            this.Imagen.TabStop = false;
+            // 
+            // txt_RutaImagen
+            // 
+            this.txt_RutaImagen.Location = new System.Drawing.Point(492, 215);
+            this.txt_RutaImagen.Name = "txt_RutaImagen";
+            this.txt_RutaImagen.Size = new System.Drawing.Size(246, 23);
+            this.txt_RutaImagen.TabIndex = 71;
+            this.txt_RutaImagen.Visible = false;
+            // 
+            // btnSubirFotoCliente
+            // 
+            this.btnSubirFotoCliente.Location = new System.Drawing.Point(373, 209);
+            this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
+            this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
+            this.btnSubirFotoCliente.TabIndex = 70;
+            this.btnSubirFotoCliente.Text = "Abrir";
+            this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
+            this.btnSubirFotoCliente.Visible = false;
+            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
             // 
             // label2
             // 
@@ -376,7 +404,7 @@
             this.BarraBotones.Location = new System.Drawing.Point(0, 0);
             this.BarraBotones.Name = "BarraBotones";
             this.BarraBotones.ShowItemToolTips = false;
-            this.BarraBotones.Size = new System.Drawing.Size(845, 39);
+            this.BarraBotones.Size = new System.Drawing.Size(793, 39);
             this.BarraBotones.TabIndex = 9;
             this.BarraBotones.Text = "toolStrip1";
             this.BarraBotones.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BarraBotones_ItemClicked);
@@ -464,39 +492,12 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txt_RutaImagen
-            // 
-            this.txt_RutaImagen.Location = new System.Drawing.Point(492, 215);
-            this.txt_RutaImagen.Name = "txt_RutaImagen";
-            this.txt_RutaImagen.Size = new System.Drawing.Size(246, 23);
-            this.txt_RutaImagen.TabIndex = 71;
-            this.txt_RutaImagen.Visible = false;
-            // 
-            // btnSubirFotoCliente
-            // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(373, 209);
-            this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
-            this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
-            this.btnSubirFotoCliente.TabIndex = 70;
-            this.btnSubirFotoCliente.Text = "Abrir";
-            this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
-            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
-            // 
-            // Imagen
-            // 
-            this.Imagen.Location = new System.Drawing.Point(121, 201);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(246, 174);
-            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Imagen.TabIndex = 72;
-            this.Imagen.TabStop = false;
-            // 
             // FrmAbmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(845, 429);
+            this.ClientSize = new System.Drawing.Size(793, 429);
             this.Controls.Add(this.BarraBotones);
             this.Controls.Add(this.Grupo);
             this.MaximizeBox = false;
@@ -507,9 +508,9 @@
             this.Load += new System.EventHandler(this.FrmAbmCliente_Load);
             this.Grupo.ResumeLayout(false);
             this.Grupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.BarraBotones.ResumeLayout(false);
             this.BarraBotones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

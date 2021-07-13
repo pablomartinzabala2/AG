@@ -713,7 +713,7 @@ namespace Concesionaria
             DataTable tbCli2 = pre.GetPrendasFinalizadas(FechaDesde, FechaHasta);
             if (tbCli2.Rows.Count >0)
             {
-                for (int i = 0; i < tbCli.Rows.Count; i++)
+                for (int i = 0; i < tbCli2.Rows.Count; i++)
                 {
                     Fecha = tbCli2.Rows[i]["FechaVencimiento"].ToString();
                     Apellido = tbCli2.Rows[i]["Apellido"].ToString();

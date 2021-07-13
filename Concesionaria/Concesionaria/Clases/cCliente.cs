@@ -322,7 +322,9 @@ namespace Concesionaria.Clases
                         Mes = "03";
                         Dia = "01";
                     }
+
                     FechaCumple = Dia + "/" + Mes + "/" + Anio;
+                   // MessageBox.Show(FechaCumple);
                     DateTime Fec = Convert.ToDateTime(FechaCumple);
                     sql2 = "update Cliente set FechaCumple=" + "'" + Fec.ToShortDateString () + "'";
                     sql2 = sql2 + " where CodCliente=" + CodCliente.ToString();

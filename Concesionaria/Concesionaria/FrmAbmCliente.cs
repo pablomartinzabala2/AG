@@ -323,6 +323,7 @@ namespace Concesionaria
 
         private void btnNuevoBarrio_Click(object sender, EventArgs e)
         {
+            Principal.CodigoPrincipalAbm = null;
             Principal.CampoIdSecundario = "CodBarrio";
             Principal.CampoNombreSecundario = "Nombre";
             Principal.NombreTablaSecundario = "Barrio";
