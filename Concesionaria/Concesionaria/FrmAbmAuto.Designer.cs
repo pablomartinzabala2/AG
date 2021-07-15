@@ -39,6 +39,10 @@
             this.btnImprimir = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.Grupo = new System.Windows.Forms.GroupBox();
+            this.btnSubirImagen = new System.Windows.Forms.Button();
+            this.txt_RutaImagen = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Imagen = new System.Windows.Forms.PictureBox();
             this.cmb_CodSucursal = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.cmb_CodTipoUtilitario = new System.Windows.Forms.ComboBox();
@@ -73,10 +77,6 @@
             this.txt_Patente = new System.Windows.Forms.TextBox();
             this.lblPatente = new System.Windows.Forms.Label();
             this.btnAgregarCiudad = new System.Windows.Forms.Button();
-            this.Imagen = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_RutaImagen = new System.Windows.Forms.TextBox();
-            this.btnSubirImagen = new System.Windows.Forms.Button();
             this.BarraBotones.SuspendLayout();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
@@ -229,6 +229,42 @@
             this.Grupo.TabIndex = 11;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del vehículo";
+            // 
+            // btnSubirImagen
+            // 
+            this.btnSubirImagen.Location = new System.Drawing.Point(364, 258);
+            this.btnSubirImagen.Name = "btnSubirImagen";
+            this.btnSubirImagen.Size = new System.Drawing.Size(75, 34);
+            this.btnSubirImagen.TabIndex = 55;
+            this.btnSubirImagen.Text = "Abrir";
+            this.btnSubirImagen.UseVisualStyleBackColor = true;
+            this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
+            // 
+            // txt_RutaImagen
+            // 
+            this.txt_RutaImagen.Location = new System.Drawing.Point(500, 279);
+            this.txt_RutaImagen.Name = "txt_RutaImagen";
+            this.txt_RutaImagen.Size = new System.Drawing.Size(132, 22);
+            this.txt_RutaImagen.TabIndex = 54;
+            this.txt_RutaImagen.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(26, 258);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 16);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "Imagen";
+            // 
+            // Imagen
+            // 
+            this.Imagen.Location = new System.Drawing.Point(112, 258);
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Size = new System.Drawing.Size(246, 170);
+            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Imagen.TabIndex = 52;
+            this.Imagen.TabStop = false;
             // 
             // cmb_CodSucursal
             // 
@@ -520,42 +556,6 @@
             this.btnAgregarCiudad.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarCiudad.TabIndex = 17;
             this.btnAgregarCiudad.UseVisualStyleBackColor = true;
-            // 
-            // Imagen
-            // 
-            this.Imagen.Location = new System.Drawing.Point(112, 258);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(246, 170);
-            this.Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Imagen.TabIndex = 52;
-            this.Imagen.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(26, 258);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 16);
-            this.label13.TabIndex = 53;
-            this.label13.Text = "Imagen";
-            // 
-            // txt_RutaImagen
-            // 
-            this.txt_RutaImagen.Location = new System.Drawing.Point(500, 279);
-            this.txt_RutaImagen.Name = "txt_RutaImagen";
-            this.txt_RutaImagen.Size = new System.Drawing.Size(132, 22);
-            this.txt_RutaImagen.TabIndex = 54;
-            this.txt_RutaImagen.Visible = false;
-            // 
-            // btnSubirImagen
-            // 
-            this.btnSubirImagen.Location = new System.Drawing.Point(364, 258);
-            this.btnSubirImagen.Name = "btnSubirImagen";
-            this.btnSubirImagen.Size = new System.Drawing.Size(75, 34);
-            this.btnSubirImagen.TabIndex = 55;
-            this.btnSubirImagen.Text = "Abrir";
-            this.btnSubirImagen.UseVisualStyleBackColor = true;
-            this.btnSubirImagen.Click += new System.EventHandler(this.btnSubirImagen_Click);
             // 
             // FrmAbmAuto
             // 

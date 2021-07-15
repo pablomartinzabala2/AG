@@ -1169,6 +1169,12 @@ namespace Concesionaria
             Int32? CodBarrio = null;
             string Observacion = txtObservacion.Text;
             string RutaImagen = txtRutaImagenCliente.Text;
+            DateTime? FechaNacimiento = null;
+            cFunciones func = new cFunciones();
+            if (func.ValidarFecha(txtFechaNacimiento.Text)==true)
+            {
+                FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+            }
             if (CmbBarrio.SelectedIndex > 0)
                 CodBarrio = Convert.ToInt32(CmbBarrio.SelectedValue);
 
@@ -1176,7 +1182,7 @@ namespace Concesionaria
             {
                 GrabaClienteNuevo = true;
                 sql = cliente.GetSqlInsertarCliente(CodTipoDoc, NroDocumento, Nombre,
-                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio, Observacion, RutaImagen);
+                      Apellido, Telefono, Celular, Calle, Altura, CodBarrio, Observacion, RutaImagen, FechaNacimiento);
                 txtCodCLiente.Text = cliente.GetMaxCliente().ToString();
             }
             else
@@ -3111,7 +3117,7 @@ namespace Concesionaria
                     txtImporteSenia.Text = fun.SepararDecimales(txtImporteSenia.Text);
                     txtImporteSenia.Text = fun.FormatoEnteroMiles(txtImporteSenia.Text);
                 }
-
+                BuscarAutosPartePago(CodVenta);
                 CalcularSubTotal();
                 //buscamos el ex titular
                 Clases.cStockAuto stockA = new Clases.cStockAuto();
@@ -3132,6 +3138,19 @@ namespace Concesionaria
 
                 }
             }
+        }
+
+        private void BuscarAutosPartePago(Int32 CodVenta)
+        {
+            cFunciones fun = new cFunciones();
+            cVentaxAuto obj = new cVentaxAuto();
+            
+            DataTable trdo = obj.GetAutosxCodVenta(CodVenta);
+            trdo = fun.TablaaMiles(trdo, "Importe");
+            GrillaVehiculos.DataSource = trdo;
+            string Col = "0;15;35;35;15;0";
+            fun.AnchoColumnas(GrillaVehiculos, Col);
+            
         }
 
         private void BuscarAutoxPatente(string Patente)

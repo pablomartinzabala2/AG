@@ -1,6 +1,6 @@
 ﻿namespace Concesionaria
 {
-    partial class FrmAbmCliente
+    partial class FrmVerCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmCliente));
             this.Grupo = new System.Windows.Forms.GroupBox();
             this.Imagen = new System.Windows.Forms.PictureBox();
             this.txt_RutaImagen = new System.Windows.Forms.TextBox();
@@ -61,20 +60,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.BarraBotones = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
-            this.btnAceptar = new System.Windows.Forms.ToolStripButton();
-            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
-            this.btnAbrir = new System.Windows.Forms.ToolStripButton();
-            this.btnImprimir = new System.Windows.Forms.ToolStripButton();
-            this.btnSalir = new System.Windows.Forms.ToolStripButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.txt_Observacion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).BeginInit();
-            this.BarraBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grupo
@@ -113,10 +102,10 @@
             this.Grupo.Controls.Add(this.label7);
             this.Grupo.Controls.Add(this.label6);
             this.Grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grupo.Location = new System.Drawing.Point(12, 42);
+            this.Grupo.Location = new System.Drawing.Point(12, 24);
             this.Grupo.Name = "Grupo";
-            this.Grupo.Size = new System.Drawing.Size(777, 351);
-            this.Grupo.TabIndex = 4;
+            this.Grupo.Size = new System.Drawing.Size(777, 390);
+            this.Grupo.TabIndex = 5;
             this.Grupo.TabStop = false;
             this.Grupo.Text = "Información del Cliente";
             // 
@@ -131,7 +120,7 @@
             // 
             // txt_RutaImagen
             // 
-            this.txt_RutaImagen.Location = new System.Drawing.Point(492, 307);
+            this.txt_RutaImagen.Location = new System.Drawing.Point(492, 215);
             this.txt_RutaImagen.Name = "txt_RutaImagen";
             this.txt_RutaImagen.Size = new System.Drawing.Size(246, 23);
             this.txt_RutaImagen.TabIndex = 71;
@@ -139,14 +128,13 @@
             // 
             // btnSubirFotoCliente
             // 
-            this.btnSubirFotoCliente.Location = new System.Drawing.Point(373, 265);
+            this.btnSubirFotoCliente.Location = new System.Drawing.Point(373, 209);
             this.btnSubirFotoCliente.Name = "btnSubirFotoCliente";
             this.btnSubirFotoCliente.Size = new System.Drawing.Size(75, 29);
             this.btnSubirFotoCliente.TabIndex = 70;
             this.btnSubirFotoCliente.Text = "Abrir";
             this.btnSubirFotoCliente.UseVisualStyleBackColor = true;
             this.btnSubirFotoCliente.Visible = false;
-            this.btnSubirFotoCliente.Click += new System.EventHandler(this.btnSubirFotoCliente_Click);
             // 
             // label2
             // 
@@ -169,9 +157,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(428, 174);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 17);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Mail";
+            this.label1.Text = "Altura";
             // 
             // label38
             // 
@@ -190,7 +178,6 @@
             this.btnAgregarCiudad2.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarCiudad2.TabIndex = 37;
             this.btnAgregarCiudad2.UseVisualStyleBackColor = true;
-            this.btnAgregarCiudad2.Click += new System.EventHandler(this.btnAgregarCiudad2_Click);
             // 
             // cmbCiudad2
             // 
@@ -210,7 +197,6 @@
             this.btnAgregarProvincia2.Size = new System.Drawing.Size(40, 28);
             this.btnAgregarProvincia2.TabIndex = 35;
             this.btnAgregarProvincia2.UseVisualStyleBackColor = true;
-            this.btnAgregarProvincia2.Click += new System.EventHandler(this.btnAgregarProvincia2_Click);
             // 
             // cmbProvincia2
             // 
@@ -220,7 +206,6 @@
             this.cmbProvincia2.Name = "cmbProvincia2";
             this.cmbProvincia2.Size = new System.Drawing.Size(246, 24);
             this.cmbProvincia2.TabIndex = 36;
-            this.cmbProvincia2.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia2_SelectedIndexChanged);
             // 
             // txtM_Celular
             // 
@@ -253,7 +238,6 @@
             this.btnNuevoBarrio.Size = new System.Drawing.Size(40, 28);
             this.btnNuevoBarrio.TabIndex = 25;
             this.btnNuevoBarrio.UseVisualStyleBackColor = true;
-            this.btnNuevoBarrio.Click += new System.EventHandler(this.btnNuevoBarrio_Click);
             // 
             // cmb_CodBarrio
             // 
@@ -355,7 +339,6 @@
             this.txt_NroDocumento.Name = "txt_NroDocumento";
             this.txt_NroDocumento.Size = new System.Drawing.Size(246, 23);
             this.txt_NroDocumento.TabIndex = 12;
-            this.txt_NroDocumento.TextChanged += new System.EventHandler(this.txt_NroDocumento_TextChanged);
             // 
             // label9
             // 
@@ -393,153 +376,57 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Documento";
             // 
-            // BarraBotones
+            // txt_Observacion
             // 
-            this.BarraBotones.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.BarraBotones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNuevo,
-            this.btnEditar,
-            this.btnEliminar,
-            this.btnAceptar,
-            this.btnCancelar,
-            this.btnAbrir,
-            this.btnImprimir,
-            this.btnSalir});
-            this.BarraBotones.Location = new System.Drawing.Point(0, 0);
-            this.BarraBotones.Name = "BarraBotones";
-            this.BarraBotones.ShowItemToolTips = false;
-            this.BarraBotones.Size = new System.Drawing.Size(793, 39);
-            this.BarraBotones.TabIndex = 9;
-            this.BarraBotones.Text = "toolStrip1";
-            this.BarraBotones.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.BarraBotones_ItemClicked);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(36, 36);
-            this.btnNuevo.Text = "toolStripButton1";
-            this.btnNuevo.ToolTipText = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(36, 36);
-            this.btnEditar.Text = "toolStripButton2";
-            this.btnEditar.ToolTipText = "Modificar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(36, 36);
-            this.btnEliminar.Text = "toolStripButton3";
-            this.btnEliminar.ToolTipText = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(36, 36);
-            this.btnAceptar.Text = "Grabar";
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(36, 36);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAbrir.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrir.Image")));
-            this.btnAbrir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(36, 36);
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
-            this.btnImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(36, 36);
-            this.btnImprimir.Text = "toolStripButton1";
-            this.btnImprimir.ToolTipText = "Imprimir";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(36, 36);
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.txt_Observacion.Location = new System.Drawing.Point(489, 244);
+            this.txt_Observacion.Multiline = true;
+            this.txt_Observacion.Name = "txt_Observacion";
+            this.txt_Observacion.Size = new System.Drawing.Size(246, 80);
+            this.txt_Observacion.TabIndex = 76;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(377, 214);
+            this.label3.Location = new System.Drawing.Point(374, 244);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 17);
-            this.label3.TabIndex = 73;
+            this.label3.TabIndex = 75;
             this.label3.Text = "Observaciones";
             // 
-            // txt_Observacion
-            // 
-            this.txt_Observacion.Location = new System.Drawing.Point(492, 214);
-            this.txt_Observacion.Multiline = true;
-            this.txt_Observacion.Name = "txt_Observacion";
-            this.txt_Observacion.Size = new System.Drawing.Size(246, 80);
-            this.txt_Observacion.TabIndex = 74;
-            // 
-            // FrmAbmCliente
+            // FrmVerCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(793, 429);
-            this.Controls.Add(this.BarraBotones);
+            this.ClientSize = new System.Drawing.Size(816, 449);
             this.Controls.Add(this.Grupo);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmAbmCliente";
+            this.Name = "FrmVerCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAbmCliente";
-            this.Load += new System.EventHandler(this.FrmAbmCliente_Load);
+            this.Text = "Informaci{on del Cliente";
+            this.Load += new System.EventHandler(this.FrmVerCliente_Load);
             this.Grupo.ResumeLayout(false);
             this.Grupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen)).EndInit();
-            this.BarraBotones.ResumeLayout(false);
-            this.BarraBotones.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox Grupo;
+        private System.Windows.Forms.PictureBox Imagen;
+        private System.Windows.Forms.TextBox txt_RutaImagen;
+        private System.Windows.Forms.Button btnSubirFotoCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Button btnAgregarCiudad2;
+        private System.Windows.Forms.ComboBox cmbCiudad2;
+        private System.Windows.Forms.Button btnAgregarProvincia2;
+        private System.Windows.Forms.ComboBox cmbProvincia2;
         private System.Windows.Forms.MaskedTextBox txtM_Celular;
         private System.Windows.Forms.MaskedTextBox txtM_Telefono;
         private System.Windows.Forms.TextBox txtCodCLiente;
@@ -560,26 +447,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ToolStrip BarraBotones;
-        private System.Windows.Forms.ToolStripButton btnNuevo;
-        private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.ToolStripButton btnEliminar;
-        private System.Windows.Forms.ToolStripButton btnAceptar;
-        private System.Windows.Forms.ToolStripButton btnCancelar;
-        private System.Windows.Forms.ToolStripButton btnAbrir;
-        private System.Windows.Forms.ToolStripButton btnImprimir;
-        private System.Windows.Forms.ToolStripButton btnSalir;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_Email;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Button btnAgregarCiudad2;
-        private System.Windows.Forms.ComboBox cmbCiudad2;
-        private System.Windows.Forms.Button btnAgregarProvincia2;
-        private System.Windows.Forms.ComboBox cmbProvincia2;
-        private System.Windows.Forms.TextBox txt_RutaImagen;
-        private System.Windows.Forms.Button btnSubirFotoCliente;
-        private System.Windows.Forms.PictureBox Imagen;
         private System.Windows.Forms.TextBox txt_Observacion;
         private System.Windows.Forms.Label label3;
     }

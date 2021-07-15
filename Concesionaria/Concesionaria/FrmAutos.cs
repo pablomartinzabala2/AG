@@ -2374,6 +2374,7 @@ namespace Concesionaria
                     string Ape = txtApellido.Text;
                     string Nom = txtNombre.Text;
                     string Telefono = txtTelefono.Text;
+          
                     if (fun.Buscar(tbCliente, "NroDocumento", NroDocumento) == false)
                     {
                         string val = CodCLi + ";" + Ape + ";" + Nom + ";" + NroDocumento + ";" + Telefono;

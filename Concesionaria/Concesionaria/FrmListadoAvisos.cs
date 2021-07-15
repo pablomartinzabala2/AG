@@ -22,7 +22,7 @@ namespace Concesionaria
             cCliente cli = new cCliente();
             cli.ActuaizarCumpleanios();
             cFunciones fun = new cFunciones();
-            string Col = "Fecha;Apellido;Nombre;Telefono;Texto";
+            string Col = "CodCliente;Fecha;Apellido;Nombre;Telefono;Texto";
             tbLista = fun.CrearTabla(Col);
             DateTime Hoy = DateTime.Now;
             DateTime Ant = Hoy.AddDays(-3);
@@ -46,17 +46,19 @@ namespace Concesionaria
             string Nombre = "";
             string Telefono = "";
             string Texto = "";
+            string CodCliente = "";
             string Val = "";
             cFunciones fun = new cFunciones();
             DataTable tbCli = cli.GetCumpleanios(FechaDesde, FechaHasta);
             for (int i=0;i< tbCli.Rows.Count;i++)
             {
+                CodCliente = tbCli.Rows[i]["CodCliente"].ToString();
                 Fecha = tbCli.Rows[i]["FechaCumple"].ToString();
                 Apellido = tbCli.Rows[i]["Apellido"].ToString();
                 Nombre = tbCli.Rows[i]["Nombre"].ToString();
                 Telefono = tbCli.Rows[i]["Telefono"].ToString();
                 Texto = "Cumpleaños";
-                Val = Fecha + ";" + Apellido;
+                Val = CodCliente + ";" +  Fecha + ";" + Apellido;
                 Val = Val + ";" + Nombre + ";" + Telefono;
                 Val = Val + ";" + Texto;
                 tbLista = fun.AgregarFilas(tbLista, Val);
@@ -79,17 +81,19 @@ namespace Concesionaria
             string Nombre = "";
             string Telefono = "";
             string Texto = "";
+            string codCliente = "";
             string Val = "";
             cFunciones fun = new cFunciones();
             DataTable tbCli = pre.GetPrendasFinalizadas(FechaDesde, FechaHasta);
             for (int i = 0; i < tbCli.Rows.Count; i++)
             {
+                codCliente = tbCli.Rows[i]["CodCliente"].ToString();
                 Fecha = tbCli.Rows[i]["FechaVencimiento"].ToString();
                 Apellido = tbCli.Rows[i]["Apellido"].ToString();
                 Nombre = tbCli.Rows[i]["Nombre"].ToString();
                 Telefono = tbCli.Rows[i]["Telefono"].ToString();
                 Texto = "Vencimiento prenda";
-                Val = Fecha + ";" + Apellido;
+                Val = codCliente + ";" + Fecha + ";" + Apellido;
                 Val = Val + ";" + Nombre + ";" + Telefono;
                 Val = Val + ";" + Texto;
                 tbLista = fun.AgregarFilas(tbLista, Val);
@@ -100,6 +104,30 @@ namespace Concesionaria
             Grilla.Columns[3].Width = 150;
             Grilla.Columns[4].Width = 180;
             Grilla.Columns[4].HeaderText = "Información";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAbrirVenta_Click(object sender, EventArgs e)
+        {
+            if (Grilla.CurrentRow ==null)
+            {
+                Mensaje("Debe seleccionar un registro ");
+                return;
+            }
+            string CodCliente = Grilla.CurrentRow.Cells[0].Value.ToString(); 
+            FrmVerCliente frm = new FrmVerCliente();
+            Principal.CodigoPrincipalAbm = CodCliente;
+            frm.ShowDialog();
+
         }
     }
 }

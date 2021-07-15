@@ -215,7 +215,7 @@ namespace Concesionaria.Clases
 
         public DataTable GetPrendasFinalizadas(DateTime FechaDesde, DateTime FechaHasta)
         {
-            string sql = "select c.Apellido,c.Nombre,c.Telefono,p.FechaVencimiento";
+            string sql = "select c.Apellido,c.Nombre,c.Telefono,p.FechaVencimiento, c.CodCliente";
             sql = sql + " from Prenda p, Cliente c";
             sql = sql + " where p.CodCliente= c.CodCliente";
             sql = sql + " and FechaVencimiento >=" + "'" + FechaDesde.ToShortDateString() + "'";
