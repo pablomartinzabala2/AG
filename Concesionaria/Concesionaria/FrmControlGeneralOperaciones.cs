@@ -41,16 +41,18 @@ namespace Concesionaria
             Double Cobranza = 0;
             Clases.cFunciones fun = new Clases.cFunciones();
             cCobranza objCobranza = new cCobranza();
-            string Col = "CodVenta;Patente;Descripcion;Apellido;ImporteVenta;Cuotas;Cheque;Cobranza;Prenda;Telefono";
+            string Col = "CodVenta;Patente;Descripcion;Apellido;ImporteVenta;Cuotas;Cheque;Cobranza;Prenda;Telefono;Tipo";
+            //Tipo se usa para saber a donde tiene que abrir
             Clases.cCuota cuota = new Clases.cCuota();
             Clases.cCheque objCheque = new Clases.cCheque();
             cPrenda objPrenda = new cPrenda();
             string telefono = "";
-            int TieneDeuda =0;
+            int TieneDeuda = 0;
             Double Cuotas = 0;
             Double Prenda = 0;
             Double Cheque = 0;
             string val = "";
+            int TipoPantalla = 1;
             DataTable tb = new DataTable();
             tb = fun.CrearTabla(Col);
             DataTable trdo = objVenta.GetVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
@@ -75,26 +77,69 @@ namespace Concesionaria
                     val = val + ";" + Cobranza.ToString();
                     val = val + ";" + Prenda.ToString();
                     val = val + ";" + telefono.ToString();
+                    val = val + ";" + TipoPantalla.ToString();
                     tb = fun.AgregarFilas(tb, val);
                 }
             }
+            TipoPantalla = 2;
+            //agrego las cuotas anteriores
+            cCuotasAnteriores cuotasAnt = new cCuotasAnteriores();
+            DataTable tcuotasAnt = cuotasAnt.GetCuotasAnterioresAdeudadesxFecha(txtPatente.Text, txtApellido.Text, FechaDesde, FechaHasta);
+            for (int i = 0; i < tcuotasAnt.Rows.Count; i++)
+            {
+                val = tcuotasAnt.Rows[i]["CodGrupo"].ToString();
+                val = val + ";" + tcuotasAnt.Rows[i]["Patente"].ToString();
+                val = val + ";" + tcuotasAnt.Rows[i]["Descripcion"].ToString();
+                val = val + ";" + tcuotasAnt.Rows[i]["Apellido"].ToString();
+                val = val + ";" + tcuotasAnt.Rows[i]["Importe"].ToString();
+                val = val + ";";
+                val = val + ";";
+                val = val + ";";
+                val = val + ";";
+                val = val + ";" + tcuotasAnt.Rows[i]["Telefono"].ToString();
+                val = val + ";" + TipoPantalla.ToString();
+                tb = fun.AgregarFilas(tb, val);
+
+            }
+            TipoPantalla = 3;
+            //Cobranza general 
+            cCobranzaGeneral cobGen = new cCobranzaGeneral();
+            DataTable tbCobGen = cobGen.GetDedudaCobranzaGeneralxFecha(Apellido, txtPatente.Text, FechaDesde, FechaHasta);
+            for (int i = 0; i < tbCobGen.Rows.Count; i++)
+            {
+                val = tbCobGen.Rows[i]["CodCobranza"].ToString();
+                val = val + ";" + tbCobGen.Rows[i]["Patente"].ToString();
+                val = val + ";" + tbCobGen.Rows[i]["Descripcion"].ToString();
+                val = val + ";" + tbCobGen.Rows[i]["Cliente"].ToString();
+                val = val + ";" + tbCobGen.Rows[i]["Importe"].ToString();
+                val = val + ";" + tbCobGen.Rows[i]["Importe"].ToString();
+                val = val + ";";
+                val = val + ";" + tbCobGen.Rows[i]["Importe"].ToString();
+                val = val + ";";
+                val = val + ";" + tbCobGen.Rows[i]["Telefono"].ToString();
+                val = val + ";" + TipoPantalla.ToString();
+                tb = fun.AgregarFilas(tb, val);
+
+            }
+            // 
+
             Double TotalVenta = fun.TotalizarColumna(tb, "ImporteVenta");
             Double TotalCuotas = fun.TotalizarColumna(tb, "Cuotas");
             Double TotalPrenda = fun.TotalizarColumna(tb, "Prenda");
             Double TotalCobranza = fun.TotalizarColumna(tb, "Cobranza");
             Double TotalCheque = fun.TotalizarColumna(tb, "Cheque");
             val = "";
-            val = val + ";" ;
             val = val + ";";
             val = val + ";";
-            val = val + ";" + TotalVenta.ToString ();
-            val = val + ";" + TotalCuotas.ToString ();
-            val = val + ";" + TotalCheque.ToString ();
-            val = val + ";" + TotalCobranza.ToString ();
-            val = val + ";" + TotalPrenda.ToString ();
+            val = val + ";";
+            val = val + ";" + TotalVenta.ToString();
+            val = val + ";" + TotalCuotas.ToString();
+            val = val + ";" + TotalCheque.ToString();
+            val = val + ";" + TotalCobranza.ToString();
+            val = val + ";" + TotalPrenda.ToString();
             val = val + ";" + telefono.ToString();
             tb = fun.AgregarFilas(tb, val);
-            
+
             tb = fun.TablaaMiles(tb, "ImporteVenta");
             tb = fun.TablaaMiles(tb, "Cuotas");
             tb = fun.TablaaMiles(tb, "Cheque");
@@ -102,6 +147,7 @@ namespace Concesionaria
             tb = fun.TablaaMiles(tb, "Prenda");
             Grilla.DataSource = tb;
             Grilla.Columns[0].Visible = false;
+            Grilla.Columns[10].Visible = false;
             Grilla.Columns[4].HeaderText = "Total";
             Grilla.Columns[5].HeaderText = "Documentos";
             for (int i = 0; i < Grilla.Rows.Count - 1; i++)
@@ -134,22 +180,35 @@ namespace Concesionaria
 
         private void btnAbrirVenta_Click(object sender, EventArgs e)
         {
-            if (Grilla.CurrentRow ==null)
+            if (Grilla.CurrentRow == null)
             {
-                MessageBox.Show ("Debe seleccionar una fila","Sistema");
+                MessageBox.Show("Debe seleccionar una fila", "Sistema");
                 return;
             }
 
-            if (Grilla.CurrentRow.Cells[0].Value.ToString()=="")
+            if (Grilla.CurrentRow.Cells[0].Value.ToString() == "")
             {
                 return;
             }
+            string Tipo = Grilla.CurrentRow.Cells[10].Value.ToString();
+            if (Tipo == "1")
+            {
+                string CodVenta = Grilla.CurrentRow.Cells[0].Value.ToString();
+                Principal.CodigoPrincipalAbm = CodVenta;
+                Principal.CodigoSenia = null;
+                FrmVenta form = new FrmVenta();
+                form.ShowDialog();
+            }
+            if (Tipo == "2")
+            {
+                string CodGrupo = Grilla.CurrentRow.Cells[0].Value.ToString();
+                Principal.CodigoPrincipalAbm = CodGrupo;
+                Principal.CodigoSenia = null;
+                FrmDocumentosAnteriores form = new FrmDocumentosAnteriores();
+                form.ShowDialog();
+            }
 
-            string CodVenta = Grilla.CurrentRow.Cells[0].Value.ToString();
-            Principal.CodigoPrincipalAbm = CodVenta;
-            Principal.CodigoSenia = null;
-            FrmVenta form = new FrmVenta();
-            form.ShowDialog();
+
         }
     }
 }

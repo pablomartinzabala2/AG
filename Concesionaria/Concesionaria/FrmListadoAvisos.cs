@@ -99,6 +99,7 @@ namespace Concesionaria
                 tbLista = fun.AgregarFilas(tbLista, Val);
             }
             Grilla.DataSource = tbLista;
+            Grilla.Columns[0].Visible = false; 
             Grilla.Columns[1].Width = 180;
             Grilla.Columns[2].Width = 180;
             Grilla.Columns[3].Width = 150;

@@ -4454,14 +4454,16 @@ namespace Concesionaria
             for (int i=0;i< Cuotas;i++)
             {
                 NroCuota = (i + 1).ToString();
-                val = NroCuota + ";" + ImporteCuota.ToString() + ";" + Fecha.ToShortDateString() + ";" + FechaPago + ";" + ImporteCuota.ToString();
+                val = NroCuota + ";" + fun.FormatoEnteroMiles(ImporteCuota.ToString()) + ";" + Fecha.ToShortDateString() + ";" + FechaPago + ";" + ImporteCuota.ToString();
                 val = val + ";" + CodCob;
                 tbCobranza = fun.AgregarFilas(tbCobranza, val);
                 Fecha = Fecha.AddMonths(1);
             }
-            tbCobranza = fun.TablaaMiles(tbCobranza, "Importe");
+            Double TotalCobranza = fun.TotalizarColumna(tbCobranza, "Importe");
+           // tbCobranza = fun.TablaaMiles(tbCobranza, "Importe");
             GrillaCobranza.DataSource = tbCobranza;
-            txtTotalCobranza.Text = txtImporteCobranza.Text;
+           // txtTotalCobranza.Text = TotalCobranza.ToString();
+            txtTotalCobranza.Text = fun.FormatoEnteroMiles(TotalCobranza.ToString());
             CalcularSubTotal();
             GrillaCobranza.Columns[0].Width = 180;
             GrillaCobranza.Columns[1].Width = 180;
