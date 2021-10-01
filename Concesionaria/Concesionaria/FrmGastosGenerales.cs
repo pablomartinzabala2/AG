@@ -92,7 +92,7 @@ namespace Concesionaria
 
             if (NombreEntidad != "")
             {
-                Descripcion = NombreEntidad + "," + Descripcion;
+                Descripcion = NombreEntidad + ", " + Descripcion;
             }
             Clases.cGastosNegocio gasto = new Clases.cGastosNegocio();
             gasto.GrabarGastos(Fecha, CodEntidad, Descripcion, Importe);

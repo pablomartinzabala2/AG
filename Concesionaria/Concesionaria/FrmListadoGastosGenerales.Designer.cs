@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Grilla = new System.Windows.Forms.DataGridView();
@@ -37,14 +39,14 @@
             this.txtFechaDesde = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnAnular = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grilla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAnular);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTotal);
@@ -62,6 +64,22 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listado de gastos generales";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(470, 37);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(230, 23);
+            this.txtDescripcion.TabIndex = 47;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(382, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 17);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Descripción";
             // 
             // txtTotal
             // 
@@ -94,7 +112,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(802, 30);
+            this.btnBuscar.Location = new System.Drawing.Point(706, 30);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(103, 31);
             this.btnBuscar.TabIndex = 44;
@@ -105,10 +123,10 @@
             // txtFechaHasta
             // 
             this.txtFechaHasta.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFechaHasta.Location = new System.Drawing.Point(359, 34);
+            this.txtFechaHasta.Location = new System.Drawing.Point(300, 34);
             this.txtFechaHasta.Mask = "00/00/0000";
             this.txtFechaHasta.Name = "txtFechaHasta";
-            this.txtFechaHasta.Size = new System.Drawing.Size(100, 23);
+            this.txtFechaHasta.Size = new System.Drawing.Size(76, 23);
             this.txtFechaHasta.TabIndex = 43;
             this.txtFechaHasta.ValidatingType = typeof(System.DateTime);
             // 
@@ -118,7 +136,7 @@
             this.txtFechaDesde.Location = new System.Drawing.Point(121, 34);
             this.txtFechaDesde.Mask = "00/00/0000";
             this.txtFechaDesde.Name = "txtFechaDesde";
-            this.txtFechaDesde.Size = new System.Drawing.Size(100, 23);
+            this.txtFechaDesde.Size = new System.Drawing.Size(79, 23);
             this.txtFechaDesde.TabIndex = 42;
             this.txtFechaDesde.ValidatingType = typeof(System.DateTime);
             // 
@@ -134,27 +152,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 37);
+            this.label2.Location = new System.Drawing.Point(206, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 40;
             this.label2.Text = "Fecha Hasta";
             // 
-            // label4
+            // btnAnular
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(465, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Descripción";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(553, 34);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(230, 23);
-            this.txtDescripcion.TabIndex = 47;
+            this.btnAnular.Location = new System.Drawing.Point(815, 29);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(103, 31);
+            this.btnAnular.TabIndex = 48;
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // FrmListadoGastosGenerales
             // 
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAnular;
     }
 }

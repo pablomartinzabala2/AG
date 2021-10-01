@@ -48,5 +48,23 @@ namespace Concesionaria.Clases
                 }
             return Importe;
         }
+
+        public Double AnulagGasto(Int32 CodGasto)
+        {
+            Double Importe = 0;
+            string sql = "select importe from GastosNegocio ";
+            sql = sql + " where CodGasto=" + CodGasto.ToString();
+            DataTable trdo = cDb.ExecuteDataTable(sql);
+            if (trdo.Rows.Count >0)
+            {
+                if (trdo.Rows[0]["Importe"].ToString() != "")
+                    Importe = Convert.ToDouble(trdo.Rows[0]["Importe"].ToString());
+            }
+            sql = "delete from GastosNegocio ";
+            sql = sql + " where CodGasto=" + CodGasto.ToString();
+            cDb.ExecutarNonQuery(sql);
+            return Importe;
+        }
     }
+
 }
