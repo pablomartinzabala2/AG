@@ -50,7 +50,7 @@ namespace Concesionaria
 
         private void InicializarComponentes()
         {
-            txtFecha.Text = DateTime.Now.ToShortDateString();
+            dpFecha.Value = DateTime.Now; ;
             Clases.cFunciones fun = new Clases.cFunciones();
             fun.LlenarCombo(cmb_CodMarca, "Marca", "Nombre", "CodMarca");
             //  fun.LlenarCombo(cmbCiudad, "Ciudad", "Nombre", "CodCiudad");
@@ -172,7 +172,7 @@ namespace Concesionaria
             }
             if (txtCodStock.Text == "")
             {
-                DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+                DateTime Fecha = dpFecha.Value; 
                 //inserto el stock
                 CodAuto = Convert.ToInt32(txtCodAuto.Text);
                 Int32? CodCliente = null;
@@ -200,12 +200,6 @@ namespace Concesionaria
                 LimpiarCliente();
                 txtCodStock.Text = "";
                 txtCodAuto.Text = "";
-                return;
-            }
-
-            if (txtFecha.Text == "")
-            {
-                MessageBox.Show("Ingresar una fecha para  continuar", Clases.cMensaje.Mensaje());
                 return;
             }
 
@@ -259,12 +253,6 @@ namespace Concesionaria
                     return;
                 }
 
-            if (fun.ValidarFecha(txtFecha.Text) == false)
-            {
-                MessageBox.Show("La fecha ingresada es incorrecta", Clases.cMensaje.Mensaje());
-                return;
-            }
-
             Int32 CodTipoDoc = 0;
             if (cmbDocumento.SelectedIndex > 0)
                 CodTipoDoc = Convert.ToInt32(cmbDocumento.SelectedValue);
@@ -315,7 +303,7 @@ namespace Concesionaria
                         CodCliente = Convert.ToInt32(txtCodCLiente.Text);
                     double ImporteaPagar = fun.ToDouble(txtEfectivoaPagar.Text);
                     Clases.cEfectivoaPagar objEft = new Clases.cEfectivoaPagar();
-                    objEft.Insertar(con, Transaccion, Convert.ToDateTime(txtFecha.Text), ImporteaPagar, CodCompra, CodCliente, CodAuto);
+                    objEft.Insertar(con, Transaccion, dpFecha.Value , ImporteaPagar, CodCompra, CodCliente, CodAuto);
                 }
                 if (txtTotalVehiculo.Text != "")
                     GrabarVenta(con, Transaccion);
@@ -1289,7 +1277,7 @@ namespace Concesionaria
 
         private void GrabarMovimiento()
         {
-            DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+            DateTime Fecha = dpFecha.Value;
             string Descripcion = "COMPRA DE AUTO " + txtPatente.Text;
             Clases.cFunciones fun = new Clases.cFunciones();
             Double Importe = fun.ToDouble(txtImporte.Text);
@@ -1315,7 +1303,7 @@ namespace Concesionaria
 
         private void GrabarGastosPagar(SqlConnection con, SqlTransaction Transaccion, Int32 CodAuto, Int32 CodCompra)
         {
-            DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+            DateTime Fecha = dpFecha.Value;
             Clases.cFunciones fun = new Clases.cFunciones();
             string Nombre = "";
             Int32 CodStock = Convert.ToInt32(txtCodStock.Text);
@@ -1535,7 +1523,7 @@ namespace Concesionaria
                         sqlCheque = sqlCheque + "values (";
                         sqlCheque = sqlCheque + "'" + GrillaCheques.Rows[j].Cells[0].Value.ToString() + "'";
                         sqlCheque = sqlCheque + "," + fun.ToDouble(sImporteCheque);
-                        sqlCheque = sqlCheque + "," + "'" + txtFecha.Text + "'";
+                        sqlCheque = sqlCheque + "," + "'" + dpFecha.Value.ToShortDateString () + "'";
                         sqlCheque = sqlCheque + "," + CodCLiente.ToString();
                         sqlCheque = sqlCheque + "," + GrillaCheques.Rows[j].Cells[3].Value.ToString();
                         sqlCheque = sqlCheque + "," + CodCompra.ToString();
@@ -1615,7 +1603,7 @@ namespace Concesionaria
             if (txtCodStock2.Text != "")
             {
                 string sql2 = "Update StockAuto set ";
-                sql2 = sql2 + " FechaBaja =" + "'" + txtFecha.Text + "'";
+                sql2 = sql2 + " FechaBaja =" + "'" + dpFecha.Value.ToShortDateString() + "'";
                 sql2 = sql2 + " where CodStock =" + txtCodStock2.Text;
                 SqlCommand Comand3 = new SqlCommand();
                 Comand3.Connection = con;
@@ -1641,7 +1629,7 @@ namespace Concesionaria
 
         private void GrabarMovimiento(SqlConnection con, SqlTransaction Transaccion, Int32 CodCompra)
         {
-            DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+            DateTime Fecha = dpFecha.Value;
             string Descripcion = "COMPRA DE AUTO " + txtPatente.Text;
             Clases.cFunciones fun = new Clases.cFunciones();
             Double Importe = 0;
@@ -1685,7 +1673,7 @@ namespace Concesionaria
                 {
                     for (int i = 0; i < GrillaGastosRecepcion.Rows.Count - 1;i++)
                     {
-                        DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+                        DateTime Fecha = dpFecha.Value;
                         double Importe = fun.ToDouble(GrillaGastosRecepcion.Rows[i].Cells[3].Value.ToString ());
                         string Descripcion = GrillaGastosRecepcion.Rows[i].Cells[1].Value.ToString();
                         mov.RegistrarMovimientoDescripcionTransaccion(con, Transaccion, -1, Principal.CodUsuarioLogueado,-1* Importe, 0, 0, 0, 0, Fecha, Descripcion, CodCompra);
@@ -1735,8 +1723,8 @@ namespace Concesionaria
 
         private string GetSqlVenta()
         {
-            string sql = "";   
-            DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
+            string sql = "";
+            DateTime Fecha = dpFecha.Value;
             Int32 CodAutoVendido = Convert.ToInt32(txtCodAuto2.Text);
             
             Int32 CodStock = Convert.ToInt32(txtCodStock2.Text);

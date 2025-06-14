@@ -12,12 +12,12 @@ namespace Concesionaria
     public partial class FrmListadoVentas : Form
     {
         public FrmListadoVentas()
-        {
+        {    
             InitializeComponent();
             DateTime fecha = DateTime.Now;
             DateTime fecha1 = fecha.AddMonths(-1);
-            txtFechaDesde.Text = fecha1.ToShortDateString();
-            txtFechaHasta.Text = fecha.ToShortDateString();
+            dpFechaDesde.Value = fecha1;
+            dpFechaHasta.Value = fecha;
             txtTotal.BackColor = cColor.CajaTexto();
             txtCantidadVentas.BackColor = cColor.CajaTexto();
             Buscar();
@@ -31,19 +31,7 @@ namespace Concesionaria
         private void Buscar()
         {
             Clases.cFunciones fun = new Clases.cFunciones();
-            if (fun.ValidarFecha(txtFechaDesde.Text) == false)
-            {
-                MessageBox.Show("Fecha desde incorrecta", Clases.cMensaje.Mensaje());
-                return;
-            }
-
-            if (fun.ValidarFecha(txtFechaHasta.Text) == false)
-            {
-                MessageBox.Show("Fecha hasta incorrecta", Clases.cMensaje.Mensaje());
-                return;
-            }
-
-            if (Convert.ToDateTime(txtFechaDesde.Text) > Convert.ToDateTime(txtFechaHasta.Text))
+            if ( dpFechaDesde.Value > dpFechaHasta.Value)
             {
                 MessageBox.Show("La fecha desde debe ser inferior a la fecha hasta", Clases.cMensaje.Mensaje());
                 return;
@@ -52,8 +40,8 @@ namespace Concesionaria
             if (txtApellido.Text != "")
                 Apellido = txtApellido.Text;
             Clases.cVenta objVenta = new Clases.cVenta();
-            DateTime FechaDesde = Convert.ToDateTime(txtFechaDesde.Text);
-            DateTime FechaHasta = Convert.ToDateTime(txtFechaHasta.Text);
+            DateTime FechaDesde = dpFechaDesde.Value;
+            DateTime FechaHasta = dpFechaHasta.Value;
             DataTable trdo = objVenta.GetVentasxFecha(FechaDesde, FechaHasta, txtPatente.Text.Trim(), Apellido);
             Clases.cPreVenta objPreVenta = new Clases.cPreVenta();
 

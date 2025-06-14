@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Concesionaria.Clases;
 
 namespace Concesionaria
 {
@@ -432,6 +433,101 @@ namespace Concesionaria
             Clases.cGasto gasto2 = new Clases.cGasto();
             DataTable tgasto = gasto2.GetGastosRecepcionxCodStock2(Convert.ToInt32(txtCodStock.Text));
             GrillaGastosRecepcion.DataSource = tgasto;
+        }
+
+        private void btnBuscarAuto_Click(object sender, EventArgs e)
+        {
+            FrmBuscarAuto form = new FrmBuscarAuto();
+            form.FormClosing += new FormClosingEventHandler(formBuscadorAuto_FormClosing);
+            form.ShowDialog();
+        }
+
+        private void formBuscadorAuto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Int32 CodAuto = Convert.ToInt32(Principal.CodigoPrincipalAbm);
+            Int32 CodStock = Convert.ToInt32(Principal.CodStock);
+            cAuto auto = new Clases.cAuto();
+            BuscarAutoxCodigo(CodAuto, CodStock);
+        }
+
+        private void BuscarAutoxCodigo(Int32 COdAuto, Int32 CodStock)
+        {
+
+            Clases.cAuto auto = new Clases.cAuto();
+            DataTable trdo = auto.GetAutoxCodigo(COdAuto);
+            if (trdo.Rows.Count > 0)
+            {
+                Clases.cFunciones fun = new Clases.cFunciones();
+                txtDescripcion.Text = trdo.Rows[0]["Descripcion"].ToString();
+                txtPatente.Text = trdo.Rows[0]["Patente"].ToString();
+                // txtMotor.Text = trdo.Rows[0]["Motor"].ToString();
+                //  txtChasis.Text = trdo.Rows[0]["Chasis"].ToString();
+                txtKms.Text = trdo.Rows[0]["Kilometros"].ToString();
+                if (txtKms.Text != "")
+                {
+                    txtKms.Text = fun.FormatoEnteroMiles(txtKms.Text);
+                }
+                txtCodAuto.Text = trdo.Rows[0]["CodAuto"].ToString();
+                if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                {
+                    cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodMarca"].ToString() != "")
+                {
+                    cmbMarca.SelectedValue = trdo.Rows[0]["CodMarca"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodAnio"].ToString() != "")
+                {
+                    // cmbAnio.SelectedValue = trdo.Rows[0]["CodAnio"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodTipoUtilitario"].ToString() != "")
+                {
+                    //  cmbTipoUtilitario.SelectedValue = trdo.Rows[0]["CodTipoUtilitario"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodColor"].ToString() != "")
+                {
+                    // cmbColor.SelectedValue = trdo.Rows[0]["CodColor"].ToString();
+                }
+
+                if (trdo.Rows[0]["CodCiudad"].ToString() != "")
+                {
+                    Int32 CodCiiudad = Convert.ToInt32(trdo.Rows[0]["CodCiudad"].ToString());
+                    cCiudad citi = new cCiudad();
+                    DataTable tbciudad = citi.GetCiudadxId(CodCiiudad);
+                    fun.LlenarComboDatatable(cmbCiudad, tbciudad, "Nombre", "CodCiudad");
+                    cmbCiudad.SelectedValue = trdo.Rows[0]["CodCiudad"].ToString();
+                }
+
+
+                if (trdo.Rows[0]["Propio"].ToString() == "1")
+                {
+                    radioPropio.Checked = true;
+                    radioConcesion.Checked = false;
+                }
+
+                if (trdo.Rows[0]["Concesion"].ToString() == "1")
+                {
+                    radioPropio.Checked = false;
+                    radioConcesion.Checked = true;
+                }
+                txtCodStock.Text = CodStock.ToString();
+
+                Clases.cStockAuto stock = new Clases.cStockAuto();
+                DataTable trdo2 = stock.GetStockAutosVigentes(Convert.ToInt32(txtCodAuto.Text));
+
+                if (txtCodStock.Text != "")
+                {
+                    CargarCostoxstock(Convert.ToInt32(txtCodStock.Text));
+                    // GetCostos(Convert.ToInt32(txtCodStock.Text));
+                    //  CargarGastosGeneralesxCodStoxk(Convert.ToInt32(txtCodStock.Text));
+                }
+
+            }
+
         }
     }
 }

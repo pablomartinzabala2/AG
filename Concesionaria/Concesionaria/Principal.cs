@@ -35,6 +35,7 @@ namespace Concesionaria
         private DataTable tbLista;
         public static Int32? CodAutoSeleccionado;
         public static string RutaImagen;
+        public static Int32? CodStock;
         public Principal()
         {
             InitializeComponent();

@@ -42,6 +42,7 @@
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaDeGastosDeRecepciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.papelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAgregarCosto = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,7 +106,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.papelesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -130,17 +130,17 @@
             // 
             this.fileMenu.DoubleClickEnabled = true;
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem6,
-            this.toolStripMenuItem7,
             this.toolStripMenuItem8,
-            this.mnuMarcas,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem1,
+            this.newToolStripMenuItem,
+            this.toolStripMenuItem6,
             this.toolStripMenuItem10,
             this.categoriaDeGastosDeRecepciónToolStripMenuItem,
-            this.tarjetaToolStripMenuItem,
+            this.mnuMarcas,
             this.papelesToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.tarjetaToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
@@ -220,6 +220,13 @@
             this.tarjetaToolStripMenuItem.Text = "Tarjeta";
             this.tarjetaToolStripMenuItem.Click += new System.EventHandler(this.tarjetaToolStripMenuItem_Click);
             // 
+            // papelesToolStripMenuItem
+            // 
+            this.papelesToolStripMenuItem.Name = "papelesToolStripMenuItem";
+            this.papelesToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.papelesToolStripMenuItem.Text = "Papeles";
+            this.papelesToolStripMenuItem.Click += new System.EventHandler(this.papelesToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -232,16 +239,16 @@
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuAgregarCosto,
             this.toolStripSeparator6,
+            this.crearAlertaToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.cutToolStripMenuItem,
+            this.mnuControlOperaciones,
             this.toolStripSeparator7,
+            this.controlDeOperacionesGeneralesToolStripMenuItem,
+            this.ingresoDeChequeToolStripMenuItem,
             this.MenuPrestamo,
             this.registrarDocumentosToolStripMenuItem,
             this.registrarCobranzasGeneralesToolStripMenuItem,
-            this.mnuControlOperaciones,
-            this.crearAlertaToolStripMenuItem,
-            this.controlDeOperacionesGeneralesToolStripMenuItem,
-            this.ingresoDeChequeToolStripMenuItem});
+            this.cutToolStripMenuItem});
             this.editMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.editMenu.Name = "editMenu";
             this.editMenu.Size = new System.Drawing.Size(101, 21);
@@ -332,28 +339,28 @@
             // viewMenu
             // 
             this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cobranzasToolStripMenuItem,
-            this.ventasToolStripMenuItem1,
-            this.comprasToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.chcToolStripMenuItem,
-            this.toolStripMenuItem9,
-            this.menuPrendas,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.interesesPagadosToolStripMenuItem,
-            this.comisionesToolStripMenuItem,
-            this.gastpsToolStripMenuItem,
-            this.chequesAPagarToolStripMenuItem,
-            this.documentosAnteriroesToolStripMenuItem,
-            this.gastosGeneralesToolStripMenuItem,
-            this.alertasToolStripMenuItem,
-            this.cobranzasGeneralesToolStripMenuItem,
-            this.efectivosAPagarToolStripMenuItem,
             this.anotacionesToolStripMenuItem,
-            this.rentabilidadToolStripMenuItem,
+            this.alertasToolStripMenuItem,
+            this.chcToolStripMenuItem,
+            this.cobranzasToolStripMenuItem,
+            this.chequesAPagarToolStripMenuItem,
+            this.comisionesToolStripMenuItem,
+            this.comprasToolStripMenuItem,
+            this.toolStripMenuItem9,
+            this.documentosAnteriroesToolStripMenuItem,
+            this.efectivosAPagarToolStripMenuItem,
+            this.gastpsToolStripMenuItem,
+            this.gastosGeneralesToolStripMenuItem,
+            this.cobranzasGeneralesToolStripMenuItem,
+            this.interesesPagadosToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem5,
             this.preVentasToolStripMenuItem,
-            this.ventasPorTarjetasToolStripMenuItem});
+            this.rentabilidadToolStripMenuItem,
+            this.ventasToolStripMenuItem1,
+            this.ventasPorTarjetasToolStripMenuItem,
+            this.menuPrendas});
             this.viewMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.viewMenu.Name = "viewMenu";
             this.viewMenu.Size = new System.Drawing.Size(73, 21);
@@ -757,13 +764,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // papelesToolStripMenuItem
-            // 
-            this.papelesToolStripMenuItem.Name = "papelesToolStripMenuItem";
-            this.papelesToolStripMenuItem.Size = new System.Drawing.Size(292, 22);
-            this.papelesToolStripMenuItem.Text = "Papeles";
-            this.papelesToolStripMenuItem.Click += new System.EventHandler(this.papelesToolStripMenuItem_Click);
             // 
             // Principal
             // 

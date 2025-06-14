@@ -73,6 +73,7 @@
             this.CmbGastoRecepcion = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.btnAgregarGastodeRecepcion = new System.Windows.Forms.Button();
+            this.btnBuscarAuto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarAuto);
             this.groupBox1.Controls.Add(this.txtCodStock);
             this.groupBox1.Controls.Add(this.txtImporte);
             this.groupBox1.Controls.Add(this.label15);
@@ -538,6 +540,16 @@
             this.btnAgregarGastodeRecepcion.UseVisualStyleBackColor = true;
             this.btnAgregarGastodeRecepcion.Click += new System.EventHandler(this.btnAgregarGastodeRecepcion_Click);
             // 
+            // btnBuscarAuto
+            // 
+            this.btnBuscarAuto.Image = global::Concesionaria.Properties.Resources.carpeta;
+            this.btnBuscarAuto.Location = new System.Drawing.Point(276, 24);
+            this.btnBuscarAuto.Name = "btnBuscarAuto";
+            this.btnBuscarAuto.Size = new System.Drawing.Size(40, 27);
+            this.btnBuscarAuto.TabIndex = 66;
+            this.btnBuscarAuto.UseVisualStyleBackColor = true;
+            this.btnBuscarAuto.Click += new System.EventHandler(this.btnBuscarAuto_Click);
+            // 
             // FrmCosto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,5 +625,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button btnAgregarGastodeRecepcion;
         private System.Windows.Forms.DataGridView GrillaGastosRecepcion;
+        private System.Windows.Forms.Button btnBuscarAuto;
     }
 }
